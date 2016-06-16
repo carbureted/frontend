@@ -94,6 +94,9 @@ You'll need a pgp key with the same name as your github user.
 
 You can see your key by writing `gpg --list-keys`
 
+### git janitor
+You merge a PR in by writing `git merge --verify-signatures -S [NAME OF PR]`
+
 https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
 
 In Git 1.8.3 and later, "git merge" and "git pull" can be told to inspect and reject when merging a commit that does not carry a trusted GPG signature with the --verify-signatures command.
