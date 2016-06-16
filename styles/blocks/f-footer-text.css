@@ -1,0 +1,51 @@
+/*
+
+short text. small line height. top-margin.
+##EXAMPLE 1
+```
+<p class="f-footer-text">
+    We are activists, developing tools for activists. Currently, we’re based in Copenhagen.
+</p>
+```
+##EXAMPLE 2
+short text. small line height. top-margin. with links and span.
+```
+<p class="f-footer-text">
+    We are activists from all over. we are everywhere. <span>Beware!</span>
+    We have knives and dogs. they <span>bite</span> and <a href="">sting</a>.
+    love firefund <span>staff</span>
+</p>
+```
+##EXAMPLE 3
+Long text. small line height. top-margin. with links and span.
+```
+<p class="f-footer-text">
+    Here is some text
+    it is nice text
+    Putting a lot of text now. <a href="">some text are links</a>
+    it is nice text
+    Putting a lot of text now. <a href="">some text are links</a>
+    it is nice text
+    Putting a lot of text now. <a href="">some text are links</a>
+    it is nice text
+    Putting a lot of text now. <a href="">some text are links</a>
+    it is nice text
+    Putting a lot of text now. <a href="">some text are links</a>
+    it is nice text
+    Putting a lot of text now. <a href="">some text are links</a>
+    it is nice text
+Putting a lot of text now. <a href="">some text are links</a>
+</p>
+```
+ */
+
+ @import "../variables";
+
+ .f-footer-text {
+     margin: 0 0 var(--margin-text);
+
+     color: var(--color-white);
+     font-size: 1.7rem;
+     font-weight: lighter;
+     line-height: 2.2rem;
+ }

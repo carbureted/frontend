@@ -1,0 +1,68 @@
+ /*
+ Text diplayed after making a donation.
+ <pre>
+ BLOCK f-postpay-info
+    Element f-postpay-
+ </pre>
+
+ ## FLEXIBLE FUNDING MODEL
+ ```
+ <div class="f-postpay-info">
+    <ul class="f-postpay-info__text">
+        <li>You donated <span>$15.00</span> directly</li>
+        <li>You chose a platform cut on <span>$1.50<span></li>
+    </ul>
+    <ul class="f-postpay-info__text">
+        <li>If we reach <span>$70.000</span> in <span>13 days</span>,</li>
+        <li>all pledged donations will also be transferred</li>
+    </ul>
+    <ul class="f-postpay-info__text">
+        <li>If the campaign do not reach <span>$70.000</span>,</li>
+        <li>then only direct donations wil be transferred.</li>
+    </ul>
+</div>
+ ```
+ ## DIRECT FUNDING MODEL
+ ```
+ <div class="f-postpay-info">
+    <ul class="f-postpay-info__text">
+        <li>You donated <span>$15.00</span> directly.</li>
+        <li>You chose a platform cut on <span>$1.50<span></li>
+</div>
+ ```
+ ## PLEDGED FUNDING MODEL
+ ```
+ <div class="f-postpay-info">
+    <ul class="f-postpay-info__text">
+        <li>You pledged to donate <span>$15.00</span> if the campaign reaches the goal.</li>
+        <li>You chose a platform cut on <span>$1.50<span></li>
+    </ul>
+    <ul class="f-postpay-info__text">
+        <li>We will only withdraw your donation if we reach <span>$70.000</span> in <span>13 days</span></li>
+    </ul>
+    <ul class="f-postpay-info__text">
+        <li>If the campaign do not reach <span>$70.000</span>,</li>
+        <li>no money will be transferred.</li>
+    </ul>
+</div>
+ ```
+ */
+
+ @import "../variables";
+
+ .f-postpay-info {
+    margin-top: 0rem;
+    margin-bottom: 8rem;
+
+    color: var(--color-white);
+    font-size: 2.6rem;
+ }
+
+ .f-postpay-info__text {
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+    padding: 0;
+
+    line-height: 3rem;
+    list-style: none;
+ }

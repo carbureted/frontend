@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>FIREFUND - openPGP</title>
+		<style>
+			* { font-family: "Roboto"; }
+			body {
+				background-color: black;
+			}
+    </style>
+		<link rel="stylesheet" href="css/bundle.css">
+		<script src="js/loader.js" charset="utf8"></script>
+		<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
+       (instead of dynamically loading it later in JS) is that the parser can go
+       to town pre-fetching resources, etc. -->
+  	<link rel="import" class="f-import" href="wc/header.htm" async>
+		<link rel="import" class="f-import" href="wc/secure-text-input.htm" async>
+	</head>
+	<body>
+
+		<f-header></f-header>
+		
+		<article class="f-content">
+			<f-secure-text-input></f-secure-text-input>
+		</article>
+
+	</body>
+</html>

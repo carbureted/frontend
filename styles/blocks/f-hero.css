@@ -1,0 +1,146 @@
+/*
+# f-hero
+
+Hero. Has a full width [of the site content] background image with text content on top.
+Image inserted as html img tag and via js set as css background-image. The
+image is initial hidden but is reveal in a translateY/opacity movement, when
+the js has run and the image is loaded.
+
+Known issue: With some image dimensions and browser window dimensions the image is too short.
+E.i. the image doesn't reach the top of the container and the black background is visible.
+
+<pre>
+BLOCK f-hero
+	ELEMENT f-hero__wrapper
+		ELEMENT f-hero__heading
+		ELEMENT f-hero__text
+</pre>
+
+## With grid
+```
+<div class="f-hero">
+	<img src="foo/bar.png">
+	<div class="f-hero__wrapper">
+		<div class="f-row f-row_6">
+			<div class="f-row__cell">
+				<div class="f-hero__heading">
+					<h1><span>Project:</span></h1><br>
+					<h1>Rebuild Kobanê</h1>
+				</div>
+			</div>
+			<div class="f-row__cell-2 f-row__cell-mobile-5">
+				<p class="f-hero__text">
+						<span>We have always dealt with oppression, but we do not only fight</span>
+						<span>against ISIS - we fight for freedom. We are the Kobanê</span>
+						<span>Reconstruction Board, and this is a global call to action, to stand</span>
+						<span>with us and rebuild our city.</span>
+				</p>
+			</div>
+		</div>
+	</div><!-- /f-hero__wrapper -->
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-hero {
+	height: 30rem;
+	width: 100%;
+	margin-bottom: 3rem;
+	padding-top: 4rem;
+
+	/*TODO: set background-image via js */
+/*	background-image: url(../../assets/image/projecthero.png);*/
+	background-image: url(../../assets/image/4FPL2ZO.jpg);
+	background-repeat: no-repeat;
+	background-position: center bottom; /* cut sides until media query limit */
+}
+
+/* `<img>` tags are hidden */
+.f-hero img { display: none; }
+
+.f-hero__wrapper {
+	lost-center: var(--page-max-width);
+}
+
+.f-hero__heading {
+	position: relative;
+
+  margin: 0 0 0 var(--gutter-width);
+}
+.f-hero__heading::before {
+	position: absolute;
+  top: 0;
+	left: -50.8rem;
+  width: 50rem;
+  height: 100%;
+
+  background-color: var(--color-black-transparent);
+
+  content: "";
+}
+.f-hero__heading h1 {
+	display: inline;
+
+  margin: 0 0 0 -0.8rem;
+  padding-right: 1.4rem;
+  padding-left: 0.8rem;
+
+  background-color: var(--color-black-transparent);
+
+  color: var(--color-white);
+  font-size: 3.7rem;
+  font-weight: bold;
+}
+
+.f-hero__text {
+	position: relative;
+
+	margin: 1.16rem 0 0 var(--gutter-width);
+}
+.f-hero__text::before {
+	position: absolute;
+  top: 0;
+  left: -50.8rem;
+  width: 50rem;
+  height: 100%;
+  content: "";
+
+  background-color: var(--color-black-transparent);
+
+	pointer-events: none;
+}
+
+.f-hero__text span {
+  margin-left: -0.8rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  /*padding: 0.2rem .72rem 3.4rem;*/ /*#TODO:120 make the 3.4 a global variable */
+
+  background-color: var(--color-black-transparent);
+
+  color: var(--color-white);
+  font-size: 1.5rem;
+  font-weight: lighter;
+  line-height: 2.1rem;
+	white-space: nowrap;
+}
+
+/*
+## TODO: Needs to be done in js
+If the window is below or equal the image width then `background-size: cover;`.
+
+E.I. the sides are cut.
+
+If thw window is above the image width, then `background-size: auto;`
+
+E.I. the top of the image is cut.
+
+The image image width should be measured from the actual image via js.
+*/
+@media screen and (min-width: 1350px) {
+	.f-hero {
+		background-size: cover;
+	}
+}

@@ -1,0 +1,555 @@
+/*
+
+Noter
+
+- Sketch ny situation med nye fundingmodeller og indret dig derefter DONE
+- Slider i egen block og branch NOPE
+- Correct the arrow DONE
+- Position buttons mobile (3-column) DONE
+- Position left-buttons again - maybe with a button div DONE
+- Allignment of radiobuttons DONE
+- Clean HTML DONE
+- Forsøg m. procent ved micropixelfejl DONE (men stadig små fejl)
+- Position rightbuttons både på mobile og desktop DONE
+- Test browsers - DONE
+
+	SAFARI
+	- Ingen slider-end i mindre versioner
+	- Slider track ustabil og glimser ud
+	FIREFOX
+	- Slider er ikke understøttet, ikke ramt på thumb DONE
+	- Slider og button position er nu skæv
+
+- [x] Insæt korrecte tal DONE
+- [x] Slim CSS DONE
+- [x] Clean CSS DONE
+- [x] Se om du kan få modal til at virke ordentligt igen DONE
+- Nice to have: centrer footer på mobile
+- When button is done, test if slimmer radiobuttons are cooler NOPE
+- [] Fix button bugs
+- []Fix radio input option
+- Fix radio red fill-out
+- Fix browser problems
+- Fix modifiers (change between the 3 different designs)
+
+In the modal window, the two different payment forms - one for mobile, one for desktop.
+
+
+<pre>
+BLOCK f-payment
+MODIFIER f-payment_direct (OBSOLETE?)
+MODIFIER f-payment_pledge (OBSOLETE?)
+	ELEMENT f-payment__heading
+	ELEMENT f-payment__heading_mobile
+	ELEMENT f-payment__text
+	ELEMENT f-payment__button
+	ELEMENT f-payment__button-group
+	ELEMENT f-payment__arrow
+	ELEMENT f-payment__radio
+		ELEMENT f-payment__radio-input
+	ELEMENT f-payment__footer
+	ELEMENT f-payment__footer-text
+	ELEMENT f-payment__slider
+	ELEMENT f-payment__slider-style
+	ELEMENT f-payment__slider-ends
+</pre>
+
+
+# Payment form
+
+<button class="f-button-basic">Toggle modal window</button>
+```
+<div class="f-modal f-modal_visible">
+	<div class="f-modal__content">
+		<div class="f-content">
+			<div class="f-payment">
+				<div class="f-row f-row_12">
+					<div class="f-row__cell-7 f-row_not-mobile">
+						<h2 class="f-payment__heading"> Choose the amount and method of payment</h2>
+						<p class="f-payment__text">A pledged donation will only transfer if the campaign reaches the goal within the timeframe. <a href="#">Read more.</a></p>
+						<button class="f-button-basic f-payment__button">Pledge</button>
+					</div>
+					<div class="f-row_not-desktop f-row__cell-mobile_push_2 f-row__cell-mobile-8">
+						<h2 class="f-payment__heading f-payment__heading_mobile"> Choose the amount and method of payment</h2>
+						<p class="f-payment__text">A pledged donation will only transfer if the campaign reaches the goal within the timeframe. <span>Read more.</span></p>
+						<button class="f-button-basic f-payment__button">Pledge</button>
+					</div>
+					<div class="f-row__cell-1 f-row_not-mobile">
+						<div class="f-payment__arrow"></div>
+					</div>
+					<div class="f-row_not-desktop f-row__cell-mobile_push_3 f-row__cell-mobile-8">
+						<div class="f-payment__arrow f-payment__arrow_mobile"></div>
+					</div>
+					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
+						<div class="f-payment__radio-group f-radio-group">
+							<div class="f-column f-column_2 f-column_mobile_3">
+								<div class="f-radio-group__element">
+									<input id="rb10" type="radio" name="rb" value="500">
+									<label for="rb10">$500</label>
+								</div>
+								<div class="f-radio-group__element">
+									<input id="rb11" type="radio" name="rb" value="250">
+									<label for="rb11">$250</label>
+								</div>
+								<div class="f-radio-group__element">
+									<input id="rb12" type="radio" name="rb" value="100">
+									<label for="rb12">$100</label>
+								</div>
+								<div class="f-radio-group__element">
+									<input id="rb13" type="radio" name="rb" value="50">
+									<label for="rb13">$50</label>
+								</div>
+								<div class="f-radio-group__element">
+									<input id="rb14" type="radio" name="rb" value="20">
+									<label for="rb14">$20</label>
+								</div>
+								<div class="f-text-input f-radio-group__element f-payment__radio-input">
+									<input id="rb15" type="radio" name="rb" value="20">
+									<label for="rb15">
+										<input class="f-text-input__text-field" type="number" placeholder="$10">
+									</label>
+								</div>
+							</div><!-- /f-column -->
+						</div>
+						<div class="f-row__cell-12">
+							<div class="f-payment__button-group">
+								<button class="f-button-basic f-payment__button">Bitcoin</button>
+								<button class="f-button-basic f-payment__button">Credit card</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /f-row_12 -->
+				<div class="f-payment__footer">
+					<div class="f-row f-row_12">
+						<div class="f-row__cell-6 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
+							<div class="f-payment__footer-text f-text">You decide the cut. Please, keep in mind that FIREFUND is non-profit and activist-driven.
+							</div>
+						</div>
+						<div class="f-row__cell-1 f-row__cell-mobile_push_2 f-row__cell-mobile-1">
+							<p class="f-payment__footer-text f-text f-payment__range-label">FIREFUND</p>
+							<p class="f-payment__footer-text f-text f-payment__range-label">KOBANE</p>
+						</div>
+						<div class="f-row__cell-3">
+							<div class="f-payment__slider">
+								<input class="f-payment__slider-style" type="range"/>
+							</div>
+							<div class="f-payment__slider">
+								<input class="f-payment__slider-style" type="range"/>
+							</div>
+						</div>
+						<div class="f-row__cell-2">
+							<div class="f-payment__footer-text f-text f-payment__range-label">$42.45</div>
+							<div class="f-payment__footer-text f-text f-payment__range-label">$8.55</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /f-payment -->
+		</div><!-- /f-content -->
+	</div><!-- /f-modal__content -->
+</div><!-- /f-modal -->
+```
+
+<script>
+	// demo script to toggle the modal window
+	document.querySelector(".f-button-basic").addEventListener("click", function(e) {
+		document.querySelector(".f-modal").classList.toggle("f-modal_visible")
+	})
+</script>
+*/
+
+@import "../variables";
+.f-payment {
+	position: relative;
+	
+	padding-top: 2.3rem;
+}
+
+.f-payment_direct {}
+
+.f-payment_pledge {}
+
+.f-payment__heading {
+	margin: 0 0 1.9rem -var(--gutter-width);
+	padding: .8rem 1.93rem .8rem var(--gutter-width);
+	
+	color: var(--color-white);
+	font-size: 2.6rem;
+	line-height: 2.7rem;
+	
+	background-color: var(--color-black);
+}
+
+.f-payment__heading_mobile {
+	margin: 0 0 1.9rem -13.6rem;
+	padding: .8rem 1.93rem .8rem 13.6rem;
+}
+
+.f-payment__text {
+	height: 10.8rem;
+	
+	margin: 0;
+}
+
+.f-payment .f-payment__button {
+	width: 100%;
+	
+	margin-bottom: 1rem;
+	
+	font-size: 2.0rem;
+	font-weight: lighter;
+}
+
+.f-payment__button-group {
+	position: absolute;
+	bottom: 0;
+	
+	width: 15rem;	
+}
+@media screen and (--viewport-mobile) {
+	.f-payment__button-group { position: static; }
+}
+
+.f-payment__arrow {
+	width: 3rem;
+	height: 3rem;
+	
+	margin: 11rem 0 0 -1.5rem;
+	
+	border-bottom: 5px solid var(--color-grey-light);
+	border-right: 5px solid var(--color-grey-light);
+	
+	transform: rotate(-45deg);
+}
+
+.f-payment__arrow_mobile {
+	margin: 1rem 0 2rem 12rem;
+	transform: rotate(45deg);
+}
+
+.f-payment__radio-group.f-radio-group {
+	margin-bottom: 2rem;
+	
+	font-weight: bold;
+}
+.f-payment__radio-input .f-text-input__text-field {
+	display: inline-block;
+
+	width: calc(100% - .4rem); /* KLUDGE: .4rem = magic number */
+	height: 2.4rem;
+
+	line-height: normal;
+	vertical-align: middle;
+
+	-moz-appearance: textfield; /* KLUDGE: remove controls from Firefox */
+}
+/*
+	KLUDGE: remove controls from Safari and Chrome
+	by styling ::-webkit-inner-spin-button and ::-webkit-outer-spin-button
+*/
+.f-payment__radio-input .f-text-input__text-field::-webkit-inner-spin-button,
+.f-payment__radio-input .f-text-input__text-field::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Removes leftover margin */
+}
+.f-text-input.f-payment__radio-input label {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	padding-left: 3.4rem;
+}
+
+.f-payment__footer {
+	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
+	padding: 3.4rem 0 2rem 3.4rem;
+
+	background: var(--color-grey-light);
+}
+
+.f-payment__footer-text {
+	color: var(--color-grey);
+	font-size: 1.2rem;
+	font-weight: 100;
+	line-height: 1.8rem;
+}
+
+.f-payment__range-label {
+	margin: 0;
+	
+	line-height: 2.2rem;
+}
+
+.f-payment__slider { position: relative; }
+.f-payment__slider::before, .f-payment__slider::after {
+	/* slider ends */
+	position: absolute;
+	left: 1rem;
+	top: .7rem;
+	content: "";
+	height: .7rem;
+	width: 1px;
+	
+	border: none;
+	border-left: thin solid var(--color-grey);
+	border-right: thin solid var(--color-grey);	
+}
+.f-payment__slider::after {
+	right: -1rem;
+	left: unset;
+}
+
+/* NORMALIZE SLIDER */
+input[type="range"].f-payment__slider-style {
+	/*position: absolute;*/
+	width: 100%; /* Specific width is required for Firefox. */
+	height: 2rem;
+
+	margin: 0;
+
+	background: transparent; /* Otherwise white in Chrome */
+
+	-webkit-appearance: none;  /* Hides the slider so that custom slider can be made */
+}
+input[type="range"].f-payment__slider-style:focus {
+	outline: none; /* Removes the blue border. */
+}
+input[type="range"].f-payment__slider-style::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type="range"].f-payment__slider-style::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Webkit styling - Chrome/Opera/Safari */
+input[type="range"].f-payment__slider-style::-webkit-slider-thumb {
+	height: 1.6rem;
+	width: 1.6rem;
+
+	margin-top: -0.8rem;
+
+	background: var(--color-grey-light);
+	border: 1px solid var(--color-grey);
+	border-radius: 50%;
+
+	cursor: pointer;
+}
+input[type="range"].f-payment__slider-style::-webkit-slider-runnable-track {
+	height: 0.1rem;
+	min-height: 1px;
+	width: 100%;
+
+	/*margin: -21% 0 0 0;*/
+
+	background: var(--color-grey);
+	border: none;
+	
+	transform: translateX(1rem);
+
+	cursor: pointer;
+}
+
+/* Mozilla styling - Firefox */
+input[type="range"].f-payment__slider-style::-moz-range-thumb {
+	height: 1.6rem;
+	width: 1.6rem;
+
+	background-color: var(--color-grey-light);
+	border: 1px solid var(--color-grey);
+	border-radius: 50%;
+	
+	transform: translateX(0); /* HACK so the track doesn't shine through' */
+
+	cursor: pointer;
+
+}
+input[type="range"].f-payment__slider-style::-moz-range-track {
+	width: 100%;
+	height: 0.1rem;
+	min-height: 1px;
+
+	background: var(--color-grey);
+	border: none;
+	
+	transform: translateX(1rem);
+
+	cursor: pointer;
+}
+
+/* Microsoft styling - Edge, IE
+TODO: mouse doesn't follow thumb exactly */
+input[type="range"].f-payment__slider-style::-ms-thumb {
+	height: 1rem;
+	width: 1rem;
+
+	background: var(--color-grey-light);
+	border: 1px solid var(--color-grey);
+	border-radius: 50%;
+	
+	transform: translateY(.4rem);
+
+	cursor: pointer;
+}
+
+input[type="range"].f-payment__slider-style::-ms-track {
+	height: 0.1rem;
+	min-height: 1px;
+	
+	margin-left: 1rem;
+
+	cursor: pointer;
+}
+
+input[type="range"].f-payment__slider-style::-ms-fill-lower {
+	background: var(--color-grey);
+
+	border: none;
+}
+
+input[type="range"].f-payment__slider-style::-ms-fill-upper {
+	background: var(--color-grey);
+
+	border: none;
+}
+
+/*
+
+## Donation
+
+With a `f-text-input` field
+
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+
+	<fieldset class="f-radio-group">
+		<div class="f-radio-group__element">
+			<input id="rb4" radio-group="amount" type="radio" name="rb" value="500">
+			<label for="rb4">$500</label>
+		</div>
+		<div class="f-radio-group__element">
+			<input id="rb5" radio-group="amount" type="radio" name="rb" value="250">
+			<label for="rb5">$250</label>
+		</div>
+		<div class="f-radio-group__element">
+			<input id="rb6" radio-group="amount" type="radio" name="rb" value="100">
+			<label for="rb6">$100</label>
+		</div>
+		<div class="f-radio-group__element">
+			<input id="rb7" radio-group="amount" type="radio" name="rb" value="50">
+			<label for="rb7">$50</label>
+		</div>
+		<div class="f-radio-group__element">
+			<input id="rb8" radio-group="amount" type="radio" name="rb" value="20">
+			<label for="rb8">$20</label>
+		</div>
+		<div class="f-text-input f-radio-group__element">
+			<input id="rb9" radio-group="amount" type="radio" name="rb" value="20">
+			<label for="rb9">
+				<input class="f-text-input__text-field" type="number" placeholder="$10">
+			</label>
+		</div>
+	</fieldset>
+
+
+</div> <!-- only here for the style guide - should not be used on the website -->
+```
+
+
+## In a grid
+
+With a `f-text-input` field
+
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+<section class="f-row f-row_12">
+	<div class="f-row__cell-8 f-row__cell-mobile-2"><p>8 cell</p></div>
+	<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
+		<fieldset class="f-radio-group">
+			<div class="f-column f-column_2 f-column_mobile_3">
+				<div class="f-radio-group__element">
+					<input id="rb10" radio-group="amount2" type="radio" name="rb" value="500">
+					<label for="rb10">$500</label>
+				</div>
+				<div class="f-radio-group__element">
+					<input id="rb11" radio-group="amount2" type="radio" name="rb" value="250">
+					<label for="rb11">$250</label>
+				</div>
+				<div class="f-radio-group__element">
+					<input id="rb12" radio-group="amount2" type="radio" name="rb" value="100">
+					<label for="rb12">$100</label>
+				</div>
+				<div class="f-radio-group__element">
+					<input id="rb13" radio-group="amount2" type="radio" name="rb" value="50">
+					<label for="rb13">$50</label>
+				</div>
+				<div class="f-radio-group__element">
+					<input id="rb14" radio-group="amount2" type="radio" name="rb" value="20">
+					<label for="rb14">$20</label>
+				</div>
+				<div class="f-text-input f-radio-group__element">
+					<input id="rb15" radio-group="amount2" type="radio" name="rb" value="20">
+					<label for="rb15">
+						<input class="f-text-input__text-field" type="number" placeholder="$10">
+					</label>
+				</div>
+			</div><!-- /f-column -->
+		</fieldset>
+	</div>
+</section>
+
+</div> <!-- only here for the style guide - should not be used on the website -->
+```
+*/
+/*.f-payment__radio-input.f-text-input__text-field {
+	display: inline-block;
+	width: calc(100% - 3.3rem);
+}
+.f-payment__radio-input.f-text-input__text-field::placeholder {
+	margin-left: 1px;
+}
+
+.f-payment__radio-group input[type=radio] {
+	visibility: hidden;
+	position: absolute;
+	height: 2.6rem;
+	width: 2.6rem;
+	transform: translate(-0.4rem, 1.2rem);
+}
+.f-payment__radio-group input[type=radio]:checked + .f-payment__radio::after {
+	position: absolute;
+
+	height: 1.4rem;
+	width: 1.4rem;
+	margin: 1.5rem 0.3rem 0.2rem 0rem;
+
+	border: none;
+	background-color: var(--color-red);
+	border-radius: 1.3rem;
+
+	transform: translate(-6rem, 0.6rem);
+
+	content: "";
+}
+.f-payment__radio::before {
+	display: inline-block;
+	height: 2.6rem;
+	width: 2.6rem;
+	margin: 1.5rem 0.3rem 0.2rem 0rem;
+
+	border: solid 0.2rem var(--color-black);
+	border-radius: 1.3rem;
+
+	vertical-align: -1rem;
+
+	background-color: var(--color-white);
+
+	content: "";
+}*/

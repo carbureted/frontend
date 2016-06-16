@@ -1,0 +1,47 @@
+/*
+
+A heading with the background reaching the right side of its container,
+If the container isn't `f-content`, then the heading will *leak* out.
+<pre>
+BLOCK f-right-heading
+</pre>
+
+## Container with padding
+```
+<div class="kalei-background-white"><!-- only here for the style guide - should not be used on the website -->
+	<div class="f-content">
+
+<!-- this should be used on the website -->
+	<h1 class="f-right-heading">About the FUCK</h1>
+<!-- this should be used on the website -->
+
+	</div> <!-- only here for the style guide - should not be used on the website -->
+</div>
+```
+
+## Leaking out of container
+```
+<div class="kalei-background-white"><!-- only here for the style guide - should not be used on the website -->
+
+<!-- this should be used on the website -->
+	<h1 class="f-right-heading">About the FUCK</h1>
+<!-- this should be used on the website -->
+
+</div><!-- only here for the style guide - should not be used on the website -->
+```
+*/
+
+@import "../variables";
+
+.f-right-heading {
+	margin: 0 -var(--gutter-width) 2.8rem 0;
+	padding: .8rem var(--gutter-width) .8rem 1.93rem;
+
+	color: var(--color-white);
+	font-size: 2.8rem;
+
+	background-color: var(--color-black);
+}
+
+
+

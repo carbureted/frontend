@@ -1,0 +1,20 @@
+/*
+Our logo.
+
+```
+<h2 class="f-branding">Fire<span>fund</span></h2>
+```
+
+*/
+
+@import "../variables";
+
+.f-branding {
+	margin: 0;
+
+	color: var(--color-white);
+	font-size: 4.1rem;
+	line-height: 4.1rem;
+ 	font-weight: bold;
+	text-transform: uppercase;
+}

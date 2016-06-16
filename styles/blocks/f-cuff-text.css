@@ -1,0 +1,71 @@
+/*
+Bold text with big line-height
+
+## Example 1
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+    <p class="f-cuff-text">This is a cuff text Lorem ipsum 
+        dolor sit amet, consectetur adipisicing elit. Debitis amet quia
+        illo libero in totam, nihil, molestiae optio, officia dolores 
+        ducimus! Quam ullam labore eum optio laudantium tempora est aspernatur.
+     </p>
+	<!-- this should be used on the website -->
+
+</div>
+```
+## Example 2
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+    <p class="f-cuff-text">
+    This is a cuff text Lorem ipsum 
+    dolor sit amet, consectetur adipisicing elit. <span>Debitis amet quia</span>
+     illo libero in totam, nihil, molestiae optio, officia dolores 
+     ducimus! Quam ullam labore <a href="">eum optio laudantium tempora est aspernatur</a>.
+     </p>
+	<!-- this should be used on the website -->
+
+</div>
+```
+## Example 3 
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+    <p class="f-cuff-text">This is a cuff text Lorem ipsum 
+    dolor sit amet, consectetur adipisicing elit. Debitis amet quia
+     illo libero in totam, nihil, molestiae optio, officia dolores 
+     ducimus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto doloremque beatae quaerat placeat tempore non optio, veritatis magnam sapiente porro, id labore quo illum facere iste perferendis voluptatum vitae. Officia.Quam ullam labore eum optio laudantium tempora est aspernaturThisThis is a cuff text Lorem ipsum 
+    dolor sit amet, consectetur adipisicing elit. <span>Debitis amet quia</span>
+     illo libero in totam, nihil, molestiae optio, officia dolores 
+     ducimus! Quam ullam labore <a href="">eum optio laudantium tempora est aspernatur</a>.
+      is a cuff text Lorem ipsum 
+    dolor sit amet, consectetur adipisicing elit. Debitis amet quia
+     illo libero in totam, nihil, molestiae optio, officia dolores 
+     ducimus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto doloremque beatae quaerat placeat tempore non optio, veritatis magnam sapiente porro, id labore quo illum facere iste perferendis voluptatum vitae. Officia.Quam ullam labore eum optio laudantium tempora est aspernaturThis is a cuff text Lorem ipsum 
+    dolor sit amet, consectetur adipisicing elit. Debitis amet quia
+     illo libero in totam, nihil, molestiae optio, officia dolores 
+     ducimus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto doloremque beatae quaerat placeat tempore non optio, veritatis magnam sapiente porro, id labore quo illum facere iste perferendis voluptatum vitae. Officia.Quam ullam labore eum optio laudantium tempora est aspernaturThis is a cuff text Lorem ipsum 
+    dolor sit amet, consectetur adipisicing elit. Debitis amet quia
+     illo libero in totam, nihil, molestiae optio, officia dolores 
+     ducimus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto doloremque beatae quaerat placeat tempore non optio, veritatis magnam sapiente porro, id labore quo illum facere iste perferendis voluptatum vitae. Officia.Quam ullam labore eum optio laudantium tempora est aspernatur.</p>
+	<!-- this should be used on the website -->
+
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-cuff-text {
+    margin-top: 0;
+    margin-bottom: var(--margin-text);
+
+    color: var(--color-grey-dark);
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 2.4rem;
+}

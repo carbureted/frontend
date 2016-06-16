@@ -1,0 +1,85 @@
+/*
+##EXAMPLE 1
+```
+<footer class="f-footer">
+	<div class="f-row f-row_12">
+		<div class="f-row__cell-4">
+		 <div class="f-footer-sitemap">
+			<h2 class="f-branding f-sitemap__branding">Fire<span>fund</span></h2>
+			<ul class="f-sitemap__links">
+				<li><a href="">About us</a></li>
+				<li><a href="">Blog</a></li>
+				<li><a href="">Terms</a></li>
+				<li><a href="">Contact</a></li>
+				<li><a href="">Manifesto</a></li>
+				<li><a href="">Team</a></li>
+				<li><a href="">Who we are</a></li>
+				<li><a href="">How does it work</a></li>
+			</ul>
+		 </div>
+		</div>
+		<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
+			<div class="f-row_not-desktop"><!-- hacking the grid - display:none; in desktop -->
+				<p class="f-footer-text">
+					We are activists from all over. we are everywhere. Beware!
+				</p>
+			</div>
+			<div class="f-row_not-mobile"><!-- hacking the grid - display:none; in mobile -->
+				<p class="f-footer-text">
+					We are activists from all over. we are everywhere. <span>Beware!</span>
+					We have knives and dogs. they <span>bite</span> and <a href="">sting</a>.
+					love firefund <span>staff</span>
+				</p>
+			</div>
+			<div class="f-footer-signup">
+				 <form class="f-signup">
+					<label class="f-signup__label">Sign up for news:
+						<input class="f-signup__input" type="email" placeholder="mail@radical.rev" required>
+					</label>
+					<button class="f-signup__button">Submit</button>
+				</form>
+			</div>
+			<div class="f-row__cell-mobile-10 f-row__cell_push_2 f-row__not-desktop">
+				<ul class="f-footer-icons f-icon-list f-icon-list_horizontal">
+					<li><a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a></li>
+					<li><a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a></li>
+				</ul>
+			</div>
+	  </div>
+		<div class="f-row__cell-2 f-row__cell_push_2 f-row__not-mobile">
+			<ul class="f-footer-icons f-icon-list">
+				<li><a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a></li>
+				<li><a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a></li>
+			</ul>
+		</div>
+	</div><!-- /f-row -->
+</footer>
+```
+*/
+
+@import "../variables";
+.f-footer {
+	lost-center: var(--page-max-width);
+}
+
+.f-footer-sitemap {}
+
+.f-footer-signup .f-signup__input {
+	width: unset;
+}
+
+.f-footer-text {
+	margin-top: 4.1rem;
+}
+
+.f-footer-icons.f-icon-list {
+	margin-top: 4.1rem;
+	color: var(--color-white);
+	text-align: center;
+}
+
+@media screen and (--viewport-mobile) {
+	.f-footer-icons.f-icon-list {
+		text-align: left;
+	}
+}

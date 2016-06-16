@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>how does it work</title>
+	<style>
+		/* Style splash screen here	*/
+		
+		* {
+			font-family: "Roboto";
+		}
+		
+		body {
+			background-color: black;
+		}
+		
+		@keyframes light-white {
+			to {
+				color: hsla(0, 0%, 85%, 1);
+			}
+		}
+		
+		@keyframes light-red {
+			to {
+				color: hsla(1, 73.7%, 31%, 1);
+			}
+		}
+		
+		.f-splash {
+			position: fixed;
+			z-index: 100;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: hsla(0, 0%, 0%, 0.6);
+			-webkit-transition: opacity 300ms ease 1s;
+			transition: opacity 300ms ease 1s;
+			opacity: 0;
+		}
+		
+		.f-splash_loading {
+			opacity: 1;
+		}
+		
+		.f-splash__content {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+		
+		.f-splash__branding {
+			margin: 0;
+			color: hsla(0, 0%, 100%, 1);
+			font-size: 4.1rem;
+			line-height: 4.1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			animation: light-white 1s ease-in-out alternate infinite;
+		}
+		
+		.f-splash__branding span {
+			color: hsla(1, 73.7%, 38.8%, 1);
+			animation: light-red 1s ease-in-out alternate infinite 250ms;
+		}
+		
+		#splash {
+			transform: scale(3);
+		}
+	</style>
+	<link rel="stylesheet" href="css/bundle.css">
+	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
+       (instead of dynamically loading it later in JS) is that the parser can go
+       to town pre-fetching resources, etc. -->
+	<link rel="import" class="f-import" href="wc/header.htm" async>
+</head>
+
+<body>
+	<div id="splash" class="f-splash f-splash_loading">
+		<div class="f-splash__content">
+			<h2 class="f-splash__branding">Fire<span>fund</span></h2>
+		</div>
+	</div>
+
+	<f-header></f-header>
+
+	<article class="f-content">
+		<div class="f-spacer"></div>
+		<div class="scrollme">
+        	<div class="animateme" 
+	            data-when="enter" 
+	            data-from="0" 
+	            data-to="1" 
+	            data-opacity="0" 
+	            data-easing="easeinout" 
+	            data-translatey="100">
+            <h1 class="f-huge-heading">How does it work?</h4>
+            </div>
+        </div>
+
+		<div class="f-spacer"></div>
+				<div class="f-spacer"></div>
+
+		<div class="f-info-card">
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_number">1</p>
+					<h4 class="f-info-card_heading ">Crowdfunding</h4>
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile">
+					<hr class="f-info-card_line">
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-2 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_text">
+						Crowdfunding is simply a way of mobilizing a crowd in support of your project, and converting that support into direct funding with many small donations.
+					</p>
+					<p class="f-info-card_text">
+						 The aim is to create a tool that uses financing of initiatives for social change as a means to organize solidarity internationally.  
+					</p>
+				</div>
+<!-- 				<div class="wrapper"> -->
+					<div class="f-row__cell-1 f-row__cell-mobile-3">
+						<div class="scrollme">
+			            	<div class="animateme"             
+				                data-when="span" 
+				                data-from="0" 
+				                data-to="1" 
+				                data-opacity="0" 
+				                data-easing="easeout" 
+				                data-translatex="325">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/fishes_fishes.svg" alt="Crowdfunding"/>
+				                </figure>
+			            	</div>
+			            </div>
+			        </div>
+			        <div class="f-row__cell-1 f-row__cell-mobile-3">
+						<div class="scrollme">
+			            	<div class="animateme"             
+				                data-when="span" 
+				                data-from="0" 
+				                data-to="1" 
+				                data-opacity="0" 
+				                data-easing="easeout" 
+				                data-translatex="275">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/fish.svg" alt="Crowdfunding"/>
+				                </figure>
+			            	</div>
+			            </div>
+			        </div>
+<!-- 			    </div> -->
+			</section>
+		</div>
+
+		<div class="f-spacer"></div>
+				<div class="f-spacer"></div>
+						<div class="f-spacer"></div>
+								<div class="f-spacer"></div>
+										<div class="f-spacer"></div>
+		
+		<div class="f-info-card">
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_number">2</p>
+					<h4 class="f-info-card_heading ">Solidarity</h4>
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile">
+					<hr class="f-info-card_line">
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-2 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_text">
+						To organize solidarity, we need to connect our struggles and support each other in reaching common goals. 
+						We aim to create a tool for initiatives to connect and support each other. 
+					</p>
+					<p class="f-info-card_text">
+						This platform is based on horizontal exchange of support and funding: Solidarity.
+					</p>
+				</div>
+				<div class="f-row__cell-2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
+					<div class="scrollme">
+		            	<div class="animateme"             
+			                data-when="span" 
+			                data-from="1" 
+			                data-to="0" 
+			                data-opacity="1" 
+			                data-easing="easeinout" 
+			                data-translatey="200">
+			                <figure class="f-media">
+			                  	<img class="f-media__media" src="assets/image/Fist.svg" alt="Solidarity!"/>
+			                </figure>
+		            	</div>
+		            </div>
+		        </div>
+			</section>
+		</div>
+
+		<div class="f-spacer"></div>
+				<div class="f-spacer"></div>
+						<div class="f-spacer"></div>
+								<div class="f-spacer"></div>
+										<div class="f-spacer"></div>
+
+		<div class="f-info-card">
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_number">3</p>
+					<h4 class="f-info-card_heading ">Who are you</h4>
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile">
+					<hr class="f-info-card_line">
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-2 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_text">
+						People looking to save others, oppress others or take advantages of others, will not be given space on this platform.
+ 					</p>
+					<p class="f-info-card_text">
+						This tool is created to redistribute power from the few to the many and organize global solidarity. No charity, no profits and no discrimination.
+					</p>
+				</div>
+				<div class="f-row__cell-2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
+					<div class="wrapper">
+						<div class="scrollme">
+			            	<div class="animateme"             
+				                data-when="exit" 
+				                data-from="0.6" 
+				                data-to="0.2"
+				                data-opacity="0" 
+				                data-easing="easeinout" 
+				                data-translatey="-100">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/HAY-01.svg" alt="badguy"/>
+				                </figure>
+			            	</div>
+			            	<div class="animateme"             
+				                data-when="exit" 
+				                data-from="0.6" 
+				                data-to="0.4" 
+				                data-opacity="0" 
+				                data-easing="easeinout" 
+				                data-translatey="-100">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/HAY-02.svg" alt="badguy"/>
+				                </figure>
+			            	</div>
+			            	<div class="animateme"             
+				                data-when="exit" 
+				                data-from="0.7" 
+				                data-to="0.35" 
+				                data-opacity="0" 
+				                data-easing="easeinout" 
+				                data-translatey="-100">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/HAY-03.svg" alt="badguy"/>
+				                </figure>
+			            	</div>
+			            	<div class="animateme"             
+				                data-when="exit" 
+				                data-from="0.8" 
+				                data-to="0.55" 
+				                data-opacity="0" 
+				                data-easing="easeinout" 
+				                data-translatey="75">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/HAY-04.svg" alt="badguy"/>
+				                </figure>
+			            	</div>
+			            	<div class="animateme"             
+				                data-when="exit" 
+				                data-from="0.8" 
+				                data-to="0.6" 
+				                data-opacity="0" 
+				                data-easing="easeinout" 
+				                data-translatey="100">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/HAY-05.svg" alt="badguy"/>
+				                </figure>
+			            	</div>
+			            	<div class="animateme"             
+				                data-when="exit" 
+				                data-from="0.8" 
+				                data-to="0.65" 
+				                data-opacity="0" 
+				                data-easing="easeinout" 
+				                data-translatey="100">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/HAY-06.svg" alt="badguy"/>
+				                </figure>
+			            	</div>
+			            </div>
+			        </div>
+			    </div>
+			</section>
+		</div>
+
+		<div class="f-spacer"></div>
+				<div class="f-spacer"></div>
+						<div class="f-spacer"></div>
+								<div class="f-spacer"></div>
+										<div class="f-spacer"></div>
+		
+		<div class="f-info-card">
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_number">4</p>
+					<h4 class="f-info-card_heading ">Rules:</h4>
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile">
+					<hr class="f-info-card_line">
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-2 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_text">
+						Don't kick down
+					</p>
+					<p class="f-info-card_text">
+						Don't fund on behalf of others
+					</p>
+					<p class="f-info-card_text">
+						Be honest
+					</p>
+				</div>
+			</section>
+		</div>
+		
+		<div class="f-spacer"></div>
+				<div class="f-spacer"></div>
+						<div class="f-spacer"></div>
+								<div class="f-spacer"></div>
+										<div class="f-spacer"></div>
+
+		<div class="f-info-card">
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_number">5</p>
+					<h4 class="f-info-card_heading ">We are a collective</h4>
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile">
+					<hr class="f-info-card_line">
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-2 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_text">
+						A collective of activists coordinates and facilitates the platform. These are the people you talk to if you wish to organize a campaign.
+					</p>
+					<p class="f-info-card_text">
+						We are currently working on decentralizing the work of facilitating crowdfunding campaigns and the platform itself.  
+					</p>
+				</div>
+				<div class="f-row__cell-2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
+					<div class="scrollme">
+			           	<div class="animateme"             
+			                data-when="span" 
+			                data-from="0.8" 
+			                data-to="0" 
+			                data-opacity="0" 
+			                data-easing="easeinout" 
+			                data-translatey="100">
+			                <figure class="f-media">
+			                  	<img class="f-media__media" src="assets/image/Collective.svg" alt="Collective"/>
+			                </figure>
+			           	</div>
+			        </div>
+				</div>
+			</section>
+		</div>
+
+		<div class="f-spacer"></div>
+				<div class="f-spacer"></div>
+						<div class="f-spacer"></div>
+								<div class="f-spacer"></div>
+										<div class="f-spacer"></div>
+		
+		<div class="f-info-card">
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_number">6</p>
+					<h4 class="f-info-card_heading ">Security</h4>
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile">
+					<hr class="f-info-card_line">
+				</div>
+			</section>
+			<section class="f-row f-row_6">
+				<div class="f-row__cell-2 f-row__cell_push_1 f-row__cell-mobile">
+					<p class="f-info-card_text">
+						The internet is a useful tool to organize solidarity, but you never know who might be listening.
+						We do our best to protect the data that runs through this site, but money transfers and internet traffic leaves traces.
+					</p>
+					<p class="f-info-card_text">
+						Please use PGP encryption when you contact us, you can pay with bitcoins and you should hide your online tracks with <span>VPN</span> and /or <span>Tor</span>.
+					</p>
+					<p class="f-info-card_text">
+						When organizing online, take care of each other, so we can be dangerous together.
+					</p>
+				</div>
+				<div class="f-row__cell-2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
+					<div class="wrapper">
+						<div class="scrollme">
+				           	<div class="animateme"             
+				                data-when="span" 
+				                data-from="1" 
+				                data-to="0.3" 
+				                data-opacity="0.5" 
+				                data-easing="easeout" 
+				                data-translatey="1000">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/security02.svg" alt="internet security"/>
+				                </figure>
+				           	</div>
+				           	<div class="animateme"             
+				                data-when="span" 
+				                data-from="1" 
+				                data-to="0.3" 
+				                data-opacity="1" 
+				                data-easing="easeout" 
+				                data-translatey="100">
+				                <figure class="f-media">
+				                  	<img class="f-info-card_image" src="assets/image/security01.svg" alt="internet security"/>
+				                </figure>
+				           	</div>
+				        </div>
+			        </div>
+				</div>
+			</section>
+		</div>
+
+		<div class="f-spacer"></div>
+				<div class="f-spacer"></div>
+		
+		<div class="f-row f-row_6">
+			<div class="f-row__cell-1"></div>
+			<div class="f-row__cell-4">
+				<a class="f-button-organize" href="/organize.htm">> Organize solidarity with a firefund</a>
+			</div>
+			<div class="f-row__cell-1"></div>
+		</div>
+		
+		<div class="f-row f-row_6">
+			<div class="f-row__cell-1"></div>
+			<div class="f-row__cell-4">
+				<p class="f-one-liner f-one-liner_center">We do not have a form you fill out. We have activists you talk to.</p>
+			</div>
+			<div class="f-row__cell-1"></div>
+		</div>
+		
+		<div class="f-spacer"></div>
+	</article>
+
+	<div class="f-spacer"></div>
+
+	<footer class="f-footer">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4">
+				<div class="f-footer-sitemap">
+					<h2 class="f-branding f-sitemap__branding">Fire<span>fund</span></h2>
+					<ul class="f-sitemap__links">
+						<li><a href="">About us</a></li>
+						<li><a href="">Blog</a></li>
+						<li><a href="">Terms</a></li>
+						<li><a href="">Contact</a></li>
+						<li><a href="">Manifesto</a></li>
+						<li><a href="">Team</a></li>
+						<li><a href="">Who we are</a></li>
+						<li><a href="">How does it work</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
+				<div class="f-row_not-desktop">
+					<!-- hacking the grid - display:none; in desktop -->
+					<p class="f-footer-text">
+						We are activists from all over. we are everywhere. Beware!
+					</p>
+				</div>
+				<div class="f-row_not-mobile">
+					<!-- hacking the grid - display:none; in mobile -->
+					<p class="f-footer-text">
+						We are activists from all over. we are everywhere. <span>Beware!</span> We have knives and dogs. they <span>bite</span> and <a href="">sting</a>. love firefund <span>staff</span>
+					</p>
+				</div>
+				<div class="f-footer-signup">
+					<form class="f-signup">
+						<label class="f-signup__label">Sign up for news:
+								<input class="f-signup__input" type="email" placeholder="mail@radical.rev" required>
+							</label>
+						<button class="f-signup__button">Submit</button>
+					</form>
+				</div>
+				<div class="f-row__cell-mobile-10 f-row__cell_push_2 f-row__not-desktop">
+					<ul class="f-footer-icons f-icon-list f-icon-list_horizontal">
+						<li>
+							<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+						</li>
+						<li>
+							<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-row__cell-2 f-row__cell_push_2 f-row__not-mobile">
+				<ul class="f-footer-icons f-icon-list">
+					<li>
+						<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+					</li>
+					<li>
+						<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /f-row -->
+	</footer>
+
+	<script src="js/loader.js" charset="utf8" async>
+		< script > // TODO: Why is this needed?!?
+			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
+	</script>
+
+	<script src="lib/jquery.js" charset="utf-8"></script>
+    <script src="lib/jquery.scrollme.min.js" charset="utf-8"></script>
+
+
+
+</body>
+
+</html>

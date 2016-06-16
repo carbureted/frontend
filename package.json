@@ -1,0 +1,43 @@
+{
+  "name": "firefund-styleguide",
+  "version": "1.0.0-alpha",
+  "description": "Firefund live styleguide",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepoly": "assets site/lib & make --jobs=4 prod",
+    "poly": "server site site/**/* --port 10420",
+    "kalei": "npm-run-all --parallel guide watch",
+    "guide": "server kalei/ kalei/css/**/*.css",
+    "postcss": "postcss --use postcss-partial-import --use lost --use postcss-cssnext",
+    "postcss:no-import": "postcss --use postcss-cssnext",
+    "postcss:prod": "postcss --use postcss-partial-import --use lost --use postcss-cssnext --use cssnano",
+    "make": "make --jobs=4",
+    "watch": "nodemon --watch styles --ext .css --exec npm run make",
+    "mkdir": "mkdirp",
+    "cp": "cp-cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Firefund/styleguide.git"
+  },
+  "author": "dotnetCarpenter <jon.ronnenberg@gmail.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/Firefund/styleguide/issues"
+  },
+  "homepage": "https://github.com/Firefund/styleguide#readme",
+  "dependencies": {
+    "@dotnetcarpenter/firefund-cli": "0.6.0 - 1.0",
+    "cp-cli": "^1.0.2",
+    "cssnano": "^3.5.2",
+    "gulp-gzip": "^1.3.0",
+    "lost": "^7.0.1-2",
+    "mkdirp": "^0.5.1",
+    "nodemon": "^1.9.1",
+    "npm-run-all": "^2.0.0",
+    "postcss-cli": "^2.5.2",
+    "postcss-cssnext": "^2.5.2",
+    "postcss-partial-import": "^1.3.0"
+  }
+}

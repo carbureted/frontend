@@ -1,0 +1,556 @@
+/*
+<style class="This is grid DEMO styling">
+	.demo {
+		padding: 1rem;
+		border: 1px dashed hsla(240, 100%, 50%, 1);
+
+		color: white;
+		font-size: 2rem;
+		text-align: center;
+		text-transform: uppercase;
+
+		background-color: hsla(240, 100%, 25%, .8);
+	}
+</style>
+
+## The grid
+
+TODO: write better explanatory text here @troldmand @magiker420
+
+We have two different grid-systems. One for layouting our pages, called `f-row`,
+and one for layouting smaller blocks on a page. The latter is called `f-column`.
+
+The row system consist of *rows* and *cells*. See <a href="grid.html">this test page</a> for a full
+demo: http://localhost:8080/grid.html
+
+
+## Row Grid Desktop Classes
+<pre>
+BLOCK f-row							- establish a row
+MODIFIER f-row_debug				- show the outline of your cells
+MODIFIER f-row_not-desktop			- hide the row on desktop sizes
+MODIFIER f-row_6					- modify row to be a 6 cell row
+MODIFIER f-row_reverse 				- reverse the cell order in a row
+	ELEMENT f-row__cell				- a full row width cell
+	ELEMENT f-row__cell-1			- a 1/6 width cell
+	ELEMENT f-row__cell-2			- a 2/6 width cell
+	ELEMENT f-row__cell-3			- a 3/6 width cell
+	ELEMENT f-row__cell-4			- a 4/6 width cell
+	ELEMENT f-row__not-desktop		- hide the cell on desktop sizes
+	MODIFIER f-row__cell_push_1		- modify the cell indentation
+	MODIFIER f-row__cell_push_2		- modify the cell indentation
+	MODIFIER f-row__cell_push_3		- modify the cell indentation
+	MODIFIER f-row__cell_push_4		- modify the cell indentation
+	MODIFIER f-row__cell_push_5		- modify the cell indentation
+MODIFIER f-row_12							- modify row to be a 12 cell row
+	ELEMENT f-row__cell						- a full row width cell
+	ELEMENT f-row__cell-1					- a 1/12 width cell
+	ELEMENT f-row__cell-2					- a 2/12 width cell
+	ELEMENT f-row__cell-3					- a 3/12 width cell
+	ELEMENT f-row__cell-4					- a 4/12 width cell
+	ELEMENT f-row__cell-5					- a 5/12 width cell
+	ELEMENT f-row__cell-6					- a 6/12 width cell
+	ELEMENT f-row__cell-7					- a 7/12 width cell
+	ELEMENT f-row__cell-8					- a 8/12 width cell
+	ELEMENT f-row__cell-9					- a 9/12 width cell
+	ELEMENT f-row__cell-10				- a 10/12 width cell
+	ELEMENT f-row__cell-11				- a 11/12 width cell
+	MODIFIER f-row__cell_push_1		- modify the cell indentation
+	MODIFIER f-row__cell_push_2		- modify the cell indentation
+	MODIFIER f-row__cell_push_3		- modify the cell indentation
+	MODIFIER f-row__cell_push_4		- modify the cell indentation
+	MODIFIER f-row__cell_push_5		- modify the cell indentation
+	MODIFIER f-row__cell_push_6		- modify the cell indentation
+	MODIFIER f-row__cell_push_7		- modify the cell indentation
+	MODIFIER f-row__cell_push_8		- modify the cell indentation
+	MODIFIER f-row__cell_push_9		- modify the cell indentation
+	MODIFIER f-row__cell_push_10	- modify the cell indentation
+	MODIFIER f-row__cell_push_11	- modify the cell indentation
+</pre>
+
+
+## 6 row with 2 cells
+In mobile width, every cell is staked.
+```
+<section class="f-row f-row_6">
+	<div class="f-row__cell-3 f-row__cell-mobile">
+		<div class="demo">1</div>
+	</div>
+	<div class="f-row__cell-3 f-row_not-mobile">
+		<div class="demo">2</div>
+	</div>
+</section>
+```
+
+## Reverse
+6 row in a 6 row reverse
+```
+<section class="f-row f-row_6 f-row_reverse">
+	<div class="f-row__cell-2 f-row__cell-mobile">
+		<div class="demo">1</div>
+	</div>
+	<div class="f-row__cell-4 f-row__cell-mobile">
+		<div class="demo">2</div>
+		<br>
+		<div class="demo">2</div>
+	</div>
+</section>
+<section class="f-row f-row_6">
+	<div class="f-row__cell-2 f-row__cell_push_4 f-row__cell-mobile">
+		<div class="demo">3</div>
+	</div>
+</section>
+
+<section class="f-row f-row_6 f-row_reverse">
+	<div class="f-row__cell-1">
+		<div class="demo">1</div>
+	</div>
+	<div class="f-row__cell-2">
+		<div class="demo">2</div>
+	</div>
+	<div class="f-row__cell-3">
+		<div class="demo">3</div>
+	</div>
+</section>
+```
+
+## 6 row with 3 cells
+```
+<section class="f-row f-row_6">
+	<div class="f-row__cell-1">
+		<div class="demo">1</div>
+	</div>
+	<div class="f-row__cell-2">
+		<div class="demo">2</div>
+	</div>
+	<div class="f-row__cell-3">
+		<div class="demo">3</div>
+	</div>
+</section>
+```
+
+## 6 row with 2 cells in desktop and another cell in mobile
+```
+<section class="f-row f-row_6">
+	<div class="f-row__not-desktop f-row__cell-mobile-2">
+		<div class="demo">mobile</div>
+	</div>
+	<div class="f-row__cell-4 f-row__cell-mobile-2">
+		<div class="demo">1</div>
+	</div>
+	<div class="f-row__cell-2">
+		<div class="demo">2</div>
+	</div>
+</section>
+```
+
+/*
+ ## Row Grid Mobile Classes
+Some of the classes are already documented but here is a recap in a
+mobile context.
+<pre>
+BLOCK f-row																	- establish a row
+MODIFIER f-row_debug												- show the outline of your cells
+MODIFIER f-row_not-mobile										- hide the row on mobile sizes
+MODIFIER f-row_6														- modify row to be a 6 cell row
+	ELEMENT f-row__cell-mobile								- a full row width cell
+	ELEMENT f-row__cell-mobile-1							- a 1/6 width cell
+	ELEMENT f-row__cell-mobile-2							- a 2/6 width cell
+	ELEMENT f-row__cell-mobile-3							- a 3/6 width cell
+	ELEMENT f-row__cell-mobile-4							- a 4/6 width cell
+	ELEMENT f-row__cell-mobile-5							- a 5/6 width cell
+	ELEMENT f-row__not-mobile									- hide the cell on mobile sizes
+	MODIFIER f-row__cell-mobile_push_1				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_2				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_3				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_4				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_5				- modify the cell indentation
+MODIFIER f-row_12														- modify row to be a 12 cell row
+	ELEMENT f-row__-mobile										- a full row width cell
+	ELEMENT f-row__cell-mobile-1							- a 1/12 width cell
+	ELEMENT f-row__cell-mobile-2							- a 2/12 width cell
+	ELEMENT f-row__cell-mobile-3							- a 3/12 width cell
+	ELEMENT f-row__cell-mobile-4							- a 4/12 width cell
+	ELEMENT f-row__cell-mobile-5							- a 5/12 width cell
+	ELEMENT f-row__cell-mobile-6							- a 6/12 width cell
+	ELEMENT f-row__cell-mobile-7							- a 7/12 width cell
+	ELEMENT f-row__cell-mobile-8							- a 8/12 width cell
+	ELEMENT f-row__cell-mobile-9							- a 9/12 width cell
+	ELEMENT f-row__cell-mobile-10							- a 10/12 width cell
+	ELEMENT f-row__cell-mobile-11							- a 11/12 width cell
+	MODIFIER f-row__cell-mobile_push_1				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_2				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_3				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_4				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_5				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_6				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_7				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_8				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_9				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_10				- modify the cell indentation
+	MODIFIER f-row__cell-mobile_push_11				- modify the cell indentation
+</pre>
+
+
+## Column Grid Classes
+<pre>
+BLOCK f-column
+MODIFIER f-column_2
+MODIFIER f-column_3
+MODIFIER f-column_4
+MODIFIER f-column_5
+MODIFIER f-column_6
+MODIFIER f-column_mobile_2
+MODIFIER f-column_mobile_3
+MODIFIER f-column_mobile_4
+MODIFIER f-column_mobile_5
+MODIFIER f-column_mobile_6
+</pre>
+`f-column_N` and `f-column_mobile_N` are complementary while `f-column_N` and
+`f-column_N` or `f-column_mobile_N` and `f-column_mobile_N` are incompatible.
+
+## Column grid - 3 columns - 2 mobile columns
+```
+<section class="f-column f-column_3 f-column_mobile_2">
+	<div class="demo">column 1</div>
+	<div class="demo">column 2</div>
+	<div class="demo">column 3</div>
+	<div class="demo">column 1</div>
+	<div class="demo">column 2</div>
+	<div class="demo">column 3</div>
+	<div class="demo">column 1</div>
+	<div class="demo">column 2</div>
+</section>
+```
+
+
+## Development
+You can run `node generate_grid.js`, located in the root of this repository, to generate the grid and create
+new grid systems by calling the grid function with different selectors, declarations and even a custom function
+to manipulate the css block while running in a loop.
+*/
+
+@import "./variables";
+
+/* --gutter-width variable doesn't work probably due to @lost gutter not being a proper css declaration block
+@lost gutter var(--gutter-width, 3.4rem); */
+@lost gutter 3.4rem;
+.f-row {
+	lost-flex-container: row;
+	width: 100%;
+}
+
+
+/* f-row_reverse is implemented extremely hacky to override *lost* margins */
+
+.f-row_reverse {
+	flex-direction: row-reverse;
+}
+
+.f-row_reverse [class^="f-row__cell"],
+.f-row_reverse [class*="f-row__cell"] {
+	margin-left: var(--gutter-width, 3.4rem)!important;
+	margin-right: 0!important;
+}
+
+.f-row_reverse [class^="f-row__cell"]:last-child,
+.f-row_reverse [class*="f-row__cell"]:last-child {
+	margin-left: 0!important;
+}
+
+.f-row_reverse [class^="f-row__cell"]:first-child,
+.f-row_reverse [class*="f-row__cell"]:first-child {
+	margin-right: 0!important;
+}
+
+.f-row::after {
+	lost-utility: clearfix;
+}
+
+.f-row_debug,
+.f-row_debug> * {
+	border: 1px dashed cyan;
+}
+
+.f-row__cell {
+	lost-column: 1 flex;
+}
+
+.f-column {
+	lost-flex-container: row;
+	width: 100%;
+	justify-content: space-between;
+}
+
+
+/*FIXME: serious hack to get flexbox working with lost - investigate 13-05-2016 
+[class^="f-column_"] > *,
+[class*=" f-column_"] > * {
+	margin-right: 0!important;
+	margin-left: 0!important;
+}*/
+
+.f-column_2> * {
+	lost-column: 1/2 2 flex;
+}
+
+.f-column_3> * {
+	lost-column: 1/3 3 flex;
+}
+
+.f-column_4> * {
+	lost-column: 1/4 4 flex;
+}
+
+.f-column_5> * {
+	lost-column: 1/5 5 flex;
+}
+
+.f-column_6> * {
+	lost-column: 1/6 6 flex;
+}
+
+@media screen and (--viewport-desktop) {
+	.f-row_not-desktop,
+	.f-row__not-desktop {
+		display: none !important;
+	}
+	.f-row_12 .f-row__cell_push_1 {
+		lost-offset: -1/12;
+	}
+	.f-row_12 .f-row__cell_push_2 {
+		lost-offset: -2/12;
+	}
+	.f-row_12 .f-row__cell_push_3 {
+		lost-offset: -3/12;
+	}
+	.f-row_12 .f-row__cell_push_4 {
+		lost-offset: -4/12;
+	}
+	.f-row_12 .f-row__cell_push_5 {
+		lost-offset: -5/12;
+	}
+	.f-row_12 .f-row__cell_push_6 {
+		lost-offset: -6/12;
+	}
+	.f-row_12 .f-row__cell_push_7 {
+		lost-offset: -7/12;
+	}
+	.f-row_12 .f-row__cell_push_8 {
+		lost-offset: -8/12;
+	}
+	.f-row_12 .f-row__cell_push_9 {
+		lost-offset: -9/12;
+	}
+	.f-row_12 .f-row__cell_push_10 {
+		lost-offset: -10/12;
+	}
+	.f-row_12 .f-row__cell_push_11 {
+		lost-offset: -11/12;
+	}
+	.f-row_6 .f-row__cell_push_1 {
+		lost-offset: -1/6;
+	}
+	.f-row_6 .f-row__cell_push_2 {
+		lost-offset: -2/6;
+	}
+	.f-row_6 .f-row__cell_push_3 {
+		lost-offset: -3/6;
+	}
+	.f-row_6 .f-row__cell_push_4 {
+		lost-offset: -4/6;
+	}
+	.f-row_6 .f-row__cell_push_5 {
+		lost-offset: -5/6;
+	}
+}
+
+.f-row_12 .f-row__cell-1 {
+	lost-column: 1/12 flex;
+}
+
+.f-row_12 .f-row__cell-2 {
+	lost-column: 2/12 flex;
+}
+
+.f-row_12 .f-row__cell-3 {
+	lost-column: 3/12 flex;
+}
+
+.f-row_12 .f-row__cell-4 {
+	lost-column: 4/12 flex;
+}
+
+.f-row_12 .f-row__cell-5 {
+	lost-column: 5/12 flex;
+}
+
+.f-row_12 .f-row__cell-6 {
+	lost-column: 6/12 flex;
+}
+
+.f-row_12 .f-row__cell-7 {
+	lost-column: 7/12 flex;
+}
+
+.f-row_12 .f-row__cell-8 {
+	lost-column: 8/12 flex;
+}
+
+.f-row_12 .f-row__cell-9 {
+	lost-column: 9/12 flex;
+}
+
+.f-row_12 .f-row__cell-10 {
+	lost-column: 10/12 flex;
+}
+
+.f-row_12 .f-row__cell-11 {
+	lost-column: 11/12 flex;
+}
+
+.f-row_6 .f-row__cell-1 {
+	lost-column: 1/6 flex;
+}
+
+.f-row_6 .f-row__cell-2 {
+	lost-column: 2/6 flex;
+}
+
+.f-row_6 .f-row__cell-3 {
+	lost-column: 3/6 flex;
+}
+
+.f-row_6 .f-row__cell-4 {
+	lost-column: 4/6 flex;
+}
+
+.f-row_6 .f-row__cell-5 {
+	lost-column: 5/6 flex;
+}
+
+
+/*
+ ## mobile
+*/
+
+@media screen and (--viewport-mobile) {
+	.f-row_not-mobile,
+	.f-row__not-mobile {
+		display: none !important;
+	}
+	.f-row__cell-mobile {
+		lost-column: 1 flex!important;
+	}
+	.f-row_12 .f-row__cell-mobile-1 {
+		lost-column: 1/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-2 {
+		lost-column: 2/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-3 {
+		lost-column: 3/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-4 {
+		lost-column: 4/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-5 {
+		lost-column: 5/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-6 {
+		lost-column: 6/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-7 {
+		lost-column: 7/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-8 {
+		lost-column: 8/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-9 {
+		lost-column: 9/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-10 {
+		lost-column: 10/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile-11 {
+		lost-column: 11/12 flex;
+	}
+	.f-row_12 .f-row__cell-mobile_push_1 {
+		lost-offset: -1/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_2 {
+		lost-offset: -2/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_3 {
+		lost-offset: -3/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_4 {
+		lost-offset: -4/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_5 {
+		lost-offset: -5/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_6 {
+		lost-offset: -6/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_7 {
+		lost-offset: -7/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_8 {
+		lost-offset: -8/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_9 {
+		lost-offset: -9/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_10 {
+		lost-offset: -10/12;
+	}
+	.f-row_12 .f-row__cell-mobile_push_11 {
+		lost-offset: -11/12;
+	}
+	.f-row_6 .f-row__cell-mobile-1 {
+		lost-column: 1/6 flex;
+	}
+	.f-row_6 .f-row__cell-mobile-2 {
+		lost-column: 2/6 flex;
+	}
+	.f-row_6 .f-row__cell-mobile-3 {
+		lost-column: 3/6 flex;
+	}
+	.f-row_6 .f-row__cell-mobile-4 {
+		lost-column: 4/6 flex;
+	}
+	.f-row_6 .f-row__cell-mobile-5 {
+		lost-column: 5/6 flex;
+	}
+	.f-row_6 .f-row__cell-mobile_push_1 {
+		lost-offset: -1/6;
+	}
+	.f-row_6 .f-row__cell-mobile_push_2 {
+		lost-offset: -2/6;
+	}
+	.f-row_6 .f-row__cell-mobile_push_3 {
+		lost-offset: -3/6;
+	}
+	.f-row_6 .f-row__cell-mobile_push_4 {
+		lost-offset: -4/6;
+	}
+	.f-row_6 .f-row__cell-mobile_push_5 {
+		lost-offset: -5/6;
+	}
+	.f-column_mobile_2> * {
+		lost-column: 1/2 2 flex;
+	}
+	.f-column_mobile_3> * {
+		lost-column: 1/3 3 flex;
+	}
+	.f-column_mobile_4> * {
+		lost-column: 1/4 4 flex;
+	}
+	.f-column_mobile_5> * {
+		lost-column: 1/5 5 flex;
+	}
+	.f-column_mobile_6> * {
+		lost-column: 1/6 6 flex;
+	}
+}

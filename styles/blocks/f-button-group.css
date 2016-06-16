@@ -1,0 +1,152 @@
+
+/*
+A container that put 3 buttons per row with equal space between them, where the first and last button are justified to the edge.
+Goes into two columns on mobile.
+
+<pre>
+BLOCK f-button-group
+    ELEMENT f-button-group__button
+    MODIFIER f-button-group__button_selected
+</pre>
+
+## What I would like:
+
+In the following example, we have two hover effects. One on the bottom line of buttons (Contact, Who we are, Dank memes), and another on the top line (Terms, Blog, Manifesto).
+Can we mix them? Could we use the bottom effect as a hovereffect, and then 'on click' use the top 'sweep' effect?
+
+I think it would look awesome!
+The effects from the Hover.css file is called: 'Underline Reveal' and 'Sweep to top'.
+
+## Default
+```
+<div class="kalei-background-white"><!-- only here for the style guide - should not be used on the website -->
+
+
+<!-- this should be used on the website -->
+	<section class="f-button-group">
+		<div class="f-column f-column_3 f-column_mobile_2">
+			<button class="f-button-group__button">Terms</button>
+			<button class="f-button-group__button">Blog</button>
+			<button class="f-button-group__button">Manifesto</button>
+			<button class="f-button-group__button">Contact</button>
+			<button class="f-button-group__button">Who we are</button>
+			<button class="f-button-group__button">Dank memes</button>
+		</div>
+	</section>
+<!-- this should be used on the website -->
+
+
+</div><!-- only here for the style guide - should not be used on the website -->
+```
+
+## Reverse **DON'T USE!**
+All the reverse and vertical stuff won't work without changing `lost` core.
+I'm keeping these examples as a reminder but **DON'T USE THEM!**
+
+```
+<div class="kalei-background-white">
+
+<!-- this should be used on the website -->
+	<section class="f-button-group f-button-group_reverse">
+		<div class="f-column f-column_3 f-column_mobile_2">
+			<button class="f-button-group__button">Terms</button>
+			<button class="f-button-group__button">Blog</button>
+			<button class="f-button-group__button">Manifesto</button>
+			<button class="f-button-group__button">Contact</button>
+			<button class="f-button-group__button">Who we are</button>
+			<button class="f-button-group__button">Dank memes</button>
+		</div>
+	</section>
+<!-- this should be used on the website -->
+
+</div>
+```
+
+## Vertical **DON'T USE!**
+```
+<div class="kalei-background-white">
+
+<!-- this should be used on the website -->
+	<section class="f-button-group f-button-group_vertical">
+		<div class="f-column f-column_3 f-column_mobile_2">
+			<button class="f-button-group__button">Terms</button>
+			<button class="f-button-group__button">Blog</button>
+			<button class="f-button-group__button">Manifesto</button>
+			<button class="f-button-group__button">Contact</button>
+			<button class="f-button-group__button">Who we are</button>
+			<button class="f-button-group__button">Dank memes</button>
+		</div>
+	</section>
+<!-- this should be used on the website -->
+
+</div>
+```
+
+## Vertical Reverse **DON'T USE!**
+```
+<div class="kalei-background-white">
+
+<!-- this should be used on the website -->
+	<section class="f-button-group f-button-group_vertical_reverse">
+		<div class="f-column f-column_3 f-column_mobile_2">
+			<button class="f-button-group__button">Terms</button>
+			<button class="f-button-group__button">Blog</button>
+			<button class="f-button-group__button">Manifesto</button>
+			<button class="f-button-group__button">Contact</button>
+			<button class="f-button-group__button">Who we are</button>
+			<button class="f-button-group__button">Dank memes</button>
+		</div>
+	</section>
+<!-- this should be used on the website -->
+
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-button-group {}
+.f-button-group > .f-column {
+	justify-content: space-between;
+}
+.f-button-group_vertical > .f-column {
+	flex-direction: column;
+}
+.f-button-group_vertical_reverse > .f-column {
+	flex-direction: column-reverse;
+	flex-wrap: wrap-reverse;
+}
+.f-button-group_reverse > .f-column {
+	flex-direction: row-reverse;
+	flex-wrap: wrap-reverse;
+}
+
+.f-button-group__button {
+	margin-bottom: 3.2rem;
+
+	font-size: 3rem;
+	font-weight: bold;
+	-moz-osx-font-smoothing: grayscale;
+	
+	transition-property: color, background; /*background;*/
+	transition-duration: 200ms;
+	transition-timing-function: ease-out;
+
+	background: linear-gradient(to top, black 50%, white 50%);
+	background-size: 100% 200%;
+	background-position:left top;
+	border: .2rem solid var(--color-black);
+	border-radius: 0.5rem;
+
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+}
+.f-button-group__button:hover, .f-button-group__button:focus {
+	background-position: left 13%;
+}
+.f-button-group__button:active, .f-button-group__button_selected {
+	color: var(--color-white);
+	background-position: left bottom;
+	background-size: 100% 300%; /*KLUDGE: background height scaled bigger because some of the white background shows */
+}

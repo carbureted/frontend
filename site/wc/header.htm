@@ -1,0 +1,44 @@
+﻿<link rel="import" href="/lib/polymer.html">
+
+<dom-module id="f-header">
+	<style>
+		:host {
+			color: white;
+		}
+	</style>
+	
+	<template>
+		<link rel="stylesheet" href="/css/blocks/f-branding.css">
+		<link rel="stylesheet" href="/css/blocks/f-navigation.css">
+		
+		<header class="f-navigation">
+			<div class="f-row f-row_12">
+				<div class="f-row__cell-4 f-row__cell-mobile-5">
+					<a href="/"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+				</div>
+				<nav class="f-row__cell-8 f-row__cell-mobile-7">
+					<div class="f-row f-row_12">
+						<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
+							<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
+						</div>
+						<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
+							<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
+						</div>
+						<div class="f-row__cell-3 f-row__cell-mobile-3">
+							<a href="/about-us.htm" class="f-navigation__link">About</a>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+	</template>
+	
+	<script>
+		Polymer({
+			/* this is the element's prototype */
+			is: 'f-header'
+		})
+  </script>
+	
+</dom-module>

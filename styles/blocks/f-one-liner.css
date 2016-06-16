@@ -1,0 +1,145 @@
+
+/*
+## f-one-liner
+
+One line of text. Can contain link(s). If you want you can (ab)use this block as a multiple line text.
+Just wrap it in a small grid column. `Top` and bottom margin can be achieved by inserting  elements.
+
+<pre>
+BLOCK f-one-liner
+    MODIFIER f-one-liner_center
+    MODIFIER f-one-liner_right
+    MODIFIER f-one-liner_size_medium
+    MODIFIER f-one-liner_size_big
+</pre>
+
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+
+
+	<h2 class="f-one-liner">This is actually a pretty long sentence, that is made just to see how they work, when there's more than one line. Pretty nifty, amarigt? Yes, amarigt. Amasorite.</h2>
+	<h2 class="f-one-liner">This is probably <a href="#">one more link</a> sentence.</h2>
+	<h2 class="f-one-liner">This is probably another link sentence.</h2>
+
+
+	<!-- this should be used on the website -->
+
+</div>
+
+```
+
+
+## f-one-liner_center
+
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+
+
+	<h2 class="f-one-liner f-one-liner_center">This is probably a link sentence. But what if it's a fucking long sentence, huh? A crazy long one, ya know?! IDK BIATtHHH</h2>
+	<h2 class="f-one-liner f-one-liner_center">This is probably <a href="#">one more link</a> sentence.</h2>
+	<h2 class="f-one-liner f-one-liner_center">This is probably another link sentence.</h2>
+
+
+	<!-- this should be used on the website -->
+
+</div>
+```
+
+
+## f-one-liner_right
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+
+
+	<h2 class="f-one-liner f-one-liner_right">This is probably a link sentence. But what if it's a fucking long sentence, huh? A crazy long one, ya know?! IDK BIATtHHH</h2>
+	<h2 class="f-one-liner f-one-liner_right">This is probably <a href="#">one more link</a> sentence.</h2>
+	<h2 class="f-one-liner f-one-liner_right">This is probably another link sentence.</h2>
+
+
+	<!-- this should be used on the website -->
+
+</div>
+```
+
+
+## f-one-liner_size_medium
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+
+
+	<h2 class="f-one-liner f-one-liner_size_medium">This is probably a link sentence. But what if it's a fucking long sentence, huh? A crazy long one, ya know?! IDK BIATtHHH</h2>
+	<h2 class="f-one-liner f-one-liner_size_medium">This is probably <a href="#">one more link</a> sentence.</h2>
+	<h2 class="f-one-liner f-one-liner_size_medium">This is probably another link sentence.</h2>
+
+
+	<!-- this should be used on the website -->
+
+</div>
+```
+
+## f-one-liner_size_big
+
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+
+
+	<h2 class="f-one-liner f-one-liner_size_big">This is probably a link sentence. But what if it's a fucking long sentence, huh? A crazy long one, ya know?! IDK BIATtHHH</h2>
+	<h2 class="f-one-liner f-one-liner_size_big">This is probably <a href="#">one more link</a> sentence.</h2>
+	<h2 class="f-one-liner f-one-liner_size_big">This is probably another line, now there's just also a <span>span.</span></h2>
+
+
+	<!-- this should be used on the website -->
+
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-one-liner {
+	margin: 0 0 1.4rem;
+
+	color: var(--color-grey-dark);
+	font-size: 1.8rem;
+	font-weight: normal;
+	line-height: 2.0rem;
+}
+
+/*Modifiers:
+.f-one-liner_center
+.f-one-liner_right
+.f-one-liner_size_medium
+.f-one-liner_size_big
+
+*/
+
+.f-one-liner_center {
+	text-align: center;
+}
+
+.f-one-liner_right {
+	text-align: right
+}
+
+.f-one-liner_size_medium {
+	font-size: 2.0rem;
+}
+
+.f-one-liner_size_big {
+	font-size: 2.3rem;
+	line-height: 2.4rem;
+}
+
+.f-one-liner_size_medium, .f-one-liner_size_big {
+	font-weight: bold;
+}

@@ -1,0 +1,133 @@
+/*
+A numbered block with heading and separator. Below the separator, is text and image.
+As seen on "How does it work".
+
+## f-info-card
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+<!-- this should be used on the website -->
+<div class="f-info-card">
+	<section class="f-row f-row_6">
+		<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
+			<p class="f-info-card_number">1</p>
+			<h4 class="f-info-card_heading ">Crowdfunding
+			</h4>
+		</div>
+	</section>
+	<section class="f-row f-row_6">
+		<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile">
+			<hr class="f-info-card_line">
+		</div>
+	</section>
+	<section class="f-row f-row_6">
+		<div class="f-row__cell-2 f-row__cell_push_1 f-row__cell-mobile">
+			<p class="f-info-card_text">
+				Crowds are the basic element in both social change and crowdfunding.
+			</p>
+			<p class="f-info-card_text">
+				Crowdfunding is simply a way for organizers, to mobilise support for an idea and translate that support into direct funding.
+			</p>
+		</div>
+	</section>
+</div>
+<!-- this should be used on the website -->
+</div>
+```
+
+## f-info-card rules
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+<!-- this should be used on the website -->
+<div class="f-info-card">
+	<section class="f-row f-row_6">
+		<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
+			<p class="f-info-card_number">2</p>
+			<h4 class="f-info-card_heading ">Rules:
+			</h4>
+		</div>
+	</section>
+	<section class="f-row f-row_6">
+		<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile">
+			<hr class="f-info-card_line">
+		</div>
+	</section>
+	<section class="f-row f-row_6">
+		<div class="f-row__cell-2 f-row__cell_push_1 f-row__cell-mobile">
+			<br>
+			<p class="f-info-card_text">
+				Kick up. Never kick down.
+			</p>
+			<p class="f-info-card_text">
+				Do not fund on behalf of others.
+			</p>
+			<p class="f-info-card_text">
+				Be honest.
+			</p>
+		</div>
+	</section>
+</div>
+<!-- this should be used on the website -->
+</div>
+```
+
+*/
+
+@import "../variables";
+
+.f-info-card {}
+
+.f-info-card_number {
+	display: inline;
+
+	color: var(--color-red);
+	font-weight: bold;
+	font-size: 7.9rem;
+	line-height: 7rem;
+}
+
+.f-info-card_heading {
+	display: inline;
+	margin-left: 2.4rem;
+
+	color: var(--color-black);
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.f-info-card_line {
+	margin-top: 7px;
+
+	border-top-color: var(--color-grey-light);
+	border-width: 2px 0 0;
+}
+
+.f-info-card_text {
+	position: relative;
+	top: -1.6rem;
+	margin-bottom: 2.7rem;
+
+	color: var(--color-grey-dark);
+	font-size: 2.0rem;
+	font-weight: lighter;
+	line-height: 2.4rem;
+}
+
+.f-info-card_image { /*TODO: This could be useful? Not sure where, tho*/
+	position: absolute;
+	top: 0;
+	right: -45%;
+}
+
+
+/*from scrollme - TODO: maybe it should be moved? Sorry Jon!*/
+
+.wrapper {
+	position: relative;
+}
+
+.scrollme {
+
+}
+
+.animateme {
+}

@@ -1,0 +1,65 @@
+/*
+
+We use this as share icons. Add `title=""` to link to see a hover popup with a description of the link. If you add a `title` to your
+links, then visual disabled people can navigate our site with a program that reads the text for them.
+
+## Default
+```
+<ul class="f-icon-list">
+    <li><a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a></li>
+    <li><a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a></li>
+</ul>
+```
+
+## Horizontal
+```
+<ul class="f-icon-list f-icon-list_horizontal">
+    <li><a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a></li>
+    <li><a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a></li>
+</ul>
+```
+
+## Pushing the limits
+```
+<!-- Default -->
+<ul class="f-icon-list">
+    <li><a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a></li>
+    <li><a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a></li>
+    <li class="f-icon-list__icon f-icon-twitter">Some text</li>
+    <li><a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a></li>
+</ul>
+<!-- Horizontal -->
+<ul class="f-icon-list f-icon-list_horizontal">
+    <li><a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a></li>
+    <li><a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a></li>
+    <li class="f-icon-list__icon f-icon-twitter">Some text</li>
+    <li><a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a></li>
+</ul>
+```
+*/
+
+@import "../variables";
+
+.f-icon-list {
+   padding: 0;
+   margin: 0;
+
+   font-size: 4rem;
+   color: var(--color-white);
+
+   list-style: none;
+}
+
+a.f-icon-list__icon {
+    color: unset;
+    
+    transition: color 250ms linear 0s;
+}
+a.f-icon-list__icon:hover {
+    color: var( --color-grey-light);
+}
+
+.f-icon-list_horizontal li {
+    display: inline;
+    margin-right: 2rem;
+}

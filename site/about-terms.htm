@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>about:terms</title>
+	<style>
+		/* Style splash screen here	*/
+		
+		* {
+			font-family: "Roboto";
+		}
+		
+		body {
+			background-color: black;
+		}
+		
+		@keyframes light-white {
+			to {
+				color: hsla(0, 0%, 85%, 1);
+			}
+		}
+		
+		@keyframes light-red {
+			to {
+				color: hsla(1, 73.7%, 31%, 1);
+			}
+		}
+		
+		.f-splash {
+			position: fixed;
+			z-index: 100;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: hsla(0, 0%, 0%, 0.6);
+			-webkit-transition: opacity 300ms ease 1s;
+			transition: opacity 300ms ease 1s;
+			opacity: 0;
+		}
+		
+		.f-splash_loading {
+			opacity: 1;
+		}
+		
+		.f-splash__content {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+		
+		.f-splash__branding {
+			margin: 0;
+			color: hsla(0, 0%, 100%, 1);
+			font-size: 4.1rem;
+			line-height: 4.1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			animation: light-white 1s ease-in-out alternate infinite;
+		}
+		
+		.f-splash__branding span {
+			color: hsla(1, 73.7%, 38.8%, 1);
+			animation: light-red 1s ease-in-out alternate infinite 250ms;
+		}
+		
+		#splash {
+			transform: scale(3);
+		}
+	</style>
+	<link rel="stylesheet" href="css/bundle.css">
+	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
+       (instead of dynamically loading it later in JS) is that the parser can go
+       to town pre-fetching resources, etc. -->
+	<link rel="import" class="f-import" href="wc/header.htm" async>
+</head>
+
+<body>
+	<div id="splash" class="f-splash f-splash_loading">
+		<div class="f-splash__content">
+			<h2 class="f-splash__branding">Fire<span>fund</span></h2>
+		</div>
+	</div>
+
+	<f-header></f-header>
+
+	<article class="f-content">
+
+		<h1 class="f-left-heading f-left-heading_big">About us</h1>
+
+		<div class="f-spacer"></div>
+
+		<section class="f-button-group">
+			<div class="f-column f-column_3 f-column_mobile_2">
+				<button class="f-button-group__button">Terms</button>
+				<button class="f-button-group__button">Blog</button>
+				<button class="f-button-group__button">Manifesto</button>
+				<button class="f-button-group__button">Contact</button>
+				<button class="f-button-group__button">Who we are</button>
+				<button class="f-button-group__button">Dank memes</button>
+			</div>
+		</section>
+
+		<article class="f-accordian">
+			<h2 class="f-accordian__heading">Privacy Policy</h2>
+			<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');">
+				<div></div>
+			</a>
+			<div class="f-accordian__cuff-wrapper">
+				<div class="f-row f-row_6">
+					<div class="f-row__cell-4 f-row__cell-mobile">
+						<p class="f-accordian__cuff-text">How we administer your activity on this site and what we do with your data.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="f-accordian__content">
+				<section class="f-text">
+					<h2 class="f-text__heading">In Short</h2>
+					<p class="f-text__text">
+						We will do everything we can, to ensure users anonymity when using our website.
+ 						The following is version 1.0, and we are currently working on version 2.0 which will be more concrete. 
+						This privacy policy explains how we, on this site firefund.net/org/com govern the privacy of the users, 
+						what kind of data we collect, what we do with it, what is our responsability regarding these terms, and what
+						the user is responsible for.
+					</p>
+					<h2 class="f-text__heading">Use of cookies</h2>
+					<p class="f-text__text">
+					Firefund.net/org/com does not on its own use cookies. However, we use different applications to support the infrastructure of the site that implement the use of cookies. 
+
+						Cookies are small files saved to the user's computer hard drive that track, save and store information about the user's interactions and usage of the website. This allows the website, through its server to provide the users with a tailored experience within this website.
+						If you wish to deny the use and saving of cookies from this website, you should take necessary steps within your web browsers security settings to block all cookies from this website. 
+						However, blocking the use of cookies from this website, may give some problems in paying with credit cards. 
+						The two applications we use on the site who implements the use of cookies are Stripe and Piwik. 
+						Stripe: 
+						Stripe is our payment provider for paying with credit cards. the application uses cookies in order to...
+						Piwik: 
+						We use this to analyse stuff, and the cookies help us with this because they tell us what you do on our site (Help, Karl)
+						We don't really know yet what we are going to use it for specifically. So we'll get back to you on that, once we've set it up and spoken with Theiz. Lolz.
+					</p>
+					<h2 class="f-text__heading">Contact and communication</h2>
+					<p class="f-text__text">
+						We do not use forms to fill out on this website. We use activist to activist communication. Hence, if you are a potential crowdfunder, want to become active or inform us about any bugs or other problems, this will be through direct contact with our staff of activists. 
+
+						We have taken every meassure to make this communication as secure as possible. When contacting us you can do so through regular email, email with pgp encryption, through wickr or signal - just tell us what type of communication you prefer. 
+
+						You to can decide the amount of personal information you want to give, but if we are going to be working close, there will come a time where we need to confirm your identity. 
+
+						The personal information you provide us with, such as name, adress account number or similar, will not leave our inbox and will be handed very delicately by our activists. It will not be handed out to third parties without your permission. 
+
+						You can also contact us through social media, but be aware that another type of privacy policy applies there. Read more further down, under social media. 
+
+						We do have an email newsletter we send out that you can read more about here:
+					</p>
+					<h2 class="f-text__heading">Email Newsletters</h2>
+					<p class="f-text__text">
+						When you use credit card to pledge a donation or donate directly, we save your email in order to be able to send you our newsletter. The newsletter will contain information about the outcome of different campaigns, news about the website and the occasional call for action. 
+						In order to evaluate and analyse on the outome of sending out newsletters and how you are reacting to them, the emails contains several tracking facilities such as; the opening of emails, forwarding of emails, the clicking of links within the email content, times, dates and frequency of activity (and some more stuff?). 
+						You are, off course, free to unsubscribe from the newsletter, the option being found in the bottom of the newsletter, in which case you will not be bothered anymore. 
+						We will still keep your email in our database, but none of the information we keep will be passed on to third party actors, nor will it be seen or handled by anyone outside the FIREFUND staff. 
+						You can at anytime request a copy of the information we posses about you that we are obliged to give you.
+					</p>
+					<h2 class="f-text__heading">External links</h2>
+					<p class="f-text__text">
+						We can only take responsability for your security and anonymity while visiting this site. We will have links to external websites posted frequently and we cannot assure the security meassures taken on these sites.
+						The security standards, the amount of anonymity and the privacy policy of any external link posted on firefund is the responsability of the owners and hosts of that specific website. 
+					</p>
+					<h2 class="f-text__heading">Social Media</h2>
+					<p class="f-text__text">
+						As it applies with external links the same thing goes for social media. We use the infrastructure of different social media platforms to host discussions, create community, reach out to a broader audience and to mobilise. When engaging in communication with us or other people in relation to FIREFUND, keep in mind that our privacy policy does not apply there. When writing things on reddit, tweeting or sending messages on facebook it is the privacy policy of those companies and platforms that apply there - we can not in the same way take responsability for your privacy and data when you engage in FIREFUND related activity on another website. 
+
+						The same goes for sharing on social media. FIREFUND uses different social sharing bottons, but cannot take responsability for anonymity, data storing, tracking or use of cookies on behalf of the site used to share FIREFUND content. 
+					</p>
+					<h2 class="f-text__heading">Shortened links</h2>
+					<p class="f-text__text">
+						When clicking on shortened links (such as this one: http://bit.ly/zyVUBo) ) published on social media by FIREFUND, be it twitter, facebook or reddit, please be aware that profiles and handles on social media are often the subject to spam and hacking. We are doing what we can to only publish trustable, informative links, but we are not untouchable, the profiles we manage on social media can also experience spam or hacking, so let this be a disclaimer: if you click on a bad link from our profile(s) it is not intended, and we would apprecieate being informed about it. 
+
+						If you want to participate further in a discussion, bring suggestions or critique regarding our privacy policy feel free to join on reddit 
+					</p>
+					<p class="f-text__text">
+						
+						v.2.0 April 2016 Edited & customised by: The FAKKEL Foundation & Firefund.
+					</p>
+				</section>
+			</div>
+		</article>
+
+		<article class="f-accordian">
+			<h2 class="f-accordian__heading">Refund Policy</h2>
+			<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');">
+				<div></div>
+			</a>
+			<div class="f-accordian__cuff-wrapper">
+				<div class="f-row f-row_6">
+					<div class="f-row__cell-4 f-row__cell-mobile">
+						<p class="f-accordian__cuff-text">How we administer your money, how and when you can get it back.</p>
+					</div>
+				</div>
+			</div>
+			<div class="f-accordian__content">
+				<section class="f-text">
+					<h2 class="f-text__heading">Direct Donations</h2>
+					<p class="f-text__text">
+						When donating to a campaign using direct donations the following terms applies: <br>
+
+						A. All donations are directly transferred to our bank account when the transaction is completed with our payment provider.
+						B. Donations can be cancelled upon request, if the request is explicit and is delivered on E-mail before the crowdfunding campaign has ended and /or before the goal for the crowdfunding campaign is reached.
+						C. Refunds will be the total donations minus 5 % to cover fees for our payment providers.
+						D. All refunds will be in current prizes, and firefund.net, firefund.org, firefund.com or the FAKKEL Foundation cannot be held responsible for any value fluctuations.
+					</p>
+					
+					<h2 class="f-text__heading">Pledged donations</h2>
+					<p class="f-text__text">
+						Crowfunding campaigns using pledged donations allows users to pay with credit card, to pledge a donation, without the money being transferred before the goal of the campaign is met with sufficient pledges. Users can abort a pledged donation by E-mail to firefund@riseup.net, and if the E-mail is received before the exact time and date the goal is reached, then the donation will be cancelled.
+					</p>
+					
+					<h2 class="f-text__heading">Bitcoins</h2>
+					<p class="f-text__text">
+						For donations paid with bitcoins, we are not yet capable of pledged donations. Instead we will refund the amount of bitcoins to the current value on the day of the refund to the bitcoin address we recieved it from.
+						All refunds will be in current prizes, and firefund.net, firefund.org, firefund.com or the FAKKEL Foundation cannot be held responsible for any value fluctuations..
+					</p>
+					<p class="f-text__text">
+						
+						v.1.1 July 2015 Edited & customised by: The FAKKEL Foundation & Firefund.
+				</section>
+			</div>
+		</article>
+
+		<article class="f-accordian">
+			<h2 class="f-accordian__heading">Costs</h2>
+			<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');">
+				<div></div>
+			</a>
+			<div class="f-accordian__cuff-wrapper">
+				<div class="f-row f-row_6">
+					<div class="f-row__cell-4 f-row__cell-mobile">
+						<p class="f-accordian__cuff-text">How we spend our money and make the organization run on a daily basis</p>
+					</div>
+				</div>
+			</div>
+			<div class="f-accordian__content">
+				<section class="f-text">
+					<h2 class="f-text__heading">The costs related to FIREFUND</h2>
+					<p class="f-text__text">
+												
+						This is a non-profit webiste, which means that we do not wish to hand out any surplus to investors who do nothing more than sit around and wait to get rich of of your hard work.
+						The use of the site is free, and no one will expect to earn money off your project. However, costs related to completing a crowdfunding campaign, must be provided by the ones fundraising. 
+						Regardless, FIREFUND do have some expenses connected to the running of the site, among others making sure servers are running, payments go through and that the site stays secure. Thus it is possible for supporters to allow a percentage of donations go to FIREFUND to help us cover these costs. 
+						FIREFUND does not require a fixed administrative fee, and we will do our best to keep the site running regardless of our budget, but we still encourage everyone donating to campaigns, to keep these expences in mind and hope you will help secure the continuity of this platform.
+						If we should find ourselves in the situation where we generate a surplus, this will be reinvested in FIREFUND or invested in other progressive initiatives that supports the general purpose of this project.
+					</p>
+				</section>
+			</div>
+		</article>
+
+		<div class="f-spacer"></div>
+
+	</article>
+
+	<div class="f-spacer"></div>
+
+	<footer class="f-footer">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4">
+				<div class="f-footer-sitemap">
+					<h2 class="f-branding f-sitemap__branding">Fire<span>fund</span></h2>
+					<ul class="f-sitemap__links">
+						<li><a href="">About us</a></li>
+						<li><a href="">Blog</a></li>
+						<li><a href="">Terms</a></li>
+						<li><a href="">Contact</a></li>
+						<li><a href="">Manifesto</a></li>
+						<li><a href="">Team</a></li>
+						<li><a href="">Who we are</a></li>
+						<li><a href="">How does it work</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
+				<div class="f-row_not-desktop">
+					<!-- hacking the grid - display:none; in desktop -->
+					<p class="f-footer-text">
+						We are activists from all over. we are everywhere. Beware!
+					</p>
+				</div>
+				<div class="f-row_not-mobile">
+					<!-- hacking the grid - display:none; in mobile -->
+					<p class="f-footer-text">
+						We are activists from all over. we are everywhere. <span>Beware!</span> We have knives and dogs. they <span>bite</span> and <a href="">sting</a>. love firefund <span>staff</span>
+					</p>
+				</div>
+				<div class="f-footer-signup">
+					<form class="f-signup">
+						<label class="f-signup__label">Sign up for news:
+								<input class="f-signup__input" type="email" placeholder="mail@radical.rev" required>
+							</label>
+						<button class="f-signup__button">Submit</button>
+					</form>
+				</div>
+				<div class="f-row__cell-mobile-10 f-row__cell_push_2 f-row__not-desktop">
+					<ul class="f-footer-icons f-icon-list f-icon-list_horizontal">
+						<li>
+							<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+						</li>
+						<li>
+							<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-row__cell-2 f-row__cell_push_2 f-row__not-mobile">
+				<ul class="f-footer-icons f-icon-list">
+					<li>
+						<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+					</li>
+					<li>
+						<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /f-row -->
+	</footer>
+
+	<script src="js/loader.js" charset="utf8" async>
+		< script > // TODO: Why is this needed?!?
+			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
+	</script>
+</body>
+
+</html>

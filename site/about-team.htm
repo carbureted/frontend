@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>about:team</title>
+	<style>
+		/* Style splash screen here	*/
+
+		* {
+			font-family: "Roboto";
+		}
+
+		body {
+			background-color: black;
+		}
+
+		@keyframes light-white {
+			to {
+				color: hsla(0, 0%, 85%, 1);
+			}
+		}
+
+		@keyframes light-red {
+			to {
+				color: hsla(1, 73.7%, 31%, 1);
+			}
+		}
+
+		.f-splash {
+			position: fixed;
+			z-index: 100;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: hsla(0, 0%, 0%, 0.6);
+			-webkit-transition: opacity 300ms ease 1s;
+			transition: opacity 300ms ease 1s;
+			opacity: 0;
+		}
+
+		.f-splash_loading {
+			opacity: 1;
+		}
+
+		.f-splash__content {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		.f-splash__branding {
+			margin: 0;
+			color: hsla(0, 0%, 100%, 1);
+			font-size: 4.1rem;
+			line-height: 4.1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			animation: light-white 1s ease-in-out alternate infinite;
+		}
+
+		.f-splash__branding span {
+			color: hsla(1, 73.7%, 38.8%, 1);
+			animation: light-red 1s ease-in-out alternate infinite 250ms;
+		}
+
+		#splash {
+			transform: scale(3);
+		}
+	</style>
+	<link rel="stylesheet" href="css/bundle.css">
+	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
+	   (instead of dynamically loading it later in JS) is that the parser can go
+	   to town pre-fetching resources, etc. -->
+	<link rel="import" class="f-import" href="wc/header.htm" async>
+</head>
+
+<body>
+	<div id="splash" class="f-splash f-splash_loading">
+		<div class="f-splash__content">
+			<h2 class="f-splash__branding">Fire<span>fund</span></h2>
+		</div>
+	</div>
+
+	<f-header></f-header>
+
+	<article class="f-content">
+
+		<h1 class="f-left-heading f-left-heading_big">About us</h1>
+
+		<div class="f-spacer"></div>
+
+		<section class="f-button-group">
+			<div class="f-column f-column_3 f-column_mobile_2">
+				<button class="f-button-group__button">Terms</button>
+				<button class="f-button-group__button">Blog</button>
+				<button class="f-button-group__button">Manifesto</button>
+				<button class="f-button-group__button">Contact</button>
+				<button class="f-button-group__button">Who we are</button>
+				<button class="f-button-group__button">Dank memes</button>
+			</div>
+		</section>
+
+		<section class="f-team-cards">
+			<div class="f-column f-column_3 f-column_mobile_2">
+				<div class="f-team-member">
+					<img class="f-team-member__image" src="assets/image/team1.jpg">
+					<div class="f-team-member__card">
+						<h2 class="f-team-member__heading">Esther K</h2>
+						<p class="f-team-member__subheading">Board member</p>
+						<hr class="f-team-member__byline">
+						<p class="f-team-member__text">
+							This is Esther. She is a good activist. she does lots of stuff
+							drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+							a lot of work for student unions, both on high school level and university.
+							she used to be a social democrat (but we don'te talk a lot about that')
+							but is now in a really healthy transition of becomming a militant anarchist,
+							so watch out cops - you about to get fucked!
+						</p>
+					</div>
+				</div>
+				<div class="f-team-member">
+					<img class="f-team-member__image" src="assets/image/team1.jpg">
+					<div class="f-team-member__card">
+						<h2 class="f-team-member__heading">gdnjdni K</h2>
+						<p class="f-team-member__subheading">Board member</p>
+						<hr class="f-team-member__byline">
+						<p class="f-team-member__text">
+							This is Esther. She is a good activist. she does lots of stuff
+							drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+							a lot of work for student unions, both on high school level and university.
+							she used to be a social democrat (but we don'te talk a lot about that')
+							but is now in a really healthy transition of becomming a militant anarchist,
+							so watch out cops - you about to get fucked!
+						</p>
+					</div>
+				</div>
+				<div class="f-team-member">
+					<img class="f-team-member__image" src="assets/image/team2.jpg">
+					<div class="f-team-member__card">
+						<h2 class="f-team-member__heading">Esther K</h2>
+						<p class="f-team-member__subheading">Board member</p>
+						<hr class="f-team-member__byline">
+						<p class="f-team-member__text">
+							This is Esther. She is a good activist. she does lots of stuff
+							drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+							a lot of work for student unions, both on high school level and university.
+							she used to be a social democrat (but we don'te talk a lot about that')
+							but is now in a really healthy transition of becomming a militant anarchist,
+							so watch out cops - you about to get fucked!
+						</p>
+					</div>
+				</div>
+				<div class="f-team-member">
+					<img class="f-team-member__image" src="assets/image/team1.jpg">
+					<div class="f-team-member__card">
+						<h2 class="f-team-member__heading">Esther K</h2>
+						<p class="f-team-member__subheading">Board member</p>
+						<hr class="f-team-member__byline">
+						<p class="f-team-member__text">
+							This is Esther. She is a good activist. she does lots of stuff
+							drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+							a lot of work for student unions, both on high school level and university.
+							she used to be a social democrat (but we don'te talk a lot about that')
+							but is now in a really healthy transition of becomming a militant anarchist,
+							so watch out cops - you about to get fucked!
+						</p>
+					</div>
+				</div>
+				<div class="f-team-member">
+					<img class="f-team-member__image" src="assets/image/team1.jpg">
+					<div class="f-team-member__card">
+					<h2 class="f-team-member__heading">Esther K</h2>
+					</div>
+				</div>
+				<div class="f-team-member">
+					<img class="f-team-member__image" src="assets/image/team1.jpg">
+					<div class="f-team-member__card">
+						<h2 class="f-team-member__heading">Esther K</h2>
+						<p class="f-team-member__subheading">Board member</p>
+						<hr class="f-team-member__byline">
+						<p class="f-team-member__text">
+							This is Esther. She is a good activist. she does lots of stuff
+							drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+							a lot of work for student unions, both on high school level and university.
+							she used to be a social democrat (but we don'te talk a lot about that')
+							but is now in a really healthy transition of becomming a militant anarchist,
+							so watch out cops - you about to get fucked!
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	</article>
+
+	<div class="f-spacer"></div>
+
+	<footer class="f-footer">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4">
+				<div class="f-footer-sitemap">
+					<h2 class="f-branding f-sitemap__branding">Fire<span>fund</span></h2>
+					<ul class="f-sitemap__links">
+						<li><a href="">About us</a></li>
+						<li><a href="">Blog</a></li>
+						<li><a href="">Terms</a></li>
+						<li><a href="">Contact</a></li>
+						<li><a href="">Manifesto</a></li>
+						<li><a href="">Team</a></li>
+						<li><a href="">Who we are</a></li>
+						<li><a href="">How does it work</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
+				<div class="f-row_not-desktop">
+					<!-- hacking the grid - display:none; in desktop -->
+					<p class="f-footer-text">
+						We are activists from all over. we are everywhere. Beware!
+					</p>
+				</div>
+				<div class="f-row_not-mobile">
+					<!-- hacking the grid - display:none; in mobile -->
+					<p class="f-footer-text">
+						We are activists from all over. we are everywhere. <span>Beware!</span> We have knives and dogs. they <span>bite</span> and <a href="">sting</a>. love firefund <span>staff</span>
+					</p>
+				</div>
+				<div class="f-footer-signup">
+					<form class="f-signup">
+						<label class="f-signup__label">Sign up for news:
+								<input class="f-signup__input" type="email" placeholder="mail@radical.rev" required>
+							</label>
+						<button class="f-signup__button">Submit</button>
+					</form>
+				</div>
+				<div class="f-row__cell-mobile-10 f-row__cell_push_2 f-row__not-desktop">
+					<ul class="f-footer-icons f-icon-list f-icon-list_horizontal">
+						<li>
+							<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+						</li>
+						<li>
+							<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-row__cell-2 f-row__cell_push_2 f-row__not-mobile">
+				<ul class="f-footer-icons f-icon-list">
+					<li>
+						<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+					</li>
+					<li>
+						<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /f-row -->
+	</footer>
+
+	<script src="js/loader.js" charset="utf8" async>
+		< script > // TODO: Why is this needed?!?
+			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
+	</script>
+</body>
+
+</html>

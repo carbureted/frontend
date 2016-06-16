@@ -1,0 +1,144 @@
+/*
+# f-text
+
+standard heading and text for bigger text blogs.
+
+<pre>
+BLOCK f-text
+MODIFIER f-text_attention
+    ELEMENT f-text__heading
+    ELEMENT f-text__text
+</pre>
+
+## EXAMPLE 1
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+
+    <section class"f-text">
+
+        <h2 class="f-text__heading">Heading explaining what the text will be about</h2>
+
+        <p class="f-text__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+        </p>
+
+        <p class="f-text__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+        </p>
+
+    </section>
+
+</div>
+```
+## Example 2 - with links and attention modifier
+```
+    <div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+    <section class="f-text f-text_attention">
+        <h2 class="f-text__heading">Heading explaining what the text will be about</h2>
+
+        <p class="f-text__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? <a href="#">Dolorem quasi</a> earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing</a> elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur <a href="#">excepturi</a> et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+        </p>
+
+        <p class="f-text__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, <a href="#">tenetur excepturi</a> et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, <a href="#">tenetur excepturi</a> et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            <a href="">Lorem ipsum dolor</a> sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque voluptate fugiat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+            necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+            autem doloremque <a href="#">voluptate fugiat.</a>
+        </p>
+    </section>
+
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-text {}
+
+.f-text_attention .f-text__heading {
+    color: var(--color-red);
+}
+
+.f-text__heading {
+    margin-top: 0rem;
+    margin-bottom: 0.65rem;
+
+    color: var(--color-grey-dark);
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.f-text__text {
+    margin-top: 0rem;
+    margin-bottom: 2.7rem;
+
+    color: var(--color-grey-dark);
+    font-weight: lighter;
+    font-size: 1.4rem;
+    line-height: 1.82rem;
+    text-rendering: optimizeLegibility;
+}
+
+.f-text__text a:hover {
+  text-decoration: underline;
+}

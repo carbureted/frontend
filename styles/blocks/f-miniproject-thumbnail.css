@@ -1,0 +1,320 @@
+/*
+# f-miniproject-thumbnail
+
+Mini thumbnails!
+
+<pre>
+
+So we're almost there. They are fully functional, I would say. Minor bugs, tho. And the 'text on image' I cannot do at the moment.
+
+TO DO's:
+- Browser checkup for grayscale - Chrome, Safari and Firefox 👏 👍 🤘
+- f-mini-project-thumbnail__image-text - 👎 CAN'T DO IT 😿🔫
+- Scrollme for mobile - Waiting for webcomponents!
+- Clean up HTML - Done.
+- Clean up CSS and re-read (+comments) - Doin' it when I've solved my last hurdle, I guess.
+- Test optimal pre-cropping of images
+- Write down optimal count for text-bits
+- Clean the imported progress-BEM (maybe? New names?)
+- For Jon: Test how easy it is to use the f-progress, instead of my copied code here. If we just use f-progress, I'm guessing it would be easier on the serverside.
+</pre>
+
+<pre>
+BLOCK f-miniproject-thumbnail
+	MODIFIER f-miniproject-thumbnail_reverse
+    ELEMENT f-miniproject-thumbnail__info (This is all informative content - so everything minus the image)
+    ELEMENT f-miniproject-thumbnail__content (This is all content for the specific campaign - minus the 'data' (__progress))
+    ELEMENT f-miniproject-thumbnail__heading (1-2 lines but same height, flexbox centered <-- oh, didn't do that)
+    ELEMENT f-miniproject-thumbnail__byline (The 'sender')
+    ELEMENT f-miniproject-thumbnail__text
+    ELEMENT f-miniproject-thumbnail__summary
+    ELEMENT f-miniproject-thumbnail__progress
+    ELEMENT f-miniproject-thumbnail__image
+    	ELEMENT f-miniproject-thumbnail__image-text (TODO: This is for text on top of picture)
+</pre>
+
+
+# Small thumbnails
+
+```
+<section class="f-column f-column_3 f-column_mobile_1">
+	<div class="f-miniproject-thumbnail">
+		<img class="f-miniproject-thumbnail__image" src="assets/image/rick.jpg">
+		<div class="f-miniproject-thumbnail__info">
+			<div class="f-miniproject-thumbnail__content">
+				<h2 class="f-miniproject-thumbnail__heading">
+				They keep changing things!
+				</h2>
+				<h3 class="f-miniproject-thumbnail__byline">Out of Africa</h3>
+				<p class="f-miniproject-thumbnail__text">
+					And this time with a longer text! We are back with more science fiction romance, after our first successful Kickstarter for Speculative Relationships: Volume 1! And there's much more! Much more actually! So much more, that we don't really have room for it here.
+				</p>
+			</div>
+			<section class="f-miniproject-thumbnail__progress" data-value="38">
+				<div class="f-miniproject-thumbnail__progress__bar">
+					<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
+				</div>
+				<div class="f-miniproject-thumbnail__progress__data">
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>38%</span> of $50K
+					</p>
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>$14,928</span> pledged
+					</p>
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>22</span> days to go
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="f-miniproject-thumbnail">
+		<img class="f-miniproject-thumbnail__image" src="assets/image/12t.jpg">
+		<div class="f-miniproject-thumbnail__info">
+			<div class="f-miniproject-thumbnail__content">
+				<h2 class="f-miniproject-thumbnail__heading">
+				This one is just outta' control!
+				</h2>
+				<h3 class="f-miniproject-thumbnail__byline">Out of Africa</h3>
+				<p class="f-miniproject-thumbnail__text">
+					We are back with more science fiction romance, after our first successful Kickstarter for Speculative Relationships: Volume 1!
+				</p>
+			</div>
+			<section class="f-miniproject-thumbnail__progress" data-value="38">
+				<div class="f-miniproject-thumbnail__progress__bar">
+					<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
+				</div>
+				<div class="f-miniproject-thumbnail__progress__data">
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>38%</span> of $50K
+					</p>
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>$14,928</span> pledged
+					</p>
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>22</span> days to go
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="f-miniproject-thumbnail">
+		<img class="f-miniproject-thumbnail__image" src="assets/image/16t.jpg">
+		<div class="f-miniproject-thumbnail__info">
+			<div class="f-miniproject-thumbnail__content">
+				<h2 class="f-miniproject-thumbnail__heading">
+				Kobane is rebuilding!
+				</h2>
+				<h4 class="f-miniproject-thumbnail__byline">Out of Africa</h4>
+				<p class="f-miniproject-thumbnail__text">
+					After our first successful Kickstarter for Speculative Relationships: Volume 1!
+				</p>
+			</div>
+			<section class="f-miniproject-thumbnail__progress" data-value="38">
+				<div class="f-miniproject-thumbnail__progress__bar">
+					<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
+				</div>
+				<div class="f-miniproject-thumbnail__progress__data">
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>38%</span> of $50K
+					</p>
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>$14,928</span> pledged
+					</p>
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>22</span> days to go
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="f-miniproject-thumbnail">
+		<img class="f-miniproject-thumbnail__image" src="assets/image/12t.jpg">
+		<div class="f-miniproject-thumbnail__info">
+			<div class="f-miniproject-thumbnail__content">
+				<h2 class="f-miniproject-thumbnail__heading">
+				This one is just outta' control!
+				</h2>
+				<h3 class="f-miniproject-thumbnail__byline">Out of Africa</h3>
+				<p class="f-miniproject-thumbnail__text">
+					We are back with more science fiction romance, after our first successful Kickstarter for Speculative Relationships: Volume 1!
+				</p>
+			</div>
+			<section class="f-miniproject-thumbnail__progress" data-value="38">
+				<div class="f-miniproject-thumbnail__progress__bar">
+					<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
+				</div>
+				<div class="f-miniproject-thumbnail__progress__data">
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>38%</span> of $50K
+					</p>
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>$14,928</span> pledged
+					</p>
+					<p class="f-miniproject-thumbnail__progress__data-element">
+						<span>22</span> days to go
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+</section>
+```
+*/
+
+@import "../variables";
+.f-miniproject-thumbnail {
+	min-height: 35.2rem;
+	max-width: 50rem;
+	margin: 0 3.6rem 3.0rem 0;
+
+	border-radius: 0.5rem;
+	background-color: var(--color-white);
+}
+
+.f-miniproject-thumbnail__image {
+	height: 16rem;
+	width: 100%;
+	margin: 0 0 0 0;
+	margin-bottom: 1rem;
+
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+
+	object-fit: cover;
+	object-position: 50% 50%;
+	cursor: pointer;
+	filter: grayscale(100%);
+	/*TO DO: Need browser check-up*/
+}
+
+
+/*This makes sure the grayscale filter won't be on mobile:*/
+
+@media screen and (--viewport-mobile) {
+	.f-miniproject-thumbnail__image {
+		filter: none;
+	}
+}
+
+.f-miniproject-thumbnail__image:hover {
+	filter: grayscale(0%);
+	transition: .3s ease-in-out;
+}
+
+.f-miniproject-thumbnail__info {
+	margin: 0 3.4rem 0.76rem 0;
+}
+
+.f-miniproject-thumbnail__image-text {
+	/*Being organized text feature*/
+	/*
+	.f-miniproject-thumbnail__image-filter {
+	position: relative;
+
+	height: 16rem;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+
+    background: var(--color-white-transparent, hsla(0, 0%, 100%, 0.8));
+
+	filter: blur(2px);
+}
+	*/
+}
+
+
+.f-miniproject-thumbnail__content {
+	height: 14rem;
+	padding-left: var(--gutter-width);
+
+	margin-bottom: 1rem;
+	overflow: hidden;
+
+	/*TODO: Only work in blink browsers */
+	/*Set's the height of the whole content area. For longer thumbnails, this is the one.*/
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 69%, rgba(0, 0, 0, 0) 96%);
+	mask: linear-gradient(to bottom, rgba(0, 0, 0, 1) 69%, rgba(0, 0, 0, 0) 96%);
+}
+
+.f-miniproject-thumbnail__heading {
+	display: inline-flex;
+	margin-bottom: .4rem;
+	margin: 0 0 0.4rem -var(--gutter-width);
+	padding: .68rem 1.0rem .86rem var(--gutter-width);
+
+	color: var(--color-white);
+	font-size: 1.5rem;
+	font-weight: bold;
+
+	background-color: var(--color-black);
+}
+
+.f-miniproject-thumbnail__byline {
+	/*margin: 0 0 0 3.4rem;*/
+	margin: 0;
+
+	color: var(--color-grey);
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.f-miniproject-thumbnail__text {
+	display: block;
+	/*margin: 1.08rem 0 0 3.4rem;*/
+	margin: 0 0 1rem;
+
+	color: var(--color-grey);
+	font-size: 1.2rem;
+	font-weight: normal;
+	line-height: 1.5rem;
+
+	overflow: hidden;
+}
+
+.f-miniproject-thumbnail__progress {
+	margin-left: 3.4rem;
+}
+
+.f-miniproject-thumbnail__progress__bar,
+.f-miniproject-thumbnail__progress__value {
+	height: 0.3rem;
+}
+
+.f-miniproject-thumbnail__progress__bar {
+	margin-bottom: 0.5rem;
+
+	background-color: var(--color-grey);
+}
+
+.f-miniproject-thumbnail__progress__value {
+	max-width: 100%;
+
+	transition: width 1s ease 260ms;
+	will-change: width;
+
+	background-color: var(--color-red);
+}
+
+.f-miniproject-thumbnail__progress__data {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	font-size: 1rem;
+	white-space: nowrap;
+}
+
+.f-miniproject-thumbnail__progress__data-element {
+	margin: 0;
+
+	color: var(--color-grey);
+	font-weight: normal;
+	line-height: 2.2rem;
+}
+
+.f-miniproject-thumbnail__progress__data-element span {
+	color: var(--color-grey-dark);
+
+	font-weight: bold;
+}

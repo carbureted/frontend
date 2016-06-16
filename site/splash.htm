@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>FIREFUND</title>
+		<style>
+    /* Style splash screen here	*/
+			* { font-family: "Roboto"; }
+			body {
+				background-color: black;
+			}
+			@keyframes light-white {
+				to { color: hsla(0, 0%, 85%, 1); }
+			}
+			@keyframes light-red {
+				to { color: hsla(1, 73.7%, 31%, 1); }
+			}
+
+			.f-splash {
+				position: fixed;
+				z-index: 100;
+				top:0;
+				left:0;
+				width: 100%;
+				height: 100%;
+
+				background-color: hsla(0, 0%, 0%, 0.6);
+
+				-webkit-transition: opacity 300ms ease 1s;
+				transition: opacity 300ms ease 1s;
+
+				opacity: 0;
+			}
+			.f-splash_loading {
+				opacity: 1;
+			}
+			.f-splash__content {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+
+				-webkit-transform: translate(-50%, -50%);
+								transform: translate(-50%, -50%);
+			}
+			.f-splash__branding {
+				margin: 0;
+
+				color: hsla(0, 0%, 100%, 1);
+				font-size: 4.1rem;
+				line-height: 4.1rem;
+				font-weight: 700;
+				text-transform: uppercase;
+
+				animation: light-white 1s ease-in-out alternate infinite;
+			}
+			.f-splash__branding span {
+				color: hsla(1, 73.7%, 38.8%, 1);
+
+				animation: light-red 1s ease-in-out alternate infinite 250ms;
+			}
+			#splash {
+				transform: scale(3);
+			}
+    </style>
+		<link rel="stylesheet" href="css/bundle.css">
+		<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
+       (instead of dynamically loading it later in JS) is that the parser can go
+       to town pre-fetching resources, etc. -->
+	</head>
+	<body>
+		<div id="splash" class="f-splash f-splash_loading f-splash_dont-hide">
+			<div class="f-splash__content">
+				<h2 class="f-splash__branding">Fire<span>fund</span></h2>
+			</div>
+		</div>
+
+		
+		<script src="js/loader.js" charset="utf8" async>
+		<script>// TODO: Why is this needed?!?
+			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
+		</script>
+	</body>
+</html>

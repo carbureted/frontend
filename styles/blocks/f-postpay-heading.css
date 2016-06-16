@@ -1,0 +1,34 @@
+/*
+With a smaller font text under.
+
+
+<pre>
+BLOCK f-postpay-heading
+	ELEMENT f-postpay-heading__sub
+</pre>
+
+## Postpay-heading
+```
+<h2 class="f-postpay-heading">thank you</h2>
+<h3 class="f-postpay-heading f-postpay-heading__sub">We have raised <span>$50022</span> so far!</h3>
+```
+*/
+
+@import "../variables";
+
+.f-postpay-heading {
+	margin: 7.2rem 0 -1.5rem 0;
+
+	font-size: 10.2rem;
+	color: var(--color-white);
+
+	text-transform: uppercase;
+}
+
+.f-postpay-heading__sub {
+	margin: 0 0 6.6rem 0;
+
+	font-size: 5.6rem;
+
+	text-transform: none;
+}

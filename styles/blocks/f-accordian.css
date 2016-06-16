@@ -1,0 +1,316 @@
+/*
+## Accordian
+
+Media queries are at the bottom of `f-accordian.css`.
+
+<pre>
+BLOCK f-accordian
+MODIFIER f-accordian_open
+MODIFIER f-accordian_link
+	ELEMENT f-accordian__heading
+	ELEMENT f-accordian__cuff-wrapper
+		ELEMENT f-accordian__cuff-text
+		ELEMENT f-accordian__arrow
+	ELEMENT f-accordian__content
+</pre>
+
+```
+<div class="f-content"> <!-- only here for the style guide - should not be used on the website -->
+
+<article class="f-accordian">
+	<h2 class="f-accordian__heading">Hej</h2>
+	<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');"><div></div></a>
+	<div class="f-accordian__cuff-wrapper">
+		<div class="f-row f-row_6">
+			<div class="f-row__cell-4 f-row__cell-mobile">
+				<p class="f-accordian__cuff-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum molestias reprehenderit, commodi!</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="f-accordian__content">
+		<section class="f-text">
+			<h2 class="f-text__heading">Lorem ipsum dolor sit amet</h2>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+			<h2 class="f-text__heading">Lorem ipsum dolor sit amet</h2>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+		</section>
+	</div>
+</article>
+
+<article class="f-accordian f-accordian_open">
+	<h2 class="f-accordian__heading">Privacy</h2>
+	<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');"><div></div></a>
+	<div class="f-accordian__cuff-wrapper">
+		<div class="f-row f-row_6">
+			<div class="f-row__cell-4 f-row__cell-mobile">
+				<p class="f-accordian__cuff-text">Ab ea tempore, in cupiditate quod, facere accusantium laboriosam obcaecati recusandae consectetur maiores vero debitis sequi eveniet ipsa!</p>
+			</div>
+		</div>
+	</div>
+	<div class="f-accordian__content">
+		<section class="f-text">
+			<h2 class="f-text__heading">Lorem ipsum dolor sit amet</h2>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+			<h2 class="f-text__heading">Lorem ipsum dolor sit amet</h2>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+			<h2 class="f-text__heading">Lorem ipsum dolor sit amet</h2>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+			<h2 class="f-text__heading">Lorem ipsum dolor sit amet</h2>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+		</section>
+	</div>
+</article>
+
+<article class="f-accordian">
+	<h2 class="f-accordian__heading">Hej</h2>
+	<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');"><div></div></a>
+	<div class="f-accordian__cuff-wrapper">
+		<div class="f-row f-row_6">
+			<div class="f-row__cell-4 f-row__cell-mobile">
+				<p class="f-accordian__cuff-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum molestias reprehenderit, commodi.</p>
+			</div>
+		</div>
+	</div>
+	<div class="f-accordian__content">
+		<section class="f-text">
+			<h2 class="f-text__heading">Lorem ipsum dolor sit amet</h2>
+			<p class="f-text__text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima a aperiam rerum, pariatur. Veniam unde id quo molestiae possimus soluta dignissimos magni sit eos dolore nihil, blanditiis animi maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia deleniti itaque eum iste, quos quae debitis odit at. Reprehenderit illum nihil doloribus nostrum, magni quibusdam laudantium autem eveniet voluptas est.
+			</p>
+		</section>
+	</div>
+</article>
+
+</div><!-- only here for the style guide - should not be used on the website -->
+```
+*/
+@import "../variables";
+
+.f-accordian {
+	position: relative;
+
+	margin: 0 0 2rem 0;
+	padding: 1rem 2.8rem;
+	/*height: 12.2rem; NOT needed - we set the height of .f-accordian__cuff-text */
+
+	border: .3rem solid var(--color-grey-light);
+	border-radius: .5rem;
+
+	overflow: hidden;
+	transition: 250ms height, 250ms border-color;
+}
+
+.f-accordian__heading {
+	margin: 0;
+
+	color: var(--color-grey-dark);
+	font-size: 3.6rem;
+	font-weight: normal;
+	line-height: 3.6rem;
+
+	transition: 250ms color;
+}
+
+.f-accordian__cuff-wrapper {
+	position:relative;
+
+	margin-bottom: 3.4rem;
+}
+
+.f-accordian__cuff-text {
+	margin: 0;
+	height: 6.4rem;
+
+	color: var(--color-grey-dark);
+	font-size: 1.8rem;
+	font-weight: light;
+	line-height: 2.4rem;
+
+	transition: 250ms color;
+}
+
+.f-accordian__arrow {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	height: 100%;
+	width: 23rem;
+
+	cursor: pointer;
+	z-index: 10; /* KLUDGE: lift arrow to be above f-row */
+}
+.f-accordian__arrow div {
+	/*TODO: make this a pseudo element. content: "";*/
+	position: absolute;
+	top: 6rem;
+	right: 50%;
+
+	width: 3rem;
+	height: 3rem;
+
+	border-bottom: .5rem solid var(--color-grey-light);
+	border-right: .5rem solid var(--color-grey-light);
+
+	transform: rotate(-135deg);
+	transition: 250ms transform, 250ms color;
+}
+
+.f-accordian__content {
+	max-height: 0;
+
+	transition: 250ms max-height linear;
+
+	overflow: hidden;
+}
+/* ### .f-accordian_open
+  .f-accordian_open is the modifier for an open accordian
+*/
+.f-accordian_open .f-accordian__content {
+	max-height: 200rem;
+}
+
+.f-accordian_open, .f-accordian_open .f-accordian__arrow div {
+	border-color: var(--color-red);
+}
+
+.f-accordian_open .f-accordian__arrow {
+	height: 14rem;
+}
+
+.f-accordian_open .f-accordian__heading,
+.f-accordian_open .f-accordian__cuff-text {
+	color: var(--color-red);
+}
+
+.f-accordian_open .f-accordian__arrow div {
+	transform: rotate(45deg);
+}
+
+@media screen and (--viewport-mobile) {
+	.f-accordian__heading {
+		margin-bottom: 2rem;
+	}
+
+	.f-accordian__cuff-text {
+		height: unset;
+	}
+
+	.f-accordian__arrow {
+		height: 6rem!important;
+	}
+
+	.f-accordian__arrow div,
+	.f-accordian_open .f-accordian__arrow div {
+		top: 2rem;
+		right: 4rem;
+		
+		width: 2rem;
+		height: 2rem;
+		
+		border-bottom-width: .3rem;
+		border-right-width: .3rem;
+
+		transform: rotate(-135deg);
+	}
+	.f-accordian_open .f-accordian__arrow div {
+		transform: rotate(45deg);
+	}
+}
+
+/*
+## Accordian link
+
+```
+<div class="f-content"> <!-- only here for the style guide - should not be used on the website -->
+
+<article class="f-accordian f-accordian_link">
+	<h2 class="f-accordian__heading">Just a regular email</h2>
+	<a class="f-accordian__arrow" href="mailto:gimme@the.heat.com"><div></div></a>
+	<div class="f-accordian__cuff-wrapper">
+		<div class="f-row f-row_6">
+			<div class="f-row__cell-4 f-row__cell-mobile">
+				<p class="f-accordian__cuff-text">
+				Send it to: <span>firefund >AT< riseup >DOT< net</span> or
+				<em class="f-row_not-mobile">click on</em>
+				<em class="f-row_not-desktop">touch</em>
+				the arrow.
+				</p>
+			</div>
+		</div>
+	</div>
+</article>
+
+<article class="f-accordian f-accordian_link">
+	<h2 class="f-accordian__heading">Reddit</h2>
+	<a class="f-accordian__arrow" href="https://www.reddit.com/r/firefund" target="_blank"><div></div></a>
+	<div class="f-accordian__cuff-wrapper">
+		<div class="f-row f-row_6">
+			<div class="f-row__cell-4 f-row__cell-mobile">
+				<p class="f-accordian__cuff-text">Our subreddit is a open forum for everyone to see, but a wonderful place to ask the community.</p>
+			</div>
+		</div>
+	</div>
+</article>
+
+</div><!-- only here for the style guide - should not be used on the website -->
+```
+*/
+
+.f-accordian_link .f-accordian__heading {
+	margin-bottom: 2rem;
+}
+
+.f-accordian_link .f-accordian__cuff-wrapper {
+	height: 4.4rem;
+}
+
+.f-accordian_link .f-accordian__cuff-wrapper {
+	margin-bottom: 0;
+}
+
+.f-accordian_link .f-accordian__arrow div {
+	top: 1.2rem;
+	
+	width: 2rem;
+	height: 2rem;
+		
+	border-color: var(--color-red);
+	
+	transform: rotate(-45deg);
+}
+
+@media screen and (--viewport-desktop) {
+	.f-accordian_link .f-accordian__arrow div {
+		top: 6rem;
+
+		width: 3rem;
+		height: 3rem;
+	}
+}

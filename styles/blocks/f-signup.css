@@ -1,0 +1,118 @@
+/*
+Our email newsletter signup form. Used in the footer.
+
+<pre>
+BLOCK f-signup
+MODIFIER f-signup_error
+	ELEMENT f-signup__label
+	ELEMENT f-signup__feedback-text
+	ELEMENT f-signup__input
+	ELEMENT f-signup__button
+</pre>
+
+## Default
+```
+<form class="f-signup">
+	<label class="f-signup__label">Sign up for news:
+		<input class="f-signup__input" type="email" placeholder="mail@radical.rev" required>
+	</label>
+	<button class="f-signup__button">Submit</button>
+</form>
+```
+
+## In a cell
+```
+<section class="f-row f-row_6">
+	<div class="f-row__cell_push_2 f-row__cell-2">
+
+		<form class="f-signup">
+			<label class="f-signup__label">Sign up for news:
+				<input class="f-signup__input" type="email" placeholder="mail@radical.rev" required>
+			</label>
+			<button class="f-signup__button">Submit</button>
+		</form>
+
+		</div>
+</section>
+```
+
+## Error:
+```
+
+```
+
+## Success:
+```
+
+```
+*/
+
+@import "../variables";
+
+.f-signup {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	margin-bottom: 2rem;
+
+	color: var(--color-white);
+	font-size: 1.7rem;
+	font-weight: lighter;
+
+	outline-color: var(--color-red);
+}
+
+.f-signup__label {
+	display: flex;
+	flex-direction: column;
+}
+
+.f-signup__input {
+	width: 18.8rem;
+	height: 2.8rem;
+	margin-top: 1rem;
+	padding-left: .8rem;
+
+	color: var(--color-white);
+	background-color: var(--color-black);
+	font-weight: lighter;
+	font-size: 1.2rem;
+
+	border: 2px solid var(--color-white);
+
+	outline: none;
+}
+
+.f-signup__input::placeholder {
+	font-style: italic;
+}
+
+.f-signup__button {
+	margin: 0 0 0 1rem;
+	padding: .14rem .7rem;
+	height: 2.8rem;
+
+	color: var(--color-black, black);
+	font-size: 1.7rem;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	border: 2px solid var(--color-red);
+	background: var(--color-red);
+
+	transition: all 250ms ease-in;
+
+	cursor: pointer;
+	outline: none;
+}
+
+.f-signup__button:hover {
+	border-color: var(--color-black);
+}
+
+.f-signup__button:focus {
+	border: 2px solid var(--color-red);
+
+	background: var(--color-black);
+	color: var(--color-white);
+}

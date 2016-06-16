@@ -1,0 +1,276 @@
+/*
+# f-project-thumbnail
+
+Big thumbnails!
+
+Not at all done, so do not review just yet.
+
+To do:
+- Progress bar need styling
+- Margins need to work
+- The .js data element needs to be there
+- Cleanup, tests, etc.
+
+<pre>
+BLOCK f-project-thumbnail
+    ELEMENT f-project-thumbnail__image
+    	ELEMENT f-project-thumbnail__image-text (TODO: This is for text on top of picture)
+    ELEMENT f-project-thumbnail__info (This is all informative content - so everything minus the image)
+    ELEMENT f-project-thumbnail__content (This is all content for the specific campaign - minus the 'data' (__progress))
+    ELEMENT f-project-thumbnail__heading (1-2 lines but same height, flexbox centered <-- oh, didn't do that)
+    ELEMENT f-project-thumbnail__byline (The 'sender')
+    ELEMENT f-project-thumbnail__text
+		ELEMENT f-project-thumbnail__summary
+    ELEMENT f-project-thumbnail__progress
+</pre>
+
+
+# First edition, cloned from mini and not done yet
+```
+<div class="f-project-thumbnail">
+	<div class="f-row f-row_6">
+		<div class="f-row__cell-2">
+			<div class="f-project-thumbnail__content">
+				<h2 class="f-left-heading f-project-thumbnail__heading"><span>Project</span><br>Rebuild Kobanê</h2>
+				<h3 class="f-project-thumbnail__byline">Out of Africa!</h3>
+				<p class="f-project-thumbnail__text">
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				We are back with another crowdfundingcampain - this one is going to succed! We wish to finish the rebuild-process, and you can help us.
+				</p>
+			</div>
+			<div class="f-project-thumbnail__summary f-progress__data">
+				<p class="f-progress__data-element f-progress-thumbnail__data-element">
+					<span>22</span> days to go
+				</p>
+				<p class="f-progress__data-element f-progress-thumbnail__data-element">
+					<span>38%</span> of $50,000
+				</p>
+				<p class="f-progress__data-element f-progress-thumbnail__data-element">
+					<span>$14,928</span> reached in total
+				</p>
+			</div>
+		</div>
+		<div class="f-row__cell-4">
+			<figure class="f-project-thumbnail__image">
+				<img src="assets/image/12.jpg"</img>
+			</figure>
+		</div>
+	</div>
+	<div class="f-row f-row_6">
+		<section class="f-row__cell">
+			<div class="f-progress" data-value="38">
+				<div class="f-project-thumbnail__progress f-progress__bar">
+					<div style="width: 38%;" class="f-progress__value"></div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+```
+*/
+
+
+@import "../variables";
+
+@keyframes odometer-movefastlast {
+	0% {
+		/*debugging: color: cyan;*/
+		transform: translateY(2rem);
+	}
+  5% {
+		/*debugging: color: red;*/
+    transform: translateY(0rem);
+  }
+	30% {
+		/*debugging: color: red;*/
+    transform: translateY(0rem);
+  }
+  40% {
+		/*debugging: color: green;*/
+    transform: translateY(-2rem);
+  }
+  65% {
+		/*debugging: color: green;*/
+    transform: translateY(-2rem);
+  }
+  75% {
+		/*debugging: color: saddlebrown;*/
+    transform: translateY(-4rem);
+  }
+	95% {
+		/*debugging: color: saddlebrown;*/
+    transform: translateY(-4rem);
+  }
+  100% {
+		/*debugging: color: navy;*/
+    transform: translateY(-6rem);
+	}
+}
+
+@keyframes odometer {
+	0% {
+		/*color: cyan;*/
+		transform: translateY(2rem);
+	}
+  10% {
+		/*color: red;*/
+    transform: translateY(0rem);
+  }
+	30% {
+		/*color: red;*/
+    transform: translateY(0rem);
+  }
+  40% {
+		/*color: green;*/
+    transform: translateY(-2rem);
+  }
+  60% {
+		/*color: green;*/
+    transform: translateY(-2rem);
+  }
+  70% {
+		/*color: saddlebrown;*/
+    transform: translateY(-4rem);
+  }
+	90% {
+		/*color: saddlebrown;*/
+    transform: translateY(-4rem);
+  }
+  100% {
+		/*color: navy;*/
+    transform: translateY(-6rem);
+  }
+}
+
+.f-project-thumbnail {
+	margin: 0 0 3rem 0;
+	padding-top: 1.8rem;
+
+	background-color: var(--color-white);
+	
+	lost-center: var(--page-max-width);
+}
+
+.f-project-thumbnail__content {
+	margin: 0 0 1rem;
+	padding-left: var(--gutter-width);
+	/*padding-right: var(--gutter-width); change from design because we want more text */
+	height: 20rem; /*Set's the height of the whole content area. For longer thumbnails, this is the one.*/
+
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 69%, rgba(0, 0, 0, 0) 96%);
+	mask: linear-gradient(to bottom, rgba(0, 0, 0, 1) 69%, rgba(0, 0, 0, 0) 96%);
+	overflow: hidden;
+}
+
+.f-project-thumbnail__heading {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 0.6rem;
+	width: calc(100% + var(--gutter-width));
+}
+
+.f-project-thumbnail__byline {
+	margin: 0 0 2rem;
+
+	color: var(--color-grey);
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.f-project-thumbnail__text {
+	display: block;
+
+	margin: 0;
+
+	color: var(--color-grey);
+	font-size: 1.2rem;
+	font-weight: normal;
+	line-height: 1.5rem;
+
+	overflow: hidden;
+}
+.f-project-thumbnail__summary {
+	position: absolute;
+	/* display: flex is set on f-progress__data */
+	flex-direction: column;
+	clip: rect(0, 50rem, 2rem, 0);
+	height: 2rem;
+	margin-left: var(--gutter-width);
+
+  color: var(--color-grey-dark);
+  line-height: 1.2;
+}
+.f-progress-thumbnail__data-element {
+	 margin: 0;
+
+  color: var(--color-grey-dark);
+  line-height: 1.2;
+
+  will-change: transform;
+  animation-duration: 8s;
+  animation-name: odometer;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+}
+.f-project-thumbnail__summary span {
+	color: var(--color-red);
+}
+
+.f-project-thumbnail__image {
+	margin: 0;
+
+	cursor: pointer;
+	filter: grayscale(100%);
+}
+.f-project-thumbnail__image img {
+	height: 22.4rem;
+	width: 100%;
+	object-fit: cover;
+	object-position: 50% 50%;
+}
+@media screen and (--viewport-mobile) {
+/*This makes sure the grayscale filter won't be on mobile:*/
+	.f-project-thumbnail__image {
+		filter: none;
+	}
+}
+.f-project-thumbnail__image:hover {
+	filter: grayscale(0%);
+	transition: .3s ease-in-out;
+}
+
+.f-project-thumbnail__image-text {
+	/*
+	.f-project-thumbnail__image-filter {
+	position: relative;
+	height: 16rem;
+
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+
+  background: var(--color-white-transparent, hsla(0, 0%, 100%, 0.8));
+
+	filter: blur(2px);
+}*/
+	/*TODO: https://github.com/Firefund/styleguide/issues/22 */
+}
+
+.f-project-thumbnail__image, .f-project-thumbnail__progress {
+	margin-right: var(--gutter-width);
+}
+
+.f-project-thumbnail__progress {
+	margin-left: var(--gutter-width);
+
+	background-color: var(--color-grey-light);
+}

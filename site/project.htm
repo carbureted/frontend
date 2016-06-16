@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>FIREFUND Shelter</title>
+	<style>
+		/* Style splash screen here	*/
+		
+		* {
+			font-family: "Roboto";
+		}
+		
+		body {
+			background-color: black;
+		}
+		
+		@keyframes light-white {
+			to {
+				color: hsla(0, 0%, 85%, 1);
+			}
+		}
+		
+		@keyframes light-red {
+			to {
+				color: hsla(1, 73.7%, 31%, 1);
+			}
+		}
+		
+		.f-splash {
+			position: fixed;
+			z-index: 100;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: hsla(0, 0%, 0%, 0.6);
+			-webkit-transition: opacity 300ms ease 1s;
+			transition: opacity 300ms ease 1s;
+			opacity: 0;
+		}
+		
+		.f-splash_loading {
+			opacity: 1;
+		}
+		
+		.f-splash__content {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+		
+		.f-splash__branding {
+			margin: 0;
+			color: hsla(0, 0%, 100%, 1);
+			font-size: 4.1rem;
+			line-height: 4.1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			animation: light-white 1s ease-in-out alternate infinite;
+		}
+		
+		.f-splash__branding span {
+			color: hsla(1, 73.7%, 38.8%, 1);
+			animation: light-red 1s ease-in-out alternate infinite 250ms;
+		}
+		
+		#splash {
+			transform: scale(3);
+		}
+	</style>
+	<link rel="stylesheet" href="css/bundle.css">
+	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
+       (instead of dynamically loading it later in JS) is that the parser can go
+       to town pre-fetching resources, etc. -->
+	<link rel="import" class="f-import" href="wc/header.htm" async>
+</head>
+
+<body>
+	<div id="splash" class="f-splash f-splash_loading">
+		<div class="f-splash__content">
+			<h2 class="f-splash__branding">FIRE<span>FUND</span>: SHELTER</h2>
+		</div>
+	</div>
+	<f-header></f-header>
+	<div class="f-hero">
+		<img src="foo/bar.png">
+		<div class="f-hero__wrapper">
+			<div class="f-row f-row_6">
+				<div class="f-row__cell">
+					<div class="f-hero__heading">
+						<h1><span>Project: </span>Shelter</h1>
+					</div>
+				</div>
+				<div class="f-row__cell-2 f-row__cell-mobile-5">
+					<p class="f-hero__text">
+						<span>Shelter is an autonomous tech collective and was born </span>
+						<span>since we saw a need to provide secure and stable infrastructure</span>
+						<span>that are run with solidarity in mind rather than motivated by profit.</span>
+						<span>We will provide shelter friends! We need support.</span>
+					</p>
+				</div>
+			</div>
+			</div><!-- /f-hero__wrapper -->
+		</div>
+		<section class="f-page-wrapper">
+			<div class="f-row f-row_6">
+				<div class="f-row f-row_reverse">
+					<section class="f-row__cell-2 f-row__cell-mobile">
+						<div class="f-content" style="padding-top:3.4rem;">
+							<button class="f-button-donate_kush" onclick="document.querySelector('.f-modal').classList.add('f-modal_visible')">SUPPORT</button>
+							<section class="f-progress f-progress_vertical" data-value="38">
+								<div class="f-progress__bar">
+									<div style="width: 38%;" class="f-progress__value"></div>
+								</div>
+								<div class="f-progress__data">
+									<p class="f-progress__data-element">
+										<span>38%</span> of $50,000
+									</p>
+									<p class="f-progress__data-element">
+										<span>$14,928</span> reached in total
+									</p>
+									<p class="f-progress__data-element">
+										<span>22</span> days to go
+									</p>
+								</div>
+							</section>
+							
+							<button class="f-icon-facebook f-button-icon f-button-icon_facebook">Share on facebook</button>
+							<button class="f-icon-twitter f-button-icon f-button-icon_twitter">Share on twitter</button>
+							<button class="f-icon-reddit f-button-icon f-button-icon_reddit">Discuss onreddit</button>
+						</div>
+						<div class="f-row_not-mobile">
+							<div class="f-content">  <!-- DUPLICATE -->
+							<h2 class="f-right-heading">About Shelter</h2>
+							<p class="f-text">The people that working with Shelter have long experience working in the "engine room" of the internet, designing, constructing and maintaining systems. </p>
+							<p class="f-text">We are a closed group of people that share the same political value and have known each other for many years. All our decision are made together and we have fully control over our infrastructure. Even if we are a closed group we are networked with many other collectives, groups and people around the world.</p>
+							<h2 class="f-right-heading">Current friends</h2>
+							<p class="f-cuff-text">Here are some of our friends:</p>
+							<h2 class="f-one-liner"><a href="http://telekommunisten.net/">Telekommunisten</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://riseup.net">Riseup</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://www.systemli.org/">Systemli</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://so36.net/">so36.net</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="http://nadir.org/">Nadir</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://mayfirst.org/">May First / People Link</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://www.immerda.ch/">immerda.ca</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://www.boum.org/">boum.org</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="http://konsthack.se/">Konsthack</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="http://www.autistici.org/">Autistici/Inventati</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="http://hogdalen.biz/">H&ouml;gdalen Business School</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://alltatalla.se/">Allt &aring;t alla</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="http://research.nu">Researchgruppen</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://redox.dk/">Redox</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="http://motkraft.net/">Motkraft</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="http://modkraft.dk/">Modkraft</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://www.eff.org/">EFF / Electronic Frontier Foundation</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://calafou.org/">Calafou</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://lorea.org/">Lorea</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="http://sindominio.net/">Sindominio</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://tachanka.org/">Tachanka</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="http://www.puscii.nl/">Puscii</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://www.free.de/">Free</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://espiv.net/">Espiv</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://tacticaltech.org/">Tachtical Tech</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://ipredator.se/">IPredator</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://www.sarava.org/">Sarav&aacute;</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://planet.squat.net/">squat.net</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://resist.ca/">Resist</a></h2>
+				            </li>
+				            <h2 class="f-one-liner"><a href="https://www.firefund.net/">Firefund</a></h2>
+				            </li>
+						</div>
+					</div>
+				</section>
+				<article class="f-row__cell-mobile f-row__cell-4">
+					<div class="f-content">
+						<h1 class="f-left-heading">Servers for Shelter</h1>
+						<figure class="f-media">
+							<iframe class="f-media__media" height="200" src="https://www.youtube.com/embed/DkTb7Pe2MtY" frameborder="" allowfullscreen></iframe>
+						</figure>
+						<p class="f-cuff-text">Secure hosting is essential for serious political movements and initiatives, but activists shouldn't spend their time on servers. They should spend it on the streets. Don't just leave hosting to any specialist, leave it with other activists who will provide it for free out of pure solidarity.
+						</p>
+						<section class"f-text">
+							<h2 class="f-text__heading">Security is not a tin-foil issue</h2>
+							<p class="f-text__text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+							</p>
+							<p class="f-text__text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+							</p>
+						</section>
+						<figure class="f-media">
+							<img class="f-media__media" src="assets/image/10.jpg">
+						</figure>
+						<section class"f-text">
+							<h2 class="f-text__heading">Heading explaining what the text will be about</h2>
+							<p class="f-text__text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+							</p>
+							<p class="f-text__text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Nulla perspiciatis, atque id, tenetur excepturi et repellendus dolorem
+								necessitatibus corporis fuga? Dolorem quasi earum omnis nam obcaecati
+								autem doloremque voluptate fugiat.
+							</p>
+						</section>
+						<h2 class="f-left-heading">More info</h2>
+						<p class="f-one-liner">Here's some extra ressources.</p>
+						<ul class="f-list">
+							<li>The unordered one! Lets make a loooooong sentence and se what the fuck is happining up in here! Double that shit up motherfucker yeah biiiitch</li>
+							<li>The unordered second! And this one is shorty! </li>
+							<li>The unordered one! Lets make a loooooong sentence and se what the fuck is happining up in here! Double that shit up motherfucker yeah biiiitch</li>
+						</ul>
+						<p class="f-one-liner">Here's some extra ressources.</p>
+						<p class="f-one-liner"><a href="#">AFA Kviddinge</a></p>
+						<p class="f-one-liner"><a href="#">AFA Over Vindinge</a></p>
+						<p class="f-one-liner"><a href="#">Konservativ Ungdom Odense</a></p>
+						<button class="f-button-donate_kush" onclick="document.querySelector('.f-modal').classList.add('f-modal_visible')">SUPPORT</button>
+						<section class="f-progress" data-value="38">
+							<div class="f-progress__bar">
+								<div style="width: 38%;" class="f-progress__value"></div>
+							</div>
+							<div class="f-progress__data">
+								<p class="f-progress__data-element">
+									<span>38%</span> of $50,000
+								</p>
+								<p class="f-progress__data-element">
+									<span>$14,928</span> reached in total
+								</p>
+								<p class="f-progress__data-element">
+									<span>22</span> days to go
+								</p>
+							</div>
+						</section>
+					</div>
+				</article>
+			</div>
+			<div class="f-row">
+				<div class="f-row f-row_6">
+					<section class="f-row_not-desktop f-row__cell-mobile">
+						<div class="f-content"> <!-- DUPLICATE -->
+						<h2 class="f-right-heading">About the FUCK</h2>
+						<p class="f-text">Karmus er en homie og vi hjælper vores homies. Donate AF! </p>
+						<p class="f-text">Mere er der sådan set ikke at sige om det. </p>
+						<h2 class="f-right-heading">Campaign groups</h2>
+						<p class="f-cuff-text">The following groups stand with the reconstruction of Karmus</p>
+						<h2 class="f-one-liner"><a href="#">AFA Kviddinge</a></h2>
+						<h2 class="f-one-liner"><a href="#">AFA Over Vindinge</a></h2>
+						<h2 class="f-one-liner"><a href="#">Konservativ Ungdom Odense</a></h2>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="f-spacer"></div>
+<footer class="f-footer">
+	<div class="f-row f-row_12">
+		<div class="f-row__cell-4">
+			<div class="f-footer-sitemap">
+				<h2 class="f-branding f-sitemap__branding">Fire<span>fund</span></h2>
+				<ul class="f-sitemap__links">
+					<li><a href="">About us</a></li>
+					<li><a href="">Blog</a></li>
+					<li><a href="">Terms</a></li>
+					<li><a href="">Contact</a></li>
+					<li><a href="">Manifesto</a></li>
+					<li><a href="">Team</a></li>
+					<li><a href="">Who we are</a></li>
+					<li><a href="">How does it work</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
+			<div class="f-row_not-desktop">
+				<!-- hacking the grid - display:none; in desktop -->
+				<p class="f-footer-text">
+					Firefund is a crowdfunding platform for progressive movements and activists.
+				</p>
+			</div>
+			<div class="f-row_not-mobile">
+				<!-- hacking the grid - display:none; in mobile -->
+				<p class="f-footer-text">
+				Firefund is a crowdfunding platform for progressive movements and activists. We work to finance and organize social change from the bottom.
+				</p>
+			</div>
+			<div class="f-footer-signup">
+				<form class="f-signup">
+					<label class="f-signup__label">Sign up for news:
+						<input class="f-signup__input" type="email" placeholder="mail@radical.rev" required>
+					</label>
+					<button class="f-signup__button">Submit</button>
+				</form>
+			</div>
+			<div class="f-row__cell-mobile-10 f-row__cell_push_2 f-row__not-desktop">
+				<ul class="f-footer-icons f-icon-list f-icon-list_horizontal">
+					<li>
+						<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+					</li>
+					<li>
+						<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="f-row__cell-2 f-row__cell_push_2 f-row__not-mobile">
+			<ul class="f-footer-icons f-icon-list">
+				<li>
+					<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+				</li>
+				<li>
+					<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /f-row -->
+</footer>
+<div class="f-modal" onclick="this.classList.remove('f-modal_visible')">
+	<div class="f-modal__content">
+		<div class="f-content">
+			<div class="f-payment">
+				<div class="f-row f-row_12">
+					<div class="f-row__cell-7 f-row_not-mobile">
+						<h2 class="f-payment__heading"> Choose the amount and method of payment</h2>
+						<p class="f-payment__text">A pledged donation will only transfer if the c"ampaign reaches the goal within the timeframe. <a href="#">Read more.</a></p>
+						<button class="f-button-basic f-payment__button">Pledge</button>
+					</div>
+					<div class="f-row_not-desktop f-row__cell-mobile_push_2 f-row__cell-mobile-8">
+						<h2 class="f-payment__heading f-payment__heading_mobile"> Choose the amount and method of payment</h2>
+						<p class="f-payment__text">A pledged donation will only transfer if the campaign reaches the goal within the timeframe. <span>Read more.</span></p>
+						<button class="f-button-basic f-payment__button">Pledge</button>
+					</div>
+					<div class="f-row__cell-1 f-row_not-mobile">
+						<div class="f-payment__arrow"></div>
+					</div>
+					<div class="f-row_not-desktop f-row__cell-mobile_push_3 f-row__cell-mobile-8">
+						<div class="f-payment__arrow f-payment__arrow_mobile"></div>
+					</div>
+					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
+						<div class="f-payment__radio-group f-radio-group">
+							<div class="f-column f-column_2 f-column_mobile_3">
+								<div class="f-radio-group__element">
+									<input id="rb10" type="radio" name="rb" value="500">
+									<label for="rb10">$500</label>
+								</div>
+								<div class="f-radio-group__element">
+									<input id="rb11" type="radio" name="rb" value="250">
+									<label for="rb11">$250</label>
+								</div>
+								<div class="f-radio-group__element">
+									<input id="rb12" type="radio" name="rb" value="100">
+									<label for="rb12">$100</label>
+								</div>
+								<div class="f-radio-group__element">
+									<input id="rb13" type="radio" name="rb" value="50">
+									<label for="rb13">$50</label>
+								</div>
+								<div class="f-radio-group__element">
+									<input id="rb14" type="radio" name="rb" value="20">
+									<label for="rb14">$20</label>
+								</div>
+								<div class="f-text-input f-radio-group__element f-payment__radio-input">
+									<input id="rb15" type="radio" name="rb" value="20">
+									<label for="rb15">
+										<input class="f-text-input__text-field" type="number" placeholder="$10">
+									</label>
+								</div>
+								</div><!-- /f-column -->
+							</div>
+							<div class="f-row__cell-12">
+								<div class="f-payment__button-group">
+									<button class="f-button-basic f-payment__button">Bitcoin</button>
+									<button class="f-button-basic f-payment__button">Credit card</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div><!-- /f-row_12 -->
+					<div class="f-payment__footer">
+						<div class="f-row f-row_12">
+							<div class="f-row__cell-6 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
+								<div class="f-payment__footer-text f-text">You decide the cut. Please, keep in mind that FIREFUND is non-profit and activist-driven.
+								</div>
+							</div>
+							<div class="f-row__cell-1 f-row__cell-mobile_push_2 f-row__cell-mobile-1">
+								<p class="f-payment__footer-text f-text f-payment__range-label">FIREFUND</p>
+								<p class="f-payment__footer-text f-text f-payment__range-label">KOBANE</p>
+							</div>
+							<div class="f-row__cell-3">
+								<div class="f-payment__slider">
+									<input class="f-payment__slider-style" type="range"/>
+								</div>
+								<div class="f-payment__slider">
+									<input class="f-payment__slider-style" type="range"/>
+								</div>
+							</div>
+							<div class="f-row__cell-2">
+								<div class="f-payment__footer-text f-text f-payment__range-label">$42.45</div>
+								<div class="f-payment__footer-text f-text f-payment__range-label">$8.55</div>
+							</div>
+						</div>
+					</div>
+					</div><!-- /f-payment -->
+				</div>
+			</div>
+		</div>
+		<script>
+		// demo script
+		// document.querySelector(".f-button-donate_kush").addEventListener("click", function(e) {
+		// 	document.querySelector(".f-modal").classList.toggle("f-modal_visible")
+		// })
+		</script>
+		<script src="js/loader.js" charset="utf8" async>
+			< script > // TODO: Why is this needed?!?
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+
