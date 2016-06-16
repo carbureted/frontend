@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>about:contact</title>
+	<style>
+		/* Style splash screen here	*/
+
+		* {
+			font-family: "Roboto";
+		}
+
+		body {
+			background-color: black;
+		}
+
+		@keyframes light-white {
+			to {
+				color: hsla(0, 0%, 85%, 1);
+			}
+		}
+
+		@keyframes light-red {
+			to {
+				color: hsla(1, 73.7%, 31%, 1);
+			}
+		}
+
+		.f-splash {
+			position: fixed;
+			z-index: 100;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: hsla(0, 0%, 0%, 0.6);
+			-webkit-transition: opacity 300ms ease 1s;
+			transition: opacity 300ms ease 1s;
+			opacity: 0;
+		}
+
+		.f-splash_loading {
+			opacity: 1;
+		}
+
+		.f-splash__content {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		.f-splash__branding {
+			margin: 0;
+			color: hsla(0, 0%, 100%, 1);
+			font-size: 4.1rem;
+			line-height: 4.1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			animation: light-white 1s ease-in-out alternate infinite;
+		}
+
+		.f-splash__branding span {
+			color: hsla(1, 73.7%, 38.8%, 1);
+			animation: light-red 1s ease-in-out alternate infinite 250ms;
+		}
+
+		#splash {
+			transform: scale(3);
+		}
+	</style>
+	<link rel="stylesheet" href="css/bundle.css">
+	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
+       (instead of dynamically loading it later in JS) is that the parser can go
+       to town pre-fetching resources, etc. -->
+	<link rel="import" class="f-import" href="wc/header.htm" async>
+</head>
+
+<body>
+	<div id="splash" class="f-splash f-splash_loading">
+		<div class="f-splash__content">
+			<h2 class="f-splash__branding">Fire<span>fund</span></h2>
+		</div>
+	</div>
+
+	<f-header></f-header>
+
+	<article class="f-content">
+
+		<h1 class="f-left-heading f-left-heading_big">About us</h1>
+
+		<div class="f-spacer"></div>
+
+		<section class="f-button-group">
+			<div class="f-column f-column_3 f-column_mobile_2">
+				<button class="f-button-group__button">Terms</button>
+				<button class="f-button-group__button">Blog</button>
+				<button class="f-button-group__button">Manifesto</button>
+				<button class="f-button-group__button">Contact</button>
+				<button class="f-button-group__button">Who we are</button>
+				<button class="f-button-group__button">Dank memes</button>
+			</div>
+		</section>
+
+		<article class="f-accordian">
+			<h2 class="f-accordian__heading">Send a quick message</h2>
+			<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');">
+				<div></div>
+			</a>
+			<div class="f-accordian__cuff-wrapper">
+				<div class="f-row f-row_6">
+					<div class="f-row__cell-4 f-row__cell-mobile">
+						<p class="f-accordian__cuff-text">If you want to get in contact with FIREFUND and do not have any special requirements regarding security and anonymity, send us a quick message, using the form below.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="f-accordian__content">
+
+				<form>
+					<section class="f-row f-row_6">
+						<div class="f-row__cell-4">
+
+							<div class="f-text-input">
+								<label class="f-text-input__label">Name
+									<input class="f-text-input__text-field" type="text" placeholder="Name, organization, newspaper, etc.">
+								</label>
+							</div>
+
+							<fieldset class="f-radio-group">
+								<legend>Regarding</legend>
+								<radiogroup>
+									<div class="f-radio-group__element">
+										<input id="rb1" type="radio" name="rb" value="Press">
+										<label for="rb1">Press</label>
+									</div>
+									<div class="f-radio-group__element">
+										<input id="rb2" type="radio" name="rb" value="Political">
+										<label for="rb2">Political cooperation / mutial aid</label>
+									</div>
+									<div class="f-radio-group__element">
+										<input id="rb3" type="radio" name="rb" value="Other">
+										<label for="rb3">Other</label>
+									</div>
+								</radiogroup>
+							</fieldset>
+
+							<div class="f-text-input f-text-input_multiline">
+								<label class="f-text-input__label">Message
+									<textarea class="f-text-input__text-field" rows="6" placeholder="This is OpenPGP encrypted using the OpenPGP.js library"></textarea>
+							</label>
+							</div>
+
+							<button class="f-button-basic">Send</button>
+
+						</div><!-- /f-row__cell-4 -->
+						<div class="f-row__cell-2"><!-- empty --></div>
+					</section><!-- /f-row -->
+
+				</form>
+
+			</div>
+		</article>
+
+		<article class="f-accordian">
+			<h2 class="f-accordian__heading">PGP encrypted email</h2>
+			<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');">
+				<div></div>
+			</a>
+			<div class="f-accordian__cuff-wrapper">
+				<div class="f-row f-row_6">
+					<div class="f-row__cell-4 f-row__cell-mobile">
+						<p class="f-accordian__cuff-text">If you want to keep the content of your message anonymous, you can send us an encrypted email using our public key, shown below</p>
+					</div>
+				</div>
+			</div>
+			<div class="f-accordian__content">
+				<form>
+					<div class="f-row f-row_6">
+						<div class="f-row__cell-4">
+
+							<div class="f-text-input f-text-input_readonly">
+								<label class="f-text-input__label">Key ID:
+									<input class="f-text-input__text-field" readonly type="text" placeholder="Name, organization, newspaper, etc.">
+								</label>
+							</div>
+
+							<div class="f-text-input f-text-input_readonly">
+								<label class="f-text-input__label">Fingerprint:
+									<input class="f-text-input__text-field" readonly type="text" placeholder="Name, organization, newspaper, etc.">
+								</label>
+							</div>
+
+						</div><!-- /f-row__cell-4 -->
+						<div class="f-row__cell-2"><!-- empty --></div>
+					</div><!-- /f-row -->
+
+					<div class="f-row f-row_6">
+						<div class="f-row__cell">
+
+							<div class="f-text-input f-text-input_readonly f-text-input_multiline">
+								<label class="f-text-input__label">PGP Public key // <a href="#">Copy to clipboard</a> // <a href="#">Download</a>  
+									<textarea class="f-text-input__text-field" readonly rows="20">
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.13 (MingW32)
+
+mI0EVzpzJAEEAOczHUF98HyisH1XDN2i3amY2Q7V3hjfhKi4VC5FevgkFH//tPUh
+1zDld92b1zmC2aBj4tJ7B57g7ohBQO/5KOTf6GVQLuuqAXLNyUdbMa1xtOIP8byb
+HgyFDyhol5GRBeCxvbL8EHJEY/WEa2XIS6NcDjDJYrg8ERFnF7PladTxABEBAAG0
+CVRlc3QgTWFuZIi+BBMBAgAoBQJXOnMkAhsDBQkAJ40ABgsJCAcDAgYVCAIJCgsE
+FgIDAQIeAQIXgAAKCRCfcYCk0/uwS2kcBACCebL1e02SG/No1gH6/1A1ifQhj9d7
+J5d8o69lQEI6niegT27jKRI+D5Bo8tQfX3i4eftTAJBUlWxcEk1eCE7mf18aiowM
+GZ8aizTtf3CIIKq8lhPdHLsAUcPgZOARBAJEpjC/kvwFAJesmPx08l+CmfLOcOxz
+KSnWsAxpPwrUnbiNBFc6cyQBBADJoYbvUqmyWQlPc/vo6ugppQiuHGURSIyAXXH9
+sQ+36n8yzTED/8s2jmj2WEbFP47K1NVIBgov6V/C8eCMjScoIxqmOnlh7prJ2rg7
+5EwwPj2As5ciIwow+t30skJRvwAxh0qa8+oicwsY4KTjAEiFzbqLIv8/GTjGmbH6
+5+LNAwARAQABiKUEGAECAA8FAlc6cyQCGwwFCQAnjQAACgkQn3GApNP7sEvPnAP/
+YRPMk0RdBSXCKBkt94Pukr6lPulBt+SzhTGarjYP0cnIcaqGeJOgH8dLlbpBvmx6
+snBsJAo3cIjqDmw/E7+VOpdk0jFrcI4fKUXcT2E7ywAzszQ7ayc8QLimUQJyba+/
+LjSacZsYqWRmM+9k6w3XZren33fIXweEguZ7raQapV8=
+=q3KY
+-----END PGP PUBLIC KEY BLOCK-----
+									</textarea>
+								</label>
+							</div>
+
+						</div><!-- /f-row__cell -->
+					</div><!-- /f-row -->
+
+				</form>
+
+			</div>
+		</article>
+
+		<article class="f-accordian f-accordian_link">
+			<h2 class="f-accordian__heading">Just a regular email</h2>
+			<a class="f-accordian__arrow" href="mailto:gimme@the.heat.com">
+				<div></div>
+			</a>
+			<div class="f-accordian__cuff-wrapper">
+				<div class="f-row f-row_6">
+					<div class="f-row__cell-4 f-row__cell-mobile">
+						<p class="f-accordian__cuff-text">
+							Send it to: <span>firefund >AT< riseup >DOT< net</span> or
+							<em class="f-row_not-mobile">click on</em>
+							<em class="f-row_not-desktop">touch</em> the arrow.
+						</p>
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<article class="f-accordian f-accordian_link">
+			<h2 class="f-accordian__heading">Reddit</h2>
+			<a class="f-accordian__arrow" href="https://www.reddit.com/r/firefund" target="_blank">
+				<div></div>
+			</a>
+			<div class="f-accordian__cuff-wrapper">
+				<div class="f-row f-row_6">
+					<div class="f-row__cell-4 f-row__cell-mobile">
+						<p class="f-accordian__cuff-text">Our subreddit is a open forum for everyone to see, but a wonderful place to ask the community.</p>
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<div class="f-spacer"></div>
+
+	</article>
+
+	<div class="f-spacer"></div>
+
+	<footer class="f-footer">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4">
+				<div class="f-footer-sitemap">
+					<h2 class="f-branding f-sitemap__branding">Fire<span>fund</span></h2>
+					<ul class="f-sitemap__links">
+						<li><a href="">About us</a></li>
+						<li><a href="">Blog</a></li>
+						<li><a href="">Terms</a></li>
+						<li><a href="">Contact</a></li>
+						<li><a href="">Manifesto</a></li>
+						<li><a href="">Team</a></li>
+						<li><a href="">Who we are</a></li>
+						<li><a href="">How does it work</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
+				<div class="f-row_not-desktop">
+					<!-- hacking the grid - display:none; in desktop -->
+					<p class="f-footer-text">
+						We are activists from all over. we are everywhere. Beware!
+					</p>
+				</div>
+				<div class="f-row_not-mobile">
+					<!-- hacking the grid - display:none; in mobile -->
+					<p class="f-footer-text">
+						We are activists from all over. we are everywhere. <span>Beware!</span> We have knives and dogs. they <span>bite</span> and <a href="">sting</a>. love firefund <span>staff</span>
+					</p>
+				</div>
+				<div class="f-footer-signup">
+					<form class="f-signup">
+						<label class="f-signup__label">Sign up for news:
+								<input class="f-signup__input" type="email" placeholder="mail@radical.rev" required>
+							</label>
+						<button class="f-signup__button">Submit</button>
+					</form>
+				</div>
+				<div class="f-row__cell-mobile-10 f-row__cell_push_2 f-row__not-desktop">
+					<ul class="f-footer-icons f-icon-list f-icon-list_horizontal">
+						<li>
+							<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+						</li>
+						<li>
+							<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-row__cell-2 f-row__cell_push_2 f-row__not-mobile">
+				<ul class="f-footer-icons f-icon-list">
+					<li>
+						<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+					</li>
+					<li>
+						<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /f-row -->
+	</footer>
+
+	<script src="js/loader.js" charset="utf8" async>
+		< script > // TODO: Why is this needed?!?
+			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
+	</script>
+</body>
+
+</html>

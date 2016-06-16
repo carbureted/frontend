@@ -1,0 +1,25 @@
+{
+  "name": "firefund-styleguide",
+  "description": "Firefund live styleguide",
+  "authors": [
+    "dotnetCarpenter <jon.ronnenberg@gmail.com>",
+    "troldmand",
+    "magiker420"
+  ],
+  "license": "Unlicense",
+  "homepage": "https://github.com/Firefund/styleguide",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~1.4.0",
+    "openpgp": "^2.3.0",
+    "scrollme": "^1.1.0",
+    "jquery": "^2.2.4"
+  }
+}

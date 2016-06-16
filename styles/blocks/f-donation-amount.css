@@ -1,0 +1,32 @@
+/*
+<pre>
+Block f-donation-amount
+	Element f-donation-amount__data
+</pre>
+
+## Direct donation amount.
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+<!-- this should be used on the website -->
+<p class="f-donation-amount"><span class="f-donation-amount__data">$10,345</span> in direct donations</p>
+<!-- this should be used on the website -->
+
+</div>
+```
+ */
+ @import "../variables";
+
+ .f-donation-amount {
+	margin-top: 0;
+	margin-bottom: 3rem;
+
+	color: var(--color-grey);
+	font-size: 1.6rem;
+	font-weight: normal;
+ }
+
+ .f-donation-amount__data {
+	 color: var(--color-grey-dark);
+	 font-weight: bold;
+ }

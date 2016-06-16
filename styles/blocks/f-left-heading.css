@@ -1,0 +1,86 @@
+/*
+
+A heading with the background reaching the left side of its container,
+
+If the container isn't `f-content`', then the heading will *leak* out.
+
+<pre>
+BLOCK f-left-heading
+</pre>
+
+
+## f-left-heading - container with padding
+```
+<div class="f-content">
+
+	<!-- this should be used on the website -->
+	<h1 class="f-left-heading">Rebuild Kobanê</h1>
+	<!-- this should be used on the website -->
+
+</div>
+```
+
+
+## f-left-heading - leaking out of container
+
+If the container isn't `f-content`', then the heading will *leak* out.
+
+```
+<div class="kalei-background-white"><!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	<h1 class="f-left-heading">Rebuild Kobanê</h1>
+	<!-- this should be used on the website -->
+
+</div><!-- only here for the style guide - should not be used on the website -->
+```
+
+## .f-left-heading_big - container with padding
+```
+<div class="f-content">
+	<!-- this should be used on the website -->
+	<h1 class="f-left-heading f-left-heading_big">About us</h1>
+	<!-- this should be used on the website -->
+</div>
+```
+
+
+## .f-left-heading_big - leaking out of container
+```
+<div class="kalei-background-white"><!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	<h1 class="f-left-heading f-left-heading_big">About us</h1>
+	<!-- this should be used on the website -->
+
+</div><!-- only here for the style guide - should not be used on the website -->
+```
+*/
+
+
+@import "../variables";
+
+.f-left-heading {
+	display: inline-flex;
+
+	margin: 4rem 0 2.8rem -var(--gutter-width);
+	padding: .8rem 1.93rem .8rem var(--gutter-width); 
+	
+	color: var(--color-white);
+	font-size: 3.0rem;
+
+	background-color: var(--color-black);
+}
+
+.f-left-heading_big {
+	display: inline-flex;
+
+	padding: .6rem 1.93rem 1.2rem var(--gutter-width); 
+	
+	color: var(--color-white);
+	font-size: 6.6rem;
+	line-height: 0.9;
+
+	background-color: var(--color-black);
+}
+

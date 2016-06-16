@@ -1,0 +1,47 @@
+/*
+# 99.99% rounding issue in Edge
+
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+<section class="f-row f-row_12">
+	<div class="f-row__cell-8"><p>This is a long cell spanning 8 cells</p></div>
+	<div class="f-row__cell-4"><p>This is a short cell spanning 4 cells</p></div>
+</section>
+
+</div> <!-- only here for the style guide - should not be used on the website -->
+```
+*/
+@lost gutter 3.4rem;
+html {
+  box-sizing: border-box;
+  /* Change 1 rem to mean 10px in a standard browser */
+  font-size: 62.5%;
+  
+  lost-center: 192rem;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.f-row {
+	lost-flex-container: row;
+	width: 100%;
+}
+
+.f-row::after {
+	lost-utility: clearfix;
+}
+
+.f-row__cell {
+	lost-column: 1 flex;
+}
+
+.f-row_12 .f-row__cell-4 {
+	lost-column: 4/12 flex;
+	background-color: hsla(1, 73.7%, 38.8%, .5);
+}
+.f-row_12 .f-row__cell-8 {
+	lost-column: 8/12 flex;
+	background-color: hsla(0, 0%, 20%, .5);
+}

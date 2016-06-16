@@ -1,0 +1,429 @@
+/*
+# Kalei Themes
+
+To make sure the code demo's are un-affected by Kaleis own styles we only set a few global styles
+
+The menu is **fixed** and the page contained simply aligns itself 20rem from the left.
+
+*/
+
+html, body, .kalei {
+  height: 100%;
+  background: #f6f4f4;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.kalei {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* Inline code blocks - in markdown it's `code` */
+code.undefined {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+.kalei-style-menu-container {
+  position: fixed;
+  /*width: 30rem;*/
+  width: 3rem;
+  height: 100%;
+  border-right: 1px solid #ccc;
+  background-color: #fff;
+  
+  transition: width 250ms 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  willchange: width;}
+.kalei-style-menu-container:hover {
+  width: 30rem;
+}
+
+.kalei-styleguide-menu-heading {
+    position: absolute;
+    height: 7.5rem;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.kalei-styleguide-menu {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.kalei-style-page {
+  position: absolute;
+  left: 3rem;
+  width: calc(100% - 3rem);
+  padding: 2rem;
+
+  background-color: #f6f4f4;
+  
+  transition: left 250ms 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275), width 250ms 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  will-change: left, width;
+}
+.kalei-style-menu-container:hover + .kalei-style-page {
+  left: 30rem;
+  width: calc(100% - 30rem);
+}
+
+.kalei-menu-items {
+    position: absolute;
+    top: 7.5rem;
+    left: 0;
+    bottom: 0;
+    width: 30rem;
+}
+
+
+/*
+## Headings and paragraphs
+```
+<div class="kalei-comments">
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+  <p class="fixie"></p>
+  <ul>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+  </ul>
+</div>
+
+```
+*/
+
+.kalei-comments > h1,
+.kalei-comments > h2,
+.kalei-comments > h3,
+.kalei-comments > h4,
+.kalei-comments > h5,
+.kalei-comments > h5,
+.kalei-comments > h6,
+.kalei-comments > ul,
+.kalei-comments > ol,
+.kalei-comments > p a,
+.kalei-comments > p a:visited,
+.kalei-comments > a:visited,
+.kalei-comments > a,
+.kalei-styleguide-menu-heading > h1,
+.kalei-styleguide-menu > li > h3,
+.kalei-sheet-submenu li,
+.kalei-styleguide-menu-stylesheets,
+.kalei-comments > p {
+  margin: 0;
+  padding: 1rem;
+  color: #444;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.kalei-comments> p a,
+.kalei-comments> p a:visited {
+  padding: 0;
+}
+
+.kalei-comments > iframe {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.kalei-comments > ul,
+.kalei-comments > ol {
+  margin-left: 2rem;
+}
+
+.kalei-comments > ul,
+.kalei-comments > ol,
+.kalei-comments > p {
+  font-size: 1.4rem;
+}
+
+/*
+## CSS and Comments Layout
+
+These styles make sure the css code block is floated to the right correctly and the comments on the left
+
+```
+<div class="kalei-documentation">
+
+  <div class="kalei-comments-container ">
+    <div class="kalei-comments ">
+      <p>This is a test Kalei comment.</p>
+    </div>
+  </div>
+
+</div>
+```
+*/
+
+.kalei-style-page > .kalei-documentation {
+  position: relative;
+}
+
+.kalei-comments-container {
+  position: relative;
+  width: 100%;
+}
+
+/*
+## Code demos
+
+When you use Markdown code blocks ```, Kalei automatically renders the code as HTML and beneath it shows the code block with syntax highlighting.
+```
+<pre>
+  <code>
+    .kalei-comments > pre > code,
+    .kalei-css-container > pre > code {
+      font-size: 1.1rem;
+      opacity: 0.7;
+      white-space: pre-wrap;
+      padding: 1rem;
+    }
+  </code>
+</pre>
+```
+*/
+
+.kalei-css-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.kalei-comments > pre > code,
+.kalei-css-container > pre > code {
+  padding: 1rem;
+  font-size: 1.4rem;
+  white-space: pre-wrap;
+}
+
+.kalei-css-container,
+.kalei-comments > pre > code {
+  opacity: 0.3;
+}
+
+.kalei-comments > pre > code:hover,
+.kalei-css-container:hover  {
+  opacity: 1;
+}
+
+.kalei-css-container.kalei-no-css {
+  display: none;
+}
+
+.kalei-comments >  pre {
+  position: relative;
+  margin: 0;
+  padding: 2rem;
+
+  font-size: small;
+
+  border: 1px solid #ebebeb;
+  border-top: none;
+  border-radius:  0 0 3px 3px;
+}
+
+.kalei-comments > pre > code:before {
+  content: "Code";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 3px 7px;
+  color: #ebebeb;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-radius: 0 0 4px 0;
+  background-color: #444;
+  opacity: 0.3;
+}
+
+.kalei-comments > pre > code:hover:before {
+  opacity: 1;
+}
+
+.kalei-comments {
+  padding: 2rem;
+  margin: 0 0 2rem 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.codedemo {
+  position: relative;
+  /*margin: 4rem;*/
+  font-size: 100%;
+  border-radius: 3px 3px 0 0;
+  border: 1px solid #ebebeb;
+  background-color: #000; /* black demo area */
+}
+
+*:not(.codedemo) .kalei-styleguide-menu-heading h1 {
+  width: 30rem;
+  margin: 2rem 0;
+  padding-left: 2rem;
+
+  color: #444;
+  font-size: 2.2rem;
+}
+
+*:not(.codedemo) .kalei-styleguide-menu-heading,
+.styleguide-menu-heading:visited {
+  text-decoration: none;
+}
+
+*:not(.codedemo) .kalei-styleguide-menu-heading:hover {
+  color: #222;
+}
+
+*:not(.codedemo) .kalei-styleguide-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.codedemo::after {
+  position: absolute;
+  content: "Example";
+  top: -1px;
+  left: -1px;
+
+  padding: 3px 7px;
+  
+  color: #ebebeb;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  border-radius: 3px 0 3px 0;
+  background-color: #444;
+
+  -webkit-transition: top .2s cubic-bezier(.29,-0.45,.67,1.4) 200ms;
+  -moz-transition: top .2s cubic-bezier(.29,-0.45,.67,1.4) 200ms;
+  transition: top .2s cubic-bezier(.29,-0.45,.67,1.4) 200ms;
+}
+.codedemo:hover::after {
+  top: -2rem;
+}
+/** Jon: show debug margin**/
+/*.codedemo-margin > *:first-child {
+  -webkit-transition: background-color 250ms 250ms cubic-bezier(.29,-0.45,.67,1.4);
+  -moz-transition: background-color 250ms 250ms cubic-bezier(.29,-0.45,.67,1.4);
+  transition: background-color 250ms 250ms cubic-bezier(.29,-0.45,.67,1.4);
+}*/
+.kalei-background-white { /* whitedemo area */
+  float: left;
+  clear: both;
+
+  height: 100%;
+  width: 100%;
+  /*margin: 2rem 0;*/
+
+  background-color: white;
+}
+.kalei-show-margin {
+  float: left;
+  clear: both;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: yellow;
+}
+.kalei-show-margin > * {
+  background-color: black; /* recreate black demo area */
+}
+.kalei-show-margin.kalei-background-white > *, .kalei-show-margin.f-content > * {
+  background-color: white; /* recreate white demo area */
+}
+/** END Jon: show debug margin**/
+
+.kalei-styleguide-menu-stylesheets {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.6rem;
+  background-color: #75eb33;
+  text-shadow: 0 0 1px #777;
+}
+
+.kalei-styleguide-menu > li > h3 {
+  margin-top: 2rem;
+  padding-left: 2rem;
+  color: #444;
+  font-weight: bold;
+  font-size: 1.6rem;
+
+}
+
+.kalei-styleguide-menu-link {
+  display: block;
+  position: relative;
+  height: 100%;
+  padding: 1rem 0 1rem 3rem;
+  color: #555;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+
+.kalei-styleguide-menu-link:hover,
+.kalei-styleguide-menu-link.active {
+  color: #ebebeb;
+  background-color: #444;
+}
+
+.kalei-styleguide-menu-link:hover:after,
+.kalei-styleguide-menu-link.active:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  margin-top: -6px;
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent #f7f7f7;
+}
+
+.kalei-sheet-submenu li.active {
+  background: #ebebeb;
+}
+
+.kalei-sheet-submenu ul {
+  margin: 0;
+  padding: 0;
+}
+.kalei-sheet-submenu li {
+  padding: 1rem 1rem 1rem 4rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+

@@ -1,0 +1,20 @@
+:root {
+  --color-red: hsla(1, 73.7%, 38.8%, 1);
+  --color-black: hsla(0, 0%, 0%, 1);
+  --color-black-transparent: hsla(0, 0%, 0%, 0.6);
+  --color-transparent: hsla(0, 0%, 0%, 0);
+  --color-white: hsla(0, 0%, 100%, 1);
+  --color-white-transparent: hsla(0, 0%, 100%, 0.8);
+  --color-grey: hsla(0, 0%, 40%, 1);
+  --color-grey-dark: hsla(0, 0%, 20%, 1);
+  --color-grey-light: hsla(0, 0%, 84.7%, 1);
+
+  --gutter-width: 3.4rem;
+  --margin-text: 3.3rem;
+  --site-max-width: 192rem;
+  --page-max-width: 98.4rem;
+}
+
+@custom-media --viewport-mobile (max-width: 640px);
+@custom-media --viewport-desktop (min-width: 640px);
+@custom-media --viewport-max-scale (max-width: 1000px);

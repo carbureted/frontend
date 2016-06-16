@@ -1,0 +1,176 @@
+/*
+# f-team-cards
+
+<pre>
+BLOCK f-team-cards
+    BLOCK f-team-member
+        ELEMENT f-team-member__image
+        ELEMENT f-team-member__card
+        ELEMENT f-team-member__heading
+        ELEMENT f-team-member__subheading
+        ELEMENT f-team-member__byline
+        ELEMENT f-team-member__text
+</pre>
+
+## Example 1
+```
+<div class="f-content"> <!-- only here for the style guide - should not be used on the website -->
+
+
+<section class="f-team-cards">
+    <div class="f-column f-column_3 f-column_mobile_2">
+            <div class="f-team-member">
+                <img class="f-team-member__image" src="assets/image/team1.jpg">
+                <div class="f-team-member__card">
+                    <h2 class="f-team-member__heading">Esther K</h2>
+                    <p class="f-team-member__subheading">Board member</p>
+                    <hr class="f-team-member__byline">
+                    <p class="f-team-member__text">
+                        This is Esther. She is a good activist. she does lots of stuff
+                        drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+                        a lot of work for student unions, both on high school level and university.
+                        she used to be a social democrat (but we don'te talk a lot about that')
+                        but is now in a really healthy transition of becomming a militant anarchist,
+                        so watch out cops - you about to get fucked!
+                    </p>
+                </div>
+            </div>
+            <div class="f-team-member">
+                <img class="f-team-member__image" src="assets/image/team1.jpg">
+                <div class="f-team-member__card">
+                    <h2 class="f-team-member__heading">gdnjdni K</h2>
+                    <p class="f-team-member__subheading">Board member</p>
+                    <hr class="f-team-member__byline">
+                    <p class="f-team-member__text">
+                        This is Esther. She is a good activist. she does lots of stuff
+                        drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+                        a lot of work for student unions, both on high school level and university.
+                        she used to be a social democrat (but we don'te talk a lot about that')
+                        but is now in a really healthy transition of becomming a militant anarchist,
+                        so watch out cops - you about to get fucked!
+                    </p>
+                </div>
+            </div>
+            <div class="f-team-member">
+                <img class="f-team-member__image" src="assets/image/team2.jpg">
+                <div class="f-team-member__card">
+                    <h2 class="f-team-member__heading">Esther K</h2>
+                    <p class="f-team-member__subheading">Board member</p>
+                    <hr class="f-team-member__byline">
+                    <p class="f-team-member__text">
+                        This is Esther. She is a good activist. she does lots of stuff
+                        drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+                        a lot of work for student unions, both on high school level and university.
+                        she used to be a social democrat (but we don'te talk a lot about that')
+                        but is now in a really healthy transition of becomming a militant anarchist,
+                        so watch out cops - you about to get fucked!
+                    </p>
+                </div>
+            </div>
+            <div class="f-team-member">
+                <img class="f-team-member__image" src="assets/image/team1.jpg">
+                <div class="f-team-member__card">
+                    <h2 class="f-team-member__heading">Esther K</h2>
+                    <p class="f-team-member__subheading">Board member</p>
+                    <hr class="f-team-member__byline">
+                    <p class="f-team-member__text">
+                        This is Esther. She is a good activist. she does lots of stuff
+                        drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+                        a lot of work for student unions, both on high school level and university.
+                        she used to be a social democrat (but we don'te talk a lot about that')
+                        but is now in a really healthy transition of becomming a militant anarchist,
+                        so watch out cops - you about to get fucked!
+                    </p>
+                </div>
+            </div>
+            <div class="f-team-member">
+                <img class="f-team-member__image" src="assets/image/team1.jpg">
+                <div class="f-team-member__card">
+                <h2 class="f-team-member__heading">Esther K</h2>
+                </div>
+            </div>
+            <div class="f-team-member">
+                <img class="f-team-member__image" src="assets/image/team1.jpg">
+                <div class="f-team-member__card">
+                    <h2 class="f-team-member__heading">Esther K</h2>
+                    <p class="f-team-member__subheading">Board member</p>
+                    <hr class="f-team-member__byline">
+                    <p class="f-team-member__text">
+                        This is Esther. She is a good activist. she does lots of stuff
+                        drink beer, smoke weed, fuck shit up and kick nazi butt. She did
+                        a lot of work for student unions, both on high school level and university.
+                        she used to be a social democrat (but we don'te talk a lot about that')
+                        but is now in a really healthy transition of becomming a militant anarchist,
+                        so watch out cops - you about to get fucked!
+                    </p>
+                </div>
+            </div>
+    </div>
+</section>
+
+
+</div> <!-- only here for the style guide - should not be used on the website -->
+```
+*/
+
+@import "../variables";
+
+.f-team-cards {}
+
+.f-team-member {
+    position: relative;
+    margin-bottom: var(--gutter-width);
+}
+
+.f-team-member__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem 2rem 2rem;
+
+    background: var(--color-white-transparent, hsla(0, 0%, 100%, 0.8));
+
+    transition: all 250ms ease;
+
+    opacity: 0;
+}
+
+.f-team-member:hover .f-team-member__card {
+    opacity: 1;
+}
+
+.f-team-member__image {
+    width: 100%;
+    max-width: 100%;
+}
+
+.f-team-member__heading {
+    margin-bottom: 1rem;
+
+    color: var(--color-black);
+    font-size: 2rem;
+    line-height: 0.2rem;
+}
+
+.f-team-member__subheading {
+    margin-top: 0;
+
+    font-size: 1.2rem;
+    font-style: normal;
+}
+
+.f-team-member__byline {
+    height: 3px;
+
+    color: var(--color-red);
+    background-color: var(--color-red);
+}
+
+.f-team-member__text {
+    color: var(--color-black);
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}

@@ -1,0 +1,106 @@
+/*
+# f-radio-group
+
+<pre>
+BLOCK f-radio-group
+	ELEMENT f-radio-group__element
+</pre>
+
+## Default
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+
+	<fieldset class="f-radio-group">
+		<legend>Regarding</legend>
+		<radiogroup>
+			<div class="f-radio-group__element">
+				<input id="rb1" type="radio" name="rb" value="Press">
+				<label for="rb1">Press</label>
+			</div>
+			<div class="f-radio-group__element">
+				<input id="rb2" type="radio" name="rb" value="Political">
+				<label for="rb2">Political cooperation / mutial aid</label>
+			</div>
+			<div class="f-radio-group__element">
+				<input id="rb3" type="radio" name="rb" value="Other">
+				<label for="rb3">Other</label>
+			</div>
+		</radiogroup>
+	</fieldset>
+
+
+</div> <!-- only here for the style guide - should not be used on the website -->
+```
+*/
+
+@import "../variables";
+.f-radio-group {
+	display: block;
+
+	margin: 0;
+	padding: 0;
+
+	border: none;
+}
+
+.f-radio-group legend {
+	font-size: 1.8rem;
+}
+
+.f-radio-group__element {
+	position: relative;
+
+	margin: 0 0 .6rem 0;
+}
+.f-radio-group__element input[type="radio"] {
+	visibility: hidden;
+
+	height: 2.4rem;
+	width: 2.4rem;
+
+	margin: 0;
+
+	line-height: 2.4rem;
+	vertical-align: middle;
+
+	cursor: pointer;
+}
+.f-radio-group__element label {
+	display: inline-block;
+	margin: 0;
+
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	vertical-align: middle;
+
+	cursor: pointer;
+}
+.f-radio-group__element input[type="radio"] ~ label::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	height: 2.4rem;
+	width: 2.4rem;
+
+	border: solid 0.2rem var(--color-black);
+	border-radius: 50%;
+
+	content: "";
+}
+.f-radio-group__element input[type="radio"]:checked ~ label::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	height: 1rem;
+	width: 1rem;
+
+	border-radius: 50%;
+	background-color: var(--color-red);
+
+	transform: translate(calc((2.4rem - 1rem) / 2), calc((2.4rem - 1rem) / 2));
+
+	content: "";
+}

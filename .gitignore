@@ -1,0 +1,27 @@
+node_modules
+npm-debug.log
+bower_components
+
+#VSCode
+.vscode  
+
+# generated css by postcss
+kalei/css/blocks/*.css
+kalei/css/base.css
+kalei/css/styleguide.css
+kalei/css/grid.css
+kalei/css/icons.css
+kalei/assets/fonts
+kalei/assets/image
+kalei/css/bugz
+
+site/assets/fonts
+site/assets/image
+site/css/blocks/*.css
+site/css/bundle.css
+
+# front end dependencies
+site/lib
+
+.DS_Store
+Thumbs.db

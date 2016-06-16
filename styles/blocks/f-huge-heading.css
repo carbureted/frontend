@@ -1,0 +1,57 @@
+/*
+# f-huge-heading
+
+A huge centered heading-text element that spans 100% of its container.
+
+<pre>
+BLOCK f-huge-heading
+MODIFIER f-huge-heading_animateme
+MODIFIER f-huge-heading_scroll
+</pre>
+
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	<h1 class="f-huge-heading">How does it work?</h1>
+	<!-- this should be used on the website -->
+
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-huge-heading {
+	margin: 11.8rem 0 11.8rem 0;
+
+	text-align: center;
+	font-size: 6.6rem;
+}
+
+.f-huge-heading_scroll {
+	padding:2em;
+
+	border:1em solid #e8e8e8;
+
+	perspective:600px;
+}
+
+.f-huge-heading_animateme {
+	width:80%;
+	padding:10%;
+
+	background:#e8e8e8;
+
+	transform-origin:center center center;
+}
+
+/*
+Leftovers from scrollme:
+.wrapper
+{
+	max-width:30em;
+	margin:2em auto;
+}*/
+
+

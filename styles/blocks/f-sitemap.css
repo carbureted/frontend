@@ -1,0 +1,60 @@
+/*
+This is the sitemap to be shown in the left of the footer
+`f-sitemap__branding` is a [BEM mix of f-branding](https://en.bem.info/forum/4/)
+
+<pre>
+BLOCK f-sitemap
+	ELEMENT f-sitemap__branding <- mix of f-branding
+	ELEMENT f-sitemap__links
+</pre>
+
+## EXAMPLE 1
+```
+<div class="f-sitemap">
+	<h2 class="f-branding f-sitemap__branding">Fire<span>fund</span></h2>
+	<ul class="f-sitemap__links">
+		<li><a href="">About us</a></li>
+		<li><a href="">Blog</a></li>
+		<li><a href="">Terms</a></li>
+		<li><a href="">Contact</a></li>
+		<li><a href="">Manifesto</a></li>
+		<li><a href="">Team</a></li>
+		<li><a href="">Who we are</a></li>
+		<li><a href="">How does it work</a></li>
+	</ul>
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-sitemap {
+	margin: 0;
+}
+
+.f-branding.f-sitemap__branding {
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+
+	font-size: 2rem;	
+}
+
+.f-sitemap__links {
+	margin-top: 0;
+	padding: 0;
+
+	font-weight: lighter;
+	font-size: 1.7rem;
+	line-height: 1.6;
+
+	list-style: none;
+}
+
+.f-sitemap__links a {
+	color: var(--color-grey-light);
+
+	transition: color 260ms ease-out;
+}
+.f-sitemap__links a:hover {
+	color: var(--color-white);
+}

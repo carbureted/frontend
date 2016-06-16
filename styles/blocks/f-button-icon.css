@@ -1,0 +1,103 @@
+/*
+
+Icons - the buttons formerly known as 'sharebuttons'. 
+
+
+<pre>
+BLOCK f-button-icon
+	ELEMENT f-button-icon__twitter
+	ELEMENT f-button-icon__facebook
+	ELEMENT f-button-icon__youtube
+	ELEMENT f-button-icon__reddit
+	ELEMENT f-button-icon__home	
+</pre>
+
+
+```
+<div class="kalei-background-white"><!-- only here for the style guide - should not be used on the website -->
+
+<!-- this should be used on the website -->
+<button class="f-icon-twitter f-button-icon f-button-icon_twitter">twitter</button>
+<button class="f-icon-facebook f-button-icon f-button-icon_facebook">facebook</button>
+<button class="f-icon-youtube f-button-icon f-button-icon_youtube">youtube</button>
+<button class="f-icon-reddit f-button-icon f-button-icon_reddit">reddit</button>
+<button class="f-icon-home f-button-icon f-button-icon_home">home</button>
+
+<div class="f-spacer f-one-liner"> And with no icons:</div>
+
+<button class="f-button-icon">Tweet this</button>
+<button class="f-button-icon">facebook</button>
+<button class="f-button-icon">youtube</button>
+<button class="f-button-icon">reddit</button>
+<button class="f-button-icon">home</button>
+<!-- this should be used on the website -->
+
+</div><!-- only here for the style guide - should not be used on the website -->
+```
+*/
+
+@import "../variables";
+
+.f-button-icon  {
+	padding: 0.8rem 2rem 0.8rem 4rem;
+
+	position: relative;
+	top: 0;
+	/*min-width: 16.4rem;*/
+	width: 100%;
+	margin: 0 3rem 3.2rem 0;
+
+	color: var(--color-black, black);
+	font-size: 1.6rem;
+	font-weight: bold;
+	text-transform: capitalize;
+	text-align: center;
+
+	background-color: var(--color-white);
+	border: .2rem solid var(--color-black); /*This needs adjustment with browser-tests*/
+	border-radius: 0.5rem;
+	box-shadow: 0 0rem 0 var(--color-black), inset 0 0rem 0 var(--color-black);
+
+	transition-property: box-shadow, top;
+	transition-duration: 100ms;
+	transition-timing-function: linear;
+
+	cursor: pointer;
+	outline: 0 none;
+}
+
+.f-button-icon::-moz-focus-inner {
+	border: 0; /*KLUDGE: remove outline in Firefox */
+}
+
+.f-button-icon:hover {
+	box-shadow: 0 .3rem 0 var(--color-black), inset 0 -.4rem 0 var(--color-black);
+}
+.f-button-icon:active {
+	top: .3rem;
+	box-shadow: 0 0rem 0 var(--color-black), inset 0 -.4rem 0 var(--color-black);
+}
+
+.f-button-icon::before {
+	position: absolute;
+
+	transform: translateX(-3.1rem);
+}
+
+.f-button-icon_youtube::before {
+	transform: translate(-3.1rem, 0.3rem);
+}
+
+.f-button-icon_facebook::before {
+	font-size: 2rem;
+
+	transform: translate(-2.6rem, 0.4rem);
+}
+
+.f-button-icon_reddit::before {
+	transform: translate(-3.6rem, 0.1rem);
+}
+
+.f-button-icon_home::before {
+	transform: translate(-3.7rem, 0.2rem);
+}

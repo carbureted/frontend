@@ -1,0 +1,68 @@
+/*
+Basic button.
+
+TODO: we should change the animation to use background with linear-gradient as in `f-button-group.css`
+to aleviate a color issue in Chrome.
+
+This is pr. 2.0 only used as 'Encrypt' and 'Reset' on contact-pages, but more is to come. 
+Remember the BEM-structure: All buttons are it's own block. This is not a block, where the other buttons are it's elements. 
+This is stand-alone. 
+
+<pre>
+BLOCK f-button-basic
+</pre>
+
+## f-button-basic
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+<!-- this should be used on the website -->
+	<button class="f-button-basic">encrypt</button>
+	<button class="f-button-basic">reset</button>
+<!-- this should be used on the website -->
+
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-button-basic {
+	position: relative;
+	top: 0;
+	min-width: 16.4rem;
+	margin: 0 3rem 3.2rem 0;
+	padding: 0; /*KLUDGE: padding set to 0 to avoid text moving while animating in Firefox */
+
+	color: var(--color-black, black);
+	font-size: 2.5rem;
+	font-weight: bold;
+	text-transform: capitalize;
+	text-align: center;
+
+	background-color: var(--color-white);
+	border: .2rem solid var(--color-black); /*To do: can't choose between 0.2 og 0.3 ...*/
+	border-radius: 0.5rem;
+	box-shadow: 0 0rem 0 var(--color-black), inset 0 0rem 0 var(--color-black);
+
+	transition-property: box-shadow, top;
+	transition-duration: 100ms;
+	transition-timing-function: linear;
+
+	cursor: pointer;
+	outline: 0 none;
+}
+
+.f-button-basic::-moz-focus-inner {
+	border: 0; /*KLUDGE: remove outline in Firefox */
+}
+
+.f-button-basic:hover {
+	box-shadow: 0 .2rem 0 var(--color-black), inset 0 -.2rem 0 var(--color-black);
+	border-color: var(--color-black);
+}
+
+.f-button-basic:active {
+	top: .2rem;
+	box-shadow: 0 0rem 0 var(--color-black), inset 0 -.2rem 0 var(--color-black);
+}

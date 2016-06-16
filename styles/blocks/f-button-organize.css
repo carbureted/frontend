@@ -1,0 +1,81 @@
+/*
+# f-button-ornanize
+
+pr. 2.0 placed on index (in f.whitecard) and on HowItWork (in f.content).
+
+<pre>
+BLOCK f-button-organize
+	ELEMENT f-button-organize_now (hopefully not needed)
+</pre>
+
+## As a button
+```
+<div class="kalei-background-white"><!-- only here for the style guide - should not be used on the website -->
+
+
+<!-- this should be used on the website -->
+<button class="f-button-organize">I'm definitely going to press this huge button!</button>
+<!-- this should be used on the website -->
+
+
+<!-- only here for the style guide - should not be used on the website -->
+<h2 class="f-one-liner_center">I know. That button is more tasty than a Big Tasty fresh out of old McDonald. That's why you are going to click it. Bitch.</h2>
+</div>
+```
+
+## As a link
+```
+<div class="kalei-background-white"><!-- only here for the style guide - should not be used on the website -->
+
+
+<!-- this should be used on the website -->
+<a class="f-button-organize" href="#/style/blocks/f-button-organize.css">I'm definitely going to press this huge button!</a>
+<!-- this should be used on the website -->
+
+
+<!-- only here for the style guide - should not be used on the website -->
+<h2 class="f-one-liner_center">I know. That button is more tasty than a Big Tasty fresh out of old McDonald. That's why you are going to click it. Bitch.</h2>
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-button-organize {
+	display: block;
+	width: 100%;
+
+	margin: 0 0 1.4rem;
+	padding: 2.2rem 0 2.3rem 0;
+
+	color: var(--color-black);
+	font-size: 2.4rem;
+	text-align: center;
+
+	border: 3px solid var(--color-black);
+	border-radius: 0.8rem;
+  background-color: var(--color-white);
+	box-shadow: 0 0rem 0 var(--color-black), inset 0 0rem 0 var(--color-black);
+
+	transition-property: box-shadow, top;
+	transition-duration: 100ms;
+	transition-timing-function: linear;
+
+	outline: 0 none;
+}
+
+.f-button-organize::-moz-focus-inner {
+	border: 0; /*KLUDGE: remove outline in Firefox */
+}
+
+.f-button-organize:hover {
+	box-shadow: 0 .3rem 0 var(--color-black), inset 0 -.4rem 0 var(--color-black);
+}
+.f-button-organize:active {
+	top: .3rem;
+	box-shadow: 0 0rem 0 var(--color-black), inset 0 -.4rem 0 var(--color-black);
+}
+
+.f-button-organize::first-letter {
+	text-transform: uppercase;
+}

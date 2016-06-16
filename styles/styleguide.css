@@ -1,0 +1,129 @@
+﻿/*
+# Firefund - with style
+## Generates live CSS documentation for use on the firefund website
+
+[![Stories in Ready](https://badge.waffle.io/Firefund/styleguide.png?label=ready&title=Ready)](https://waffle.io/Firefund/styleguide)
+
+We use [kalei](https://github.com/Firefund/kaleistyleguide/) to generate our CSS documentation right in your browser.
+
+## Prerequisites
+
+You can test if you have `git`, `make` and `node` installed by trying to call them in your terminal/cmd.
+<pre>
+git --version
+node -v
+make -v
+</pre>
+
+1. Install [git](https://git-scm.com/downloads) our version control
+2. Install [git lfs](https://git-lfs.github.com/) our version control for large files like pictures and illustrator documents
+3. Install [nodejs](https://nodejs.org/en/) our server platform and platform for various helper tools
+4. Install [make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm). It's preinstalled on Mac.
+Probably also with your linux distro. Make is a task runner designed for compiling files.
+
+
+## Getting started
+
+1. Go to https://github.com/Firefund/styleguide/ and copy the git url.
+1. Download the repository (`git clone --depth=1 https://github.com/Firefund/styleguide.git`) and cd into the styleguide folder.
+2. `npm i` - download the node packages that we depend on.
+3. `npm run kalei`
+4. Go to [localhost:8080](localhost:8080) in your browser (preferably in two or three different, like firefox and chrome
+to ensure that your styles work in all browsers)
+5. Start developing css in `styles/blocks/`
+
+
+## Creating new BEM blocks
+
+1. Find or create a card in [Waffle - our kanban tool](https://waffle.io/Firefund/styleguide)
+2. Create a css file in `styles/blocks/` - name it after your BEM block
+3. add the file name to the beginning of the Makefile (currently second line)
+4. add the file path to `styles/master.css`. `@import "blocks/YourFileName.css";`
+
+## Sorting the CSS in BEM blocks
+
+ FIRST: position/box-model
+	position:
+	display:
+	top/right/botom/left
+	float
+	content (kun brugt med ::before og ::after)
+
+
+SECOND: size
+	height:
+	margin:;
+	padding;
+
+THIRD: font/text
+	color
+	font-*
+	text-*
+	line-height
+
+FOURTH: background/border
+
+FIFTH: transitions/transforms/animation
+
+SIXTH: weird stuff
+*/
+
+/* TODO: This is not run through postcss-partial-import - if we do then all the latter @imports will fuck up master
+@import "variables";*/
+
+@import url("base.css");
+@import url("grid.css");
+@import url("icons.css");
+
+/* ### BEM blocks ### */
+@import url("blocks/f-accordian.css");
+@import url("blocks/f-branding.css");
+@import url("blocks/f-button-basic.css");
+@import url("blocks/f-button-donate.css");
+@import url("blocks/f-button-group.css");
+@import url("blocks/f-button-icon.css");
+@import url("blocks/f-button-organize.css");
+@import url("blocks/f-content.css");
+@import url("blocks/f-cuff-text.css");
+@import url("blocks/f-donation-amount.css");
+@import url("blocks/f-footer-text.css");
+@import url("blocks/f-footer.css");
+@import url("blocks/f-hero.css");
+@import url("blocks/f-huge-heading.css");
+@import url("blocks/f-icon-list.css");
+@import url("blocks/f-info-card.css");
+@import url("blocks/f-left-heading.css");
+@import url("blocks/f-list.css");
+@import url("blocks/f-media.css");
+@import url("blocks/f-miniproject-thumbnail.css");
+@import url("blocks/f-modal.css");
+@import url("blocks/f-navigation.css");
+@import url("blocks/f-one-liner.css");
+@import url("blocks/f-payment-form.css");
+@import url("blocks/f-postpay-heading.css");
+@import url("blocks/f-postpay-info.css");
+@import url("blocks/f-progress.css");
+@import url("blocks/f-project-thumbnail.css");
+@import url("blocks/f-radio-group.css");
+@import url("blocks/f-right-heading.css");
+@import url("blocks/f-signup.css");
+@import url("blocks/f-sitemap.css");
+@import url("blocks/f-spacer.css");
+@import url("blocks/f-team-cards.css");
+@import url("blocks/f-text-input.css");
+@import url("blocks/f-text.css");
+@import url("blocks/f-white-card.css");
+
+
+/*
+### bugz
+@import url("bugz/99.99.css");
+*/
+
+/*
+@import url("blocks/f-horizontal-button-group.css");
+@import url("blocks/f-huge-button.css");*/
+
+/* ##### Examples from kalei
+@import url("buttons.css");
+@import url("fixie-demo.css");*/

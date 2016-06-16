@@ -1,0 +1,29 @@
+/* 
+
+A spacer, used for creating space (6rem) between blocks. 
+So you can't see it without something on each side. 
+
+## Example, with two other blocks. 
+```
+<div class="kalei-background-white">  <!-- only here for the style guide - should not be used on the website -->
+<!-- this should be used on the website -->
+   
+<h2 class="f-one-liner f-one-liner">This is probably another link sentence.</h2>
+
+<div class="f-spacer"></div>
+
+<div class="f-text-input">
+	<label class="f-text-input__label">Name
+		<input class="f-text-input__text-field" type="text" placeholder="Name, organization, newspaper, etc.">
+	</label>
+</div>
+
+<!-- this should be used on the website -->
+</div> <!-- only here for the style guide - should not be used on the website -->
+```
+*/
+
+.f-spacer {
+		display: block;
+    height: 6rem;
+}

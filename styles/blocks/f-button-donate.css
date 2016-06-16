@@ -1,0 +1,180 @@
+/*
+## Donate
+
+The donate button, for all campaigns, that takes you to the payment module in a modal window. 
+Is currently placed in top-right, and bottom of each project page.
+
+TO DO:
+
+- Create examples on different placing
+- Make sure examples have spacing and are easy to evaluate
+- Remove the 'all caps' thing
+- Focus on the bubbly-one for starters
+- Throw away old code, if bubbly is great
+
+<pre>BLOCK f-button-donate
+		MODIFIER f-button-donate_kush
+		MODIFIER f-button-donate_shrink
+		MODIFIER f-button-donate_grow</pre>
+
+```
+## Variations 
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+<!-- this should be used on the website -->
+<br> <br>
+	<button class="f-button-donate">SUPPORT</button>
+<br> <br>	
+	<button class="f-button-donate">DONATE</button>
+<br> <br>	
+	<button class="f-button-donate">SUPPORT NOW</button>
+<br> <br>	
+	<button class="f-button-donate">Support Now</button>
+<br> <br>	
+	<button class="f-button-donate">Support now</button>
+<br> <br>
+<!-- this should be used on the website -->
+</div>
+```
+
+
+```
+## Transformations 
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+<!-- this should be used on the website -->
+<br> <br>
+	<button class="f-button-donate">SUPPORT</button>
+<br> <br>	
+	<button class="f-button-donate_kush">SUPPORT</button>
+<br> <br>	
+	<button class="f-button-donate_shrink">SUPPORT</button>
+<br> <br>	
+	<button class="f-button-donate_grow">SUPPORT</button>
+<br> <br>
+<!-- this should be used on the website -->
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-button-donate {
+	padding: 2.2rem 0 2.3rem 0;
+	border: 2px solid var(--color-red);
+	width: inherit;
+
+	color: var(--color-white);
+
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	background: var(--color-red);
+
+	transition: opacity 0.3s ease 0s;
+	
+	cursor: pointer;
+}
+
+.f-button-donate:hover, .f-button-donate::before {
+	box-shadow: none;
+	background: var(--color-red);
+}
+
+.f-button-donate:active {
+	border: 2px solid var(--color-black);
+	color: var(--color-white);
+	background: var(--color-black);
+}
+
+.f-button-donate_kush {
+	padding: 2.2rem 0 2.3rem 0;
+	border: 2px solid var(--color-red);
+	width: 100%;
+
+	color: var(--color-white);
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	
+	border-radius: .5rem;
+	background: var(--color-red);
+
+	display: inline-block;
+	vertical-align: middle;
+	transform: translateZ(0);
+	box-shadow: 0 0 1px var(--color-red);
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	transition-duration: 0.3s;
+	transition-property: transform;
+}
+
+.f-button-donate_kush::before {
+	position: absolute;
+	z-index: -1;
+	content: '';
+	left: calc(50% - 10px);
+	bottom: 0;
+	border-style: solid;
+	border-width: 10px 10px 0 10px;
+	border-color: var(--color-red) transparent transparent transparent;
+	transition-duration: 0.3s;
+	transition-property: transform;
+}
+
+.f-button-donate_kush:hover, .f-button-donate_kush:focus, .f-button-donate_kush:active {
+	transform: translateY(-10px);
+}
+
+.f-button-donate_kush:hover::before, .f-button-donate_kush:focus::before, .f-button-donate_kush:active::before {
+	transform: translateY(10px);
+}
+
+.f-button-donate_shrink {
+	padding: 2.2rem 0 2.3rem 0;
+	border: 2px solid var(--color-red);
+	width: inherit;
+
+	color: var(--color-white);
+
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	background: var(--color-red);
+
+	display: inline-block;
+	vertical-align: middle;
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	transition-duration: 0.3s;
+	transition-property: transform;
+}
+
+.f-button-donate_shrink:hover, .f-button-donate_shrink:focus, .f-button-donate_shrink:active {
+	transform: scale(0.9);
+}
+
+.f-button-donate_grow {
+	padding: 2.2rem 0 2.3rem 0;
+	border: 2px solid var(--color-red);
+	width: inherit;
+
+	color: var(--color-white);
+
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	background: var(--color-red);
+
+	display: inline-block;
+	vertical-align: middle;
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	transition-duration: 0.3s;
+	transition-property: transform;
+}
+
+.f-button-donate_grow:hover, .f-button-donate_grow:focus, .f-button-donate_grow:active {
+	transform: scale(1.1);
+}
+

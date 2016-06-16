@@ -1,0 +1,46 @@
+/*
+A wide white card, splitting the page with a breath of light.
+
+Designed for index, for the ORGANIZE section under thumbnails.
+
+<pre>
+BLOCK f-white-card
+	ELEMENT f-white-card__text (or f-one-liner)
+</pre>
+
+```
+<section class="f-white-card">
+
+
+<!-- only here as an example - should not be used on the website -->
+	<div class="f-row f-row_12">
+		<div class="f-row__cell_push_1 f-row__cell-10">
+			<button class="f-button-basic">Want to organize a crowdfunding campaign?</button>
+		</div>
+		<div class="f-row__cell_push_2 f-row__cell-8">
+			<h2 class="f-one-liner f-one-liner_center">We are doing stuff a little different. Please read about us before you contact us. We are not Kickstarter.</h2>
+		</div>
+	</div>
+<!-- only here as an example - should not be used on the website -->
+
+
+</section>
+```
+*/
+
+@import "../variables";
+
+.f-white-card {
+	display: block;
+
+	width: 100%;
+	height: 28rem;
+
+	margin-bottom: 3rem;
+	padding: 6.5rem 0 6.5rem 0;
+
+	text-align: center;
+
+	background: var(--color-white);
+}
+

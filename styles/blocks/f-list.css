@@ -1,0 +1,79 @@
+/*
+## Unordered list
+
+A bullet list. (About Who-01, Project-01)
+
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	<ul class="f-list">
+		<li>The unordered one! Lets make a loooooong sentence and se what the fuck is happining up in here! Double that shit up motherfucker yeah biiiitch</li>
+		<li>The unordered second! And this one is shorty! </li>
+		<li>The unordered one! Lets make a loooooong sentence and se what the fuck is happining up in here! Double that shit up motherfucker yeah biiiitch</li>
+	</ul>
+	<!-- this should be used on the website -->
+
+</div>
+```
+
+## Ordered list
+A number list. (About Who-01, Project-01)
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	<ol class="f-list">
+		<li>The ordered one!</li>
+		<li>The ordered second one!!!  Lets make a loooooong sentence and se what the fuck is happining up in here! Double that shit up motherfucker yeah biiiitch</li>
+		<li>The ordered one!</li>
+	</ol>
+	<!-- this should be used on the website -->
+
+</div>
+```
+*/
+
+@import "../variables";
+
+.f-list {
+	display: table;
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+	counter-reset: f-list;
+}
+
+.f-list li {
+	display: table-row;
+	height: 3rem;
+
+	color: var(--color-grey-dark);
+	font-size: 1.4rem;
+	font-weight: lighter;
+	line-height: 1.8rem; /*TODO: Correct this line-height, Karl*/
+}
+
+.f-list li::before {
+	display: table-cell;
+	position: relative;
+	top: 0.9rem; /* set the vertical position of the bullet if necessary. Make sure to use rem or % */
+
+	padding-right: 1.25rem; /* give the bullet some padding from the text Make sure to use rem*/
+	padding-left: 0;
+	content: "\2022"; /* /2022 is the numerical unicode for &bull; */
+
+	color: var(--color-red);
+	font-size: 3.8rem; /* set the font-size of the bullet if necessary. Make sure to use rem or %*/
+	line-height: 0; /* should be zero or the bullets will add vertical space to the li's */
+}
+
+ol.f-list li::before {
+	top: 0rem;
+
+	font-size: 1.4rem;
+
+	counter-increment: f-list;
+	content: counter(f-list) ".";
+}

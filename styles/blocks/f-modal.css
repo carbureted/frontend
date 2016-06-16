@@ -1,0 +1,64 @@
+/*
+##EXAMPLE 1
+
+<button class="f-button-basic">Toggle modal window</button>
+```
+ <div class="f-modal f-modal_visible">
+  <div class="f-modal__content">
+	<div class="f-content">
+		<h1 class="f-left-heading">Rebuild Kobanê</h1>
+		<p class="f-text__text">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis aliquid hic ex sed possimus perspiciatis ullam nostrum, qui eligendi officia eaque suscipit dolores enim repellendus mollitia, itaque blanditiis dolorem vitae.
+		</p>
+	</div>
+ </div>
+</div>
+```
+
+<script>
+	// demo script
+	document.querySelector(".f-button-basic").addEventListener("click", function(e) {
+		document.querySelector(".f-modal").classList.toggle("f-modal_visible")
+	})
+</script>
+*/
+
+@import "../variables";
+
+.f-modal {
+	position: fixed;
+	z-index: 100;
+	top:0;
+	left: -1000rem;
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--color-black-transparent);
+
+	transition: opacity .3s ease;
+
+	opacity: 0;
+	/*pointer-events: none;*/
+}
+
+.f-modal_visible {
+	left:0;
+
+	opacity: 1;
+}
+
+.f-modal__content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	height: 41.5rem;
+	width: 64.5rem;
+
+	transform: translate(-50%, -50%);
+
+	pointer-events: all;
+	overflow: auto; /* make sure that the user can get to all of the content by scrolling */
+}
+
+.f-modal_autoclosable {}
