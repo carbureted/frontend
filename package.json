@@ -1,6 +1,6 @@
 {
   "name": "firefund-styleguide",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-beta",
   "description": "Firefund live styleguide",
   "private": true,
   "scripts": {
