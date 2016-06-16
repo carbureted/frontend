@@ -82,7 +82,9 @@ Happy coding!
 
 We sign our commits in the master branch to be sure no one can tamper with our code without us noticing it.
 
-To see signed commits your write `git log --show-signature`
+To see signed commits your write `git log --show-signature`.
+If you dislike typing you can create an alias. E.g. `git config alias.l "log --show-signature"`.
+Now, you only need to write `git l`.
 
 You'll need a pgp key with the same name as your github user.
 
