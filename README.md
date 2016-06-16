@@ -1,7 +1,5 @@
 # Firefund - Style guide
 
-## We're migrating to [frontend](https://github.com/Firefund/frontend) - which only has signed commits in the master branch
-
 ## Generates live CSS documentation for use on the firefund website
 
 [![Stories in Ready](https://badge.waffle.io/Firefund/styleguide.png?label=ready&title=Ready)](https://waffle.io/Firefund/styleguide)
@@ -78,3 +76,50 @@ SIXTH: weird stuff
 ```
 
 Happy coding!
+
+
+# Secure code
+
+We sign our commits in the master branch to be sure no one can tamper with our code without us noticing it.
+
+To see signed commits your write `git log --show-signature`
+
+You'll need a pgp key with the same name as your github user.
+
+`git config user.signingkey [Your key]`
+
+`git config commit.gpgsign true`
+
+You can see your key by writing `gpg --list-keys`
+
+https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
+
+In Git 1.8.3 and later, "git merge" and "git pull" can be told to inspect and reject when merging a commit that does not carry a trusted GPG signature with the --verify-signatures command.
+
+If you use this option when merging a branch and it contains commits that are not signed and valid, the merge will not work.
+
+	$ git merge --verify-signatures non-verify
+	fatal: Commit ab06180 does not have a GPG signature.
+If the merge contains only valid signed commits, the merge command will show you all the signatures it has checked and then move forward with the merge.
+
+	$ git merge --verify-signatures signed-branch
+	Commit 13ad65e has a good GPG signature by Scott Chacon (Git signing key) <schacon@gmail.com>
+	Updating 5c3386c..13ad65e
+	Fast-forward
+	README | 2 ++
+	1 file changed, 2 insertions(+)
+You can also use the -S option with the git merge command itself to sign the resulting merge commit itself. The following example both verifies that every commit in the branch to be merged is signed and furthermore signs the resulting merge commit.
+
+	$ git merge --verify-signatures -S  signed-branch
+	Commit 13ad65e has a good GPG signature by Scott Chacon (Git signing key) <schacon@gmail.com>
+
+	You need a passphrase to unlock the secret key for
+	user: "Scott Chacon (Git signing key) <schacon@gmail.com>"
+	2048-bit RSA key, ID 0A46826A, created 2014-06-04
+
+	Merge made by the 'recursive' strategy.
+	README | 2 ++
+	1 file changed, 2 insertions(+)
+
+## Everyone Must Sign
+Signing tags and commits is great, but if you decide to use this in your normal workflow, you’ll have to make sure that everyone on your team understands how to do so. If you don’t, you’ll end up spending a lot of time helping people figure out how to rewrite their commits with signed versions. Make sure you understand GPG and the benefits of signing things before adopting this as part of your standard workflow.
