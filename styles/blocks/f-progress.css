@@ -1,13 +1,15 @@
 ﻿/*
 Display how much is donated out of the goal.
 
-Note on currency format in different countries: https://docs.oracle.com/cd/E19455-01/806-0169/overview-9/index.html
+Note on currency format in different countries:
+[https://docs.oracle.com/cd/E19455-01/806-0169/overview-9/index.html]([https://docs.oracle.com/cd/E19455-01/806-0169/overview-9/index.html)
 
 ## BEM
 <pre>
 BLOCK f-progress
 MODIFIER f-progress_small
 MODIFIER f-progress_vertical
+MODIFIER f-progress_flyout
 	ELEMENT f-progress__bar
 		ELEMENT f-progress__value
 	ELEMENT f-progress__data
@@ -71,6 +73,62 @@ MODIFIER f-progress_vertical
 </div>
 ```
 
+## Example small
+```
+<div class="kalei-background-white" style="max-width: 639px;"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	
+	<section class="f-progress f-progress_small" data-value="38">
+		<div class="f-progress__bar">
+			<div style="width: 38%;" class="f-progress__value"></div>
+		</div>
+		<div class="f-progress__data">
+			<p class="f-progress__data-element">
+				<span>38%</span> of $50,000
+			</p>
+			<p class="f-progress__data-element">
+				<span>$14,928</span> reached in total
+			</p>
+			<p class="f-progress__data-element">
+				<span>22</span> days to go
+			</p>
+		</div>
+	</section>
+
+	<!-- this should be used on the website -->
+
+</div>
+```
+
+## Example flyout
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	
+	<section class="f-progress f-progress_flyout" data-value="38">
+		<div class="f-progress__bar">
+			<div style="width: 38%;" class="f-progress__value"></div>
+		</div>
+		<div class="f-progress__data">
+			<p class="f-progress__data-element">
+				<span>38%</span> of $50,000
+			</p>
+			<p class="f-progress__data-element">
+				<span>$14,928</span> reached in total
+			</p>
+			<p class="f-progress__data-element">
+				<span>22</span> days to go
+			</p>
+		</div>
+	</section>
+
+	<!-- this should be used on the website -->
+
+</div>
+
+```
 */
 
 @import "../variables";
@@ -81,8 +139,28 @@ MODIFIER f-progress_vertical
 	padding-top: 1.4rem;
 }
 
-/*TODO: this modifier is in affect on f-project-thumbnail */
-.f-progress_small {
+/***************\
+	MODIFIERS
+\***************/
+/*this modifier is in affect on f-project-thumbnail */
+.f-progress_small {}
+.f-progress_small .f-progress__bar {
+	height: .3rem;
+	margin: 0 0 .5rem;
+
+	background-color: var(--color-grey-dark);
+}
+.f-progress_small .f-progress__data-element {
+	font-size: 1rem;
+
+	white-space: nowrap;
+}
+
+.f-progress_flyout {}
+.f-progress_flyout .f-progress__data { display: none; }
+.f-progress_vertical {}
+.f-progress_vertical .f-progress__data {
+	flex-direction: column;
 }
 
 .f-progress__bar, .f-progress__value {
@@ -96,6 +174,7 @@ MODIFIER f-progress_vertical
 }
 
 .f-progress__value {
+	height: inherit;
 	max-width: 100%;
 
 	background-color: var(--color-red);
@@ -110,9 +189,6 @@ MODIFIER f-progress_vertical
 	justify-content: space-between;
 	
 	font-size: 1.6rem;
-}
-.f-progress_vertical .f-progress__data {
-	flex-direction: column;
 }
 
 .f-progress__data-element {
