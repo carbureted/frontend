@@ -77,6 +77,7 @@
        (instead of dynamically loading it later in JS) is that the parser can go
        to town pre-fetching resources, etc. -->
 	<link rel="import" class="f-import" href="wc/header.htm" async>
+	<link rel="import" class="f-import" href="wc/progress.htm" async>
 </head>
 
 <body>
@@ -338,8 +339,8 @@
 	</footer>
 
 	<script src="js/loader.js" charset="utf8" async>
-		< script > // TODO: Why is this needed?!?
-			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
+	<script> // TODO: Why is this needed?!?
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
 	</script>
 </body>
 

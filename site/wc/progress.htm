@@ -1,6 +1,6 @@
 ﻿<link rel="import" href="/lib/polymer.html">
 
-<dom-module id="f-header">
+<dom-module id="f-progress">
 	
 	<template>
 		<link rel="stylesheet" href="/css/blocks/f-progress.css">
@@ -27,7 +27,11 @@
 	<script>
 		Polymer({
 			/* this is the element's prototype */
-			is: 'f-progress'
+			is: 'f-progress',
+			properties: {
+				jon: String
+			},
+			attached: () => { console.log("JON: " + this.jon) }
 		})
   </script>
 	
