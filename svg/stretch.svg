@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 width="100%" height="100%" viewBox="0 0 300 200"  xml:space="preserve" preserveAspectRatio="xMinYMin meet">
+<style type="text/css">
+<![CDATA[
+	.st0{opacity:0.25;fill:url(#);}
+	.st1{font-family:'HelveticaNeue-Light';}
+	.st2{fill:#CCCCCC;stroke:#C1272D;stroke-width:5;stroke-miterlimit:10;}
+	.st3{opacity:0.8;fill:#FFFFFF;}
+	.st4{fill:none;stroke:#CCCCCC;stroke-width:5;stroke-miterlimit:10;}
+	.st5{fill:#CCCCCC;stroke:#C1272D;stroke-width:4;stroke-miterlimit:10;}
+	.st6{fill:#D4145A;stroke:#C1272D;stroke-width:4;stroke-miterlimit:10;}
+	.st7{fill:#621A1A;stroke:#CCCCCC;stroke-width:4;stroke-miterlimit:10;}
+	.st8{fill:#CCCCCC;stroke:#C1272D;stroke-width:4.0804;stroke-miterlimit:10;}
+	.st9{fill:#C1272D;stroke:#CCCCCC;stroke-width:4;stroke-miterlimit:10;}
+	.st10{fill:#FFFFFF;}
+	.st11{fill:none;}
+	.st12{fill:#666666;}
+	.st13{fill:#CCCCCC;stroke:#C1272D;stroke-width:5.1005;stroke-miterlimit:10;}
+	.st14{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st15{font-size:14;}
+	.st16{fill:#4D4D4D;stroke:#CCCCCC;stroke-miterlimit:10;}
+	.st17{font-family:'Roboto-Bold';}
+	.st18{fill:#A71C1A;}
+	.st19{fill:none;stroke:#C1272D;stroke-width:11;stroke-miterlimit:10;}
+	.st20{font-family:'Roboto-Regular';}
+]]>
+</style>
+<g>
+	<line class="st16" x1="68" y1="120" x2="268" y2="120"/>
+	<rect x="68" y="134" class="st11" width="216" height="64"/>
+	<text transform="matrix(0.9923 0 0 1 68 143.9961)"><tspan x="0" y="0" class="st12 st1 st15">A complete setup of free, wireless </tspan><tspan x="0" y="14.6" class="st12 st1 st15">internet in Camp Roccastrada</tspan></text>
+	<rect x="68" y="106" class="st11" width="215" height="22"/>
+	<text transform="matrix(0.9989 0 0 1 68 116.668)"><tspan x="0" y="0" class="st17 st15">100%</tspan><tspan x="34.4" y="0" class="st20 st15"> First camp in Creece</tspan></text>
+</g>
+
+
+<g style="transform: translateY(134px);">
+<g>
+	<line class="st16" x1="68" y1="120" x2="268" y2="120"/>
+	<rect x="68" y="134" class="st11" width="216" height="64"/>
+	<text transform="matrix(0.9923 0 0 1 68 143.9961)"><tspan x="0" y="0" class="st12 st1 st15">Somethign different</tspan><tspan x="0" y="14.6" class="st12 st1 st15">internet in Camp Roccastrada</tspan></text>
+	<rect x="68" y="106" class="st11" width="215" height="22"/>
+	<text transform="matrix(0.9989 0 0 1 68 116.668)"><tspan x="0" y="0" class="st17 st15">100%</tspan><tspan x="34.4" y="0" class="st20 st15"> First camp in Creece</tspan></text>
+</g>
+	<line class="st4" x1="34" y1="0" x2="34" y2="100"/>
+	<line class="st8" x1="34" y1="0" x2="34" y2="64"/>
+	<circle class="st13" cx="34" cy="117" r="17"/>
+</g>
+
+
+<g style="transform: translateY(268px);">
+<g>
+	<line class="st16" x1="68" y1="120" x2="268" y2="120"/>
+	<rect x="68" y="134" class="st11" width="216" height="64"/>
+	<text transform="matrix(0.9923 0 0 1 68 143.9961)"><tspan x="0" y="0" class="st12 st1 st15">Somethign different</tspan><tspan x="0" y="14.6" class="st12 st1 st15">internet in Camp Roccastrada</tspan></text>
+	<rect x="68" y="106" class="st11" width="215" height="22"/>
+	<text transform="matrix(0.9989 0 0 1 68 116.668)"><tspan x="0" y="0" class="st17 st15">100%</tspan><tspan x="34.4" y="0" class="st20 st15"> First camp in Creece</tspan></text>
+</g>
+	<line class="st4" x1="34" y1="0" x2="34" y2="100"/>
+	<line class="st8" x1="34" y1="0" x2="34" y2="64"/>
+	<circle class="st13" cx="34" cy="117" r="17"/>
+</g>
+
+
+
+<g>
+	<line class="st4" x1="34" y1="0" x2="34" y2="100"/>
+	<line class="st8" x1="34" y1="0" x2="34" y2="64"/>
+	<circle class="st13" cx="34" cy="117" r="17"/>
+</g>
+</svg>
+
