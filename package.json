@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Firefund/styleguide.git"
+    "url": "git+https://github.com/Firefund/frontend.git"
   },
   "author": "dotnetCarpenter <jon.ronnenberg@gmail.com>",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/Firefund/styleguide/issues"
+    "url": "https://github.com/Firefund/frontend/issues"
   },
-  "homepage": "https://github.com/Firefund/styleguide#readme",
+  "homepage": "https://github.com/Firefund/frontend#readme",
   "dependencies": {
     "@dotnetcarpenter/firefund-cli": "0.6.0 - 1.0",
     "cp-cli": "^1.0.2",
