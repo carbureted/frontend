@@ -1,11 +1,11 @@
-﻿<link rel="import" href="/lib/polymer.html">
+﻿<link rel="import" href="/lib/polymer-mini.html">
 
 <dom-module id="f-progress">
 	
 	<template>
 		<link rel="stylesheet" href="/css/blocks/f-progress.css">
 		
-		<section class="f-progress f-progress_flyout" data-value="38">
+		<section class="f-progress">
 			<div class="f-progress__bar">
 				<div style="width: 38%;" class="f-progress__value"></div>
 			</div>
@@ -29,9 +29,23 @@
 			/* this is the element's prototype */
 			is: 'f-progress',
 			properties: {
-				jon: String
+				name: String,
+				modifier: String,
+				value: Number,
+				goal: Number,
+				days: Number,
+				total: Number,
+				symbol: String
 			},
-			attached: () => { console.log("JON: " + this.jon) }
+			attached: function() {
+				var modifier = this.modifier || "default"
+				if(modifier === "default") return
+				console.log(modifier)
+				this.querySelector(".f-progress")
+					.classList
+					.add("f-progress_" + modifier)
+			}
+			// ready: function() { console.log(this.name) },
 		})
   </script>
 	
