@@ -64,6 +64,20 @@
 </g>
 
 
+<g style="transform: translateY(268px);">
+<g>
+	<line class="st16" x1="68" y1="120" x2="268" y2="120"/>
+	<rect x="68" y="134" class="st11" width="216" height="64"/>
+	<text transform="matrix(0.9923 0 0 1 68 143.9961)"><tspan x="0" y="0" class="st12 st1 st15">Somethign different</tspan><tspan x="0" y="14.6" class="st12 st1 st15">internet in Camp Roccastrada</tspan></text>
+	<rect x="68" y="106" class="st11" width="215" height="22"/>
+	<text transform="matrix(0.9989 0 0 1 68 116.668)"><tspan x="0" y="0" class="st17 st15">100%</tspan><tspan x="34.4" y="0" class="st20 st15"> First camp in Creece</tspan></text>
+</g>
+	<line class="st4" x1="34" y1="0" x2="34" y2="100"/>
+	<line class="st8" x1="34" y1="0" x2="34" y2="64"/>
+	<circle class="st13" cx="34" cy="117" r="17"/>
+</g>
+
+
 
 <g>
 	<line class="st4" x1="34" y1="0" x2="34" y2="100"/>
