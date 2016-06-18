@@ -57,7 +57,9 @@
 
 				var text = [
 					"<span>" + days + "</span> days to go",
-					"<span>" + value + "%</span> of " + accounting.formatMoney(goal),
+					modifier === "small"
+						? "<span>" + value + "%</span> of " + truncate(goal)
+						: "<span>" + value + "%</span> of " + accounting.formatMoney(goal),
 					"<span>" + accounting.formatMoney(total) + "</span> reached in total"
 				]
 
@@ -92,6 +94,10 @@
 				return rect.top + rect.height < window.innerHeight && rect.bottom - rect.height > 0;
 			}
 		})
+
+		function truncate(money) {
+			return money > 999 ? accounting.formatMoney(money / 1000) + "K" : accounting.formatMoney(money)
+		}
 
 		function changeModifier(el, mod) {
 			var modifier = mod || "default"
