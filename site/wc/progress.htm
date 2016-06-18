@@ -80,7 +80,7 @@
 			},
 			attached: function() {
 				if(this.isInView())
-					this.changeHandler()
+					_.defer(this.changeHandler)
 			},
 			isInView: function() {
 				var rect = this.getBoundingClientRect();
