@@ -59,7 +59,8 @@
 				]
 
 				changeModifier(this, this.firefund.modifier) // modifier should always be the first thing you want to set because it changes the design
-				changeProgressbar(this, value)
+				
+				setTimeout(function() { changeProgressbar(self, value) }, 1000)
 				
 
 				var dataElements = Array.prototype.slice.call( this.querySelectorAll(".f-progress__data-element"), 0 )
