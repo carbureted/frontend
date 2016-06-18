@@ -7,22 +7,18 @@
 		
 		<section class="f-progress">
 			<div class="f-progress__bar">
-				<div style="width: 38%;" class="f-progress__value"></div>
+				<div style="width:0%;" class="f-progress__value"></div>
 			</div>
 			<div class="f-progress__data">
-				<p class="f-progress__data-element">
-					<span>22</span> days to go
-				</p>
-				<p class="f-progress__data-element">
-					<span>38%</span> of $50,000
-				</p>
-				<p class="f-progress__data-element">
-					<span>$14,928</span> reached in total
-				</p>
+				<p class="f-progress__data-element"></p>
+				<p class="f-progress__data-element"></p>
+				<p class="f-progress__data-element"></p>
 			</div>
 		</section>
 
 	</template>
+
+	<script src="/lib/accounting.js"></script>
 	
 	<script>
 		Polymer({
@@ -32,16 +28,46 @@
 			properties: {
 				name: String,
 				modifier: String,
-				value: Number,
 				goal: Number,
 				days: Number,
 				total: Number,
 				symbol: String
 			},
 			ready: function() {
-				changeModifier(this, this.attributes.getNamedItem("modifier").nodeValue)
-				changeValue(this, this.attributes.getNamedItem("value").nodeValue)
-				changeGoal(this, this.attributes.getNamedItem("goal").nodeValue)
+				//FIXME: hack to get the properties since Polymer just sets them to undefined
+				var self = this,
+					ourNS = this.firefund = {}
+				Object.keys(this.properties).forEach(function(key) {
+					var item =  self.attributes.getNamedItem(key)
+					if(item.nodeValue) self.firefund[key] = item.nodeValue
+				})
+
+				var total = this.firefund.total
+				var goal = this.firefund.goal
+				var value = Math.round(total / goal * 100)
+				var days = this.firefund.days
+				var symbol = this.firefund.symbol
+
+				// configure accounting.js
+				accounting.settings.currency.symbol = symbol
+				accounting.settings.currency.precision = 0
+
+				var text = [
+					"<span>" + days + "</span> days to go",
+					"<span>" + value + "%</span> of " + accounting.formatMoney(goal),
+					"<span>" + accounting.formatMoney(total) + "</span> reached in total"
+				]
+
+				changeModifier(this, this.firefund.modifier) // modifier should always be the first thing you want to set because it changes the design
+				changeProgressbar(this, value)
+				
+
+				var dataElements = Array.prototype.slice.call( this.querySelectorAll(".f-progress__data-element"), 0 )
+				dataElements.forEach(function(el, i) {
+					el.innerHTML = text[i]
+				})
+
+				// changeGoal(this, this.firefund.goal)
 			}
 			// attached: function() { console.log(this.name) },
 		})
@@ -56,13 +82,11 @@
 				.add("f-progress_" + modifier)
 		}
 
-		function changeValue(el, val) {
+		function changeProgressbar(el, val) {
 			var val = val + "%"
 			el.querySelector(".f-progress__value")
 				.style
 				.width = val
-			el.querySelectorAll(".f-progress__data-element span")[1]
-				.innerText = val
 		}
 
 		function changeGoal(el, goal) {
