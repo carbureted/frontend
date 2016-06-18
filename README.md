@@ -27,7 +27,7 @@ Probably also with your linux distro. Make is a task runner designed for compili
 1. Go to https://github.com/Firefund/styleguide/ and copy the git url.
 1. Download the repository (`git clone --depth=1 https://github.com/Firefund/styleguide.git`) and cd into the styleguide folder.
 2. `npm i` - download the node packages that we depend on.
-3. `npm run kalei`
+3. `npm install -g bower` - downloads Bower
 4. Go to [localhost:8080](localhost:8080) in your browser (preferably in two or three different, like firefox and chrome
 to ensure that your styles work in all browsers)
 5. Start developing css in `styles/blocks/`
@@ -128,3 +128,10 @@ You can also use the -S option with the git merge command itself to sign the res
 
 ## Everyone Must Sign
 Signing tags and commits is great, but if you decide to use this in your normal workflow, you’ll have to make sure that everyone on your team understands how to do so. If you don’t, you’ll end up spending a lot of time helping people figure out how to rewrite their commits with signed versions. Make sure you understand GPG and the benefits of signing things before adopting this as part of your standard workflow.
+
+
+## Lastly
+
+A good password is only used once and is easy to remember!
+
+![Password Strength](https://www.explainxkcd.com/wiki/images/6/6a/password_strength.png)

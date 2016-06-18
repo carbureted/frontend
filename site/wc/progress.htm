@@ -1,0 +1,143 @@
+﻿<link rel="import" href="/lib/polymer-mini.html">
+
+<dom-module id="f-progress">
+
+	<template>
+		<link rel="stylesheet" href="/css/blocks/f-progress.css">
+
+		<section class="f-progress">
+			<div class="f-progress__bar">
+				<div style="width:0%;" class="f-progress__value"></div>
+			</div>
+			<div class="f-progress__data">
+				<p class="f-progress__data-element"></p>
+				<p class="f-progress__data-element"></p>
+				<p class="f-progress__data-element"></p>
+			</div>
+		</section>
+
+	</template>
+
+	<script src="/lib/accounting.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script src="/lib/underscore.js"></script>
+
+	<script>
+		Polymer({
+			/* this is the element's prototype */
+			is: 'f-progress',
+
+			properties: {
+				name: String,
+				modifier: String,
+				goal: Number,
+				days: Number,
+				total: Number,
+				symbol: String
+			},
+			ready: function() {
+				//FIXME: hack to get the properties since Polymer just sets them to undefined
+				var self = this,
+					ourNS = this.firefund = {}
+				Object.keys(this.properties).forEach(function(key) {
+					var item =  self.attributes.getNamedItem(key)
+					if(item.nodeValue) ourNS[key] = item.nodeValue
+				})
+
+				var modifier = this.firefund.modifier
+				var total = this.firefund.total
+				var goal = this.firefund.goal
+				var value = Math.round(total / goal * 100)
+				var days = this.firefund.days
+				var symbol = this.firefund.symbol
+
+				// configure accounting.js
+				accounting.settings.currency.symbol = symbol
+				accounting.settings.currency.precision = 0
+
+				var text = [
+					"<span>" + days + "</span> days to go",
+					modifier === "small"
+						? "<span>" + value + "%</span> of " + truncate(goal)
+						: "<span>" + value + "%</span> of " + accounting.formatMoney(goal),
+					"<span>" + accounting.formatMoney(total) + "</span> reached in total"
+				]
+
+				changeModifier(this, modifier) // modifier should always be the first thing you want to set because it changes the design
+
+				this.changeHandler = _.once(changeProgressbar.bind(null, self, value))
+				$(window).on("scroll", function scrollHandler() {
+					if( self.isInView() ) {
+						$(window).off("scroll", scrollHandler)
+						self.changeHandler()
+					}
+				})
+
+				var dataElements = Array.prototype.slice.call( this.querySelectorAll(".f-progress__data-element"), 0 )
+				dataElements.forEach(function(el, i) {
+					el.innerHTML = text[i]
+				})
+			},
+			attached: function() {
+				if(this.isInView())
+					this.changeHandler()
+			},
+			isInView: function() {
+				var rect = this.getBoundingClientRect();
+
+				// USE THE FOLLOWING IN A UNIT TEST
+				// console.log("Is in View", rec't.top + rect.height < window.innerHeight && rect.bottom > 0);
+				// console.log("top", rect.top, window.innerHeight, rect.height, rect.top + rect.height < window.innerHeight);
+				// console.log("bottom", rect.bottom, window.innerHeight, rect.height, rect.bottom - rect.height > 0);
+				// console.log("*******************'*");
+
+				return rect.top + rect.height < window.innerHeight && rect.bottom - rect.height > 0;
+			}
+		})
+
+		function changeModifier(el, mod) {
+			var modifier = mod || "default"
+
+			if(modifier === "default") return
+
+			el.querySelector(".f-progress")
+				.classList
+				.add("f-progress_" + modifier)
+		}
+
+		function truncate(money) {
+			return money > 999 ? accounting.formatMoney(money / 1000) + "K" : accounting.formatMoney(money)
+		}
+
+		function changeProgressbar(el, val) {
+			el.querySelector(".f-progress__value")
+				.style
+				.width = Math.min(val, 100) + "%"
+		}
+
+		//TODO: animate numbers counting from 0 to whatever value their suppose to have
+		function animateCountingNumbers(number, delay) {
+			var delayCountingValues = 500
+			_.delay(function() {
+				$({ counter: 0 }).animate({ counter: number }, {
+					duration: 1000,
+					easing: "swing",
+					step: function() {
+					if(isMoney) { //#TODO:250 refactor this block into formatNumber
+						target.text(accounting.formatMoney(Math.ceil(this.counter), {
+						symbol: prefix,
+						precision: 0
+						}) + postfix);
+					} else {
+						target.text(prefix + Math.ceil(this.counter) + postfix);
+					}
+					}/* USE THIS IN CASE THE step FUNCTION DOESN'T KEEP THE DESIRED FORMAT,
+					done: function() {
+					target.text(value);
+					}*/
+				});
+			}, delay);
+		}
+  </script>
+
+</dom-module>

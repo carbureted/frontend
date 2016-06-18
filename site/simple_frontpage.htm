@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Index</title>
+	<title>index without splash</title>
 	<link rel="stylesheet" href="css/bundle.css">
 	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
        (instead of dynamically loading it later in JS) is that the parser can go
        to town pre-fetching resources, etc. -->
 	<link rel="import" class="f-import" href="wc/progress.htm" async>
 </head>
-<header class="f-navigation">
-	<div class="f-row f-row_12">
-		<div class="f-row__cell-4 f-row__cell-mobile-5">
-			<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
-		</div>
-		<nav class="f-row__cell-8 f-row__cell-mobile-7">
-			<div class="f-row f-row_12">
-				<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
-					<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
-				</div>
-				<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
-					<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
-				</div>
-				<div class="f-row__cell-3 f-row__cell-mobile-3">
-					<a href="/about-us.htm" class="f-navigation__link">About</a>
-				</div>
-			</nav>
-		</div>
-	</div>
-</header>
+
 <body>
+
+	<header class="f-navigation">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4 f-row__cell-mobile-5">
+				<a href="/"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+			</div>
+			<nav class="f-row__cell-8 f-row__cell-mobile-7">
+				<div class="f-row f-row_12">
+					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
+					</div>
+					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
+					</div>
+					<div class="f-row__cell-3 f-row__cell-mobile-3">
+						<a href="/about-us.htm" class="f-navigation__link">About</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
 	<div class="f-hero">
 		<img src="foo/bar.png">
 		<div class="f-hero__wrapper">
@@ -65,17 +67,6 @@
 						We are the Kobanê Reconstruction Board, and this is a global call to action, to stand with us and rebuild our city.
 					</p>
 				</div>
-				<div class="f-project-thumbnail__summary f-progress__data">
-					<p class="f-progress__data-element f-progress-thumbnail__data-element">
-						<span>22</span> days to go
-					</p>
-					<p class="f-progress__data-element f-progress-thumbnail__data-element">
-						<span>38%</span> of $50,000
-					</p>
-					<p class="f-progress__data-element f-progress-thumbnail__data-element">
-						<span>$14,928</span> reached in total
-					</p>
-				</div>
 			</div>
 			<div class="f-row__cell-4">
 				<figure class="f-project-thumbnail__image">
@@ -87,11 +78,15 @@
 		</div>
 		<div class="f-row f-row_6">
 			<section class="f-row__cell">
-				<div class="f-progress" data-value="38">
-					<div class="f-project-thumbnail__progress f-progress__bar">
-						<div style="width: 38%;" class="f-progress__value"></div>
-					</div>
-				</div>
+
+					<f-progress
+						name="kobane"
+						modifier="flyout"
+						goal="130000"
+						days="2"
+						total="149280"
+						symbol="€"></f-progress>
+
 			</section>
 		</div>
 	</div>
@@ -113,22 +108,13 @@
 						We are the Kobanê Reconstruction Board, and this is a global call to action, to stand with us and rebuild our city.
 						</p>
 					</div>
-					<section class="f-miniproject-thumbnail__progress" data-value="38">
-						<div class="f-miniproject-thumbnail__progress__bar">
-							<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
-						</div>
-						<div class="f-miniproject-thumbnail__progress__data">
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>38%</span> of $50K
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>$14,928</span> pledged
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>22</span> days to go
-							</p>
-						</div>
-					</section>
+					<f-progress
+						name="shut_it_down"
+						modifier="small"
+						goal="30000"
+						days="42"
+						total="4299"
+						symbol="$"></f-progress>
 				</div>
 			</div>
 			<div class="f-miniproject-thumbnail">
@@ -146,22 +132,13 @@
 						We are the Kobanê Reconstruction Board, and this is a global call to action, to stand with us and rebuild our city.
 						</p>
 					</div>
-					<section class="f-miniproject-thumbnail__progress" data-value="38">
-						<div class="f-miniproject-thumbnail__progress__bar">
-							<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
-						</div>
-						<div class="f-miniproject-thumbnail__progress__data">
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>38%</span> of $50K
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>$14,928</span> pledged
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>22</span> days to go
-							</p>
-						</div>
-					</section>
+					<f-progress
+						name="freepeter"
+						modifier="small"
+						goal="1000"
+						days="22"
+						total="593"
+						symbol="€"></f-progress>
 				</div>
 			</div>
 			<div class="f-miniproject-thumbnail">
@@ -179,22 +156,13 @@
 						We are the Kobanê Reconstruction Board, and this is a global call to action, to stand with us and rebuild our city.
 						</p>
 					</div>
-					<section class="f-miniproject-thumbnail__progress" data-value="38">
-						<div class="f-miniproject-thumbnail__progress__bar">
-							<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
-						</div>
-						<div class="f-miniproject-thumbnail__progress__data">
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>38%</span> of $50K
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>$14,928</span> pledged
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>22</span> days to go
-							</p>
-						</div>
-					</section>
+					<f-progress
+						name="strike"
+						modifier="small"
+						goal="500000"
+						days="10"
+						total="499999"
+						symbol="$"></f-progress>
 				</div>
 			</div>
 		</div>
@@ -202,8 +170,9 @@
 	
 	<section class="f-white-card">
 		<div class="f-row f-row_6">
-			<div class="f-row__cell-2 f-row__cell_push_2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
-				<a class="f-button-organize" href="/howdoesitwork.htm">> Start organizing solidarity</a>
+			<div class="f-row__cell-1"></div>
+			<div class="f-row__cell-4">
+				<a class="f-button-organize" href="/howdoesitwork.htm">I'm definitely going to press this huge button!</a>
 			</div>
 			<div class="f-row__cell-1"></div>
 		</div>
@@ -211,35 +180,42 @@
 		<div class="f-row f-row_6">
 			<div class="f-row__cell-1"></div>
 			<div class="f-row__cell-4">
-				<p class="f-one-liner f-one-liner_center"><br>Read about how we do crowdfunding on this platform, and get in contact with the collective.</p>
+				<p class="f-one-liner f-one-liner_center">Read about how we do crowdfunding on this platform, and get in contact with the colective</p>
 			</div>
 			<div class="f-row__cell-1"></div>
 		</div>
 	</section>
+
 	<footer class="f-footer">
 		<div class="f-row f-row_12">
 			<div class="f-row__cell-4">
 				<div class="f-footer-sitemap">
-					<h2 class="f-branding f-sitemap__branding f-sitemap__links">
-						<a href="/">Fire<span>fund</span></a>
-					</h2>
+					<h2 class="f-branding f-sitemap__branding" href="http://localhost:10420">Fire<span>fund</span></h2>
 					<ul class="f-sitemap__links">
-						<li><a href="/about-us.htm">About us</a></li>
+						<li><a href="http://localhost:10420/about-us.htm">About us</a></li>
 						<li><a href="https://medium.com/@firefundnet/">Blog ></a></li>
-						<li><a href="/about-terms.htm">Terms</a></li>
-						<li><a href="/about-contact.htm">Contact</a></li>
-						<li><a href="/about-manifesto.htm">Manifesto</a></li>
-						<li><a href="/about-team.htm">Team</a></li>
-						<li><a href="/about-us.htm">Who we are</a></li>
-						<li><a href="/howdoesitwork.htm">How does it work</a></li>
-						<div class="f-spacer"></div>
+						<li><a href="http://localhost:10420/about-terms.htm">Terms</a></li>
+						<li><a href="http://localhost:10420/about-contact.htm">Contact</a></li>
+						<li><a href="http://localhost:10420/about-manifesto.htm">Manifesto</a></li>
+						<li><a href="http://localhost:10420/about-team.htm">Team</a></li>
+						<li><a href="http://localhost:10420/about-us.htm">Who we are</a></li>
+						<li><a href="http://localhost:10420/howdoesitwork.htm">How does it work</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
-				<p class="f-footer-text">
-					FIRE<span>FUND</span> is a crowdfunding platform working to finance and organize <br> social change from the bottom. 
-				</p>
+				<div class="f-row_not-desktop">
+					<!-- hacking the grid - display:none; in desktop -->
+					<p class="f-footer-text">
+						Firefund is a crowdfunding platform for progressive movements and activists. 
+					</p>
+				</div>
+				<div class="f-row_not-mobile">
+					<!-- hacking the grid - display:none; in mobile -->
+					<p class="f-footer-text">
+						Firefund is a crowdfunding platform for progressive movements and activists. We work to finance and organize social change from the bottom. 
+					</p>
+				</div>
 				<div class="f-footer-signup">
 					<form class="f-signup">
 						<label class="f-signup__label">Sign up for news:
@@ -272,6 +248,7 @@
 		</div>
 		<!-- /f-row -->
 	</footer>
+
 	<script src="js/loader.js" charset="utf8" async></script>
 	<script src="lib/jquery.js" charset="utf8" async></script>
 	<script src="lib/underscore.js" charset="utf8" async></script>
