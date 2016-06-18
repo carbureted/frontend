@@ -31,10 +31,7 @@
 
 			properties: {
 				name: String,
-				modifier: {
-					type: String,
-					reflectToAttribute: true
-				},
+				modifier: String,
 				value: Number,
 				goal: Number,
 				days: Number,
@@ -42,15 +39,27 @@
 				symbol: String
 			},
 			ready: function() {
-				var modifier = this.attributes.getNamedItem("modifier").nodeValue || "default"
-				if(modifier === "default") return
-				console.log(modifier)
-				this.querySelector(".f-progress")
-					.classList
-					.add("f-progress_" + modifier)
+				changeModifier(this, this.attributes.getNamedItem("modifier").nodeValue)
+				changeValue(this, this.attributes.getNamedItem("value").nodeValue)
 			}
 			// attached: function() { console.log(this.name) },
 		})
+
+		function changeModifier(el, mod) {
+			var modifier = mod || "default"
+
+			if(modifier === "default") return
+
+			el.querySelector(".f-progress")
+				.classList
+				.add("f-progress_" + modifier)
+		}
+
+		function changeValue(el, val) {
+			el.querySelector(".f-progress__value")
+				.style
+				.width = val + "%"
+		}
   </script>
 	
 </dom-module>
