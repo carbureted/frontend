@@ -95,10 +95,6 @@
 			}
 		})
 
-		function truncate(money) {
-			return money > 999 ? accounting.formatMoney(money / 1000) + "K" : accounting.formatMoney(money)
-		}
-
 		function changeModifier(el, mod) {
 			var modifier = mod || "default"
 
@@ -109,10 +105,38 @@
 				.add("f-progress_" + modifier)
 		}
 
+		function truncate(money) {
+			return money > 999 ? accounting.formatMoney(money / 1000) + "K" : accounting.formatMoney(money)
+		}
+
 		function changeProgressbar(el, val) {
 			el.querySelector(".f-progress__value")
 				.style
 				.width = Math.min(val, 100) + "%"
+		}
+
+		//TODO: animate numbers counting from 0 to whatever value their suppose to have
+		function animateCountingNumbers(number, delay) {
+			var delayCountingValues = 500
+			_.delay(function() {
+				$({ counter: 0 }).animate({ counter: number }, {
+					duration: 1000,
+					easing: "swing",
+					step: function() {
+					if(isMoney) { //#TODO:250 refactor this block into formatNumber
+						target.text(accounting.formatMoney(Math.ceil(this.counter), {
+						symbol: prefix,
+						precision: 0
+						}) + postfix);
+					} else {
+						target.text(prefix + Math.ceil(this.counter) + postfix);
+					}
+					}/* USE THIS IN CASE THE step FUNCTION DOESN'T KEEP THE DESIRED FORMAT,
+					done: function() {
+					target.text(value);
+					}*/
+				});
+			}, delay);
 		}
   </script>
 

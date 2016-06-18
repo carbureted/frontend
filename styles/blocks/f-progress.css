@@ -191,7 +191,7 @@ MODIFIER f-progress_flyout
 
 	background-color: var(--color-red);
 
-	transition: width 1s ease 260ms;
+	transition: width 1s ease 500ms;
 	will-change: width;
 }
 
