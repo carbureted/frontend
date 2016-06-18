@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
@@ -14,7 +13,26 @@
 
 <body>
 	
-	<f-header></f-header>
+	<header class="f-navigation">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4 f-row__cell-mobile-5">
+				<a href="/"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+			</div>
+			<nav class="f-row__cell-8 f-row__cell-mobile-7">
+				<div class="f-row f-row_12">
+					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
+					</div>
+					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
+					</div>
+					<div class="f-row__cell-3 f-row__cell-mobile-3">
+						<a href="/about-us.htm" class="f-navigation__link">About</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
 
 	<div class="f-hero">
 		<img src="foo/bar.png">
@@ -62,13 +80,13 @@
 			<section class="f-row__cell">
 
 					<f-progress
-						name="kobane"
-						modifier="flyout"
-						value="63"
-						goal="50000"
-						days="22"
-						total="14928",
-						symbol="$"></f-progress>
+						data-name="kobane"
+						data-modifier="flyout"
+						data-value="63"
+						data-goal="50000"
+						data-days="22"
+						data-total="14928",
+						data-symbol="$"></f-progress>
 
 			</section>
 		</div>
@@ -92,12 +110,12 @@
 						</p>
 					</div>
 					<f-progress
-						name="kobane"
-						modifier="small"
-						value="63"
-						goal="$50000"
-						days="22"
-						total="$14928"></f-progress>
+						data-name="kobane"
+						data-modifier="small"
+						data-value="63"
+						data-goal="$50000"
+						data-days="22"
+						data-total="$14928"></f-progress>
 				</div>
 			</div>
 			<div class="f-miniproject-thumbnail">
@@ -116,12 +134,12 @@
 						</p>
 					</div>
 					<f-progress
-						name="kobane"
-						modifier="small"
-						value="85"
-						goal="$50000"
-						days="22"
-						total="$14928"></f-progress>
+						data-name="kobane"
+						data-modifier="small"
+						data-value="85"
+						data-goal="$50000"
+						data-days="22"
+						data-total="$14928"></f-progress>
 				</div>
 			</div>
 			<div class="f-miniproject-thumbnail">
@@ -140,12 +158,12 @@
 						</p>
 					</div>
 					<f-progress
-						name="kobane"
-						modifier="small"
-						value="2"
-						goal="$50000"
-						days="22"
-						total="$14928"></f-progress>
+						data-name="kobane"
+						data-modifier="small"
+						data-value="2"
+						data-goal="$50000"
+						data-days="22"
+						data-total="$14928"></f-progress>
 				</div>
 			</div>
 		</div>
