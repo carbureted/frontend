@@ -232,7 +232,9 @@ MODIFIER f-progress_flyout
 	white-space: nowrap;
 }
 
-.f-progress_flyout {}
+.f-progress_flyout {
+	position: relative;
+}
 .f-progress_flyout .f-progress__bar {
 	margin: 0 var(--gutter-width);
 
@@ -240,8 +242,7 @@ MODIFIER f-progress_flyout
 }
 .f-progress_flyout .f-progress__data {
 	position: absolute;
-	position: absolute;
-	top: -var(--margin-text); /*TODO: probably needs adjustment */
+	top: -2rem;
 	left: 0;	
 	flex-direction: column;
 	

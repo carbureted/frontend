@@ -28,24 +28,28 @@
 		Polymer({
 			/* this is the element's prototype */
 			is: 'f-progress',
+
 			properties: {
 				name: String,
-				modifier: String,
+				modifier: {
+					type: String,
+					reflectToAttribute: true
+				},
 				value: Number,
 				goal: Number,
 				days: Number,
 				total: Number,
 				symbol: String
 			},
-			attached: function() {
-				var modifier = this.modifier || "default"
+			ready: function() {
+				var modifier = this.attributes.getNamedItem("modifier").nodeValue || "default"
 				if(modifier === "default") return
 				console.log(modifier)
 				this.querySelector(".f-progress")
 					.classList
 					.add("f-progress_" + modifier)
 			}
-			// ready: function() { console.log(this.name) },
+			// attached: function() { console.log(this.name) },
 		})
   </script>
 	
