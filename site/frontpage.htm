@@ -10,33 +10,45 @@
        (instead of dynamically loading it later in JS) is that the parser can go
        to town pre-fetching resources, etc. -->
 	<link rel="import" class="f-import" href="wc/progress.htm" async>
+
+	<style>
+		/*FIXME: hack to gracefully show the progress WC after the BEM modifier has taken effect */
+		.f-progress_flyout-wrapper {
+			height: 4.6rem;
+			opacity: 0;
+			transition: opacity 250ms ease 250ms;
+		}
+	</style>
 </head>
-<header class="f-navigation">
-	<div class="f-row f-row_12">
-		<div class="f-row__cell-4 f-row__cell-mobile-5">
-			<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
-		</div>
-		<nav class="f-row__cell-8 f-row__cell-mobile-7">
-			<div class="f-row f-row_12">
-				<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
-					<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
-				</div>
-				<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
-					<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
-				</div>
-				<div class="f-row__cell-3 f-row__cell-mobile-3">
-					<a href="/about-us.htm" class="f-navigation__link">About</a>
-				</div>
-			</nav>
-		</div>
-	</div>
-</header>
+
 <body>
+
+	<header class="f-navigation">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4 f-row__cell-mobile-5">
+				<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+			</div>
+			<nav class="f-row__cell-8 f-row__cell-mobile-7">
+				<div class="f-row f-row_12">
+					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
+					</div>
+					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
+					</div>
+					<div class="f-row__cell-3 f-row__cell-mobile-3">
+						<a href="/about-us.htm" class="f-navigation__link">About</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
 	<div class="f-hero">
 		<img src="foo/bar.png">
 		<div class="f-hero__wrapper">
 			<div class="f-row f-row_6">
-				<div class="f-row__cell">				
+				<div class="f-row__cell">
 					<div class="f-hero__heading">
 						<h1><span>Project:</span></h1><br>
 						<h1>SHELTER</h1>
@@ -65,37 +77,22 @@
 						We are the Kobanê Reconstruction Board, and this is a global call to action, to stand with us and rebuild our city.
 					</p>
 				</div>
-				<div class="f-project-thumbnail__summary f-progress__data">
-					<p class="f-progress__data-element f-progress-thumbnail__data-element">
-						<span>22</span> days to go
-					</p>
-					<p class="f-progress__data-element f-progress-thumbnail__data-element">
-						<span>38%</span> of $50,000
-					</p>
-					<p class="f-progress__data-element f-progress-thumbnail__data-element">
-						<span>$14,928</span> reached in total
-					</p>
-				</div>
 			</div>
 			<div class="f-row__cell-4">
 				<figure class="f-project-thumbnail__image">
 					<a href="project.htm">
-						<img src="assets/image/18.jpg"</img>
+						<img src="assets/image/18.jpg">
 					</a>
 				</figure>
 			</div>
 		</div>
 		<div class="f-row f-row_6">
-			<section class="f-row__cell">
-				<div class="f-progress" data-value="38">
-					<div class="f-project-thumbnail__progress f-progress__bar">
-						<div style="width: 38%;" class="f-progress__value"></div>
-					</div>
-				</div>
+			<section class="f-row__cell f-progress_flyout-wrapper">
+				<f-progress name="kobane" modifier="flyout" goal="50000" days="22" total="14928" symbol="€"></f-progress>
 			</section>
 		</div>
 	</div>
-	
+
 	<section class="f-page-wrapper">
 		<div class="f-column f-column_3 f-column_mobile_1">
 			<div class="f-miniproject-thumbnail">
@@ -113,22 +110,7 @@
 						We are the Kobanê Reconstruction Board, and this is a global call to action, to stand with us and rebuild our city.
 						</p>
 					</div>
-					<section class="f-miniproject-thumbnail__progress" data-value="38">
-						<div class="f-miniproject-thumbnail__progress__bar">
-							<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
-						</div>
-						<div class="f-miniproject-thumbnail__progress__data">
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>38%</span> of $50K
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>$14,928</span> pledged
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>22</span> days to go
-							</p>
-						</div>
-					</section>
+					<f-progress name="shut-it-down" modifier="small" goal="50000" days="22" total="3212" symbol="€"></f-progress>
 				</div>
 			</div>
 			<div class="f-miniproject-thumbnail">
@@ -146,22 +128,7 @@
 						We are the Kobanê Reconstruction Board, and this is a global call to action, to stand with us and rebuild our city.
 						</p>
 					</div>
-					<section class="f-miniproject-thumbnail__progress" data-value="38">
-						<div class="f-miniproject-thumbnail__progress__bar">
-							<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
-						</div>
-						<div class="f-miniproject-thumbnail__progress__data">
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>38%</span> of $50K
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>$14,928</span> pledged
-							</p>
-							<p class="f-miniproject-thumbnail__progress__data-element">
-								<span>22</span> days to go
-							</p>
-						</div>
-					</section>
+					<f-progress name="freepeter" modifier="small" goal="50000" days="5" total="32212" symbol="€"></f-progress>
 				</div>
 			</div>
 			<div class="f-miniproject-thumbnail">
@@ -179,6 +146,7 @@
 						We are the Kobanê Reconstruction Board, and this is a global call to action, to stand with us and rebuild our city.
 						</p>
 					</div>
+					<!--FIXME: f-miniproject-thumbnail__progress left here as reference when I need to restyle the project thumbnail ~JON -->
 					<section class="f-miniproject-thumbnail__progress" data-value="38">
 						<div class="f-miniproject-thumbnail__progress__bar">
 							<div style="width: 38%;" class="f-miniproject-thumbnail__progress__value"></div>
@@ -199,7 +167,7 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<section class="f-white-card">
 		<div class="f-row f-row_6">
 			<div class="f-row__cell-2 f-row__cell_push_2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
@@ -207,7 +175,7 @@
 			</div>
 			<div class="f-row__cell-1"></div>
 		</div>
-		
+
 		<div class="f-row f-row_6">
 			<div class="f-row__cell-1"></div>
 			<div class="f-row__cell-4">
@@ -238,7 +206,7 @@
 			</div>
 			<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
 				<p class="f-footer-text">
-					FIRE<span>FUND</span> is a crowdfunding platform working to finance and organize <br> social change from the bottom. 
+					FIRE<span>FUND</span> is a crowdfunding platform working to finance and organize <br> social change from the bottom.
 				</p>
 				<div class="f-footer-signup">
 					<form class="f-signup">
@@ -272,6 +240,7 @@
 		</div>
 		<!-- /f-row -->
 	</footer>
+
 	<script src="js/loader.js" charset="utf8" async></script>
 	<script src="lib/jquery.js" charset="utf8" async></script>
 	<script src="lib/underscore.js" charset="utf8" async></script>

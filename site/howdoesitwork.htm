@@ -5,98 +5,45 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>how does it work</title>
-	<style>
-		/* Style splash screen here	*/
-		
-		* {
-			font-family: "Roboto";
-		}
-		
-		body {
-			background-color: black;
-		}
-		
-		@keyframes light-white {
-			to {
-				color: hsla(0, 0%, 85%, 1);
-			}
-		}
-		
-		@keyframes light-red {
-			to {
-				color: hsla(1, 73.7%, 31%, 1);
-			}
-		}
-		
-		.f-splash {
-			position: fixed;
-			z-index: 100;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: hsla(0, 0%, 0%, 0.6);
-			-webkit-transition: opacity 300ms ease 1s;
-			transition: opacity 300ms ease 1s;
-			opacity: 0;
-		}
-		
-		.f-splash_loading {
-			opacity: 1;
-		}
-		
-		.f-splash__content {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			-webkit-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);
-		}
-		
-		.f-splash__branding {
-			margin: 0;
-			color: hsla(0, 0%, 100%, 1);
-			font-size: 4.1rem;
-			line-height: 4.1rem;
-			font-weight: 700;
-			text-transform: uppercase;
-			animation: light-white 1s ease-in-out alternate infinite;
-		}
-		
-		.f-splash__branding span {
-			color: hsla(1, 73.7%, 38.8%, 1);
-			animation: light-red 1s ease-in-out alternate infinite 250ms;
-		}
-		
-		#splash {
-			transform: scale(3);
-		}
-	</style>
 	<link rel="stylesheet" href="css/bundle.css">
 	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
        (instead of dynamically loading it later in JS) is that the parser can go
        to town pre-fetching resources, etc. -->
-	<link rel="import" class="f-import" href="wc/header.htm" async>
+	<!-- TODO: change this to whatever WC you need <link rel="import" class="f-import" href="wc/header.htm" async>-->
 </head>
 
 <body>
-	<div id="splash" class="f-splash f-splash_loading">
-		<div class="f-splash__content">
-			<h2 class="f-splash__branding">Fire<span>fund</span></h2>
-		</div>
-	</div>
 
-	<f-header></f-header>
+	<header class="f-navigation">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4 f-row__cell-mobile-5">
+				<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+			</div>
+			<nav class="f-row__cell-8 f-row__cell-mobile-7">
+				<div class="f-row f-row_12">
+					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
+					</div>
+					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
+					</div>
+					<div class="f-row__cell-3 f-row__cell-mobile-3">
+						<a href="/about-us.htm" class="f-navigation__link">About</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
 
 	<article class="f-content">
 		<div class="f-spacer"></div>
 		<div class="scrollme">
-        	<div class="animateme" 
-	            data-when="enter" 
-	            data-from="0" 
-	            data-to="1" 
-	            data-opacity="0" 
-	            data-easing="easeinout" 
+        	<div class="animateme"
+	            data-when="enter"
+	            data-from="0"
+	            data-to="1"
+	            data-opacity="0"
+	            data-easing="easeinout"
 	            data-translatey="100">
             <h1 class="f-huge-heading">How does it work?</h4>
             </div>
@@ -123,18 +70,18 @@
 						Crowdfunding is simply a way of mobilizing a crowd in support of your project, and converting that support into direct funding with many small donations.
 					</p>
 					<p class="f-info-card_text">
-						 The aim is to create a tool that uses financing of initiatives for social change as a means to organize solidarity internationally.  
+						 The aim is to create a tool that uses financing of initiatives for social change as a means to organize solidarity internationally.
 					</p>
 				</div>
 <!-- 				<div class="wrapper"> -->
 					<div class="f-row__cell-1 f-row__cell-mobile-3">
 						<div class="scrollme">
-			            	<div class="animateme"             
-				                data-when="span" 
-				                data-from="0" 
-				                data-to="1" 
-				                data-opacity="0" 
-				                data-easing="easeout" 
+			            	<div class="animateme"
+				                data-when="span"
+				                data-from="0"
+				                data-to="1"
+				                data-opacity="0"
+				                data-easing="easeout"
 				                data-translatex="325">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/fishes_fishes.svg" alt="Crowdfunding"/>
@@ -144,12 +91,12 @@
 			        </div>
 			        <div class="f-row__cell-1 f-row__cell-mobile-3">
 						<div class="scrollme">
-			            	<div class="animateme"             
-				                data-when="span" 
-				                data-from="0" 
-				                data-to="1" 
-				                data-opacity="0" 
-				                data-easing="easeout" 
+			            	<div class="animateme"
+				                data-when="span"
+				                data-from="0"
+				                data-to="1"
+				                data-opacity="0"
+				                data-easing="easeout"
 				                data-translatex="275">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/fish.svg" alt="Crowdfunding"/>
@@ -166,7 +113,7 @@
 						<div class="f-spacer"></div>
 								<div class="f-spacer"></div>
 										<div class="f-spacer"></div>
-		
+
 		<div class="f-info-card">
 			<section class="f-row f-row_6">
 				<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
@@ -182,8 +129,8 @@
 			<section class="f-row f-row_6">
 				<div class="f-row__cell-2 f-row__cell_push_1 f-row__cell-mobile">
 					<p class="f-info-card_text">
-						To organize solidarity, we need to connect our struggles and support each other in reaching common goals. 
-						We aim to create a tool for initiatives to connect and support each other. 
+						To organize solidarity, we need to connect our struggles and support each other in reaching common goals.
+						We aim to create a tool for initiatives to connect and support each other.
 					</p>
 					<p class="f-info-card_text">
 						This platform is based on horizontal exchange of support and funding: Solidarity.
@@ -191,12 +138,12 @@
 				</div>
 				<div class="f-row__cell-2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
 					<div class="scrollme">
-		            	<div class="animateme"             
-			                data-when="span" 
-			                data-from="1" 
-			                data-to="0" 
-			                data-opacity="1" 
-			                data-easing="easeinout" 
+		            	<div class="animateme"
+			                data-when="span"
+			                data-from="1"
+			                data-to="0"
+			                data-opacity="1"
+			                data-easing="easeinout"
 			                data-translatey="200">
 			                <figure class="f-media">
 			                  	<img class="f-media__media" src="assets/image/Fist.svg" alt="Solidarity!"/>
@@ -237,67 +184,67 @@
 				<div class="f-row__cell-2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
 					<div class="wrapper">
 						<div class="scrollme">
-			            	<div class="animateme"             
-				                data-when="exit" 
-				                data-from="0.6" 
+			            	<div class="animateme"
+				                data-when="exit"
+				                data-from="0.6"
 				                data-to="0.2"
-				                data-opacity="0" 
-				                data-easing="easeinout" 
+				                data-opacity="0"
+				                data-easing="easeinout"
 				                data-translatey="-100">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/HAY-01.svg" alt="badguy"/>
 				                </figure>
 			            	</div>
-			            	<div class="animateme"             
-				                data-when="exit" 
-				                data-from="0.6" 
-				                data-to="0.4" 
-				                data-opacity="0" 
-				                data-easing="easeinout" 
+			            	<div class="animateme"
+				                data-when="exit"
+				                data-from="0.6"
+				                data-to="0.4"
+				                data-opacity="0"
+				                data-easing="easeinout"
 				                data-translatey="-100">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/HAY-02.svg" alt="badguy"/>
 				                </figure>
 			            	</div>
-			            	<div class="animateme"             
-				                data-when="exit" 
-				                data-from="0.7" 
-				                data-to="0.35" 
-				                data-opacity="0" 
-				                data-easing="easeinout" 
+			            	<div class="animateme"
+				                data-when="exit"
+				                data-from="0.7"
+				                data-to="0.35"
+				                data-opacity="0"
+				                data-easing="easeinout"
 				                data-translatey="-100">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/HAY-03.svg" alt="badguy"/>
 				                </figure>
 			            	</div>
-			            	<div class="animateme"             
-				                data-when="exit" 
-				                data-from="0.8" 
-				                data-to="0.55" 
-				                data-opacity="0" 
-				                data-easing="easeinout" 
+			            	<div class="animateme"
+				                data-when="exit"
+				                data-from="0.8"
+				                data-to="0.55"
+				                data-opacity="0"
+				                data-easing="easeinout"
 				                data-translatey="75">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/HAY-04.svg" alt="badguy"/>
 				                </figure>
 			            	</div>
-			            	<div class="animateme"             
-				                data-when="exit" 
-				                data-from="0.8" 
-				                data-to="0.6" 
-				                data-opacity="0" 
-				                data-easing="easeinout" 
+			            	<div class="animateme"
+				                data-when="exit"
+				                data-from="0.8"
+				                data-to="0.6"
+				                data-opacity="0"
+				                data-easing="easeinout"
 				                data-translatey="100">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/HAY-05.svg" alt="badguy"/>
 				                </figure>
 			            	</div>
-			            	<div class="animateme"             
-				                data-when="exit" 
-				                data-from="0.8" 
-				                data-to="0.65" 
-				                data-opacity="0" 
-				                data-easing="easeinout" 
+			            	<div class="animateme"
+				                data-when="exit"
+				                data-from="0.8"
+				                data-to="0.65"
+				                data-opacity="0"
+				                data-easing="easeinout"
 				                data-translatey="100">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/HAY-06.svg" alt="badguy"/>
@@ -314,7 +261,7 @@
 						<div class="f-spacer"></div>
 								<div class="f-spacer"></div>
 										<div class="f-spacer"></div>
-		
+
 		<div class="f-info-card">
 			<section class="f-row f-row_6">
 				<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
@@ -341,7 +288,7 @@
 				</div>
 			</section>
 		</div>
-		
+
 		<div class="f-spacer"></div>
 				<div class="f-spacer"></div>
 						<div class="f-spacer"></div>
@@ -366,17 +313,17 @@
 						A collective of activists coordinates and facilitates the platform. These are the people you talk to if you wish to organize a campaign.
 					</p>
 					<p class="f-info-card_text">
-						We are currently working on decentralizing the work of facilitating crowdfunding campaigns and the platform itself.  
+						We are currently working on decentralizing the work of facilitating crowdfunding campaigns and the platform itself.
 					</p>
 				</div>
 				<div class="f-row__cell-2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
 					<div class="scrollme">
-			           	<div class="animateme"             
-			                data-when="span" 
-			                data-from="0.8" 
-			                data-to="0" 
-			                data-opacity="0" 
-			                data-easing="easeinout" 
+			           	<div class="animateme"
+			                data-when="span"
+			                data-from="0.8"
+			                data-to="0"
+			                data-opacity="0"
+			                data-easing="easeinout"
 			                data-translatey="100">
 			                <figure class="f-media">
 			                  	<img class="f-media__media" src="assets/image/Collective.svg" alt="Collective"/>
@@ -392,7 +339,7 @@
 						<div class="f-spacer"></div>
 								<div class="f-spacer"></div>
 										<div class="f-spacer"></div>
-		
+
 		<div class="f-info-card">
 			<section class="f-row f-row_6">
 				<div class="f-row__cell-3 f-row__cell_push_1 f-row__cell-mobile">
@@ -421,23 +368,23 @@
 				<div class="f-row__cell-2 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
 					<div class="wrapper">
 						<div class="scrollme">
-				           	<div class="animateme"             
-				                data-when="span" 
-				                data-from="1" 
-				                data-to="0.3" 
-				                data-opacity="0.5" 
-				                data-easing="easeout" 
+				           	<div class="animateme"
+				                data-when="span"
+				                data-from="1"
+				                data-to="0.3"
+				                data-opacity="0.5"
+				                data-easing="easeout"
 				                data-translatey="1000">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/security02.svg" alt="internet security"/>
 				                </figure>
 				           	</div>
-				           	<div class="animateme"             
-				                data-when="span" 
-				                data-from="1" 
-				                data-to="0.3" 
-				                data-opacity="1" 
-				                data-easing="easeout" 
+				           	<div class="animateme"
+				                data-when="span"
+				                data-from="1"
+				                data-to="0.3"
+				                data-opacity="1"
+				                data-easing="easeout"
 				                data-translatey="100">
 				                <figure class="f-media">
 				                  	<img class="f-info-card_image" src="assets/image/security01.svg" alt="internet security"/>
@@ -451,7 +398,7 @@
 
 		<div class="f-spacer"></div>
 				<div class="f-spacer"></div>
-		
+
 		<div class="f-row f-row_6">
 			<div class="f-row__cell-1"></div>
 			<div class="f-row__cell-4">
@@ -459,7 +406,7 @@
 			</div>
 			<div class="f-row__cell-1"></div>
 		</div>
-		
+
 		<div class="f-row f-row_6">
 			<div class="f-row__cell-1"></div>
 			<div class="f-row__cell-4">
@@ -467,7 +414,7 @@
 			</div>
 			<div class="f-row__cell-1"></div>
 		</div>
-		
+
 		<div class="f-spacer"></div>
 	</article>
 
@@ -536,16 +483,13 @@
 		<!-- /f-row -->
 	</footer>
 
-	<script src="js/loader.js" charset="utf8" async>
-	<script> // TODO: Why is this needed?!?
+	<script src="js/loader.js" charset="utf8" async></script>
+	<script src="lib/underscore.js" charset="utf8" async></script>
+	<script src="lib/jquery.js" charset="utf8"></script>
+    <script src="lib/jquery.scrollme.min.js" charset="utf-8"></script>
+	<script>
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
 	</script>
-
-	<script src="lib/jquery.js" charset="utf-8"></script>
-    <script src="lib/jquery.scrollme.min.js" charset="utf-8"></script>
-
-
-
 </body>
 
 </html>

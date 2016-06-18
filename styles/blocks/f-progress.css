@@ -191,7 +191,7 @@ MODIFIER f-progress_flyout
 
 	background-color: var(--color-red);
 
-	transition: width 1s ease 500ms;
+	transition: width 1s ease 260ms;
 	will-change: width;
 }
 
@@ -224,7 +224,7 @@ MODIFIER f-progress_flyout
 	height: .3rem;
 	margin: 0 0 .5rem;
 
-	background-color: var(--color-grey-dark);
+	background-color: var(--color-grey);
 }
 .f-progress_small .f-progress__data-element {
 	font-size: 1rem;
