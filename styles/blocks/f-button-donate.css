@@ -60,7 +60,8 @@ TO DO:
 .f-button-donate {
 	padding: 2.2rem 0 2.3rem 0;
 	border: 2px solid var(--color-red);
-	width: inherit;
+	border-radius: 0.5rem;
+	width: 100%;
 
 	color: var(--color-white);
 
