@@ -30,9 +30,20 @@ Now, you only need to write `git l`.
 
 You'll need a pgp key with the same name as your github user.
 
+This will choose which key you are using for verification: 
 `git config user.signingkey [Your key]`
 
+This will set it to do it automatically, so you don't have to write -S with your commits: 
 `git config commit.gpgsign true`
+
+If you by accident committed something that is not signed: 
+'git commit --amend -S'
+
+OBS: Most people will enter Wi, and you can get out again by clicking: ESC, :, w,q,enter
+OBS: If you hate it when you enter Wi, then you can change to your preferred editor instead of Wi like this: 
+https://trello.com/c/24uvJkO0/476-jon-please-help-mikkel-add-his-text-editor-as-default-in-his-shell-3
+
+
 
 You can see your key by writing `gpg --list-keys`
 
