@@ -166,10 +166,11 @@ MODIFIER f-payment_bitcoin
 }*/
 
 .f-payment__credit {
+/*	position: absolute;*/
 	display: none;
-	opacity: 0;
+	opacity: 1;
 	transition: opacity 500ms ease;
-	pointer-events: none;
+	pointer-events: unset;
 
 }
 
@@ -179,13 +180,21 @@ MODIFIER f-payment_bitcoin
 	pointer-events: unset;
 }
 
+.f-payment_bitcoin_container {
+	position: absolute;
+	display: block;
+}
 
+.f-payment_credit_container {
+	position: absolute;
+	display: block;
+}
 
 .f-payment__bitcoin {
-	display: none;
-	opacity: 0;
+	display: block;
+	opacity: 1;
 	transition: opacity 500ms ease;
-	pointer-events: none;
+	pointer-events: unset;
 }
 
 .f-payment_step_bitcoin .f-payment__bitcoin {
@@ -209,7 +218,7 @@ MODIFIER f-payment_bitcoin
 
 
 .f-payment__footer-credit {
-	display:none;
+	display: none;
 /*	transform: translateY(-28rem);*/
 
 	position: relative;
@@ -225,9 +234,8 @@ MODIFIER f-payment_bitcoin
 
 }
 
-.f-payment__footer-bitcoin {
+/*.f-payment__footer-bitcoin {
 	display:none;
-/*	transform: translateY(-28rem);*/
 
 	position: relative;
 
@@ -239,17 +247,17 @@ MODIFIER f-payment_bitcoin
 	z-index: -1;
 
 	transition: transform 250ms ease-out;
-}
+}*/
 
 
-.f-payment_step_bitcoin .f-payment__footer-bitcoin {
+.f-payment_step_bitcoin .f-payment__footer-credit {
 	display:block;
-/*	transform: translateY(0rem);*/
+
 }
 
 .f-payment_step_credit .f-payment__footer-credit {
 	display:block;
-/*	transform: translateY(0rem);*/
+	transform: translateY(0rem);
 }
 
 
@@ -357,20 +365,6 @@ MODIFIER f-payment_bitcoin
 	transition: transform 250ms ease-out;
 }*/
 
-/*KOPIII*/
-/*.f-payment__footer {
-	display: none;
-	position: relative;
-
-	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
-	padding: 3.4rem 0 2rem 3.4rem;
-
-	background: var(--color-grey-light);
-
-	z-index: -1;
-
-	transition: transform 250ms ease-out;
-}*/
 
 .f-payment__footer-text {
 	color: var(--color-grey);

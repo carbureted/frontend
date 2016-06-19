@@ -353,7 +353,7 @@
 
 			<!-- The one and only -->
 
-			<div class="f-payment">			
+			<div class="f-payment f-payment_step_">			
 				<div class="f-row f-row_12">
 					<div class="f-row__cell-7 f-row_not-mobile">
 						<h2 class="f-payment__heading"> Choose the amount and method of payment</h2>
@@ -374,62 +374,72 @@
 					<!-- step 2 -->
 					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
 						<div class="f-payment__credit">
-							<div class="f-payment__radio-group f-radio-group">
-								<div class="f-column f-column_2 f-column_mobile_3">
-									<div class="f-radio-group__element">
-										<input id="rb10" type="radio" name="rb" value="500">
-										<label for="rb10">$500</label>
+							<div class="f-payment_credit_container">
+								<div class="f-payment__radio-group f-radio-group">
+									<div class="f-column f-column_2 f-column_mobile_3">
+										<div class="f-radio-group__element">
+											<input id="rb10" type="radio" name="rb" value="500">
+											<label for="rb10">$500</label>
+										</div>
+										<div class="f-radio-group__element">
+											<input id="rb11" type="radio" name="rb" value="250">
+											<label for="rb11">$250</label>
+										</div>
+										<div class="f-radio-group__element">
+											<input id="rb12" type="radio" name="rb" value="100">
+											<label for="rb12">$100</label>
+										</div>
+										<div class="f-radio-group__element">
+											<input id="rb13" type="radio" name="rb" value="50">
+											<label for="rb13">$50</label>
+										</div>
+										<div class="f-radio-group__element">
+											<input id="rb14" type="radio" name="rb" value="20">
+											<label for="rb14">$20</label>
+										</div>
+										<div class="f-text-input f-radio-group__element f-payment__radio-input">
+											<input id="rb15" type="radio" name="rb" value="20">
+											<label for="rb15">
+												<input class="f-text-input__text-field" type="number" placeholder="$10">
+											</label>
+										</div>
 									</div>
-									<div class="f-radio-group__element">
-										<input id="rb11" type="radio" name="rb" value="250">
-										<label for="rb11">$250</label>
-									</div>
-									<div class="f-radio-group__element">
-										<input id="rb12" type="radio" name="rb" value="100">
-										<label for="rb12">$100</label>
-									</div>
-									<div class="f-radio-group__element">
-										<input id="rb13" type="radio" name="rb" value="50">
-										<label for="rb13">$50</label>
-									</div>
-									<div class="f-radio-group__element">
-										<input id="rb14" type="radio" name="rb" value="20">
-										<label for="rb14">$20</label>
-									</div>
-									<div class="f-text-input f-radio-group__element f-payment__radio-input">
-										<input id="rb15" type="radio" name="rb" value="20">
-										<label for="rb15">
-											<input class="f-text-input__text-field" type="number" placeholder="$10">
-										</label>
-									</div>
+								</div>
+								<div class="f-payment__button-group">
+									<button class="f-button-donate">Donate</button>
 								</div>
 							</div>
-								<div class="f-row__cell-12">
-									<div class="f-payment__button-group">
-										<button class="f-button-donate">Donate</button>
-									</div>
-								</div>
+							<div class="f-payment_bitcoin_container">
+								<figure>
+									<img src="assets/image/btcad.png">
+								</figure>
+								<div class="f-text-input f-text-input_readonly">
+								<label class="f-text-input__label">To bitcoin adress:
+									<input class="f-text-input__text-field" readonly type="text" value="1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2">
+								</label>
 							</div>
 						</div>
 					</div>
 
 
 					<!-- step 3 -->
-					<div class="f-payment__bitcoin f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
-								<figure>
-									<img src="assets/image/btcad.png">
-								</figure>
-							<div class="f-row__cell-12">
-								<div class="f-text-input f-text-input_readonly">
-								<label class="f-text-input__label">To bitcoin adress:
-									<input class="f-text-input__text-field" readonly type="text" value="1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2">
-								</label>
-							</div>
+<!-- 					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
+						<div class="f-payment__bitcoin">
+							<div class="f-payment_bitcoin_container">
+								<div class="f-row__cell-12">
+									<figure>
+										<img src="assets/image/btcad.png">
+									</figure>
+									<div class="f-text-input f-text-input_readonly">
+									<label class="f-text-input__label">To bitcoin adress:
+										<input class="f-text-input__text-field" readonly type="text" value="1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2">
+									</label>
+								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
-					<div class="f-payment__footer f-payment__footer-credit">
+<!-- 					<div class="f-payment__footer f-payment__footer-credit">
 						<div class="f-row f-row_12">
 							<div class="f-row__cell-6 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
 								<div class="f-payment__footer-text f-text">You decide the cut. Please, keep in mind that FIREFUND is non-profit and activist-driven.
@@ -461,7 +471,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 				</div>
 			</div>
