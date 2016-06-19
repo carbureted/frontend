@@ -180,7 +180,7 @@ MODIFIER f-payment_bitcoin
 
 .f-payment__bitcoin {
 
-	position: absolute;
+	position: relative;
 
 	display: none;
 
@@ -207,7 +207,7 @@ MODIFIER f-payment_bitcoin
 }
 
 .f-payment_bitcoin_container {
-	position: absolute;
+	position: relative;
 	display: block;
 }
 
@@ -272,7 +272,6 @@ MODIFIER f-payment_bitcoin
 
 .f-payment_step_credit .f-payment__footer-credit {
 	display:block;
-	transform: translateY(0rem);
 }
 
 
