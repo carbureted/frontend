@@ -1,7 +1,6 @@
-﻿<script src="/lib/openpgp.min.js"></script>
-<link rel="import" href="/lib/polymer.html">
+﻿<link rel="import" href="/lib/polymer.html">
 
-<dom-module id="f-secure-text-input" attributes="armoredOutput">
+<dom-module id="f-secure-text-input">
 
 	<template>
 		<link rel="stylesheet" href="/css/blocks/f-text-input.css">
@@ -17,7 +16,7 @@
 			</div>
 				<button id="enc_button" class="f-button-basic">Encrypt</button>
 				<input type="submit" class="f-button-basic">
-				<button id="dec_button" class="f-button-basic">Descrypt</button>
+				<button id="dec_button" class="f-button-basic">Decrypt</button>
 		</form>
 
 		<div class="f-text-input f-text-input_multiline">
@@ -28,6 +27,7 @@
 
 	</template>
 
+	<script src="/lib/openpgp.min.js"></script>
 	<script>
 		Polymer({
 			/* this is the element's prototype */
