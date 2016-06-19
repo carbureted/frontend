@@ -149,14 +149,8 @@ MODIFIER f-payment_bitcoin
 	</div><!-- /f-modal__content -->
 </div><!-- /f-modal -->
 ```
-
-<script>
-	// demo script to toggle the modal window
-	document.querySelector(".f-button-basic").addEventListener("click", function(e) {
-		document.querySelector(".f-modal").classList.toggle("f-modal_visible")
-	})
-</script>
 */
+
 
 @import "../variables";
 .f-payment {
@@ -167,23 +161,54 @@ MODIFIER f-payment_bitcoin
 
 }
 
-.f-payment .f-payment_step_bitcoin, .f-payment_step_credit {
+/*.f-payment .f-payment_step_bitcoin, .f-payment_step_credit {
 	height: 50.5rem;
-}
+}*/
 
 .f-payment__credit {
+
+	opacity: 0;
+	transition: opacity 500ms ease;
+	pointer-events: none;
+
+}
+
+.f-payment_step_credit .f-payment__credit {
+	display:block;
+	opacity: 1;
+	pointer-events: unset;
+}
+
+
+
+.f-payment__bitcoin {
 	opacity: 0;
 	transition: opacity 500ms ease;
 	pointer-events: none;
 }
 
-.f-payment_step_credit .f-payment__credit {
+.f-payment_step_bitcoin .f-payment__bitcoin {
+	display:block;
 	opacity: 1;
 	pointer-events: unset;
 }
 
+
+
+/*.f-payment__footer-bitcoin, .f-payment__footer-credit {
+	transform: translateY(-28rem);
+}*/
+
+.f-payment__footer-credit {
+	display:none;
+}
+
+.f-payment__footer-bitcoin {
+	display:none;
+}
+
 .f-payment_step_bitcoin .f-payment__footer-bitcoin {
-	transform: translateY(-11rem);	
+	transform: translateY(0rem);
 }
 
 .f-payment_step_credit .f-payment__footer-credit {
@@ -290,11 +315,25 @@ MODIFIER f-payment_bitcoin
 
 	background: var(--color-grey-light);
 
-	transform: translateY(-28rem);
 	z-index: -1;
 
 	transition: transform 250ms ease-out;
 }
+
+/*KOPIII*/
+/*.f-payment__footer {
+	display: none;
+	position: relative;
+
+	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
+	padding: 3.4rem 0 2rem 3.4rem;
+
+	background: var(--color-grey-light);
+
+	z-index: -1;
+
+	transition: transform 250ms ease-out;
+}*/
 
 .f-payment__footer-text {
 	color: var(--color-grey);
@@ -536,8 +575,7 @@ With a `f-text-input` field
 
 </div> <!-- only here for the style guide - should not be used on the website -->
 ```
-*/
-/*.f-payment__radio-input.f-text-input__text-field {
+.f-payment__radio-input.f-text-input__text-field {
 	display: inline-block;
 	width: calc(100% - 3.3rem);
 }
@@ -581,4 +619,5 @@ With a `f-text-input` field
 	background-color: var(--color-white);
 
 	content: "";
-}*/
+}
+*/
