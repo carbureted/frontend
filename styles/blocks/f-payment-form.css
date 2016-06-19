@@ -167,9 +167,9 @@ MODIFIER f-payment_bitcoin
 
 }
 
-.f-payment .f-payment_step_bitcoin, .f-payment_step_credit {
+/*.f-payment .f-payment_step_bitcoin, .f-payment_step_credit {
 	height: 50.5rem;
-}
+}*/
 
 .f-payment__credit {
 	opacity: 0;
