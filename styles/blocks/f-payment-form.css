@@ -156,7 +156,7 @@ MODIFIER f-payment_bitcoin
 .f-payment {
 	position: relative;
 	
-	height: 36.3rem; /*50.5 in mobile, when step 2 or 3*/
+	height: 100%; /*50.5 in mobile, when step 2 or 3*/
 	padding-top: 2.3rem;
 
 }
@@ -166,18 +166,44 @@ MODIFIER f-payment_bitcoin
 }*/
 
 .f-payment__credit {
-/*	position: absolute;*/
-	display: none;
-	opacity: 1;
-	transition: opacity 500ms ease;
-	pointer-events: unset;
 
+	position: relative;
+
+	display: none;
+
+	opacity: 1;
+
+	transition: opacity 500ms ease;
+
+	pointer-events: unset;
 }
+
+.f-payment__bitcoin {
+
+	position: absolute;
+
+	display: none;
+
+	opacity: 1;
+
+	transition: opacity 500ms ease;
+
+	pointer-events: unset;
+}
+
 
 .f-payment_step_credit .f-payment__credit {
 	display: block;
-	opacity: 1;
-	pointer-events: unset;
+
+/*	opacity: 1;
+	pointer-events: unset;*/
+}
+
+.f-payment_step_bitcoin .f-payment__bitcoin {
+	display: block;
+
+/*	opacity: 1;
+	pointer-events: unset;*/
 }
 
 .f-payment_bitcoin_container {
@@ -190,18 +216,7 @@ MODIFIER f-payment_bitcoin
 	display: block;
 }
 
-.f-payment__bitcoin {
-	display: block;
-	opacity: 1;
-	transition: opacity 500ms ease;
-	pointer-events: unset;
-}
 
-.f-payment_step_bitcoin .f-payment__bitcoin {
-	display: block;
-	opacity: 1;
-	pointer-events: unset;
-}
 
 /*.f-payment__footer {
 	position: relative;
@@ -228,7 +243,7 @@ MODIFIER f-payment_bitcoin
 
 	background: var(--color-grey-light);
 
-	z-index: -1;
+/*	z-index: -1;*/
 
 	transition: transform 250ms ease-out;
 
