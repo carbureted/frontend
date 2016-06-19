@@ -41,10 +41,10 @@
 					ourNS = this.firefund = {}
 				Object.keys(this.properties).forEach(function(key) {
 					var item =  self.attributes.getNamedItem(key)
-					if(item.nodeValue) ourNS[key] = item.nodeValue
+					if(item) ourNS[key] = item.nodeValue
 				})
 
-				var modifier = this.firefund.modifier
+				var modifier = this.firefund.modifier || "default"
 				var total = this.firefund.total
 				var goal = this.firefund.goal
 				var value = Math.round(total / goal * 100)
