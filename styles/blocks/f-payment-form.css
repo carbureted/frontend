@@ -168,10 +168,16 @@ MODIFIER f-payment_bitcoin
 
 }
 
-.f-payment_credit {
-	transform: translateY(0rem);	
+.f-payment_start {
+	opacity: 0;
+	transition: opacity 500ms ease;
+	pointer-events: none;
 }
 
+.f-payment_credit .f-payment-start {
+	opacity: 1;
+	pointer-events: unset;
+}
 
 .f-payment_bitcoin {
 	transform: translateY(0rem);
