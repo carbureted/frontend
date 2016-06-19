@@ -3,7 +3,7 @@
 <dom-module id="f-progress">
 
 	<template>
-		<link rel="stylesheet" href="/css/blocks/f-progress.css">
+		<link rel="stylesheet" href="/css/blocks/f-progress.css" id="myStyling">
 
 		<section class="f-progress">
 			<div class="f-progress__bar">
@@ -82,15 +82,33 @@
 			},
 			attached: function() {
 				var self = this
-				//FIXME: hack to make sure the check for isInView isn't run before the WC is rendered
+				var modifier = this.firefund.modifier || "default"
+				//FIXME: timer hack to make sure the check for isInView isn't run before the WC is rendered
 				_.delay(function() {
 					if(self.isInView())
 						_.defer(self.intoViewHandler)
 				}, 500)
 
-				// see hack about gracefully show the WC in frontpage.htm
-				if(this.firefund.modifier === "flyout" && this.parentNode.style.opacity < 1)
-					this.parentNode.style.opacity = 1
+
+				// hack to avoid jumping when the WC is injected into the page
+				// var wrapperElement = document.createElement("div")
+				var cssInjection = "opacity:0;-webkit-transition:opacity 250ms ease 500ms;transition:opacity 250ms ease 500ms;"
+				switch(modifier) {
+					case "vertical":
+						cssInjection += "height:13rem;"
+						break
+					case "flyout":
+						cssInjection += "height:4.6rem;"
+						break
+					case "default":
+						cssInjection += "height:8.6rem;"
+						break
+				}
+				this.parentElement.setAttribute("style", cssInjection)
+				this.querySelector("#myStyling").addEventListener("load", function() {
+					self.parentElement.style.opacity = 1
+					self.style.position = "static"
+				})
 			},
 			isInView: function() {
 				var rect = this.getBoundingClientRect()

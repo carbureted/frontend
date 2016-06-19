@@ -35,7 +35,7 @@
 	</header>
 
 	<div class="f-hero">
-		<img src="foo/bar.png">
+		<!--<img src="foo/bar.png">-->
 		<div class="f-hero__wrapper">
 			<div class="f-row f-row_6">
 				<div class="f-row__cell">
@@ -60,8 +60,11 @@
 					<section class="f-row__cell-2 f-row__cell-mobile">
 						<div class="f-content" style="padding-top:3.4rem;">
 							<button class="f-button-donate_kush" onclick="document.querySelector('.f-modal').classList.add('f-modal_visible')">SUPPORT</button>
-							<f-progress name="shelter" modifier="vertical" goal="432432" days="7" total="32212" symbol="€"></f-progress>
 							
+							<div class="f-progress__wrapper-vertical">
+								<f-progress name="shelter" modifier="vertical" goal="432432" days="7" total="32212" symbol="€"></f-progress>
+							</div>
+
 							<button class="f-icon-facebook f-button-icon f-button-icon_facebook">Share on facebook</button>
 							<button class="f-icon-twitter f-button-icon f-button-icon_twitter">Share on twitter</button>
 							<button class="f-icon-reddit f-button-icon f-button-icon_reddit">Discuss onreddit</button>
@@ -238,8 +241,9 @@
 						<p class="f-one-liner"><a href="#">Konservativ Ungdom Odense</a></p>
 						<button class="f-button-donate_kush" onclick="document.querySelector('.f-modal').classList.add('f-modal_visible')">SUPPORT</button>
 						
-						<f-progress name="shelter" goal="432432" days="7" total="32212" symbol="€"></f-progress>
-						
+						<div class="f-progress__wrapper">
+							<f-progress name="shelter" goal="432432" days="7" total="32212" symbol="€"></f-progress>
+						</div>
 					</div>
 				</article>
 			</div>
