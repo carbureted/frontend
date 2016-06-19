@@ -1,4 +1,6 @@
 ﻿/*
+# f-progress - placeholder
+
 Placeholder for the `f-progress` Web Component. Used as a placeholder while `f-progress` loads.
 
 ## Example default
@@ -22,7 +24,7 @@ Placeholder for the `f-progress` Web Component. Used as a placeholder while `f-p
 
 	<!-- this should be used on the website -->
 	
-	<div class="f-progress__wrapper-vertical">
+	<div class="f-progress__wrapper_vertical">
 		<f-progress name="shelter" modifier="vertical" goal="432432" days="7" total="32212" symbol="€"></f-progress>
 	</div>
 
@@ -41,7 +43,7 @@ Don't need a wrapper.
 
 	<!-- this should be used on the website -->
 	
-	<div class="f-progress__wrapper-flyout">
+	<div class="f-progress__wrapper_flyout">
 		<f-progress name="kobane" modifier="flyout" goal="130000" days="2" total="149280" symbol="€"></f-progress>
 	</div>
 
@@ -52,14 +54,14 @@ Don't need a wrapper.
 ```
 */
 
-.f-progress__wrapper, .f-progress__wrapper-vertical, .f-progress__wrapper-flyout {
+.f-progress__wrapper, .f-progress__wrapper_vertical, .f-progress__wrapper_flyout {
 	position: relative; /* KLUDGE: make sure f-progress can not move sibling elements at all */
 
 	opacity: 0;
 	transition: opacity 250ms ease 500ms;
 }
 
-.f-progress__wrapper > *, .f-progress__wrapper-vertical > *, .f-progress__wrapper-flyout > * {
+.f-progress__wrapper > *, .f-progress__wrapper_vertical > *, .f-progress__wrapper_flyout > * {
 	position: absolute; /* KLUDGE: make sure f-progress can not move sibling elements at all */
 }
 
@@ -67,10 +69,10 @@ Don't need a wrapper.
 	height: 8.6rem;
 }
 
-.f-progress__wrapper-vertical {
+.f-progress__wrapper_vertical {
 	height: 13rem;
 }
 
-.f-progress__wrapper-flyout {
+.f-progress__wrapper_flyout {
 	height: 4.6rem;
 }

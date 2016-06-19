@@ -1,0 +1,29 @@
+/*
+# f-project-thumbnail - placeholder
+
+Placeholder for the `f-project-thumbnail` Web Component. Used as a placeholder while `f-project-thumbnail` loads.
+
+```
+<div class="f-project-thumbnail__placeholder_small">
+	<f-project-thumbnail></f-project-thumbnail>
+</div>
+```
+*/
+
+.f-project-thumbnail__placeholder, .f-project-thumbnail__placeholder_small {
+	/*position: relative;  KLUDGE: make sure f-project-thumbnail can not move sibling elements at all */
+	background-color: var(--color-white);
+
+	/*opacity: 0;
+	transition: opacity 250ms ease 500ms;*/
+}
+
+/*.f-project-thumbnail__placeholder> *, .f-project-thumbnail__placeholder_small > * {
+	position: absolute;  KLUDGE: make sure f-progress can not move sibling elements at all
+}*/
+
+.f-project-thumbnail__placeholder_small {
+	height: 39rem; /* KLUDGE: magic number */
+
+	border-radius: 0.5rem;
+}

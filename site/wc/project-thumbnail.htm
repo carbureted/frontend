@@ -1,0 +1,41 @@
+﻿<link rel="import" href="/lib/polymer-mini.html">
+<link rel="import" href="progress.htm">
+
+<dom-module id="f-project-thumbnail">
+	
+	
+	<template>
+		<f-progress name="freepeter" modifier="small" goal="50000" days="5" total="32212" symbol="€"></f-progress>
+	</template>
+	
+
+	<script>
+		Polymer({
+			is: 'f-project-thumbnail',
+			attached: function() {
+				this.childCount = Polymer.dom(this).getEffectiveChildNodes()
+				// do something with childCount ...
+
+				// hack to avoid jumping when the WC is injected into the page
+				// var cssInjection = "opacity:0;-webkit-transition:opacity 250ms ease 500ms;transition:opacity 250ms ease 500ms;"
+				// switch(modifier) {
+				// 	case "vertical":
+				// 		cssInjection += "height:13rem;"
+				// 		break
+				// 	case "flyout":
+				// 		cssInjection += "height:4.6rem;"
+				// 		break
+				// 	case "default":
+				// 		cssInjection += "height:8.6rem;"
+				// 		break
+				// }
+				// this.parentElement.setAttribute("style", cssInjection)
+				// this.querySelector("#myStyling").addEventListener("load", function() {
+				// 	self.parentElement.style.opacity = 1
+				// 	self.style.position = "static"
+				// })
+			}
+		})
+  </script>
+	
+</dom-module>

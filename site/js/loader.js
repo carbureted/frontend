@@ -14,36 +14,24 @@
 
 	function finishLazyLoading () {
 		// Set up the element imports.
-		window.Polymer = window.Polymer || {}
+		// window.Polymer = window.Polymer || {}
 		// shadow dom can NOT be used because we load external css to style our web components
 		// window.Polymer.dom = 'shadow'
 
-		var imports = Array.prototype.slice.call(document.querySelectorAll(".f-import"), 0)
+		// var imports = Array.prototype.slice.call(document.querySelectorAll(".f-import"), 0)
 
-		var loaded = downloads(imports, hideSplash, function predicate(url, list, startListLength) {
-			if(list.indexOf(url) === -1) throw new Error("Unknown url: " + url)
-			list.splice( list.indexOf(url), 1 )
-			return list.length < startListLength / 2 // true when half is loaded
-		})
+		// var loaded = downloads(imports, hideSplash, function predicate(url, list, startListLength) {
+		// 	if(list.indexOf(url) === -1) throw new Error("Unknown url: " + url)
+		// 	list.splice( list.indexOf(url), 1 )
+		// 	return list.length < startListLength / 2 // true when half is loaded
+		// })
 		
-		if(imports.length === 0)
-			hideSplash() // hide splash now if there is zero web components
+		// if(imports.length === 0)
+		// 	hideSplash() // hide splash now if there is zero web components
 
-		imports.forEach(function(link) {
-			if(link.import && link.import.readyState === "complete") loaded(link.href)
-			else link.addEventListener("load", loaded(link.href))
-		})
-
-		// var elements = [
-		// 	'/wc/header.htm'
-		// ]
-		// elements.forEach(function(elementURL) {
-
-		// 	var elImport = document.createElement('link')
-		// 	elImport.rel = 'import'
-		// 	elImport.href = elementURL
-
-		// 	document.head.appendChild(elImport)
+		// imports.forEach(function(link) {
+		// 	if(link.import && link.import.readyState === "complete") loaded(link.href)
+		// 	else link.addEventListener("load", loaded(link.href))
 		// })
 	}
 	
