@@ -10,15 +10,6 @@
        (instead of dynamically loading it later in JS) is that the parser can go
        to town pre-fetching resources, etc. -->
 	<link rel="import" class="f-import" href="wc/progress.htm" async>
-
-	<style>
-		/*FIXME: hack to gracefully show the progress WC after the BEM modifier has taken effect */
-		.f-progress_flyout-wrapper {
-			height: 4.6rem;
-			opacity: 0;
-			transition: opacity 250ms ease 250ms;
-		}
-	</style>
 </head>
 
 <body>
@@ -87,8 +78,10 @@
 			</div>
 		</div>
 		<div class="f-row f-row_6">
-			<section class="f-row__cell f-progress_flyout-wrapper">
-				<f-progress name="kobane" modifier="flyout" goal="130000" days="2" total="149280" symbol="€"></f-progress>
+			<section class="f-row__cell">
+				<div class="f-progress__wrapper-flyout">
+					<f-progress name="kobane" modifier="flyout" goal="130000" days="2" total="149280" symbol="€"></f-progress>
+				</div>
 			</section>
 		</div>
 	</div>
@@ -128,7 +121,9 @@
 						We are the Kobanê Reconstruction Board, and this is a global call to action, to stand with us and rebuild our city.
 						</p>
 					</div>
+
 					<f-progress name="freepeter" modifier="small" goal="50000" days="5" total="32212" symbol="€"></f-progress>
+				
 				</div>
 			</div>
 			<div class="f-miniproject-thumbnail">
