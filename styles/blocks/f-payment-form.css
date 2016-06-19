@@ -162,10 +162,13 @@ MODIFIER f-payment_bitcoin
 .f-payment {
 	position: relative;
 	
-	height: 36.3rem;
+	height: 36.3rem; /*50.5 in mobile, when step 2 or 3*/
 	padding-top: 2.3rem;
 
+}
 
+.f-payment .f-payment_step_bitcoin, .f-payment_step_credit {
+	height: 50.5rem;
 }
 
 .f-payment__credit {
