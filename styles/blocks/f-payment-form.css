@@ -166,7 +166,7 @@ MODIFIER f-payment_bitcoin
 }*/
 
 .f-payment__credit {
-
+	display: none;
 	opacity: 0;
 	transition: opacity 500ms ease;
 	pointer-events: none;
@@ -174,7 +174,7 @@ MODIFIER f-payment_bitcoin
 }
 
 .f-payment_step_credit .f-payment__credit {
-	display:block;
+	display: block;
 	opacity: 1;
 	pointer-events: unset;
 }
@@ -182,37 +182,74 @@ MODIFIER f-payment_bitcoin
 
 
 .f-payment__bitcoin {
+	display: none;
 	opacity: 0;
 	transition: opacity 500ms ease;
 	pointer-events: none;
 }
 
 .f-payment_step_bitcoin .f-payment__bitcoin {
-	display:block;
+	display: block;
 	opacity: 1;
 	pointer-events: unset;
 }
 
+/*.f-payment__footer {
+	position: relative;
 
+	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
+	padding: 3.4rem 0 2rem 3.4rem;
 
-/*.f-payment__footer-bitcoin, .f-payment__footer-credit {
-	transform: translateY(-28rem);
+	background: var(--color-grey-light);
+
+	z-index: -1;
+
+	transition: transform 250ms ease-out;
 }*/
+
 
 .f-payment__footer-credit {
 	display:none;
+/*	transform: translateY(-28rem);*/
+
+	position: relative;
+
+	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
+	padding: 3.4rem 0 2rem 3.4rem;
+
+	background: var(--color-grey-light);
+
+	z-index: -1;
+
+	transition: transform 250ms ease-out;
+
 }
 
 .f-payment__footer-bitcoin {
 	display:none;
+/*	transform: translateY(-28rem);*/
+
+	position: relative;
+
+	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
+	padding: 3.4rem 0 2rem 3.4rem;
+
+	background: var(--color-grey-light);
+
+	z-index: -1;
+
+	transition: transform 250ms ease-out;
 }
 
+
 .f-payment_step_bitcoin .f-payment__footer-bitcoin {
-	transform: translateY(0rem);
+	display:block;
+/*	transform: translateY(0rem);*/
 }
 
 .f-payment_step_credit .f-payment__footer-credit {
-	transform: translateY(0rem);
+	display:block;
+/*	transform: translateY(0rem);*/
 }
 
 
@@ -307,7 +344,7 @@ MODIFIER f-payment_bitcoin
 	padding-left: 3.4rem;
 }
 
-.f-payment__footer {
+/*.f-payment__footer {
 	position: relative;
 
 	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
@@ -318,7 +355,7 @@ MODIFIER f-payment_bitcoin
 	z-index: -1;
 
 	transition: transform 250ms ease-out;
-}
+}*/
 
 /*KOPIII*/
 /*.f-payment__footer {
