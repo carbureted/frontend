@@ -37,8 +37,8 @@ In the modal window, the two different payment forms - one for mobile, one for d
 
 <pre>
 BLOCK f-payment
-MODIFIER f-payment_direct (OBSOLETE?)
-MODIFIER f-payment_pledge (OBSOLETE?)
+MODIFIER f-payment_credit
+MODIFIER f-payment_bitcoin
 	ELEMENT f-payment__heading
 	ELEMENT f-payment__heading_mobile
 	ELEMENT f-payment__text
@@ -168,9 +168,14 @@ MODIFIER f-payment_pledge (OBSOLETE?)
 
 }
 
-.f-payment_direct {}
+.f-payment_credit {
+	transform: translateY(0rem);	
+}
 
-.f-payment_pledge {}
+
+.f-payment_bitcoin {
+	transform: translateY(0rem);
+}
 
 .f-payment__heading {
 	margin: 0 0 1.9rem -var(--gutter-width);
@@ -271,7 +276,7 @@ MODIFIER f-payment_pledge (OBSOLETE?)
 
 	background: var(--color-grey-light);
 
-	transform: translateY(-10rem);
+	transform: translateY(-28rem);
 	z-index: -1;
 }
 
