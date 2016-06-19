@@ -361,7 +361,7 @@
 
 
 			<!-- Step 1 -->
-			<div class="f-payment">			
+			<div class="f-payment f-payment_step_credit">			
 				<div class="f-row f-row_12">
 					<div class="f-row__cell-7 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
 						<h2 class="f-payment__heading"> Choose the amount and method of payment</h2>
@@ -370,13 +370,48 @@
 						<button class="f-button-basic f-payment__button">Bitcoin</button>
 						<button class="f-button-basic f-payment__button">Credit card</button>
 					</div>
-					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
-
-
+					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
 						<div class="f-payment__credit">
-							CREDIT<br><br><br><br><br><br>YO
+							<div class="f-payment__radio-group f-radio-group">
+								<div class="f-column f-column_2 f-column_mobile_3">
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb10" type="radio" name="rb" value="500">
+										<label for="rb10">$500</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb11" type="radio" name="rb" value="250">
+										<label for="rb11">$250</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb12" type="radio" name="rb" value="100">
+										<label for="rb12">$100</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb13" type="radio" name="rb" value="50">
+										<label for="rb13">$50</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb14" type="radio" name="rb" value="20">
+										<label for="rb14">$20</label>
+									</div>
+									<div class="f-text-input f-payment__radio-element f-radio-group__element f-payment__radio-input">
+										<input id="rb15" type="radio" name="rb" value="20">
+										<label for="rb15">
+											<input class="f-text-input__text-field" type="number" placeholder="$10">
+										</label>
+									</div>
+									<button class="f-button-donate">Donate</button>
+								</div>
+							</div>
 						</div>
+
+
+
 						<div class="f-payment__bitcoin">
+
+
+
+
 							BUTCOIN
 						</div>
 					

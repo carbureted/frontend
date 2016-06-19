@@ -1,5 +1,5 @@
-/*
 
+/*
 Noter
 
 - Sketch ny situation med nye fundingmodeller og indret dig derefter DONE
@@ -311,7 +311,7 @@ MODIFIER f-payment_bitcoin
 	position: absolute;
 	bottom: 0;
 	
-	width: 15rem;	
+	width: 22rem;	
 }
 @media screen and (--viewport-mobile) {
 	.f-payment__button-group { position: static; }
@@ -334,11 +334,18 @@ MODIFIER f-payment_bitcoin
 	transform: rotate(45deg);
 }
 
-.f-payment__radio-group.f-radio-group {
-	margin-bottom: 2rem;
+/*This works. Spacing between the classes doesnt!? WTF! (Safari, Moz, Chrome)*/
+.f-radio-group.f-payment__radio-group {
+	margin: 8.6rem -4.4rem 0rem 0.8rem;
 	
 	font-weight: bold;
 }
+
+
+.f-payment__radio-element {
+	margin: 0rem 0rem 2.5rem 0rem !important;
+}                        /*Sorry Jon! ^^^*/
+
 .f-payment__radio-input .f-text-input__text-field {
 	display: inline-block;
 
@@ -533,7 +540,6 @@ input[type="range"].f-payment__slider-style::-ms-fill-upper {
 }
 
 /*
-
 ## Donation
 
 With a `f-text-input` field
@@ -665,5 +671,4 @@ With a `f-text-input` field
 	background-color: var(--color-white);
 
 	content: "";
-}
-*/
+}*/
