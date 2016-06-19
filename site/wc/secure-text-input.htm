@@ -39,28 +39,28 @@
 				var public = openpgp.key.readArmored(this.secretSource).keys
 console.log(public)
 				var self = this
-				this.$.enc_button.addEventListener("click", function(e) {
+				this.querySelector("#enc_button").addEventListener("click", function(e) {
 					e.preventDefault()
-// console.log( self.$.enctext.value )
+// console.log( self.querySelector("#enctext").value )
 					openpgp.encrypt({
 						publicKeys: public,
-						data: self.$.enctext.value
+						data: self.querySelector("#enctext").value
 					}).then(function(ciphertext) {
 							encrypted = ciphertext.data; // '-----BEGIN PGP MESSAGE ... END PGP MESSAGE-----'
 // console.log(encrypted)
-							self.$.encout.value = encrypted
-							self.$.secretFormSource.value = encrypted
+							self.querySelector("#encout").value = encrypted
+							self.querySelector("#secretFormSource").value = encrypted
 					})
 				})
 
-				this.$.dec_button.addEventListener("click", function(e) {
+				this.querySelector("#dec_button").addEventListener("click", function(e) {
 					e.preventDefault();
 					openpgp.decrypt({
-						message: openpgp.message.readArmored(self.$.encout.value),
+						message: openpgp.message.readArmored(self.querySelector("#encout").value),
 						publicKeys: public,    // for verification (optional)
 						privateKey: openpgp.key.readArmored(self.superSecret).keys[0] // for decryption
 					}).then(function(plaintext) {
-						self.$.encout.value = plaintext.data
+						self.querySelector("#encout").value = plaintext.data
 					})
 				})
 			}, superSecret: `-----BEGIN PGP PRIVATE KEY BLOCK-----
