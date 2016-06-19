@@ -162,7 +162,10 @@ MODIFIER f-payment_pledge (OBSOLETE?)
 .f-payment {
 	position: relative;
 	
+	height: 36.3rem;
 	padding-top: 2.3rem;
+
+
 }
 
 .f-payment_direct {}
