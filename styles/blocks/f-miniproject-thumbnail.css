@@ -275,7 +275,7 @@ BLOCK f-miniproject-thumbnail
 .f-miniproject-thumbnail__progress {
 	margin-left: 3.4rem;
 }
-
+/*
 .f-miniproject-thumbnail__progress__bar,
 .f-miniproject-thumbnail__progress__value {
 	height: 0.3rem;
@@ -317,4 +317,4 @@ BLOCK f-miniproject-thumbnail
 	color: var(--color-grey-dark);
 
 	font-weight: bold;
-}
+}*/

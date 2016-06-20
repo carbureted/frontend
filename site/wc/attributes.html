@@ -1,0 +1,34 @@
+<link rel="import" href="/lib/polymer.html">
+
+<dom-module id="x-custom">
+
+    <template>
+        <abbr>jdd</abbr>
+    </template>
+
+<script>
+
+  Polymer({
+
+    is: 'x-custom',
+
+    properties: {
+      user: String,
+      manager: {
+        type: Boolean,
+        notify: true
+      }
+    },
+
+    attached: function() {
+      // render
+      console.log('Hello World, my user is ' + (this.user || 'nobody') + '.\n' +
+        'This user is ' + (this.manager ? '' : 'not') + ' a manager.')
+    }
+
+  });
+
+</script>
+
+</dom-module>
+<x-custom user="Scott" manager></x-custom>

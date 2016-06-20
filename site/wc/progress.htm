@@ -1,6 +1,12 @@
-﻿<link rel="import" href="/lib/polymer-mini.html">
+﻿<script>
+	window.Polymer = window.Polymer || {}
+	// shadow dom can NOT be used because we load external css to style our web components
+	window.Polymer.dom = 'shadow'
+</script>
 
-<dom-module id="f-progress">
+<link rel="import" href="/lib/polymer.html">
+
+<dom-module id="firefund-progress">
 
 	<template>
 		<link rel="stylesheet" href="/css/blocks/f-progress.css" id="myStyling">
@@ -23,33 +29,53 @@
 	<script src="/lib/underscore.js"></script>
 
 	<script>
+		"use strict"
+
 		Polymer({
 			/* this is the element's prototype */
-			is: 'f-progress',
+			is: 'firefund-progress',
 
 			properties: {
-				name: String,
-				modifier: String,
-				goal: Number,
-				days: Number,
-				total: Number,
-				symbol: String
+				name: {
+					type: String,
+					reflectToAttribute: true
+				},
+				modifier: {
+					type: String,
+					reflectToAttribute: true
+				},
+				goal: {
+					type: Number,
+					reflectToAttribute: true
+				},
+				days: {
+					type: Number,
+					reflectToAttribute: true
+				},
+				total: {
+					type: Number,
+					reflectToAttribute: true
+				},
+				symbol: {
+					type: String,
+					reflectToAttribute: true
+				}
 			},
-			ready: function() {
+			attached: function() {
 				//FIXME: hack to get the properties since Polymer just sets them to undefined
-				var self = this,
-					ourNS = this.firefund = {}
-				Object.keys(this.properties).forEach(function(key) {
-					var item =  self.attributes.getNamedItem(key)
-					if(item) ourNS[key] = item.nodeValue
-				})
+				var self = this
+				// var ourNS = this.firefund = {}
+				// Object.keys(this.properties).forEach(function(key) {
+				// 	var item =  self.attributes.getNamedItem(key)
+				// 	if(item) self.properties[key].value = item.nodeValue
+				// })
 
-				var modifier = this.firefund.modifier || "default"
-				var total = this.firefund.total
-				var goal = this.firefund.goal
+				var modifier = this.modifier || "default"
+				var total = this.total
+				var goal = this.goal
 				var value = Math.round(total / goal * 100)
-				var days = this.firefund.days
-				var symbol = this.firefund.symbol
+				var days = this.days
+				var symbol = this.symbol
 
 				// configure accounting.js
 				accounting.settings.currency.symbol = symbol
@@ -79,10 +105,10 @@
 				dataElements.forEach(function(el, i) {
 					el.innerHTML = text[i]
 				})
-			},
-			attached: function() {
-				var self = this
-				var modifier = this.firefund.modifier || "default"
+
+				console.log(this.deserialize("modifier", String))
+				// var self = this
+				// var modifier = this.firefund.modifier || "default"
 				//FIXME: timer hack to make sure the check for isInView isn't run before the WC is rendered
 				_.delay(function() {
 					if(self.isInView())
@@ -105,6 +131,7 @@
 				}
 				this.parentElement.setAttribute("style", cssInjection)
 				this.querySelector("#myStyling").addEventListener("load", function() {
+					if( !/f-progress__wrapper/.test(self.parentElement.className) ) return
 					self.parentElement.style.opacity = 1
 					self.style.position = "static"
 				})
@@ -166,5 +193,8 @@
 			}, delay)
 		}
   </script>
-
 </dom-module>
+
+<div class="f-progress__wrapper_vertical">
+	<firefund-progress name="shelter" modifier="vertical" goal="430000" days="7" total="322120" symbol="€"></f-progress>
+</div>
