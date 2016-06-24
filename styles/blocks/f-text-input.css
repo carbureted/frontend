@@ -146,7 +146,7 @@ LjSacZsYqWRmM+9k6w3XZren33fIXweEguZ7raQapV8=
 	position: relative;
 	display: block;
 
-	margin-left: -1px; /* align with text-field -  adjust to the border  */
+	margin-left: 0.2rem; /* align with text-field -  adjust to the border  */
 
 	color: var(--color-grey-dark);
 	line-height: 1.8;
@@ -154,9 +154,10 @@ LjSacZsYqWRmM+9k6w3XZren33fIXweEguZ7raQapV8=
 
 .f-text-input__text-field {
 	display: block;
+	padding: 0.5rem;
 }
 .f-text-input__text-field::placeholder {
-	padding-left: .2rem; /*TODO: only works in chrome */
+	padding-left: .5rem; /*TODO: only works in chrome */
 }
 
 .f-text-input_disable * {
@@ -165,7 +166,7 @@ LjSacZsYqWRmM+9k6w3XZren33fIXweEguZ7raQapV8=
 
 f-text-input_multiline, .f-text-input__text-field {
 	width: 100%;
-	margin-bottom: 2rem;
+	margin: 0 0 2rem 0.1rem;
 
 	border: 1px solid var(--color-black);
 	border-radius: .3rem;
