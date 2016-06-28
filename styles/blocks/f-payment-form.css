@@ -249,8 +249,9 @@ MODIFIER f-payment_bitcoin
 
 }
 
-/*.f-payment__footer-bitcoin {
-	display:none;
+.f-payment__footer-bitcoin {
+	display: none;
+/*	transform: translateY(-28rem);*/
 
 	position: relative;
 
@@ -259,13 +260,14 @@ MODIFIER f-payment_bitcoin
 
 	background: var(--color-grey-light);
 
-	z-index: -1;
+/*	z-index: -1;*/
 
 	transition: transform 250ms ease-out;
-}*/
+
+}
 
 
-.f-payment_step_bitcoin .f-payment__footer-credit {
+.f-payment_step_bitcoin .f-payment__footer-bitcoin {
 	display:block;
 
 }
@@ -393,6 +395,7 @@ MODIFIER f-payment_bitcoin
 	font-weight: 100;
 	line-height: 1.8rem;
 }
+
 
 .f-payment__range-label {
 	margin: 0;
