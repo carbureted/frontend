@@ -1,57 +1,35 @@
+
 /*
+#Notes#
 
-Noter
-
-- Sketch ny situation med nye fundingmodeller og indret dig derefter DONE
-- Slider i egen block og branch NOPE
-- Correct the arrow DONE
-- Position buttons mobile (3-column) DONE
-- Position left-buttons again - maybe with a button div DONE
-- Allignment of radiobuttons DONE
-- Clean HTML DONE
-- Forsøg m. procent ved micropixelfejl DONE (men stadig små fejl)
-- Position rightbuttons både på mobile og desktop DONE
-- Test browsers - DONE
-
-	SAFARI
-	- Ingen slider-end i mindre versioner
-	- Slider track ustabil og glimser ud
-	FIREFOX
-	- Slider er ikke understøttet, ikke ramt på thumb DONE
-	- Slider og button position er nu skæv
-
-- [x] Insæt korrecte tal DONE
-- [x] Slim CSS DONE
-- [x] Clean CSS DONE
-- [x] Se om du kan få modal til at virke ordentligt igen DONE
-- Nice to have: centrer footer på mobile
-- When button is done, test if slimmer radiobuttons are cooler NOPE
-- [] Fix button bugs
-- []Fix radio input option
-- Fix radio red fill-out
-- Fix browser problems
-- Fix modifiers (change between the 3 different designs)
-
-In the modal window, the two different payment forms - one for mobile, one for desktop.
-
+Here's the payment module's CSS! 
 
 <pre>
 BLOCK f-payment
-MODIFIER f-payment_direct (OBSOLETE?)
-MODIFIER f-payment_pledge (OBSOLETE?)
+	ELEMENT f-payment__credit
+	ELEMENT f-payment__bitcoin
+
+	MODIFIER f-payment_step-bitcoin
+	MODIFIER f-payment_step-credit 
+	ELEMENT f-payment__footer-credit
+	ELEMENT f-payment__footer-bitcoin
+
 	ELEMENT f-payment__heading
-	ELEMENT f-payment__heading_mobile
 	ELEMENT f-payment__text
 	ELEMENT f-payment__button
 	ELEMENT f-payment__button-group
-	ELEMENT f-payment__arrow
-	ELEMENT f-payment__radio
-		ELEMENT f-payment__radio-input
-	ELEMENT f-payment__footer
+
+	ELEMENT f-payment__arrow - are currently inactive
+	ELEMENT f-payment__arrow_mobile - are currently inactive
+
+	ELEMENT f-payment__radio-group
+	ELEMENT f-payment__radio-element
+	ELEMENT f-payment__radio-input
+
 	ELEMENT f-payment__footer-text
+	ELEMENT f-payment__range-label
 	ELEMENT f-payment__slider
 	ELEMENT f-payment__slider-style
-	ELEMENT f-payment__slider-ends
 </pre>
 
 
@@ -62,112 +40,189 @@ MODIFIER f-payment_pledge (OBSOLETE?)
 <div class="f-modal f-modal_visible">
 	<div class="f-modal__content">
 		<div class="f-content">
-			<div class="f-payment">
+			<div class="f-payment">	
 				<div class="f-row f-row_12">
-					<div class="f-row__cell-7 f-row_not-mobile">
+					<div class="f-row__cell-7 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
 						<h2 class="f-payment__heading"> Choose the amount and method of payment</h2>
-						<p class="f-payment__text">A pledged donation will only transfer if the campaign reaches the goal within the timeframe. <a href="#">Read more.</a></p>
-						<button class="f-button-basic f-payment__button">Pledge</button>
+						<p class="f-text">A <a href="#">credit card</a> donation will only be transferred if the campaign reaches the goal in time.</p>
+						<p>With bitcoin donations, all donations are instant and refunds are not currently possible. <a href="#">Read more.</a></p>
+						<button class="f-button-basic f-payment__button">Bitcoin</button>
+						<button class="f-button-basic f-payment__button">Credit card</button>
 					</div>
-					<div class="f-row_not-desktop f-row__cell-mobile_push_2 f-row__cell-mobile-8">
-						<h2 class="f-payment__heading f-payment__heading_mobile"> Choose the amount and method of payment</h2>
-						<p class="f-payment__text">A pledged donation will only transfer if the campaign reaches the goal within the timeframe. <span>Read more.</span></p>
-						<button class="f-button-basic f-payment__button">Pledge</button>
-					</div>
-					<div class="f-row__cell-1 f-row_not-mobile">
-						<div class="f-payment__arrow"></div>
-					</div>
-					<div class="f-row_not-desktop f-row__cell-mobile_push_3 f-row__cell-mobile-8">
-						<div class="f-payment__arrow f-payment__arrow_mobile"></div>
-					</div>
-					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
-						<div class="f-payment__radio-group f-radio-group">
-							<div class="f-column f-column_2 f-column_mobile_3">
-								<div class="f-radio-group__element">
-									<input id="rb10" type="radio" name="rb" value="500">
-									<label for="rb10">$500</label>
-								</div>
-								<div class="f-radio-group__element">
-									<input id="rb11" type="radio" name="rb" value="250">
-									<label for="rb11">$250</label>
-								</div>
-								<div class="f-radio-group__element">
-									<input id="rb12" type="radio" name="rb" value="100">
-									<label for="rb12">$100</label>
-								</div>
-								<div class="f-radio-group__element">
-									<input id="rb13" type="radio" name="rb" value="50">
-									<label for="rb13">$50</label>
-								</div>
-								<div class="f-radio-group__element">
-									<input id="rb14" type="radio" name="rb" value="20">
-									<label for="rb14">$20</label>
-								</div>
-								<div class="f-text-input f-radio-group__element f-payment__radio-input">
-									<input id="rb15" type="radio" name="rb" value="20">
-									<label for="rb15">
-										<input class="f-text-input__text-field" type="number" placeholder="$10">
-									</label>
-								</div>
-							</div><!-- /f-column -->
-						</div>
-						<div class="f-row__cell-12">
-							<div class="f-payment__button-group">
-								<button class="f-button-basic f-payment__button">Bitcoin</button>
-								<button class="f-button-basic f-payment__button">Credit card</button>
+					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
+						<div class="f-payment__credit">
+							<div class="f-payment__radio-group f-radio-group">
+								<div class="f-column f-column_2 f-column_mobile_3">
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb10" type="radio" name="rb" value="500">
+										<label for="rb10">$500</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb11" type="radio" name="rb" value="250">
+										<label for="rb11">$250</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb12" type="radio" name="rb" value="100">
+										<label for="rb12">$100</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb13" type="radio" name="rb" value="50">
+										<label for="rb13">$50</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb14" type="radio" name="rb" value="20">
+										<label for="rb14">$20</label>
+									</div>
+									<div class="f-text-input f-payment__radio-element f-radio-group__element f-payment__radio-input">
+										<input id="rb15" type="radio" name="rb" value="20">
+										<label for="rb15">
+											<input class="f-text-input__text-field" type="number" placeholder="$10">
+										</label>
+									</div>
+									<button class="f-button-donate">Donate</button>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div><!-- /f-row_12 -->
-				<div class="f-payment__footer">
-					<div class="f-row f-row_12">
-						<div class="f-row__cell-6 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
-							<div class="f-payment__footer-text f-text">You decide the cut. Please, keep in mind that FIREFUND is non-profit and activist-driven.
+
+						<!-- Step Bitcoin! -->
+						<div class="f-payment__bitcoin">
+							<div class="f-row__cell-12">
+								<figure>
+									<img src="assets/image/btcad.png">
+								</figure>
+								<div class="f-text-input f-text-input_readonly">
+								<label class="f-text-input__label">To bitcoin adress:
+									<input class="f-text-input__text-field" readonly type="text" value="1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2">
+								</label>
 							</div>
-						</div>
-						<div class="f-row__cell-1 f-row__cell-mobile_push_2 f-row__cell-mobile-1">
-							<p class="f-payment__footer-text f-text f-payment__range-label">FIREFUND</p>
-							<p class="f-payment__footer-text f-text f-payment__range-label">KOBANE</p>
-						</div>
-						<div class="f-row__cell-3">
-							<div class="f-payment__slider">
-								<input class="f-payment__slider-style" type="range"/>
-							</div>
-							<div class="f-payment__slider">
-								<input class="f-payment__slider-style" type="range"/>
-							</div>
-						</div>
-						<div class="f-row__cell-2">
-							<div class="f-payment__footer-text f-text f-payment__range-label">$42.45</div>
-							<div class="f-payment__footer-text f-text f-payment__range-label">$8.55</div>
 						</div>
 					</div>
 				</div>
-			</div><!-- /f-payment -->
+					<div class="f-row_cell-12">
+
+						<!-- footer for credit -->
+						<div class="f-payment__footer f-payment__footer-credit">
+							<div class="f-row f-row_12">
+								<div class="f-row__cell-6 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
+									<div class="f-payment__footer-text f-text">You decide the cut. Please, keep in mind that FIREFUND is non-profit and activist-driven.
+									</div>
+								</div>
+								<div class="f-row__cell-1 f-row__cell-mobile_push_2 f-row__cell-mobile-1">
+									<p class="f-payment__footer-text f-text f-payment__range-label">FIREFUND</p>
+									<p class="f-payment__footer-text f-text f-payment__range-label">KOBANE</p>
+								</div>
+								<div class="f-row__cell-3">
+									<div class="f-payment__slider">
+										<input class="f-payment__slider-style" type="range"/>
+									</div>
+									<div class="f-payment__slider">
+										<input class="f-payment__slider-style" type="range"/>
+									</div>
+								</div>
+								<div class="f-row__cell-2">
+									<div class="f-payment__footer-text f-text f-payment__range-label">$42.45</div>
+									<div class="f-payment__footer-text f-text f-payment__range-label">$8.55</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- footer for bitcoin -->
+						<div class="f-payment__footer f-payment__footer-bitcoin">
+							<div class="f-row f-row_12">
+								<div class="f-row__cell-9 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
+									<div class="f-payment__footer-text f-text">Bitcoin is different. very different. So it requies a bit more information than simple credit card donations. But we're going to be all right. Just note <span>this</span>. 
+									</div>
+								</div>
+							</div>
+						</div>							
+					</div>
+				</div>
+			</div>
 		</div><!-- /f-content -->
 	</div><!-- /f-modal__content -->
 </div><!-- /f-modal -->
 ```
-
-<script>
-	// demo script to toggle the modal window
-	document.querySelector(".f-button-basic").addEventListener("click", function(e) {
-		document.querySelector(".f-modal").classList.toggle("f-modal_visible")
-	})
-</script>
 */
+
 
 @import "../variables";
 .f-payment {
 	position: relative;
 	
+	height: 100%; /*50.5 in mobile, when step 2 or 3 - 46 in desktop*/
 	padding-top: 2.3rem;
+
 }
 
-.f-payment_direct {}
+/*.f-payment .f-payment__bitcoin {
+	height: 46.5rem;
+}*/
 
-.f-payment_pledge {}
+.f-payment__credit {
+	position: relative;
+	display: none;
+
+	transition: opacity 500ms ease;
+
+	pointer-events: unset;
+	opacity: 1;
+}
+
+.f-payment__bitcoin {
+	position: relative;
+	display: none;
+
+	transition: opacity 500ms ease;
+
+	pointer-events: unset;
+	opacity: 1;
+}
+
+.f-payment_step-credit .f-payment__credit {
+	display: block;
+
+	/*pointer-events: unset;*/
+}
+
+.f-payment_step-bitcoin .f-payment__bitcoin {
+	display: block;
+
+	/*pointer-events: unset;*/
+}
+
+.f-payment__footer-credit {
+	position: relative;
+	display: none;
+
+	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
+	padding: 3.4rem 0 2rem 3.4rem;
+
+	background: var(--color-grey-light);
+
+	transition: transform 250ms ease-out;
+}
+
+.f-payment__footer-bitcoin {
+	display: none;
+	position: relative;
+
+	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
+	padding: 3.4rem 0 2rem 3.4rem;
+
+	background: var(--color-grey-light);
+
+	transition: transform 250ms ease-out;
+}
+
+
+.f-payment_step-bitcoin .f-payment__footer-bitcoin {
+	display: block;
+}
+
+.f-payment_step-credit .f-payment__footer-credit {
+	display: block;
+}
+
 
 .f-payment__heading {
 	margin: 0 0 1.9rem -var(--gutter-width);
@@ -180,20 +235,13 @@ MODIFIER f-payment_pledge (OBSOLETE?)
 	background-color: var(--color-black);
 }
 
-.f-payment__heading_mobile {
-	margin: 0 0 1.9rem -13.6rem;
-	padding: .8rem 1.93rem .8rem 13.6rem;
-}
-
 .f-payment__text {
 	height: 10.8rem;
-	
 	margin: 0;
 }
 
 .f-payment .f-payment__button {
 	width: 100%;
-	
 	margin-bottom: 1rem;
 	
 	font-size: 2.0rem;
@@ -204,13 +252,14 @@ MODIFIER f-payment_pledge (OBSOLETE?)
 	position: absolute;
 	bottom: 0;
 	
-	width: 15rem;	
+	width: 22rem;	
 }
+
 @media screen and (--viewport-mobile) {
 	.f-payment__button-group { position: static; }
 }
 
-.f-payment__arrow {
+/*.f-payment__arrow {
 	width: 3rem;
 	height: 3rem;
 	
@@ -220,18 +269,24 @@ MODIFIER f-payment_pledge (OBSOLETE?)
 	border-right: 5px solid var(--color-grey-light);
 	
 	transform: rotate(-45deg);
-}
+}*/
 
-.f-payment__arrow_mobile {
+/*.f-payment__arrow_mobile {
 	margin: 1rem 0 2rem 12rem;
 	transform: rotate(45deg);
-}
+}*/
 
-.f-payment__radio-group.f-radio-group {
-	margin-bottom: 2rem;
+.f-radio-group.f-payment__radio-group {
+	margin: 8.6rem -4.4rem 0rem 0.8rem;
 	
 	font-weight: bold;
 }
+
+
+.f-payment__radio-element {
+	margin: 0rem 0rem 2.5rem 0rem !important;
+}                        /*Sorry Jon! ^^^*/
+
 .f-payment__radio-input .f-text-input__text-field {
 	display: inline-block;
 
@@ -243,15 +298,18 @@ MODIFIER f-payment_pledge (OBSOLETE?)
 
 	-moz-appearance: textfield; /* KLUDGE: remove controls from Firefox */
 }
+
 /*
 	KLUDGE: remove controls from Safari and Chrome
 	by styling ::-webkit-inner-spin-button and ::-webkit-outer-spin-button
 */
+
 .f-payment__radio-input .f-text-input__text-field::-webkit-inner-spin-button,
 .f-payment__radio-input .f-text-input__text-field::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; /* Removes leftover margin */
 }
+
 .f-text-input.f-payment__radio-input label {
 	position: absolute;
 	top: 0;
@@ -260,19 +318,13 @@ MODIFIER f-payment_pledge (OBSOLETE?)
 	padding-left: 3.4rem;
 }
 
-.f-payment__footer {
-	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
-	padding: 3.4rem 0 2rem 3.4rem;
-
-	background: var(--color-grey-light);
-}
-
 .f-payment__footer-text {
 	color: var(--color-grey);
 	font-size: 1.2rem;
 	font-weight: 100;
 	line-height: 1.8rem;
 }
+
 
 .f-payment__range-label {
 	margin: 0;
@@ -315,16 +367,16 @@ input[type="range"].f-payment__slider-style:focus {
 	outline: none; /* Removes the blue border. */
 }
 input[type="range"].f-payment__slider-style::-webkit-slider-thumb {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 input[type="range"].f-payment__slider-style::-ms-track {
-  width: 100%;
-  cursor: pointer;
+	width: 100%;
+	cursor: pointer;
 
-  /* Hides the slider so custom styles can be added */
-  background: transparent; 
-  border-color: transparent;
-  color: transparent;
+	/* Hides the slider so custom styles can be added */
+	background: transparent; 
+	border-color: transparent;
+	color: transparent;
 }
 
 /* Webkit styling - Chrome/Opera/Safari */
@@ -340,6 +392,7 @@ input[type="range"].f-payment__slider-style::-webkit-slider-thumb {
 
 	cursor: pointer;
 }
+
 input[type="range"].f-payment__slider-style::-webkit-slider-runnable-track {
 	height: 0.1rem;
 	min-height: 1px;
@@ -367,8 +420,8 @@ input[type="range"].f-payment__slider-style::-moz-range-thumb {
 	transform: translateX(0); /* HACK so the track doesn't shine through' */
 
 	cursor: pointer;
-
 }
+
 input[type="range"].f-payment__slider-style::-moz-range-track {
 	width: 100%;
 	height: 0.1rem;
@@ -504,52 +557,5 @@ With a `f-text-input` field
 		</fieldset>
 	</div>
 </section>
-
-</div> <!-- only here for the style guide - should not be used on the website -->
-```
+</div> 
 */
-/*.f-payment__radio-input.f-text-input__text-field {
-	display: inline-block;
-	width: calc(100% - 3.3rem);
-}
-.f-payment__radio-input.f-text-input__text-field::placeholder {
-	margin-left: 1px;
-}
-
-.f-payment__radio-group input[type=radio] {
-	visibility: hidden;
-	position: absolute;
-	height: 2.6rem;
-	width: 2.6rem;
-	transform: translate(-0.4rem, 1.2rem);
-}
-.f-payment__radio-group input[type=radio]:checked + .f-payment__radio::after {
-	position: absolute;
-
-	height: 1.4rem;
-	width: 1.4rem;
-	margin: 1.5rem 0.3rem 0.2rem 0rem;
-
-	border: none;
-	background-color: var(--color-red);
-	border-radius: 1.3rem;
-
-	transform: translate(-6rem, 0.6rem);
-
-	content: "";
-}
-.f-payment__radio::before {
-	display: inline-block;
-	height: 2.6rem;
-	width: 2.6rem;
-	margin: 1.5rem 0.3rem 0.2rem 0rem;
-
-	border: solid 0.2rem var(--color-black);
-	border-radius: 1.3rem;
-
-	vertical-align: -1rem;
-
-	background-color: var(--color-white);
-
-	content: "";
-}*/
