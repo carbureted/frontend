@@ -6,21 +6,30 @@ Here's the payment module's CSS!
 
 <pre>
 BLOCK f-payment
-MODIFIER f-payment_credit
-MODIFIER f-payment_bitcoin
+	ELEMENT f-payment__credit
+	ELEMENT f-payment__bitcoin
+
+	MODIFIER f-payment_step-bitcoin
+	MODIFIER f-payment_step-credit 
+	ELEMENT f-payment__footer-credit
+	ELEMENT f-payment__footer-bitcoin
+
 	ELEMENT f-payment__heading
-	ELEMENT f-payment__heading_mobile
 	ELEMENT f-payment__text
 	ELEMENT f-payment__button
 	ELEMENT f-payment__button-group
-	ELEMENT f-payment__arrow
-	ELEMENT f-payment__radio
-		ELEMENT f-payment__radio-input
-	ELEMENT f-payment__footer
+
+	ELEMENT f-payment__arrow - are currently inactive
+	ELEMENT f-payment__arrow_mobile - are currently inactive
+
+	ELEMENT f-payment__radio-group
+	ELEMENT f-payment__radio-element
+	ELEMENT f-payment__radio-input
+
 	ELEMENT f-payment__footer-text
+	ELEMENT f-payment__range-label
 	ELEMENT f-payment__slider
 	ELEMENT f-payment__slider-style
-	ELEMENT f-payment__slider-ends
 </pre>
 
 
@@ -181,16 +190,6 @@ MODIFIER f-payment_bitcoin
 	/*pointer-events: unset;*/
 }
 
-.f-payment_bitcoin_container {
-	position: relative;
-	display: block;
-}
-
-.f-payment_credit_container {
-	position: absolute;
-	display: block;
-}
-
 .f-payment__footer-credit {
 	position: relative;
 	display: none;
@@ -234,11 +233,6 @@ MODIFIER f-payment_bitcoin
 	line-height: 2.7rem;
 	
 	background-color: var(--color-black);
-}
-
-.f-payment__heading_mobile {
-	margin: 0 0 1.9rem -13.6rem;
-	padding: .8rem 1.93rem .8rem 13.6rem;
 }
 
 .f-payment__text {
