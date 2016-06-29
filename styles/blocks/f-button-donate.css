@@ -58,13 +58,15 @@ TO DO:
 @import "../variables";
 
 .f-button-donate {
-	padding: 2.2rem 0 2.3rem 0;
+	padding: 1.6rem 0 1.9rem 0;
+	margin: 1rem 1rem 1rem 1rem;
 	border: 2px solid var(--color-red);
-	width: inherit;
+	border-radius: 0.5rem;
+	width: 100%;
 
 	color: var(--color-white);
 
-	font-size: 3.2rem;
+	font-size: 2.4rem;
 	text-transform: uppercase;
 	background: var(--color-red);
 
@@ -73,6 +75,8 @@ TO DO:
 	cursor: pointer;
 }
 
+
+/*Fejl? :::::*/
 .f-button-donate:hover, .f-button-donate::before {
 	box-shadow: none;
 	background: var(--color-red);
