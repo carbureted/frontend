@@ -150,44 +150,35 @@ MODIFIER f-payment_bitcoin
 }*/
 
 .f-payment__credit {
-
 	position: relative;
-
 	display: none;
-
-	opacity: 1;
 
 	transition: opacity 500ms ease;
 
 	pointer-events: unset;
+	opacity: 1;
 }
 
 .f-payment__bitcoin {
-
 	position: relative;
-
 	display: none;
-
-	opacity: 1;
 
 	transition: opacity 500ms ease;
 
 	pointer-events: unset;
+	opacity: 1;
 }
 
-
-.f-payment_step_credit .f-payment__credit {
+.f-payment_step-credit .f-payment__credit {
 	display: block;
 
-/*	opacity: 1;
-	pointer-events: unset;*/
+	/*pointer-events: unset;*/
 }
 
-.f-payment_step_bitcoin .f-payment__bitcoin {
+.f-payment_step-bitcoin .f-payment__bitcoin {
 	display: block;
 
-/*	opacity: 1;
-	pointer-events: unset;*/
+	/*pointer-events: unset;*/
 }
 
 .f-payment_bitcoin_container {
@@ -201,26 +192,19 @@ MODIFIER f-payment_bitcoin
 }
 
 .f-payment__footer-credit {
-	display: none;
-/*	transform: translateY(-28rem);*/
-
 	position: relative;
+	display: none;
 
 	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
 	padding: 3.4rem 0 2rem 3.4rem;
 
 	background: var(--color-grey-light);
 
-/*	z-index: -1;*/
-
 	transition: transform 250ms ease-out;
-
 }
 
 .f-payment__footer-bitcoin {
 	display: none;
-/*	transform: translateY(-28rem);*/
-
 	position: relative;
 
 	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
@@ -228,19 +212,16 @@ MODIFIER f-payment_bitcoin
 
 	background: var(--color-grey-light);
 
-/*	z-index: -1;*/
-
 	transition: transform 250ms ease-out;
-
 }
 
 
-.f-payment_step_bitcoin .f-payment__footer-bitcoin {
-	display:block;
+.f-payment_step-bitcoin .f-payment__footer-bitcoin {
+	display: block;
 }
 
-.f-payment_step_credit .f-payment__footer-credit {
-	display:block;
+.f-payment_step-credit .f-payment__footer-credit {
+	display: block;
 }
 
 
@@ -262,13 +243,11 @@ MODIFIER f-payment_bitcoin
 
 .f-payment__text {
 	height: 10.8rem;
-	
 	margin: 0;
 }
 
 .f-payment .f-payment__button {
 	width: 100%;
-	
 	margin-bottom: 1rem;
 	
 	font-size: 2.0rem;
@@ -281,11 +260,12 @@ MODIFIER f-payment_bitcoin
 	
 	width: 22rem;	
 }
+
 @media screen and (--viewport-mobile) {
 	.f-payment__button-group { position: static; }
 }
 
-.f-payment__arrow {
+/*.f-payment__arrow {
 	width: 3rem;
 	height: 3rem;
 	
@@ -295,14 +275,13 @@ MODIFIER f-payment_bitcoin
 	border-right: 5px solid var(--color-grey-light);
 	
 	transform: rotate(-45deg);
-}
+}*/
 
-.f-payment__arrow_mobile {
+/*.f-payment__arrow_mobile {
 	margin: 1rem 0 2rem 12rem;
 	transform: rotate(45deg);
-}
+}*/
 
-/*This works. Spacing between the classes doesnt!? WTF! (Safari, Moz, Chrome)*/
 .f-radio-group.f-payment__radio-group {
 	margin: 8.6rem -4.4rem 0rem 0.8rem;
 	
@@ -325,15 +304,18 @@ MODIFIER f-payment_bitcoin
 
 	-moz-appearance: textfield; /* KLUDGE: remove controls from Firefox */
 }
+
 /*
 	KLUDGE: remove controls from Safari and Chrome
 	by styling ::-webkit-inner-spin-button and ::-webkit-outer-spin-button
 */
+
 .f-payment__radio-input .f-text-input__text-field::-webkit-inner-spin-button,
 .f-payment__radio-input .f-text-input__text-field::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; /* Removes leftover margin */
 }
+
 .f-text-input.f-payment__radio-input label {
 	position: absolute;
 	top: 0;
@@ -341,20 +323,6 @@ MODIFIER f-payment_bitcoin
 
 	padding-left: 3.4rem;
 }
-
-/*.f-payment__footer {
-	position: relative;
-
-	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
-	padding: 3.4rem 0 2rem 3.4rem;
-
-	background: var(--color-grey-light);
-
-	z-index: -1;
-
-	transition: transform 250ms ease-out;
-}*/
-
 
 .f-payment__footer-text {
 	color: var(--color-grey);
@@ -405,16 +373,16 @@ input[type="range"].f-payment__slider-style:focus {
 	outline: none; /* Removes the blue border. */
 }
 input[type="range"].f-payment__slider-style::-webkit-slider-thumb {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 input[type="range"].f-payment__slider-style::-ms-track {
-  width: 100%;
-  cursor: pointer;
+	width: 100%;
+	cursor: pointer;
 
-  /* Hides the slider so custom styles can be added */
-  background: transparent; 
-  border-color: transparent;
-  color: transparent;
+	/* Hides the slider so custom styles can be added */
+	background: transparent; 
+	border-color: transparent;
+	color: transparent;
 }
 
 /* Webkit styling - Chrome/Opera/Safari */
@@ -430,6 +398,7 @@ input[type="range"].f-payment__slider-style::-webkit-slider-thumb {
 
 	cursor: pointer;
 }
+
 input[type="range"].f-payment__slider-style::-webkit-slider-runnable-track {
 	height: 0.1rem;
 	min-height: 1px;
@@ -457,8 +426,8 @@ input[type="range"].f-payment__slider-style::-moz-range-thumb {
 	transform: translateX(0); /* HACK so the track doesn't shine through' */
 
 	cursor: pointer;
-
 }
+
 input[type="range"].f-payment__slider-style::-moz-range-track {
 	width: 100%;
 	height: 0.1rem;
@@ -509,6 +478,7 @@ input[type="range"].f-payment__slider-style::-ms-fill-upper {
 }
 
 /*
+
 ## Donation
 
 With a `f-text-input` field
@@ -593,51 +563,5 @@ With a `f-text-input` field
 		</fieldset>
 	</div>
 </section>
-
-</div> <!-- only here for the style guide - should not be used on the website -->
-```
-.f-payment__radio-input.f-text-input__text-field {
-	display: inline-block;
-	width: calc(100% - 3.3rem);
-}
-.f-payment__radio-input.f-text-input__text-field::placeholder {
-	margin-left: 1px;
-}
-
-.f-payment__radio-group input[type=radio] {
-	visibility: hidden;
-	position: absolute;
-	height: 2.6rem;
-	width: 2.6rem;
-	transform: translate(-0.4rem, 1.2rem);
-}
-.f-payment__radio-group input[type=radio]:checked + .f-payment__radio::after {
-	position: absolute;
-
-	height: 1.4rem;
-	width: 1.4rem;
-	margin: 1.5rem 0.3rem 0.2rem 0rem;
-
-	border: none;
-	background-color: var(--color-red);
-	border-radius: 1.3rem;
-
-	transform: translate(-6rem, 0.6rem);
-
-	content: "";
-}
-.f-payment__radio::before {
-	display: inline-block;
-	height: 2.6rem;
-	width: 2.6rem;
-	margin: 1.5rem 0.3rem 0.2rem 0rem;
-
-	border: solid 0.2rem var(--color-black);
-	border-radius: 1.3rem;
-
-	vertical-align: -1rem;
-
-	background-color: var(--color-white);
-
-	content: "";
-}*/
+</div> 
+*/
