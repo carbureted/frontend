@@ -6,28 +6,35 @@
 	<meta name="viewport" content="width=device-width">
 	<title>about:manifesto</title>
 	<link rel="stylesheet" href="css/bundle.css">
+	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
+       (instead of dynamically loading it later in JS) is that the parser can go
+       to town pre-fetching resources, etc. -->
+	<!-- TODO: change this to whatever WC you need <link rel="import" class="f-import" href="wc/header.htm" async>-->
 </head>
-<header class="f-navigation">
-	<div class="f-row f-row_12">
-		<div class="f-row__cell-4 f-row__cell-mobile-5">
-			<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
-		</div>
-		<nav class="f-row__cell-8 f-row__cell-mobile-7">
-			<div class="f-row f-row_12">
-				<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
-					<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
-				</div>
-				<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
-					<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
-				</div>
-				<div class="f-row__cell-3 f-row__cell-mobile-3">
-					<a href="/about-us.htm" class="f-navigation__link">About</a>
-				</div>
-			</nav>
-		</div>
-	</div>
-</header>
+
 <body>
+
+	<header class="f-navigation">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4 f-row__cell-mobile-5">
+				<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+			</div>
+			<nav class="f-row__cell-8 f-row__cell-mobile-7">
+				<div class="f-row f-row_12">
+					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
+					</div>
+					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
+					</div>
+					<div class="f-row__cell-3 f-row__cell-mobile-3">
+						<a href="/about-us.htm" class="f-navigation__link">About</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
 	<article class="f-content">
 
 		<h1 class="f-left-heading f-left-heading_big">About us</h1>
@@ -53,65 +60,69 @@
 					<p class="f-text__text">
 				  	Our society is created and developed by popular movements and their struggles.
 					Throughout history, progressive steps for humanity has been led by a critical mass of people creating movements.
-					When the political system fails to reform, change, and solve the issues of humanity, it is not an error or a failure. 
+					When the political system fails to reform, change, and solve the issues of humanity, it is not an error or a failure.
 					The political system is not designed to innovate, change or even represent.
 					It is designed to preserve current power structures, and in that sense it is doing a really good job.
-					In order to seize rights, power and influence, we need to organise solidarity and start supporting, not the people in power, but the movements who actually have the ability to create real change. 
-					Rights and liberties are not given to us. They are fought for and taken. 
+					In order to seize rights, power and influence, we need to organise solidarity and start supporting, not the people in power, but the movements who actually have the ability to create real change.
+					Rights and liberties are not given to us. They are fought for and taken.
 					</p>
 				</div><!-- /f-text -->
-				
+
 				<div class="f-text f-text_attention">
 					<h2 class="f-text__heading">How</h2>
 
 					<p class="f-text__text">
-							In order to create and sustain progressive change, 
+							In order to create and sustain progressive change,
 							we should shift our focus away from the people in power and instead support
-						 	the movements with revolutionary potential.  
-							We need mutual aid, -support and realised solidarity.  
-							We need to fund each other directly, not through handouts and charity from third party actors.  
-							
-							The structure is already in place: Through the internet we become part of each others’ struggles 
+						 	the movements with revolutionary potential.
+							We need mutual aid, -support and realised solidarity.
+							We need to fund each other directly, not through handouts and charity from third party actors.
+
+							The structure is already in place: Through the internet we become part of each others’ struggles
 							by sharing and showing support, now we need to take advantage of this infrastructure and use it
 							to its full potential.
 					</p>
-				</div><!-- /f-text -->					
+				</div><!-- /f-text -->
 			</div><!-- /f-row__cell-3 -->
-			
+
 			<div class="f-row__cell-3 f-row__cell-mobile">
 				<div class="f-text">
 					<h2 class="f-text__heading">Who</h2>
 
 					<p class="f-text__text">
-							
+
 							This site is meant to be a useful tool for progressive movements.
- 							A tool for the full variety of groups, networks, tactics and ways of organizing, across geographical locations.  
-  
+ 							A tool for the full variety of groups, networks, tactics and ways of organizing, across geographical locations.
+
 							Everyone seeking progressive change will approach the tactics and solutions to accomplish this differently.
 							All struggles vary in methods, input and output depending on where it takes place and the people carrying it out.
 							We need a platform that uses this factor as a strength.
 					</p>
 				</div><!-- /f-text -->
-				
+
 				<div class="f-text">
 					<h2 class="f-text__heading">What</h2>
 
 					<p class="f-text__text">
 							FIREFUND is a platform that seeks to encourage cooperation within this diversity.
-							We want to encourage, inspire, empower, support, include, exchange and work together with the movements, 
+							We want to encourage, inspire, empower, support, include, exchange and work together with the movements,
 							fighting for a world beyond oppression and unequally distributed rights and power.
-							We want to facilitate and escalate the work of the social movements by connecting people and struggles 
-							through financing and strengthening.  
-							
+							We want to facilitate and escalate the work of the social movements by connecting people and struggles
+							through financing and strengthening.
+
 							<p>In other words, we want to exchange symbolic solidarity into direct action.</p>
 					</p>
 				</div><!-- /f-text -->
-			
+
 			</div><!-- /f-row__cell-3 -->
-		</section>		
+		</section>
+
 		<div class="f-spacer"></div>
+
 	</article>
+
 	<div class="f-spacer"></div>
+
 	<footer class="f-footer">
 		<div class="f-row f-row_12">
 			<div class="f-row__cell-4">
@@ -134,7 +145,7 @@
 			</div>
 			<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
 				<p class="f-footer-text">
-					FIRE<span>FUND</span> is a crowdfunding platform working to finance and organize <br> social change from the bottom. 
+					FIRE<span>FUND</span> is a crowdfunding platform working to finance and organize <br> social change from the bottom.
 				</p>
 				<div class="f-footer-signup">
 					<form class="f-signup">
@@ -166,8 +177,84 @@
 				</ul>
 			</div>
 		</div>
-		<!-- /f-row -->
-	</footer>
+
+		<article class="f-content">
+		<div class="f-spacer"></div>
+
+		<section class="f-row f-row_6">
+			<div class="f-row__cell-3 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
+				<div class="f-text f-text_attention">
+					<h2 class="f-text__heading">Why</h2>
+					<p class="f-text__text">
+				  	Our society is developed by popular movements and their struggles.
+					Throughout history, progressive steps for humanity has been led by a critical mass of people organized within movements.
+
+					<p class="f-text__text">
+					When the political system fails to reform, change, and solve the issues of humanity, it is not an error or a failure.
+					The 'raison d'etre' is not to innovate, change or represent.
+					The institutions, the goverments and the capitalist class aims to preserve current power structures, and in that sense it is doing a really good job.
+					
+					<p class="f-text__text">
+					We think, we need to organise solidarity and start supporting the movements who have the ability to create real change.
+					</p>
+				</div><!-- /f-text -->
+
+				<div class="f-text">
+					<h2 class="f-text__heading">Who</h2>
+
+					<p class="f-text__text">
+
+					This site is meant to be a useful tool for progressive movements.<br>
+ 					A tool for the full variety of groups, networks, tactics and ways of organizing, across borders and cultures.
+
+					<p class="f-text__text">
+					Everyone seeking progressive change will approach the tactics and solutions to accomplish their goals in their own manner. We need a platform that leverages this factor as a strength - not a reason for disunity and 'intraclass' warfare.
+					</p>
+				</div><!-- /f-text -->
+			</div><!-- /f-row__cell-3 -->
+
+			<div class="f-row__cell-3 f-row__cell-mobile-4 f-row__cell-mobile_push_1">
+				<div class="f-text f-text_attention">
+					<h2 class="f-text__heading">How</h2>
+					<p class="f-text__text">
+							In order to create and sustain progressive change,
+							we should shift our focus away from the people in power and instead support
+						 	the movements with revolutionary potential.
+
+					<p class="f-text__text">
+							We need mutual aid, mutual support and realised solidarity. We need accomplishes and alliances, we need cooperation and unity, we need creativity and multi-tactical diversity. We need to fund each other directly, not through handouts and charity from third party actors.
+
+					<p class="f-text__text">
+							With the internet, we have become part of each others’ struggles. Now we need to take advantage of this infrastructure and explore its revolutionary potential.
+					</p>
+				</div><!-- /f-text -->
+
+				<div class="f-text">
+					<h2 class="f-text__heading">What</h2>
+
+					<p class="f-text__text">
+					FIRE<span>FUND</span> is a platform that seeks to encourage cooperation within this diversity.
+
+					<p class="f-text__text">
+					We want to encourage, inspire, empower, support, include, exchange and work together within the movements, fighting for a world beyond oppression and unequally distributed rights, wealth and power.
+
+					<p class="f-text__text">
+					We want to facilitate and escalate the work of the social movements by connecting struggles through crowdfunding and crowdsourcing.
+				</div><!-- /f-text -->
+			</div><!-- /f-row__cell-3 -->
+		</section>
+		<p class="f-left-heading">
+		In other words:
+		</p>
+		<p class="f-huge-heading">We aim to exchange symbolic solidarity into direct action.
+		</p>
+		<div class="f-spacer"></div>
+
+		</article>
+
+
+	<div class="f-spacer"></div>
+
 	<script src="js/loader.js" charset="utf8" async></script>
 	<script src="lib/jquery.js" charset="utf8" async></script>
 	<script src="lib/underscore.js" charset="utf8" async></script>

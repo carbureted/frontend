@@ -10,31 +10,29 @@
        to town pre-fetching resources, etc. -->
 	<link rel="import" class="f-import" href="wc/progress.htm" async>
 </head>
-<header class="f-navigation">
-	<div class="f-row f-row_12">
-		<div class="f-row__cell-4 f-row__cell-mobile-5">
-			<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
-		</div>
-		<nav class="f-row__cell-8 f-row__cell-mobile-7">
-			<div class="f-row f-row_12">
-				<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
-					<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
-				</div>
-				<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
-					<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
-				</div>
-				<div class="f-row__cell-3 f-row__cell-mobile-3">
-					<a href="/about-us.htm" class="f-navigation__link">About</a>
-				</div>
-			</div>
-		</nav>
-	</div>
-</header>
-
 <body>
-
+	<header class="f-navigation">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4 f-row__cell-mobile-5">
+				<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+			</div>
+			<nav class="f-row__cell-8 f-row__cell-mobile-7">
+				<div class="f-row f-row_12">
+					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
+					</div>
+					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
+					</div>
+					<div class="f-row__cell-3 f-row__cell-mobile-3">
+						<a href="/about-us.htm" class="f-navigation__link">About</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
 	<div class="f-hero">
-		<img src="foo/bar.png">
+		<!--<img src="foo/bar.png">-->
 		<div class="f-hero__wrapper">
 			<div class="f-row f-row_6">
 				<div class="f-row__cell">
@@ -51,6 +49,7 @@
 					</p>
 				</div>
 			</div>
+<<<<<<< HEAD
 		</div><!-- /f-hero__wrapper -->
 	</div>
 	<section class="f-page-wrapper">
@@ -314,22 +313,10 @@
 						<p class="f-one-liner"><a href="#">AFA Over Vindinge</a></p>
 						<p class="f-one-liner"><a href="#">Konservativ Ungdom Odense</a></p>
 						<button class="f-button-donate_kush" onclick="document.querySelector('.f-modal').classList.add('f-modal_visible')">SUPPORT</button>
-						<section class="f-progress" data-value="38">
-							<div class="f-progress__bar">
-								<div style="width: 38%;" class="f-progress__value"></div>
-							</div>
-							<div class="f-progress__data">
-								<p class="f-progress__data-element">
-									<span>38%</span> of $50,000
-								</p>
-								<p class="f-progress__data-element">
-									<span>$14,928</span> reached in total
-								</p>
-								<p class="f-progress__data-element">
-									<span>22</span> days to go
-								</p>
-							</div>
-						</section>
+						
+						<div class="f-progress__wrapper">
+							<f-progress name="shelter" goal="432432" days="7" total="32212" symbol="€"></f-progress>
+						</div>
 					</div>
 				</article>
 			</div>

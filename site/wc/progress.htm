@@ -3,11 +3,11 @@
 <dom-module id="f-progress">
 
 	<template>
-		<link rel="stylesheet" href="/css/blocks/f-progress.css">
+		<link rel="stylesheet" href="/css/blocks/f-progress.css" id="myStyling">
 
 		<section class="f-progress">
 			<div class="f-progress__bar">
-				<div style="width:0%;" class="f-progress__value"></div>
+				<div style="width:0%" class="f-progress__value"></div>
 			</div>
 			<div class="f-progress__data">
 				<p class="f-progress__data-element"></p>
@@ -41,10 +41,10 @@
 					ourNS = this.firefund = {}
 				Object.keys(this.properties).forEach(function(key) {
 					var item =  self.attributes.getNamedItem(key)
-					if(item.nodeValue) ourNS[key] = item.nodeValue
+					if(item) ourNS[key] = item.nodeValue
 				})
 
-				var modifier = this.firefund.modifier
+				var modifier = this.firefund.modifier || "default"
 				var total = this.firefund.total
 				var goal = this.firefund.goal
 				var value = Math.round(total / goal * 100)
@@ -56,20 +56,22 @@
 				accounting.settings.currency.precision = 0
 
 				var text = [
-					"<span>" + days + "</span> days to go",
 					modifier === "small"
 						? "<span>" + value + "%</span> of " + truncate(goal)
 						: "<span>" + value + "%</span> of " + accounting.formatMoney(goal),
-					"<span>" + accounting.formatMoney(total) + "</span> reached in total"
+					modifier === "small"
+						? "<span>" + accounting.formatMoney(total) + "</span> reached"
+						: "<span>" + accounting.formatMoney(total) + "</span> reached in total",
+					"<span>" + days + "</span> days to go"
 				]
 
 				changeModifier(this, modifier) // modifier should always be the first thing you want to set because it changes the design
 
-				this.changeHandler = _.once(changeProgressbar.bind(null, self, value))
+				this.intoViewHandler = _.once(changeProgressbar.bind(null, self, value))
 				$(window).on("scroll", function scrollHandler() {
 					if( self.isInView() ) {
 						$(window).off("scroll", scrollHandler)
-						self.changeHandler()
+						self.intoViewHandler()
 					}
 				})
 
@@ -79,19 +81,45 @@
 				})
 			},
 			attached: function() {
-				if(this.isInView())
-					this.changeHandler()
+				var self = this
+				var modifier = this.firefund.modifier || "default"
+				//FIXME: timer hack to make sure the check for isInView isn't run before the WC is rendered
+				_.delay(function() {
+					if(self.isInView())
+						_.defer(self.intoViewHandler)
+				}, 500)
+
+
+				// hack to avoid jumping when the WC is injected into the page
+				// var wrapperElement = document.createElement("div")
+				var cssInjection = "opacity:0;-webkit-transition:opacity 250ms ease 500ms;transition:opacity 250ms ease 500ms;"
+				switch(modifier) {
+					case "vertical":
+						cssInjection += "height:13rem;"
+						break
+					case "flyout":
+						cssInjection += "height:4.6rem;"
+						break
+					case "default":
+						cssInjection += "height:8.6rem;"
+						break
+				}
+				this.parentElement.setAttribute("style", cssInjection)
+				this.querySelector("#myStyling").addEventListener("load", function() {
+					self.parentElement.style.opacity = 1
+					self.style.position = "static"
+				})
 			},
 			isInView: function() {
-				var rect = this.getBoundingClientRect();
+				var rect = this.getBoundingClientRect()
 
 				// USE THE FOLLOWING IN A UNIT TEST
-				// console.log("Is in View", rec't.top + rect.height < window.innerHeight && rect.bottom > 0);
-				// console.log("top", rect.top, window.innerHeight, rect.height, rect.top + rect.height < window.innerHeight);
-				// console.log("bottom", rect.bottom, window.innerHeight, rect.height, rect.bottom - rect.height > 0);
-				// console.log("*******************'*");
+				// console.log("Is in View", rect.top + rect.height < window.innerHeight && rect.bottom > 0)
+				// console.log("top", rect.top, window.innerHeight, rect.height, rect.top + rect.height < window.innerHeight)
+				// console.log("bottom", rect.bottom, window.innerHeight, rect.height, rect.bottom - rect.height > 0)
+				// console.log("********************")
 
-				return rect.top + rect.height < window.innerHeight && rect.bottom - rect.height > 0;
+				return rect.top + rect.height < window.innerHeight && rect.bottom - rect.height > 0
 			}
 		})
 
@@ -127,16 +155,16 @@
 						target.text(accounting.formatMoney(Math.ceil(this.counter), {
 						symbol: prefix,
 						precision: 0
-						}) + postfix);
+						}) + postfix)
 					} else {
-						target.text(prefix + Math.ceil(this.counter) + postfix);
+						target.text(prefix + Math.ceil(this.counter) + postfix)
 					}
 					}/* USE THIS IN CASE THE step FUNCTION DOESN'T KEEP THE DESIRED FORMAT,
 					done: function() {
-					target.text(value);
+					target.text(value)
 					}*/
-				});
-			}, delay);
+				})
+			}, delay)
 		}
   </script>
 

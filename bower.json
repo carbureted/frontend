@@ -19,7 +19,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#~1.5.0",
     "openpgp": "^2.3.0",
-    "scrollme": "^1.1.0",
+    "scrollme": "https://github.com/Firefund/scrollme.git#^1.1.1",
     "jquery": "^3.0.0",
     "accounting": "dotnetCarpenter/accounting.js#^0.4.2",
     "underscore": "^1.8.3"

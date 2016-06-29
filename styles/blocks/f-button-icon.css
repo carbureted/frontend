@@ -45,12 +45,11 @@ BLOCK f-button-icon
 	top: 0;
 	/*min-width: 16.4rem;*/
 	width: 100%;
-	margin: 0 3rem 3.2rem 0;
+	margin: 0 3rem 1.5rem 0;
 
 	color: var(--color-black, black);
 	font-size: 1.6rem;
 	font-weight: bold;
-	text-transform: capitalize;
 	text-align: center;
 
 	background-color: var(--color-white);
