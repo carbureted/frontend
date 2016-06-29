@@ -1,39 +1,8 @@
 
 /*
-Noter
+#Notes#
 
-- Sketch ny situation med nye fundingmodeller og indret dig derefter DONE
-- Slider i egen block og branch NOPE
-- Correct the arrow DONE
-- Position buttons mobile (3-column) DONE
-- Position left-buttons again - maybe with a button div DONE
-- Allignment of radiobuttons DONE
-- Clean HTML DONE
-- Forsøg m. procent ved micropixelfejl DONE (men stadig små fejl)
-- Position rightbuttons både på mobile og desktop DONE
-- Test browsers - DONE
-
-	SAFARI
-	- Ingen slider-end i mindre versioner
-	- Slider track ustabil og glimser ud
-	FIREFOX
-	- Slider er ikke understøttet, ikke ramt på thumb DONE
-	- Slider og button position er nu skæv
-
-- [x] Insæt korrecte tal DONE
-- [x] Slim CSS DONE
-- [x] Clean CSS DONE
-- [x] Se om du kan få modal til at virke ordentligt igen DONE
-- Nice to have: centrer footer på mobile
-- When button is done, test if slimmer radiobuttons are cooler NOPE
-- [] Fix button bugs
-- []Fix radio input option
-- Fix radio red fill-out
-- Fix browser problems
-- Fix modifiers (change between the 3 different designs)
-
-In the modal window, the two different payment forms - one for mobile, one for desktop.
-
+Here's the payment module's CSS! 
 
 <pre>
 BLOCK f-payment
@@ -62,89 +31,104 @@ MODIFIER f-payment_bitcoin
 <div class="f-modal f-modal_visible">
 	<div class="f-modal__content">
 		<div class="f-content">
-			<div class="f-payment">
+			<div class="f-payment">	
 				<div class="f-row f-row_12">
-					<div class="f-row__cell-7 f-row_not-mobile">
+					<div class="f-row__cell-7 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
 						<h2 class="f-payment__heading"> Choose the amount and method of payment</h2>
-						<p class="f-payment__text">A pledged donation will only transfer if the campaign reaches the goal within the timeframe. <a href="#">Read more.</a></p>
-						<button class="f-button-basic f-payment__button">Pledge</button>
+						<p class="f-text">A <a href="#">credit card</a> donation will only be transferred if the campaign reaches the goal in time.</p>
+						<p>With bitcoin donations, all donations are instant and refunds are not currently possible. <a href="#">Read more.</a></p>
+						<button class="f-button-basic f-payment__button">Bitcoin</button>
+						<button class="f-button-basic f-payment__button">Credit card</button>
 					</div>
-					<div class="f-row_not-desktop f-row__cell-mobile_push_2 f-row__cell-mobile-8">
-						<h2 class="f-payment__heading f-payment__heading_mobile"> Choose the amount and method of payment</h2>
-						<p class="f-payment__text">A pledged donation will only transfer if the campaign reaches the goal within the timeframe. <span>Read more.</span></p>
-						<button class="f-button-basic f-payment__button">Pledge</button>
-					</div>
-					<div class="f-row__cell-1 f-row_not-mobile">
-						<div class="f-payment__arrow"></div>
-					</div>
-					<div class="f-row_not-desktop f-row__cell-mobile_push_3 f-row__cell-mobile-8">
-						<div class="f-payment__arrow f-payment__arrow_mobile"></div>
-					</div>
-					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
-						<div class="f-payment__radio-group f-radio-group">
-							<div class="f-column f-column_2 f-column_mobile_3">
-								<div class="f-radio-group__element">
-									<input id="rb10" type="radio" name="rb" value="500">
-									<label for="rb10">$500</label>
-								</div>
-								<div class="f-radio-group__element">
-									<input id="rb11" type="radio" name="rb" value="250">
-									<label for="rb11">$250</label>
-								</div>
-								<div class="f-radio-group__element">
-									<input id="rb12" type="radio" name="rb" value="100">
-									<label for="rb12">$100</label>
-								</div>
-								<div class="f-radio-group__element">
-									<input id="rb13" type="radio" name="rb" value="50">
-									<label for="rb13">$50</label>
-								</div>
-								<div class="f-radio-group__element">
-									<input id="rb14" type="radio" name="rb" value="20">
-									<label for="rb14">$20</label>
-								</div>
-								<div class="f-text-input f-radio-group__element f-payment__radio-input">
-									<input id="rb15" type="radio" name="rb" value="20">
-									<label for="rb15">
-										<input class="f-text-input__text-field" type="number" placeholder="$10">
-									</label>
-								</div>
-							</div><!-- /f-column -->
-						</div>
-						<div class="f-row__cell-12">
-							<div class="f-payment__button-group">
-								<button class="f-button-basic f-payment__button">Bitcoin</button>
-								<button class="f-button-basic f-payment__button">Credit card</button>
+					<div class="f-row__cell-4 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
+						<div class="f-payment__credit">
+							<div class="f-payment__radio-group f-radio-group">
+								<div class="f-column f-column_2 f-column_mobile_3">
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb10" type="radio" name="rb" value="500">
+										<label for="rb10">$500</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb11" type="radio" name="rb" value="250">
+										<label for="rb11">$250</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb12" type="radio" name="rb" value="100">
+										<label for="rb12">$100</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb13" type="radio" name="rb" value="50">
+										<label for="rb13">$50</label>
+									</div>
+									<div class="f-payment__radio-element f-radio-group__element">
+										<input id="rb14" type="radio" name="rb" value="20">
+										<label for="rb14">$20</label>
+									</div>
+									<div class="f-text-input f-payment__radio-element f-radio-group__element f-payment__radio-input">
+										<input id="rb15" type="radio" name="rb" value="20">
+										<label for="rb15">
+											<input class="f-text-input__text-field" type="number" placeholder="$10">
+										</label>
+									</div>
+									<button class="f-button-donate">Donate</button>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div><!-- /f-row_12 -->
-				<div class="f-payment__footer">
-					<div class="f-row f-row_12">
-						<div class="f-row__cell-6 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
-							<div class="f-payment__footer-text f-text">You decide the cut. Please, keep in mind that FIREFUND is non-profit and activist-driven.
+
+						<!-- Step Bitcoin! -->
+						<div class="f-payment__bitcoin">
+							<div class="f-row__cell-12">
+								<figure>
+									<img src="assets/image/btcad.png">
+								</figure>
+								<div class="f-text-input f-text-input_readonly">
+								<label class="f-text-input__label">To bitcoin adress:
+									<input class="f-text-input__text-field" readonly type="text" value="1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2">
+								</label>
 							</div>
-						</div>
-						<div class="f-row__cell-1 f-row__cell-mobile_push_2 f-row__cell-mobile-1">
-							<p class="f-payment__footer-text f-text f-payment__range-label">FIREFUND</p>
-							<p class="f-payment__footer-text f-text f-payment__range-label">KOBANE</p>
-						</div>
-						<div class="f-row__cell-3">
-							<div class="f-payment__slider">
-								<input class="f-payment__slider-style" type="range"/>
-							</div>
-							<div class="f-payment__slider">
-								<input class="f-payment__slider-style" type="range"/>
-							</div>
-						</div>
-						<div class="f-row__cell-2">
-							<div class="f-payment__footer-text f-text f-payment__range-label">$42.45</div>
-							<div class="f-payment__footer-text f-text f-payment__range-label">$8.55</div>
 						</div>
 					</div>
 				</div>
-			</div><!-- /f-payment -->
+					<div class="f-row_cell-12">
+
+						<!-- footer for credit -->
+						<div class="f-payment__footer f-payment__footer-credit">
+							<div class="f-row f-row_12">
+								<div class="f-row__cell-6 f-row__cell-mobile_push_2 f-row__cell-mobile-7">
+									<div class="f-payment__footer-text f-text">You decide the cut. Please, keep in mind that FIREFUND is non-profit and activist-driven.
+									</div>
+								</div>
+								<div class="f-row__cell-1 f-row__cell-mobile_push_2 f-row__cell-mobile-1">
+									<p class="f-payment__footer-text f-text f-payment__range-label">FIREFUND</p>
+									<p class="f-payment__footer-text f-text f-payment__range-label">KOBANE</p>
+								</div>
+								<div class="f-row__cell-3">
+									<div class="f-payment__slider">
+										<input class="f-payment__slider-style" type="range"/>
+									</div>
+									<div class="f-payment__slider">
+										<input class="f-payment__slider-style" type="range"/>
+									</div>
+								</div>
+								<div class="f-row__cell-2">
+									<div class="f-payment__footer-text f-text f-payment__range-label">$42.45</div>
+									<div class="f-payment__footer-text f-text f-payment__range-label">$8.55</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- footer for bitcoin -->
+						<div class="f-payment__footer f-payment__footer-bitcoin">
+							<div class="f-row f-row_12">
+								<div class="f-row__cell-9 f-row__cell-mobile_push_2 f-row__cell-mobile-8">
+									<div class="f-payment__footer-text f-text">Bitcoin is different. very different. So it requies a bit more information than simple credit card donations. But we're going to be all right. Just note <span>this</span>. 
+									</div>
+								</div>
+							</div>
+						</div>							
+					</div>
+				</div>
+			</div>
 		</div><!-- /f-content -->
 	</div><!-- /f-modal__content -->
 </div><!-- /f-modal -->
@@ -156,13 +140,13 @@ MODIFIER f-payment_bitcoin
 .f-payment {
 	position: relative;
 	
-	height: 100%; /*50.5 in mobile, when step 2 or 3*/
+	height: 100%; /*50.5 in mobile, when step 2 or 3 - 46 in desktop*/
 	padding-top: 2.3rem;
 
 }
 
-/*.f-payment .f-payment_step_bitcoin, .f-payment_step_credit {
-	height: 50.5rem;
+/*.f-payment .f-payment__bitcoin {
+	height: 46.5rem;
 }*/
 
 .f-payment__credit {
@@ -216,22 +200,6 @@ MODIFIER f-payment_bitcoin
 	display: block;
 }
 
-
-
-/*.f-payment__footer {
-	position: relative;
-
-	margin: 1rem -var(--gutter-width) 0 -var(--gutter-width);
-	padding: 3.4rem 0 2rem 3.4rem;
-
-	background: var(--color-grey-light);
-
-	z-index: -1;
-
-	transition: transform 250ms ease-out;
-}*/
-
-
 .f-payment__footer-credit {
 	display: none;
 /*	transform: translateY(-28rem);*/
@@ -269,7 +237,6 @@ MODIFIER f-payment_bitcoin
 
 .f-payment_step_bitcoin .f-payment__footer-bitcoin {
 	display:block;
-
 }
 
 .f-payment_step_credit .f-payment__footer-credit {
