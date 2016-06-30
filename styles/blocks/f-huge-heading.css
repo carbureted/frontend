@@ -50,4 +50,8 @@ MODIFIER f-huge-heading_scroll
 	margin: 6rem 0 2rem 0;
 }
 
+.nodisplay {
+  display: none;
+}
+
 
