@@ -35,17 +35,22 @@
 	</header>
 
 	<div class="f-hero">
-		<!--<img src="foo/bar.png">-->
 		<div class="f-hero__wrapper">
 			<div class="f-row f-row_6">
 				<div class="f-row__cell">
-					<div class="f-hero__heading f-huge-heading">
-						<h1>Solidarity. Mit ein <span>döner</span>, man</h1>
+					<div class="f-hero__heading">
+						<h1>Organize</h1><h1 class="element"></h1>
 					</div>
 				</div>
 			</div>
-		</div><!-- /f-hero__wrapper -->
+		</div>
 	</div>
+
+
+	<div class="f-white-card">
+		<p class="element">YO MAN! WHATS UP!</p>
+	</div>
+
 
 	<footer class="f-footer">
 		<div class="f-row f-row_12">
@@ -107,9 +112,47 @@
 	<script src="js/loader.js" charset="utf8" async></script>
 	<script src="lib/jquery.js" charset="utf8" async></script>
 	<script src="lib/underscore.js" charset="utf8" async></script>
+	<script src="lib/typed.js" charset="utf8" async></script>
 	<script>
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
 	</script>
+
+	<script>
+		$(function(){
+			$(".element").typed({
+				strings: ["solidarity.", "direct action.", "and repeat."],
+				// typing speed
+				typeSpeed: 1,
+				// time before typing starts
+				startDelay: 5,
+				// backspacing speed
+				backSpeed: 0,
+				// time before backspacing
+				backDelay: 1000,
+				// loop
+				loop: true,
+				// false = infinite
+				loopCount: false,
+				// show cursor
+				showCursor: false,
+				// character for cursor
+				cursorChar: "<",
+				// attribute to type (null == text)
+				attr: null,
+				// either html or text
+				contentType: 'html',
+				// call when done callback function
+				callback: function() {},
+				// starting callback function before each string
+				preStringTyped: function() {},
+				//callback for every typed string
+				onStringTyped: function() {},
+				// callback for reset
+				resetCallback: function() {}
+			});
+		});
+	</script>
+
 </body>
 
 </html>
