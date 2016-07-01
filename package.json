@@ -12,6 +12,7 @@
     "postcss": "postcss --use postcss-partial-import --use lost --use postcss-cssnext",
     "postcss:no-import": "postcss --use postcss-cssnext",
     "postcss:prod": "postcss --use postcss-partial-import --use lost --use postcss-cssnext --use cssnano",
+    "postcss:prod:wc": "postcss --use postcss-partial-import --use lost --use postcss-cssnext --use cssnano --stringifier postcss-dom-module",
     "make": "make --jobs=4",
     "watch": "nodemon --watch styles --ext .css --exec npm run make",
     "mkdir": "mkdirp",

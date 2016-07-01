@@ -1,15 +1,17 @@
 ﻿<script>
-	window.Polymer = window.Polymer || {}
-	// shadow dom can NOT be used because we load external css to style our web components
-	window.Polymer.dom = 'shadow'
+		window.Polymer = window.Polymer || {}
+		window.Polymer.dom = 'shadow'
+		window.Polymer.lazyRegister = true
 </script>
-
 <link rel="import" href="/lib/polymer.html">
 
 <dom-module id="firefund-progress">
 
+	<style>
+		@import url("/css/blocks/f-progress.css");
+	</style>
 	<template>
-		<link rel="stylesheet" href="/css/blocks/f-progress.css" id="myStyling">
+		<!--<link rel="import" href="/css/blocks/f-progress.html" id="myStyling">-->
 
 		<section class="f-progress">
 			<div class="f-progress__bar">
@@ -106,7 +108,7 @@
 					el.innerHTML = text[i]
 				})
 
-				console.log(this.deserialize("modifier", String))
+console.log(this.modifier)
 				// var self = this
 				// var modifier = this.firefund.modifier || "default"
 				//FIXME: timer hack to make sure the check for isInView isn't run before the WC is rendered

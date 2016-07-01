@@ -14,9 +14,9 @@
 
 	function finishLazyLoading () {
 		// Set up the element imports.
-		// window.Polymer = window.Polymer || {}
-		// shadow dom can NOT be used because we load external css to style our web components
-		// window.Polymer.dom = 'shadow'
+		window.Polymer = window.Polymer || {}
+		window.Polymer.dom = 'shadow'
+		window.Polymer.lazyRegister = true
 
 		// var imports = Array.prototype.slice.call(document.querySelectorAll(".f-import"), 0)
 
