@@ -15,18 +15,15 @@
 <body>
 	<header class="f-navigation">
 		<div class="f-row f-row_12">
-			<div class="f-row__cell-4 f-row__cell-mobile-5">
+			<div class="f-row__cell-3 f-row__cell-mobile-4">
 				<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
 			</div>
 			<nav class="f-row__cell-8 f-row__cell-mobile-7">
 				<div class="f-row f-row_12">
-					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
-						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
-					</div>
 					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
 						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
 					</div>
-					<div class="f-row__cell-3 f-row__cell-mobile-3">
+					<div class="f-row__cell-1 f-row__cell-mobile-3">
 						<a href="/about-us.htm" class="f-navigation__link">About</a>
 					</div>
 				</nav>
@@ -34,12 +31,12 @@
 		</div>
 	</header>
 
-	<div class="f-hero">
+	<div class="f-hero f-hero_big">
 		<div class="f-hero__wrapper">
 			<div class="f-row f-row_6">
 				<div class="f-row__cell">
 					<div class="f-hero__heading">
-						<h1>Organize</h1><h1 class="element"></h1>
+						<h1>We organize</h1><h1 class="element"></h1>
 					</div>
 				</div>
 			</div>
@@ -48,7 +45,19 @@
 
 
 	<div class="f-white-card">
-		<p class="element">YO MAN! WHATS UP!</p>
+
+		<div class="f-row f-row_6">
+			<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile_push_1 f-row__cell-mobile-4">
+				<p class="f-one-liner_center">
+				We're a team of 15 activists from Denmark, Sweden, Italy, Spain, Greece and California - but we want to be hundreds. Jump the boat, play ball and kick ass with us. 
+				</p>
+			</div>
+			<div class="f-row__cell-2 f-row__cell_push_2 f-row__cell-mobile_push_2 f-row__cell-mobile-2">
+				<div class="f-button-organize">
+					<a href="/howdoesitwork.htm">How it works</a>
+				</div>
+			</div>
+		</div>
 	</div>
 
 
@@ -112,19 +121,19 @@
 	<script src="js/loader.js" charset="utf8" async></script>
 	<script src="lib/jquery.js" charset="utf8" async></script>
 	<script src="lib/underscore.js" charset="utf8" async></script>
-	<script src="lib/typed.js" charset="utf8" async></script>
 	<script>
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
 	</script>
 
+	<script src="lib/typed.js" charset="utf8" async></script>
 	<script>
 		$(function(){
 			$(".element").typed({
-				strings: ["solidarity.", "direct action.", "and repeat."],
+				strings: ["a political crowdfunding platform", "as activists", "international solidarity"],
 				// typing speed
-				typeSpeed: 1,
+				typeSpeed: 0,
 				// time before typing starts
-				startDelay: 5,
+				startDelay: 0,
 				// backspacing speed
 				backSpeed: 0,
 				// time before backspacing

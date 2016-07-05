@@ -11,6 +11,7 @@ E.i. the image doesn't reach the top of the container and the black background i
 
 <pre>
 BLOCK f-hero
+	MODIFIER f-hero_big
 	ELEMENT f-hero__wrapper
 		ELEMENT f-hero__heading
 		ELEMENT f-hero__text
@@ -52,9 +53,13 @@ BLOCK f-hero
 
 	/*TODO: set background-image via js */
 /*	background-image: url(../../assets/image/projecthero.png);*/
-	background-image: url(../../assets/image/4FPL2ZO.jpg);
+	background-image: url(../../assets/image/notes.png);
 	background-repeat: no-repeat;
 	background-position: center bottom; /* cut sides until media query limit */
+}
+
+.f-hero.f-hero_big {
+	height: 46rem;
 }
 
 /* `<img>` tags are hidden */
@@ -67,31 +72,32 @@ BLOCK f-hero
 .f-hero__heading {
 	position: relative;
 
-  margin: 0 0 0 var(--gutter-width);
+  	margin: 0 0 0 var(--gutter-width);
 }
 .f-hero__heading::before {
 	position: absolute;
-  top: 0;
+  	top: 0;
 	left: -50.8rem;
-  width: 50rem;
-  height: 100%;
+	width: 50rem;
+	height: 100%;
 
-  background-color: var(--color-black-transparent);
+	background-color: var(--color-black-transparent);
 
-  content: "";
+	content: "";
 }
+
 .f-hero__heading h1 {
 	display: inline;
 
-  margin: 0 0 0 -0.8rem;
-  padding-right: 1.4rem;
-  padding-left: 0.8rem;
+	margin: 3rem 0 0 -0.8rem;
+	padding-right: 1.4rem;
+	padding-left: 0.8rem;
 
-  background-color: var(--color-black-transparent);
+	background-color: var(--color-black-transparent);
 
-  color: var(--color-white);
-  font-size: 3.7rem;
-  font-weight: bold;
+	color: var(--color-white);
+	font-size: 3.7rem;
+	font-weight: bold;
 }
 
 .f-hero__text {
@@ -99,15 +105,16 @@ BLOCK f-hero
 
 	margin: 1.16rem 0 0 var(--gutter-width);
 }
+
 .f-hero__text::before {
 	position: absolute;
-  top: 0;
-  left: -50.8rem;
-  width: 50rem;
-  height: 100%;
-  content: "";
+	top: 0;
+	left: -50.8rem;
+	width: 50rem;
+	height: 100%;
+	content: "";
 
-  background-color: var(--color-black-transparent);
+	background-color: var(--color-black-transparent);
 
 	pointer-events: none;
 }
