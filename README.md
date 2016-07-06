@@ -24,8 +24,8 @@ Probably also with your linux distro. Make is a task runner designed for compili
 
 ## Getting started
 
-1. Go to https://github.com/Firefund/styleguide/ and copy the git url.
-1. Download the repository (`git clone --depth=1 https://github.com/Firefund/styleguide.git`) and cd into the styleguide folder.
+1. Go to https://github.com/Firefund/frontend/ and copy the git url.
+1. Download the repository (`git clone --depth=1 https://github.com/Firefund/frontend.git`) and cd into the frontend folder.
 2. `npm i` - download the node packages that we depend on.
 3. `npm install -g bower` - downloads Bower
 4. Go to [localhost:8080](localhost:8080) in your browser (preferably in two or three different, like firefox and chrome
