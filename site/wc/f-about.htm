@@ -1,0 +1,38 @@
+<link rel="import" href="/lib/polymer.html">
+
+<dom-module id="f-about"> <!-- Before: f-header -->
+	<style>
+		:host {
+			color: white;
+		}
+	</style>
+	
+	<template>
+		<link rel="stylesheet" href="/css/blocks/f-button-group.css"> <!-- Insert -->
+		<link rel="stylesheet" href="/css/blocks/f-left-heading.css"> <!-- Insert -->
+		<link rel="stylesheet" href="/css/blocks/grid.css"> <!-- Insert -->
+		<link rel="stylesheet" href="/css/blocks/f-spacer.css"> <!-- Insert -->
+
+		<h1 class="f-left-heading f-left-heading_big">About us</h1>
+		<div class="f-spacer"></div>
+		<section class="f-button-group">
+			<div class="f-column f-column_3 f-column_mobile_2">
+				<button class="f-button-group__button">Terms</button>
+				<button class="f-button-group__button">Blog ></button>
+				<button class="f-button-group__button">Manifesto</button>
+				<button class="f-button-group__button">Contact</button>
+				<button class="f-button-group__button">Who we are</button>
+				<button class="f-button-group__button">Team</button>
+			</div>
+		</section>
+
+	</template>
+	
+	<script>
+		Polymer({
+			/* this is the element's prototype */
+			is: 'f-about'
+		})
+	</script>
+	
+</dom-module>
