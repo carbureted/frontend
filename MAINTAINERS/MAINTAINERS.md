@@ -1,3 +1,15 @@
+Table of Content
+
+1. [Introduction](#Introduction)
+2. [Warning](#Warning)
+3. [How to sign](#How-to-sign)
+4. [Git Janitors](#Git-Janitors)
+5. [Fix missing signing](#Fix-missing-signing)
+6. [More info](#More-info)
+7. [FAQ](#FAQ)
+8. [Roles](#Roels)
+9. [Strong passphrases](#Strong-passphrases)
+
 Introduction
 ============
 
@@ -84,6 +96,58 @@ You can also use the -S option with the git merge command itself to sign the res
 	1 file changed, 2 insertions(+)
 
 {The 'Git janitor' section is copied from the general README.md}
+
+
+
+Fix missing signing
+===================
+WARNING: 	This will destroy everyone else copy of the branch, it is is the *master* branch - you will
+destroy/invalidate everyone elses local copy - meaning they have to download the repository again and possibly
+have a lot of difficulties merging in their new work.
+
+YOU SHOULD NEVER PUSH UNSIGN COMMITS TO MASTER!! Check with `git log --show-signature` before push!
+
+You can rewrite git historyt with `rebase -i`. With `rebase -i` you first have to find the last *good* commit. That is the last commit who has a good signature. To find this you do:
+
+`git log --show-signature`
+
+This will give you a list of commits (you can scroll down with `j` and up with `k` if you don't find any *good* commits).
+
+Let's say the first *good* commit is 3 commits down. That is, we have 2 *bad* commits but the third is fine. You copy the commit hash, which looks like this:
+
+`76d5807afd8c0b4ed948c027c8668058828e8a29`
+
+Then you write `git rebase -i 76d5807afd8c0b4ed948c027c8668058828e8a29`.
+
+You now enter rebase mode. The editor you have configured git to use will open with a list of 2 commits. In the list you want to edit this 2 unsigned commits with `git commit --amend -S`.
+
+First you mark the 2 commits for edit. Just write `e` in front of the commit hash.
+
+```
+pick 76d5807 figure out of to use the...
+pick c21d192 perhaps a solution to our...
+```
+
+Will be
+
+```
+e 76d5807 figure out of to use the...
+e c21d192 perhaps a solution to our...
+```
+
+Close you editor and if asked to save, save!
+
+You can now edit the commits. We don't want to change anything in the commits but merely sign them. Remember that signing is `-S`.
+
+Type: `git commit --amend -S`
+
+And after you have entered your password for unlocking the signing key (if you have a passphrase for that), you need to continue with the rebase.
+
+Type: `git rebase --continue`
+
+Then you do the same for the last *bad* commit.
+
+**NOTE:** If you have anything signed after these commits, you will have to re-sign those commits as well, because the commit-signature no longer is valid because you have changed the git history. If it is merely the current/last commit, you will just do `git commit --amend -S`. If it is not your commits - you are in trouble.
 
 
 
