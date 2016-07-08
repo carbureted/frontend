@@ -1,14 +1,14 @@
 Table of Content
 
-1. [Introduction](#Introduction)
-2. [Warning](#Warning)
-3. [How to sign](#How-to-sign)
-4. [Git Janitors](#Git-Janitors)
-5. [Fix missing signing](#Fix-missing-signing)
-6. [More info](#More-info)
-7. [FAQ](#FAQ)
-8. [Roles](#Roels)
-9. [Strong passphrases](#Strong-passphrases)
+1. [Introduction](#introduction)
+2. [Warning](wWarning)
+3. [How to sign](#how-to-sign)
+4. [Git Janitors](#git-janitors)
+5. [Fix missing signing](#fix-missing-signing)
+6. [More info](#more-info)
+7. [FAQ](#faq)
+8. [Roles](#roles)
+9. [Strong passphrases](#strong-passphrases)
 
 Introduction
 ============
