@@ -1,6 +1,6 @@
 <link rel="import" href="/lib/polymer.html">
 <!-- <link rel="import" href="/lib/iron-resizable-behavior.html">
-<link rel="import" href="/lib/iron-selector/iron-selectable.html"> -->
+ --><link rel="import" href="/lib/iron-selector/iron-selectable.html">
 
 <dom-module id="about-buttons"> <!-- Before: f-header -->
 		<style>
@@ -30,31 +30,31 @@
 
 		  is: 'about-buttons',
 
-		  // behaviors: [
-		  //   Polymer.IronResizableBehavior,
-		  //   Polymer.IronSelectableBehavior
-		  // ],
+		  behaviors: [
+		    // Polymer.IronResizableBehavior,
+		    Polymer.IronSelectableBehavior
+		  ],
 
-		  // properties: {
+		  properties: {
 
-		  //   // as the selected page is the only one visible, activateEvent
-		  //   // is both non-sensical and problematic; e.g. in cases where a user
-		  //   // handler attempts to change the page and the activateEvent
-		  //   // handler immediately changes it back
-		  //   activateEvent: {
-		  //     type: String,
-		  //     value: null
-		  //   }
+		    // as the selected page is the only one visible, activateEvent
+		    // is both non-sensical and problematic; e.g. in cases where a user
+		    // handler attempts to change the page and the activateEvent
+		    // handler immediately changes it back
+		    activateEvent: {
+		      type: String,
+		      value: null
+		    }
 
-		  // },
+		  },
 
-		  // observers: [
-		  //   '_selectedPageChanged(selected)'
-		  // ],
+		  observers: [
+		    '_selectedPageChanged(selected)'
+		  ],
 
-		  // _selectedPageChanged: function(selected, old) {
-		  //   this.async(this.notifyResize);
-		  // }
+		  _selectedPageChanged: function(selected, old) {
+		    this.async(this.notifyResize);
+		  }
 		});
   	</script>
 </dom-module>
