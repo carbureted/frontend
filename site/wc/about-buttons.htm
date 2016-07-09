@@ -1,0 +1,40 @@
+<link rel="import" href="/lib/polymer.html">
+
+
+<dom-module id="about-buttons"> <!-- Before: f-header -->
+	<template>
+		<style>
+			:host {
+				color: white;
+			}
+/*		    :host > ::content > :not(.iron-selected) {
+		      display: none !important;
+		    }*/
+	    </style>
+		<div>
+			<section class="f-button-group">
+				<div class="f-column f-column_3 f-column_mobile_2">
+					<button class="f-button-group__button">Terms</button>
+					<button class="f-button-group__button">Blog ></button>
+					<button class="f-button-group__button">Manifesto</button>
+					<button class="f-button-group__button">Contact</button>
+					<button class="f-button-group__button">Who we are</button>
+					<button class="f-button-group__button">Team</button>
+				</div> 
+			</section>
+		</div>
+	</template>
+
+
+	<script>
+		Polymer({
+			/* this is the element's prototype */
+			is: 'about-buttons',
+			// properties: {
+			// 	heading: String,
+			// 	text: String,
+			// 	image: String,
+			// },
+		})
+  </script>
+</dom-module>

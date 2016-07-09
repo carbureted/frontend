@@ -9,6 +9,7 @@
        (instead of dynamically loading it later in JS) is that the parser can go
        to town pre-fetching resources, etc. -->
 	<!-- TODO: change this to whatever WC you need <link rel="import" class="f-import" href="wc/header.htm" async>-->
+	<link rel="import" class="f-import" href="wc/about-buttons.htm">
 	<link rel="import" class="f-import" href="wc/about-us.htm">
 	<link rel="import" class="f-import" href="wc/about-manifesto.htm">
 	<link rel="import" class="f-import" href="wc/about-terms.htm">
@@ -51,37 +52,24 @@ The about-buttons should be a webcomponent where it is possible to add more butt
 and where each button loads a different content webcomponent - about-manifesto, about-terms, etc. 
  -->
 <!-- attr-for-selected="name" selected="who" fallback-selection="default" -->
-	<section class="f-button-group">
-		<div class="f-column f-column_3 f-column_mobile_2">
-			<button class="f-button-group__button">Terms</button>
-			<button class="f-button-group__button">Blog ></button>
-			<button class="f-button-group__button">Manifesto</button>
-			<button class="f-button-group__button">Contact</button>
-			<button class="f-button-group__button">Who we are</button>
-			<button class="f-button-group__button">Team</button>
-		</div> <!-- Button group -->
-	</section>
+	
+	<about-buttons>
+	</about-buttons>
 
 	<about-us name="default">
-		<p class="f-huge-heading">100% FULL COMMUNISM IS LOADING</p>
     </about-us>
     
-    <about-manifesto>
-		<p class="f-huge-heading">LOADING FULL COMMUNISM</p>
+    <about-manifesto name="manifesto">
     </about-manifesto>
 
-    <about-terms>
-		<p class="f-huge-heading">LOADING FULL COMMUNISM</p>
+    <about-terms name="terms">
     </about-terms>
 
-    <about-team>
-		<p class="f-huge-heading">LOADING FULL COMMUNISM</p>
+    <about-team name="team">
     </about-team>    
 
-    <about-contact>
-		<p class="f-huge-heading">LOADING FULL COMMUNISM</p>
+    <about-contact class="contact">
     </about-contact>    
-
 
 	</article>
 
