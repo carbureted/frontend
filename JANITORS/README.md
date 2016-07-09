@@ -43,6 +43,7 @@ to the repository but some git janitors (the ones listed in the [MAINTAINERS](..
 will have to approve a PR before it can be merged. All git janitors should be listed in the [MAINTAINERS](../MAINTAINERS)
 file but we could have a grace period where new git janitors would need to gain some experience before
 they are listed in the [MAINTAINERS](../MAINTAINERS) file.
+Our *approval* system is currently setup to need a single (1) approval from a listed maintainer.
 
 
 Warning
