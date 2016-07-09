@@ -9,7 +9,11 @@
        (instead of dynamically loading it later in JS) is that the parser can go
        to town pre-fetching resources, etc. -->
 	<!-- TODO: change this to whatever WC you need <link rel="import" class="f-import" href="wc/header.htm" async>-->
-	<link rel="import" class="f-import" href="wc/about-us.htm" async>
+	<link rel="import" class="f-import" href="wc/about-us.htm">
+	<link rel="import" class="f-import" href="wc/about-manifesto.htm">
+	<link rel="import" class="f-import" href="wc/about-terms.htm">
+	<link rel="import" class="f-import" href="wc/about-team.htm">
+	<link rel="import" class="f-import" href="wc/about-contact.htm">
 	<link rel="import" href="/lib/polymer.html">
 	<link rel="stylesheet" href="/css/blocks/f-button-group.css"> <!-- Insert -->
 	<link rel="stylesheet" href="/css/blocks/f-left-heading.css"> <!-- Insert -->
@@ -58,27 +62,26 @@ and where each button loads a different content webcomponent - about-manifesto, 
 		</div> <!-- Button group -->
 	</section>
 
-
-		<!-- This is the about-manifesto web component -->
-<!-- 	<about-manifesto >
- --><!-- 			textblog
-			textblog
-			textblog
-			textblog
-			bottomheading
-			bottom text -->
-<!--     </about-manifesto>
- -->
-
-		<!-- This is the about-us web component -->
-	<about-us>
-
-<!-- 	 		
-		heading
-		text
-		picture
-	 -->
+	<about-us name="default">
+		<p class="f-huge-heading">100% FULL COMMUNISM IS LOADING</p>
     </about-us>
+    
+    <about-manifesto>
+		<p class="f-huge-heading">LOADING FULL COMMUNISM</p>
+    </about-manifesto>
+
+    <about-terms>
+		<p class="f-huge-heading">LOADING FULL COMMUNISM</p>
+    </about-terms>
+
+    <about-team>
+		<p class="f-huge-heading">LOADING FULL COMMUNISM</p>
+    </about-team>    
+
+    <about-contact>
+		<p class="f-huge-heading">LOADING FULL COMMUNISM</p>
+    </about-contact>    
+
 
 	</article>
 
