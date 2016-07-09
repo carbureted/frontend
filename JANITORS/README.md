@@ -13,23 +13,45 @@ Table of Content
 Introduction
 ============
 
-All git janitors are maintainers.
-This folder, is created to collect git janitors and possibly other contribuaters public PGP keys.
+All Git Janitors are maintainers.
+This folder, is created to collect git janitors and possibly other contributors public PGP keys.
 
-The reason we do this, is to sign all commits and pull requests. In non-tech language, it is to verify every new edition of the website.
-If our website was handled by a boss sitting behind a desk, and everytime on from the office has a new campaign ready, that person will talk to the boss and make him update the website and launch the campaign. We are trying to do stuff a little different.
+The reason we do this, is to sign all commits and pull requests. In non-tech language, it is to
+verify every new edition of the website.
+If our website was handled by a boss sitting behind a desk, and everytime on from the office has
+a new campaign ready, that person will talk to the boss and make him update the website and launch
+the campaign. We are trying to do stuff a little different.
 
-Everytime someone on the Git Janitor team reviews a new campaign code from one of the Git Campaigners (see roles*), the Git Janitor will make sure that the code is clean from bugs, virusses, germs etc. It can be hard to be sure about that, because hackers are smart.
+Everytime someone on the Git Janitor team reviews a new campaign code from one of the Git Campaigners
+(see [roles](#roles)), the Git Janitor will make sure that the code is clean from bugs, virusses,
+germs etc. It can be hard to be sure about that, because hackers are smart.
 
-So when the Git Janitor have cleaned everything she can see, then she will commit the code to our 'Master' which will launch the campaign if it is accepted. But it will only be accepted, if the Git Janitor can verify herself by signing the PR (Pull Request, in Git language) and if there's nothing hidden somewhere else in the code. This is a pretty strong and very important security measure, and if you are annoyed about having to learn about PGP-encryption to function as a Git Janitor, then just image what hackers could hit us with, when they would be able to put in their own software on our website.
+So when the Git Janitor have cleaned everything she can see, then she will commit the code to our
+`Master` which will launch the campaign if it is accepted. But it will only be accepted, if the
+Git Janitor can verify herself by signing the PR (Pull Request, in Git language) and if there's
+nothing hidden somewhere else in the code. This is a pretty strong and very important security measure,
+and if you are annoyed about having to learn about PGP-encryption to function as a Git Janitor, then
+just image what hackers could hit us with, when they would be able to put in their own software on our website.
 
-Read more about signing, PGP encryption, Github GPG encryption by researching it online - I will not go into technical details here.
+Read more about signing, PGP encryption, Github GPG encryption by researching it online - I will not
+go into technical details here.
+
+### NEW TOOL ###
+Using [Looks Good To Me](https://lgtm.co/docs/overview/) we can visually see that a PR is approved by a
+registered Maintainer. This mean we can have 2 kinds of git janitors, they have the same access rights
+to the repository but some git janitors (the ones listed in the [MAINTAINERS](../MAINTAINERS) file)
+will have to approve a PR before it can be merged. All git janitors should be listed in the [MAINTAINERS](../MAINTAINERS)
+file but we could have a grace period where new git janitors would need to gain some experience before
+they are listed in the [MAINTAINERS](../MAINTAINERS) file.
 
 
 Warning
 =======
 Everyone Must Sign!
-Signing tags and commits is great, but if you decide to use this in your normal workflow, you’ll have to make sure that everyone on your team understands how to do so. If you don’t, you’ll end up spending a lot of time helping people figure out how to rewrite their commits with signed versions. Make sure you understand GPG and the benefits of signing things before adopting this as part of your standard workflow.
+Signing tags and commits is great, but if you decide to use this in your normal workflow, you’ll have to
+make sure that everyone on your team understands how to do so. If you don’t, you’ll end up spending a lot
+of time helping people figure out how to rewrite their commits with signed versions. Make sure you understand
+GPG and the benefits of signing things before adopting this as part of your standard workflow.
 
 
 How to sign
