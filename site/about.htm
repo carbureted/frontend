@@ -16,7 +16,11 @@
 	<link rel="import" class="f-import" href="wc/about-team.htm">
 	<link rel="import" class="f-import" href="wc/about-contact.htm">
 	<link rel="import" class="f-import" href="wc/firefund-footer.htm">
+	<link rel="import" class="f-import" href="wc/about-iron-pages.htm">
 	<link rel="import" href="/lib/polymer.html">
+	<link rel="import" href="/lib/iron-resizable-behavior/iron-resizable-behavior.html">
+	<link rel="import" href="/lib/iron-selector/iron-selectable.html">
+
 </head>
 <body>
     <header class="f-navigation">
@@ -41,8 +45,8 @@
 	</header>
 
 	<article class="f-content">
-	<h1 class="f-left-heading f-left-heading_big">About us</h1>
-	<div class="f-spacer"></div>
+		<h1 class="f-left-heading f-left-heading_big">About us</h1>
+		<div class="f-spacer"></div>
 
 <!-- 
 For when this becomes a webcomponent in it's own:
@@ -52,37 +56,23 @@ and where each button loads a different content webcomponent - about-manifesto, 
  -->
 <!-- attr-for-selected="name" selected="who" fallback-selection="default" -->
 	
-	<about-buttons>
-	</about-buttons>
+		<about-buttons>
+		</about-buttons>
 
-	<about-us name="default">
-    </about-us>
-    
-    <about-manifesto name="manifesto">
-    </about-manifesto>
-
-    <about-terms name="terms">
-    </about-terms>
-
-    <about-team name="team">
-    </about-team>    
-
-    <about-contact>
-    </about-contact>    
-
+		<about-iron-pages selected="0">   
+		</about-iron-pages>
 	</article>
 
 	<div class="f-spacer"></div>
 
 	<firefund-footer>
-	yo
 	</firefund-footer>
 
 	<script src="js/loader.js" charset="utf8" async></script>
 	<script src="lib/jquery.js" charset="utf8" async></script>
 	<script src="lib/underscore.js" charset="utf8" async></script>
-	<script>
+<!-- 	<script>
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
-	</script>
+	</script> -->
 	</body>
 </html>

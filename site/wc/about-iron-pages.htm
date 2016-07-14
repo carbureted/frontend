@@ -1,0 +1,69 @@
+<link rel="import" href="/lib/polymer.html">
+<link rel="import" href="/lib/iron-resizable-behavior/iron-resizable-behavior.html">
+<link rel="import" href="/lib/iron-selector/iron-selectable.html">
+
+<dom-module id="about-iron-pages"> <!-- Before: f-header -->
+		<template>
+		    <style>
+		      :host {
+		        display: block;
+		      }
+
+		      :host > ::content > :not(.iron-selected) {
+		        display: none !important;
+		      }
+		    </style>
+
+			<content>
+				<about-us>
+			    </about-us>
+			    
+			    <about-manifesto>
+			    </about-manifesto>
+
+			    <about-terms>
+			    </about-terms>
+
+			    <about-team>
+			    </about-team>    
+
+			    <about-contact>
+			    </about-contact> 
+			</content>
+
+			</template>
+
+			<script>
+			    Polymer({
+
+			      is: 'about-iron-pages',
+
+			      behaviors: [
+			        Polymer.IronResizableBehavior,
+			        Polymer.IronSelectableBehavior
+			      ],
+
+			      properties: {
+
+			        // as the selected page is the only one visible, activateEvent
+			        // is both non-sensical and problematic; e.g. in cases where a user
+			        // handler attempts to change the page and the activateEvent
+			        // handler immediately changes it back
+			        activateEvent: {
+			          type: String,
+			          value: null
+			        }
+
+			      },
+
+			      observers: [
+			        '_selectedPageChanged(selected)'
+			      ],
+
+			      _selectedPageChanged: function(selected, old) {
+			        this.async(this.notifyResize);
+			      }
+			    });
+
+			  </script>
+</dom-module>
