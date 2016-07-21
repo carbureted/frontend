@@ -48,18 +48,24 @@
 		<h1 class="f-left-heading f-left-heading_big">About us</h1>
 		<div class="f-spacer"></div>
 
-<!-- 
-For when this becomes a webcomponent in it's own:
-
-The about-buttons should be a webcomponent where it is possible to add more buttons,
-and where each button loads a different content webcomponent - about-manifesto, about-terms, etc. 
- -->
-<!-- attr-for-selected="name" selected="who" fallback-selection="default" -->
-	
 		<about-buttons>
 		</about-buttons>
 
-		<about-iron-pages selected="0">   
+		<about-iron-pages attr-for-selected="name" selected="who" fallback-selection="who">   
+				<about-us name="who">
+			    </about-us>
+			    
+			    <about-manifesto name="manifesto">
+			    </about-manifesto>
+
+			    <about-terms name="terms">
+			    </about-terms>
+			    
+			    <about-team name="team">
+			    </about-team>    
+			    
+			    <about-contact name="contact">
+			    </about-contact> 
 		</about-iron-pages>
 	</article>
 
