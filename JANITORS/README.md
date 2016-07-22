@@ -18,8 +18,8 @@ This folder, is created to collect git janitors and possibly other contributors 
 
 The reason we do this, is to sign all commits and pull requests. In non-tech language, it is to
 verify every new edition of the website.
-If our website was handled by a boss sitting behind a desk, and everytime on from the office has
-a new campaign ready, that person will talk to the boss and make him update the website and launch
+If our website was handled by a boss sitting behind a desk, and everytime some one from the office has
+a new campaign ready, that person would have to talk to the boss and make him update the website and launch
 the campaign. We are trying to do stuff a little different.
 
 Everytime someone on the Git Janitor team reviews a new campaign code from one of the Git Campaigners
@@ -31,7 +31,7 @@ So when the Git Janitor have cleaned everything she can see, then she will commi
 Git Janitor can verify herself by signing the PR (Pull Request, in Git language) and if there's
 nothing hidden somewhere else in the code. This is a pretty strong and very important security measure,
 and if you are annoyed about having to learn about PGP-encryption to function as a Git Janitor, then
-just image what hackers could hit us with, when they would be able to put in their own software on our website.
+just imaging what hackers could hit us with, when they would be able to put in their own software on our website.
 
 Read more about signing, PGP encryption, Github GPG encryption by researching it online - I will not
 go into technical details here.
