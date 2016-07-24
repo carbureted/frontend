@@ -1,25 +1,31 @@
 <link rel="import" href="/lib/polymer.html">
 <link rel="import" href="/lib/iron-selector/iron-multi-selectable.html">
+<link rel="import" href="/lib/iron-selector/iron-selector.html">
 
 <dom-module id="about-buttons"> 
 	<template>
 		<style>
+		.iron-selected {
+			color: var(--color-white);
+			background-position: left bottom;
+			background-size: 100% 300%; /*KLUDGE: background height scaled bigger because some of the white background shows */
+		}
 
 	    </style>
  	   	<div>
 			<section class="f-button-group">
-				<iron-selector 
+ 				<iron-selector 
 					attr-for-selected="name" 
-					selected="non-existing"
-                    fallback-selection="default">
-					<div class="f-column f-column_3 f-column_mobile_2">
-						<button class="f-button-group__button" name="terms">Terms</button>
-						<button class="f-button-group__button" name="blog">Blog ></button>
-						<button class="f-button-group__button" name="manifesto">Manifesto</button>
-						<button class="f-button-group__button" name="contact">Contact</button>
-						<button class="f-button-group__button" name="who">Who we are</button>
-						<button class="f-button-group__button" name="team">Team</button>
-					</div> 
+					selected="who" 
+					fallback-selection="who" 
+					class="f-column f-column_3 f-column_mobile_2">
+
+					<button class="f-button-group__button" name="terms">Terms</button>
+					<button class="f-button-group__button" name="blog">Blog ></button>
+					<button class="f-button-group__button" name="manifesto">Manifesto</button>
+					<button class="f-button-group__button" name="contact">Contact</button>
+					<button class="f-button-group__button" name="who">Who we are</button>
+					<button class="f-button-group__button" name="team">Team</button>
 				</iron-selector>
 			</section>
 		</div>

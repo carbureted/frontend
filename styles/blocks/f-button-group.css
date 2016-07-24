@@ -125,7 +125,7 @@ I'm keeping these examples as a reminder but **DON'T USE THEM!**
 	margin-bottom: 3.2rem;
 
 	font-size: 3rem;
-	font-weight: bold;
+	font-weight: lighter;
 	-moz-osx-font-smoothing: grayscale;
 	
 	transition-property: color, background; /*background;*/
