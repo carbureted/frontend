@@ -16,10 +16,9 @@
 			<section class="f-button-group">
  				<iron-selector 
 					attr-for-selected="name" 
-					selected="who" 
+					selected="{{buttonSelected}}" 
 					fallback-selection="who" 
 					class="f-column f-column_3 f-column_mobile_2">
-
 					<button class="f-button-group__button" name="terms">Terms</button>
 					<button class="f-button-group__button" name="blog">Blog ></button>
 					<button class="f-button-group__button" name="manifesto">Manifesto</button>
@@ -35,9 +34,26 @@
 
     is: 'about-buttons',
 
-    behaviors: [
-      Polymer.IronMultiSelectableBehavior
-    ]
+    properties: {
+    	buttonSelected: {
+    		type: String,
+    		notify: true,
+    		value: 'who'
+    	}
+    }
+
+    // behaviors: [
+    //   Polymer.IronMultiSelectableBehavior
+    // ]
+
+ //    properties: {
+ //    selected: {
+ //      type: String,
+ //      notify: true,
+ //      value: 'who'
+ //     }
+	// }
+
     // function 
     // 	lyt på hvilken attr-for-selected (eventListener?)
     // 	find iron-pages tilsvarende attr-for-selected (hmmmm)
