@@ -53,7 +53,7 @@ BLOCK f-hero
 
 	/*TODO: set background-image via js */
 /*	background-image: url(../../assets/image/projecthero.png);*/
-	background-image: url(../../assets/image/notes.png);
+	background-image: url(../../assets/image/red.png);
 	background-repeat: no-repeat;
 	background-position: center bottom; /* cut sides until media query limit */
 }
