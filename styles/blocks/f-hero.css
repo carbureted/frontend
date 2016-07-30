@@ -53,7 +53,7 @@ BLOCK f-hero
 
 	/*TODO: set background-image via js */
 /*	background-image: url(../../assets/image/projecthero.png);*/
-	background-image: url(../../assets/image/red.png);
+	background-image: url(../../assets/image/white2.png);
 	background-repeat: no-repeat;
 	background-position: center bottom; /* cut sides until media query limit */
 }
@@ -72,9 +72,11 @@ BLOCK f-hero
 .f-hero__heading {
 	position: relative;
 
-  	margin: 0 0 0 var(--gutter-width);
+  	margin: 5.5 0 0 var(--gutter-width);
 }
 .f-hero__heading::before {
+	display: none;
+
 	position: absolute;
   	top: 0;
 	left: -50.8rem;
@@ -93,11 +95,11 @@ BLOCK f-hero
 	padding-right: 1.4rem;
 	padding-left: 0.8rem;
 
-	background-color: var(--color-black-transparent);
+/*	background-color: var(--color-black-transparent);*/
 
-	color: var(--color-white);
-	font-size: 3.7rem;
-	font-weight: bold;
+	color: var(--color-black);
+	font-size: 7.7rem;
+	font-weight: lighter;
 }
 
 .f-hero__text {
@@ -107,6 +109,8 @@ BLOCK f-hero
 }
 
 .f-hero__text::before {
+	display: none;
+
 	position: absolute;
 	top: 0;
 	left: -50.8rem;
