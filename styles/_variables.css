@@ -15,6 +15,6 @@
   --page-max-width: 98.4rem;
 }
 
-@custom-media --viewport-mobile (max-width: 640px);
+@custom-media --viewport-mobile (max-width: 639px);
 @custom-media --viewport-desktop (min-width: 640px);
 @custom-media --viewport-max-scale (max-width: 1000px);
