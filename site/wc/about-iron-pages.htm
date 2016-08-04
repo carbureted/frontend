@@ -37,7 +37,7 @@
 	        activateEvent: {
 	          type: String,
 	          value: null,
-	          // notify: true,
+	          notify: true,
 	        }
 
 	      },
@@ -47,6 +47,7 @@
 	      ],
 
 	      _selectedPageChanged: function(selected, old) {
+	      	console.log(selected)
 	        this.async(this.notifyResize);
 	      }
 	    });
