@@ -10,61 +10,48 @@
 			background-position: left bottom;
 			background-size: 100% 300%; /*KLUDGE: background height scaled bigger because some of the white background shows */
 		}
+		</style>
 
-	    </style>
- 	   	<div>
-			<section class="f-button-group">
+		<section class="f-button-group">
+			<!--<button class="f-button-group__button" name="terms">Terms</button>
+			<button class="f-button-group__button" name="blog">Blog ></button>
+			<button class="f-button-group__button" name="manifesto">Manifesto</button>
+			<button class="f-button-group__button" name="contact">Contact</button>
+			<button class="f-button-group__button" name="who">Who we are</button>
+			<button class="f-button-group__button" name="team">Team</button>-->
+				<iron-selector 
+				attr-for-selected="name" 
+				selected="{{buttonSelected}}"
+				fallback-selection="who" 
+				class="f-column f-column_3 f-column_mobile_2">
 				<button class="f-button-group__button" name="terms">Terms</button>
 				<button class="f-button-group__button" name="blog">Blog ></button>
 				<button class="f-button-group__button" name="manifesto">Manifesto</button>
 				<button class="f-button-group__button" name="contact">Contact</button>
 				<button class="f-button-group__button" name="who">Who we are</button>
 				<button class="f-button-group__button" name="team">Team</button>
- 				<!-- <iron-selector 
-					attr-for-selected="name" 
-					selected="{{buttonSelected}}"
-					fallback-selection="who" 
-					class="f-column f-column_3 f-column_mobile_2">
-					<button class="f-button-group__button" name="terms">Terms</button>
-					<button class="f-button-group__button" name="blog">Blog ></button>
-					<button class="f-button-group__button" name="manifesto">Manifesto</button>
-					<button class="f-button-group__button" name="contact">Contact</button>
-					<button class="f-button-group__button" name="who">Who we are</button>
-					<button class="f-button-group__button" name="team">Team</button>
-				</iron-selector> -->
-			</section>
-		</div>
+			</iron-selector> 
+		</section>
 	</template>
 <script>
+	"use strict"
   Polymer({
 
     is: 'about-buttons',
 
+    behaviors: [
+      Polymer.IronMultiSelectableBehavior
+    ],
+
     properties: {
-    	// buttonSelected: {
-    	// 	type: String,
-    	// 	notify: true,
-    	// 	value: 'who'
-    	// }
-    },
+			buttonSelected: {
+				type: String,
+				// notify: true,
+				value: 'who'
+			}
+		}
 
-    ready: {
-    	
-    }
-
-    // behaviors: [
-    //   Polymer.IronMultiSelectableBehavior
-    // ]
-
- //    properties: {
- //    selected: {
- //      type: String,
- //      notify: true,
- //      value: 'who'
- //     }
-	// }
-
-    // function 
+    // function @troldmand - see about-iron-pages.htm
     // 	lyt på hvilken attr-for-selected (eventListener?)
     // 	find iron-pages tilsvarende attr-for-selected (hmmmm)
     // 	indsæt samme attr-for-selected (øøøøøh)

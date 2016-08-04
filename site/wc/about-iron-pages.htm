@@ -1,6 +1,6 @@
 <link rel="import" href="/lib/polymer.html">
-<link rel="import" href="/lib/iron-resizable-behavior/iron-resizable-behavior.html">
-<link rel="import" href="/lib/iron-selector/iron-selectable.html">
+<link rel="import" href="/lib/iron-resizable-behavior.html">
+<link rel="import" href="/lib/iron-selectable.html">
 
 <dom-module id="about-iron-pages"> <!-- Before: f-header -->
 	<template>
@@ -42,15 +42,36 @@
 
 	      },
 
-	      observers: [
+	      listeners: [
 	        '_selectedPageChanged(selected)'
 	      ],
 
 	      _selectedPageChanged: function(selected, old) {
-	      	console.log(selected)
-	        this.async(this.notifyResize);
-	      }
-	    });
+	      	// console.log(selected)
+	        this.async(this.notifyResize)
+	      },
 
+				attached: function() {
+					var buttonGroup = document.querySelector(".about-buttons")
+					buttonGroup.addEventListener("click", changePage.bind(this), false)
+				},
+
+				detached: function() {
+					var buttonGroup = document.querySelector(".about-buttons")
+					buttonGroup.removeEventListener("click", changePage.bind(this), false)
+				}
+
+	    });
+			function changePage(event) {
+				console.log(arguments)
+				var selected = event.target // event is the click event / event.target is the button that is actually clicked
+				// var selected = Polymer.dom(event).path.shift() // Polymer shitty way
+				// debugger // this line will open devtools in the browser and stop js execution at exactly this line
+				if(selected.name === "blog") // selected.name is the name of <button name="terms">Terms</button> in about-buttons.htm
+					window.open("https://medium.com/@firefundnet/latest")
+				else if(!selected.name) return
+				else this.setAttribute("selected", selected.name)
+				// console.log(this.selected) // print the value of <about-iron-pages selected="?">
+			}
 	</script>
 </dom-module>

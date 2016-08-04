@@ -9,9 +9,8 @@
 	   (instead of dynamically loading it later in JS) is that the parser can go
 	   to town pre-fetching resources, etc. -->
 	<!-- TODO: change this to whatever WC you need <link rel="import" class="f-import" href="wc/header.htm" async>-->
-	<link rel="import" href="/lib/polymer.html">
-	<link rel="import" href="/lib/iron-resizable-behavior/iron-resizable-behavior.html">
-	<link rel="import" href="/lib/iron-selector/iron-selectable.html">
+	<link rel="import" class="f-import" href="/lib/iron-resizable-behavior.html">
+	<link rel="import" class="f-import" href="/lib/iron-selector.html">
 	<link rel="import" class="f-import" href="wc/about-iron-pages.htm">
 
 	<link rel="import" class="f-import" href="wc/about-buttons.htm">
@@ -51,7 +50,7 @@
 		<about-buttons selected="who">
 		</about-buttons>
 
-		<about-us name="who">
+		<!--<about-us name="who">
 		</about-us>
 		
 		<about-manifesto name="manifesto">
@@ -64,10 +63,10 @@
 		</about-team>    
 		
 		<about-contact name="contact">
-		</about-contact>
+		</about-contact>-->
 
 		
-		<!-- <about-iron-pages attr-for-selected="name" selected="who" fallback-selection="who">   
+		 <about-iron-pages attr-for-selected="name" selected="who" fallback-selection="who">   
 			<about-us name="who">
 			</about-us>
 			
@@ -82,7 +81,7 @@
 			
 			<about-contact name="contact">
 			</about-contact> 
-		</about-iron-pages> -->
+		</about-iron-pages> 
 	</article>
 
 	<div class="f-spacer"></div>
