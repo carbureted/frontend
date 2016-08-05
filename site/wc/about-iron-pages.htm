@@ -19,6 +19,20 @@
 	</template>
 
 	<script>
+		(function() { // start of self invoking function (closure)
+
+			function changePage(event) {
+				// console.log(arguments)
+				var selected = event.target // event is the click event / event.target is the button that is actually clicked
+				// var selected = Polymer.dom(event).path.shift() // Polymer shitty way
+				// debugger // this line will open devtools in the browser and stop js execution at exactly this line
+				if(selected.name === "blog") // selected.name is the name of <button name="terms">Terms</button> in about-buttons.htm
+					window.open("https://medium.com/@firefundnet/latest")
+				else if(!selected.name) return
+				else this.setAttribute("selected", selected.name)
+				// console.log(this.selected) // print the value of <about-iron-pages selected="?">
+			}
+			var changeAboutPage // variable for a function with 'this' bound to about-iron-pages 
 	    Polymer({
 
 	      is: 'about-iron-pages',
@@ -52,26 +66,19 @@
 	      },
 
 				attached: function() {
+					// attach click event listener
 					var buttonGroup = document.querySelector(".about-buttons")
-					buttonGroup.addEventListener("click", changePage.bind(this), false)
+					changeAboutPage = changePage.bind(this)
+					buttonGroup.addEventListener("click", changeAboutPage, false)
 				},
 
 				detached: function() {
+					// clean up event listener logic - saving memory and preventing memory leak
 					var buttonGroup = document.querySelector(".about-buttons")
-					buttonGroup.removeEventListener("click", changePage.bind(this), false)
+					buttonGroup.removeEventListener("click", changeAboutPage, false)
+					firefund.changeAboutPage = null
 				}
-
-	    });
-			function changePage(event) {
-				console.log(arguments)
-				var selected = event.target // event is the click event / event.target is the button that is actually clicked
-				// var selected = Polymer.dom(event).path.shift() // Polymer shitty way
-				// debugger // this line will open devtools in the browser and stop js execution at exactly this line
-				if(selected.name === "blog") // selected.name is the name of <button name="terms">Terms</button> in about-buttons.htm
-					window.open("https://medium.com/@firefundnet/latest")
-				else if(!selected.name) return
-				else this.setAttribute("selected", selected.name)
-				// console.log(this.selected) // print the value of <about-iron-pages selected="?">
-			}
+	    })
+		}())  // end of self invoking function
 	</script>
 </dom-module>
