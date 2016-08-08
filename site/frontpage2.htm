@@ -1,32 +1,29 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>About us</title>
+	<title>Index</title>
 	<link rel="stylesheet" href="css/bundle.css">
 	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
        (instead of dynamically loading it later in JS) is that the parser can go
        to town pre-fetching resources, etc. -->
-	<!-- TODO: change this to whatever WC you need <link rel="import" class="f-import" href="wc/header.htm" async>-->
+	<link rel="import" class="f-import" href="wc/progress.htm" async>
 </head>
 
 <body>
-
-     <header class="f-navigation">
+	<header class="f-navigation">
 		<div class="f-row f-row_12">
-			<div class="f-row__cell-4 f-row__cell-mobile-5">
-				<a href="/"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+			<div class="f-row__cell-3 f-row__cell-mobile-4">
+				<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
 			</div>
 			<nav class="f-row__cell-8 f-row__cell-mobile-7">
 				<div class="f-row f-row_12">
-					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
-						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
-					</div>
 					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
 						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
 					</div>
-					<div class="f-row__cell-3 f-row__cell-mobile-3">
+					<div class="f-row__cell-1 f-row__cell-mobile-3 f-row__cell_push_10">
 						<a href="/about-us.htm" class="f-navigation__link">About</a>
 					</div>
 				</nav>
@@ -34,70 +31,34 @@
 		</div>
 	</header>
 
-	<article class="f-content">
-
-		<h1 class="f-left-heading f-left-heading_big">About us</h1>
-
-		<div class="f-spacer"></div>
-
-		<section class="f-button-group">
-			<div class="f-column f-column_3 f-column_mobile_2">
-					<button class="f-button-group__button">Terms</button>
-					<button class="f-button-group__button">Blog ></button>
-					<button class="f-button-group__button">Manifesto</button>
-					<button class="f-button-group__button">Contact</button>
-					<button class="f-button-group__button">Who we are</button>
-					<button class="f-button-group__button">Team</button>
+	<div class="f-hero f-hero_big">
+		<div class="f-hero__wrapper">
+			<div class="f-row f-row_6">
+				<div class="f-row__cell">
+					<div class="f-hero__heading">
+						<h1>We organize</h1><h1 class="element"></h1>
+					</div>
+				</div>
 			</div>
-		</section>
+		</div>
+	</div>
 
-		<div class="f-spacer"></div>
+	<div class="f-white-card">
 
-		<section class="f-row f-row_6">
-			<div class="f-row__cell-2 f-row__cell-mobile">
+		<div class="f-row f-row_6">
+			<div class="f-row__cell-4 f-row__cell_push_1 f-row__cell-mobile">
+				<p class="f-one-liner_center">
+				We're a team of 15 activists from Denmark, Sweden, Italy, Spain, Greece and California - but we want to be hundreds. Jump the boat, play ball and kick ass with us. 
+				</p>
+	
+				<br>
 
-				<div class="f-text">
-					<h1 class="f-text__heading">Activist to activist</h1>
-
-					<p class="f-text__text">
-
-					Basically, we are activists working together to organize international solidarity.
-					<br>
-					<br>
-					We are legally founded in Copenhagen,<br> as a non-profit, socio-economic foundation.<br>
-					Currently, we are expanding and decentralising to an internatonally based organization, with open-source ambitions and local affinity groups.
-					<br>
-					<br>
-					We will become a platform by the movements, for the movements - and continue to kick ass.
-
-					</p>
-				</div><!-- /f-text -->
-
-
-			</div><!-- /f-row__cell-2 -->
-
-			<div class="f-row__cell-4 f-row__cell-mobile">
-
-				<!-- this should be used on the website -->
-				<figure class="f-media">
-					<img class="f-media__media" src="assets/image/WWA1.png">
-					<figcaption class="f-media__caption"></figcaption>
-				</figure>
-				<!-- this should be used on the website -->
-					</div><!-- /f-row__cell-3 -->
-
-			</div><!-- /f-row__cell-4 -->
-		</section><!-- /f-row -->
-
-
-			<div class="f-row__cell-1"></div>
-		</section>
-
-		<div class="f-spacer"></div>
-
-	</article>
-
-	<div class="f-spacer"></div>
+			<div class="f-row__cell-2 f-row__cell_push_2 f-row__cell-mobile_push_2 f-row__cell-mobile-2">
+				</div>
+				<a class="f-button-organize" href="/howdoesitwork.htm">How it works</a>
+			</div>
+		</div>
+	</div>
 
 	<footer class="f-footer">
 		<div class="f-row f-row_12">
@@ -162,5 +123,44 @@
 	<script>
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
 	</script>
-	</body>
+
+	<script src="lib/typed.js" charset="utf8" async></script>
+	<script>
+		$(function(){
+			$(".element").typed({
+				strings: ["solidarity", "crowdfunding", "mutual aid", "direct action"],
+				// typing speed
+				typeSpeed: 0,
+				// time before typing starts
+				startDelay: 1000,
+				// backspacing speed
+				backSpeed: 0,
+				// time before backspacing
+				backDelay: 2000,
+				// loop
+				loop: true,
+				// false = infinite
+				loopCount: false,
+				// show cursor
+				showCursor: false,
+				// character for cursor
+				cursorChar: ".",
+				// attribute to type (null == text)
+				attr: null,
+				// either html or text
+				contentType: 'html',
+				// call when done callback function
+				callback: function() {},
+				// starting callback function before each string
+				preStringTyped: function() {},
+				//callback for every typed string
+				onStringTyped: function() {},
+				// callback for reset
+				resetCallback: function() {}
+			});
+		});
+	</script>
+
+</body>
+
 </html>
