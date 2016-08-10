@@ -113,9 +113,15 @@ As seen on "How does it work".
 }
 
 .f-info-card_image { /*TODO: This could be useful? Not sure where, tho*/
-	position: absolute;
-	top: 0;
-	right: -45%;
+	
+	position: fixed;
+	width: 100%
+	
+}
+
+.f-info-card_image_fish {
+	position: fixed; 
+
 }
 
 
