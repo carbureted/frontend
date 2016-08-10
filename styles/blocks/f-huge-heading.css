@@ -46,12 +46,12 @@ MODIFIER f-huge-heading_scroll
 	transform-origin:center center center;
 }
 
-/*
-Leftovers from scrollme:
-.wrapper
-{
-	max-width:30em;
-	margin:2em auto;
-}*/
+.f-hero__heading.f-huge-heading {
+	margin: 6rem 0 2rem 0;
+}
+
+.nodisplay {
+  display: none;
+}
 
 
