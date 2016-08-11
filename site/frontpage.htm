@@ -34,11 +34,21 @@
 	<div class="f-hero f-hero_big">
 		<div class="f-hero__wrapper">
 			<div class="f-row f-row_6">
-				<div class="f-row__cell">
+
+				<div class="f-row__cell f-row_not-mobile">
 					<div class="f-hero__heading">
 						<h1>We organize</h1><h1 class="element"></h1>
 					</div>
 				</div>
+
+				<div class="f-row__cell f-row_not-desktop">
+					<div class="f-hero__heading_mobile">
+						<h1>We organize</h1><h1 class="element"></h1>
+					</div>
+				</div>
+
+
+
 			</div>
 		</div>
 	</div>
@@ -50,11 +60,9 @@
 				<p class="f-one-liner_center">
 				We're a team of 15 activists from Denmark, Sweden, Italy, Spain, Greece and California - but we want to be hundreds. We educate new real acitivsts and delegate leadership.
 				</p>
-	
 				<br>
-
+			</div>
 			<div class="f-row__cell-2 f-row__cell_push_2 f-row__cell-mobile_push_2 f-row__cell-mobile-2">
-				</div>
 				<a class="f-button-organize" href="/howdoesitwork.htm">How it works</a>
 			</div>
 		</div>
@@ -124,7 +132,6 @@
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
 	</script>
 
-	<script src="lib/typed.js" charset="utf8" async></script>
 	<script>
 		$(function(){
 			$(".element").typed({
@@ -160,6 +167,7 @@
 			});
 		});
 	</script>
+	<script src="lib/typed.js" charset="utf8" async></script>
 
 </body>
 

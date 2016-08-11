@@ -102,6 +102,20 @@ BLOCK f-hero
 	font-weight: lighter;
 }
 
+.f-hero__heading_mobile h1 {
+	display: inline-block;
+
+	margin-top: 14rem;
+	padding-right: 1.4rem;
+	padding-left: 0.8rem;
+
+	background-color: var(--color-black-transparent);
+
+	color: var(--color-black);
+	font-size: 4.7rem;
+	font-weight: lighter;
+}
+
 .f-hero__text {
 	position: relative;
 

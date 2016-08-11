@@ -1,7 +1,7 @@
 :root {
   --color-red: hsla(1, 73.7%, 38.8%, 1);
   --color-black: hsla(0, 0%, 0%, 1);
-  --color-black-transparent: hsla(0, 0%, 0%, 0.6);
+  --color-black-transparent: hsla(0, 0%, 0%, 0.3);
   --color-transparent: hsla(0, 0%, 0%, 0);
   --color-white: hsla(0, 0%, 100%, 1);
   --color-white-transparent: hsla(0, 0%, 100%, 0.9);
