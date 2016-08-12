@@ -32,7 +32,12 @@
 				else this.setAttribute("selected", selected.name)
 				// console.log(this.selected) // print the value of <about-iron-pages selected="?">
 			}
-			var changeAboutPage // variable for a function with 'this' bound to about-iron-pages 
+			var changeAboutPage // variable for a function with 'this' bound to about-iron-pages
+
+			function hashPage(pageName) { //TODO: use the hash to change the page so we can link to a sub-about page
+				window.location.hash = pageName
+			}
+
 	    Polymer({
 
 	      is: 'about-iron-pages',
