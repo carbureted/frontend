@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>organize</title>
+	<title>about:contact</title>
 	<link rel="stylesheet" href="css/bundle.css">
 	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
        (instead of dynamically loading it later in JS) is that the parser can go
@@ -17,18 +17,18 @@
 	<header class="f-navigation">
 		<div class="f-row f-row_12">
 			<div class="f-row__cell-4 f-row__cell-mobile-5">
-				<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+				<a href="/frontpage"><h2 class="f-branding">Fire<span>fund</span></h2></a>
 			</div>
 			<nav class="f-row__cell-8 f-row__cell-mobile-7">
 				<div class="f-row f-row_12">
 					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
-						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
+						<a href="/howdoesitwork" class="f-navigation__link">How it works</a>
 					</div>
 					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
-						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
+						<a href="/howdoesitwork" class="f-navigation__link">How</a>
 					</div>
 					<div class="f-row__cell-3 f-row__cell-mobile-3">
-						<a href="/about-us.htm" class="f-navigation__link">About</a>
+						<a href="/about-us" class="f-navigation__link">About</a>
 					</div>
 				</nav>
 			</div>
@@ -37,30 +37,22 @@
 
 	<article class="f-content">
 
-		<div class="f-spacer"></div>
-
-		<h1 class="f-left-heading f-left-heading_big">Organize</h1>
+		<h1 class="f-left-heading f-left-heading_big">About us</h1>
 
 		<div class="f-spacer"></div>
 
-		<h2 class="f-one-liner">
-			Want to organize a campaign?<a href="#"></a><br>
-			Are you already familiar with <a href="#">How It Works</a>?<br>
-		</h2>
-
-		<section class="f-text">
-			<p class="f-text__text">
-				
-			We do not have a form you fill out, we have a network
-			 of activists that will work with you and prepare the firefund. 
-			Remember you can also get feedback, ideas and troubleshooting on our <a href="#">Reddit</a>. 
-			</p>
-			<p class="f-text__text">
-				Depending on your group, your project and where you are in the process, there can be different ways of starting contact. Check out the different possibilities below.
-			</p>
+		<section class="f-button-group">
+			<div class="f-column f-column_3 f-column_mobile_2">
+				<button class="f-button-group__button">Terms</button>
+				<button class="f-button-group__button">Blog</button>
+				<button class="f-button-group__button">Manifesto</button>
+				<button class="f-button-group__button">Contact</button>
+				<button class="f-button-group__button">Who we are</button>
+				<button class="f-button-group__button">Dank memes</button>
+			</div>
 		</section>
 
-		<section class="f-accordian f-accordian_open">
+		<article class="f-accordian">
 			<h2 class="f-accordian__heading">Send a quick message</h2>
 			<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');">
 				<div></div>
@@ -68,14 +60,14 @@
 			<div class="f-accordian__cuff-wrapper">
 				<div class="f-row f-row_6">
 					<div class="f-row__cell-4 f-row__cell-mobile">
-						<p class="f-accordian__cuff-text">If you want to get in contact with FIREFUND and do not have any special requirements regarding security and anonymity, send us a quick message, using the form below</p>
+						<p class="f-accordian__cuff-text">If you want to get in contact with FIREFUND and do not have any special requirements regarding security and anonymity, send us a quick message, using the form below.</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="f-accordian__content">
 
-				<form action="">
+				<form>
 					<section class="f-row f-row_6">
 						<div class="f-row__cell-4">
 
@@ -85,31 +77,42 @@
 								</label>
 							</div>
 
-
+							<fieldset class="f-radio-group">
+								<legend>Regarding</legend>
+								<radiogroup>
+									<div class="f-radio-group__element">
+										<input id="rb1" type="radio" name="rb" value="Press">
+										<label for="rb1">Press</label>
+									</div>
+									<div class="f-radio-group__element">
+										<input id="rb2" type="radio" name="rb" value="Political">
+										<label for="rb2">Political cooperation / mutial aid</label>
+									</div>
+									<div class="f-radio-group__element">
+										<input id="rb3" type="radio" name="rb" value="Other">
+										<label for="rb3">Other</label>
+									</div>
+								</radiogroup>
+							</fieldset>
 
 							<div class="f-text-input f-text-input_multiline">
 								<label class="f-text-input__label">Message
 									<textarea class="f-text-input__text-field" rows="6" placeholder="This is OpenPGP encrypted using the OpenPGP.js library"></textarea>
-								</label>
+							</label>
 							</div>
 
-							<button class="f-button-basic">Encrypt</button>
-							<input type="reset" class="f-button-basic" value="Reset"/>
-
-							<div class="f-text-input f-text-input_multiline f-text-input_readonly">
-								<textarea class="f-text-input__text-field" rows="6" readonly placeholder="Your encrypted message:"></textarea>
-							</div>
-
-							<input type="submit" class="f-button-basic" value="Send"/>
+							<button class="f-button-basic">Send</button>
 
 						</div><!-- /f-row__cell-4 -->
 						<div class="f-row__cell-2"><!-- empty --></div>
 					</section><!-- /f-row -->
-				</form>
-			</div>
-		</section>
 
-		<section class="f-accordian">
+				</form>
+
+			</div>
+		</article>
+
+		<article class="f-accordian">
 			<h2 class="f-accordian__heading">PGP encrypted email</h2>
 			<a class="f-accordian__arrow" onclick="this.parentElement.classList.toggle('f-accordian_open');">
 				<div></div>
@@ -117,7 +120,7 @@
 			<div class="f-accordian__cuff-wrapper">
 				<div class="f-row f-row_6">
 					<div class="f-row__cell-4 f-row__cell-mobile">
-						<p class="f-accordian__cuff-text"> If you want to keep the content of your message anonymous, you can send us an encrypted email using our public key, shown below</p>
+						<p class="f-accordian__cuff-text">If you want to keep the content of your message anonymous, you can send us an encrypted email using our public key, shown below</p>
 					</div>
 				</div>
 			</div>
@@ -177,9 +180,9 @@ LjSacZsYqWRmM+9k6w3XZren33fIXweEguZ7raQapV8=
 				</form>
 
 			</div>
-		</section>
+		</article>
 
-		<section class="f-accordian f-accordian_link">
+		<article class="f-accordian f-accordian_link">
 			<h2 class="f-accordian__heading">Just a regular email</h2>
 			<a class="f-accordian__arrow" href="mailto:gimme@the.heat.com">
 				<div></div>
@@ -195,9 +198,9 @@ LjSacZsYqWRmM+9k6w3XZren33fIXweEguZ7raQapV8=
 					</div>
 				</div>
 			</div>
-		</section>
+		</article>
 
-		<section class="f-accordian f-accordian_link">
+		<article class="f-accordian f-accordian_link">
 			<h2 class="f-accordian__heading">Reddit</h2>
 			<a class="f-accordian__arrow" href="https://www.reddit.com/r/firefund" target="_blank">
 				<div></div>
@@ -209,7 +212,7 @@ LjSacZsYqWRmM+9k6w3XZren33fIXweEguZ7raQapV8=
 					</div>
 				</div>
 			</div>
-		</section>
+		</article>
 
 		<div class="f-spacer"></div>
 
@@ -225,14 +228,14 @@ LjSacZsYqWRmM+9k6w3XZren33fIXweEguZ7raQapV8=
 						<a href="/">Fire<span>fund</span></a>
 					</h2>
 					<ul class="f-sitemap__links">
-						<li><a href="/about-us.htm">About us</a></li>
+						<li><a href="/about-us">About us</a></li>
 						<li><a href="https://medium.com/@firefundnet/">Blog ></a></li>
-						<li><a href="/about-terms.htm">Terms</a></li>
-						<li><a href="/about-contact.htm">Contact</a></li>
-						<li><a href="/about-manifesto.htm">Manifesto</a></li>
-						<li><a href="/about-team.htm">Team</a></li>
-						<li><a href="/about-us.htm">Who we are</a></li>
-						<li><a href="/howdoesitwork.htm">How does it work</a></li>
+						<li><a href="/about-terms">Terms</a></li>
+						<li><a href="/about-contact">Contact</a></li>
+						<li><a href="/about-manifesto">Manifesto</a></li>
+						<li><a href="/about-team">Team</a></li>
+						<li><a href="/about-us">Who we are</a></li>
+						<li><a href="/howdoesitwork">How does it work</a></li>
 						<div class="f-spacer"></div>
 					</ul>
 				</div>
@@ -273,11 +276,10 @@ LjSacZsYqWRmM+9k6w3XZren33fIXweEguZ7raQapV8=
 		</div>
 		<!-- /f-row -->
 	</footer>
-
 	<script src="js/loader.js" charset="utf8" async></script>
 	<script src="lib/jquery.js" charset="utf8" async></script>
 	<script src="lib/underscore.js" charset="utf8" async></script>
-	<script>
+	<script> // TODO: Why is this needed?!?
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
 	</script>
 </body>
