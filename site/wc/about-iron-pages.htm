@@ -1,0 +1,77 @@
+<link rel="import" href="/lib/polymer.html">
+<link rel="import" href="/lib/iron-resizable-behavior/iron-resizable-behavior.html">
+<link rel="import" href="/lib/iron-selectable/iron-selectable.html">
+
+<dom-module id="about-iron-pages"> <!-- Before: f-header -->
+	<template>
+	    <style>
+			:host {
+				display: block;
+			}
+			:host > ::content > :not(.iron-selected) {
+				display: none !important;
+			}
+	    </style>
+
+		<content>
+		</content>
+
+	</template>
+
+	<script>
+	    Polymer({
+
+	      is: 'about-iron-pages',
+
+	      behaviors: [
+	        Polymer.IronResizableBehavior,
+	        Polymer.IronSelectableBehavior
+	      ],
+
+	      properties: {
+
+	        // as the selected page is the only one visible, activateEvent
+	        // is both non-sensical and problematic; e.g. in cases where a user
+	        // handler attempts to change the page and the activateEvent
+	        // handler immediately changes it back
+	        activateEvent: {
+	          type: String,
+	          value: null,
+	          notify: true,
+	        }
+
+	      },
+
+	      listeners: [
+	        '_selectedPageChanged(selected)'
+	      ],
+
+	      _selectedPageChanged: function(selected, old) {
+	      	// console.log(selected)
+	        this.async(this.notifyResize)
+	      },
+
+				attached: function() {
+					var buttonGroup = document.querySelector(".about-buttons")
+					buttonGroup.addEventListener("click", changePage.bind(this), false)
+				},
+
+				detached: function() {
+					var buttonGroup = document.querySelector(".about-buttons")
+					buttonGroup.removeEventListener("click", changePage.bind(this), false)
+				}
+
+	    });
+			function changePage(event) {
+				console.log(arguments)
+				var selected = event.target // event is the click event / event.target is the button that is actually clicked
+				// var selected = Polymer.dom(event).path.shift() // Polymer shitty way
+				// debugger // this line will open devtools in the browser and stop js execution at exactly this line
+				if(selected.name === "blog") // selected.name is the name of <button name="terms">Terms</button> in about-buttons.htm
+					window.open("https://medium.com/@firefundnet/latest")
+				else if(!selected.name) return
+				else this.setAttribute("selected", selected.name)
+				// console.log(this.selected) // print the value of <about-iron-pages selected="?">
+			}
+	</script>
+</dom-module>

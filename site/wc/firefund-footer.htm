@@ -1,0 +1,82 @@
+<link rel="import" href="/lib/polymer.html">
+
+
+<dom-module id="firefund-footer"> <!-- Before: f-header -->
+	<template>
+		<style>
+			:host {
+				color: white;
+			}
+	    </style>
+
+
+		<footer class="f-footer">
+			<div class="f-row f-row_12">
+				<div class="f-row__cell-4">
+					<div class="f-footer-sitemap">
+						<h2 class="f-branding f-sitemap__branding f-sitemap__links">
+						<a href="/">Fire<span>fund</span></a>
+						</h2>
+						<ul class="f-sitemap__links">
+							<li><a href="/about.htm">About us</a></li>
+							<li><a href="https://medium.com/@firefundnet/">Blog ></a></li>
+							<li><a href="/about-terms.htm">Terms</a></li>
+							<li><a href="/about-contact.htm">Contact</a></li>
+							<li><a href="/about-manifesto.htm">Manifesto</a></li>
+							<li><a href="/about-team.htm">Team</a></li>
+							<li><a href="/about-us.htm">Who we are</a></li>
+							<li><a href="/howdoesitwork.htm">How does it work</a></li>
+							<div class="f-spacer"></div>
+						</ul>
+					</div>
+				</div>
+				<div class="f-row__cell-4 f-row__cell-mobile-6 f-row__cell-mobile_push_1">
+					<p class="f-footer-text">
+						FIRE<span>FUND</span> is a crowdfunding platform working to finance and organize <br> social change from the bottom.
+					</p>
+					<div class="f-footer-signup">
+						<form class="f-signup">
+							<label class="f-signup__label">Sign up for news:
+								<input class="f-signup__input" type="email" placeholder="mail@radical.rev" required>
+							</label>
+							<button class="f-signup__button">Submit</button>
+						</form>
+					</div>
+					<div class="f-row__cell-mobile-10 f-row__cell_push_2 f-row__not-desktop">
+						<ul class="f-footer-icons f-icon-list f-icon-list_horizontal">
+							<li>
+								<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+							</li>
+							<li>
+								<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="f-row__cell-2 f-row__cell_push_2 f-row__not-mobile">
+					<ul class="f-footer-icons f-icon-list">
+						<li>
+							<a class="f-icon-list__icon f-icon-reddit" title="Checkout our reddit!" href="http://www.reddit.com/r/firefund"></a>
+						</li>
+						<li>
+							<a class="f-icon-list__icon f-icon-twitter" title="Checkout our twitter!" href="https://twitter.com/firefundnet"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>	
+			
+
+	</template>
+	<script>
+		Polymer({
+			/* this is the element's prototype */
+			is: 'firefund-footer',
+			// properties: {
+			// 	heading: String,
+			// 	text: String,
+			// 	image: String,
+			// },
+		})
+  	</script>
+</dom-module>

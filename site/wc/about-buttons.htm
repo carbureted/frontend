@@ -1,0 +1,60 @@
+<link rel="import" href="/lib/polymer.html">
+<!-- <link rel="import" href="/lib/iron-selector/iron-multi-selectable.html">
+<link rel="import" href="/lib/iron-selector/iron-selector.html">
+ -->
+<dom-module id="about-buttons"> 
+	<template>
+		<style>
+		.iron-selected {
+			color: var(--color-white, white);
+			background-position: left bottom;
+			background-size: 100% 300%; /*KLUDGE: background height scaled bigger because some of the white background shows */
+		}
+		</style>
+
+		<section class="f-button-group">
+			<!--<button class="f-button-group__button" name="terms">Terms</button>
+			<button class="f-button-group__button" name="blog">Blog ></button>
+			<button class="f-button-group__button" name="manifesto">Manifesto</button>
+			<button class="f-button-group__button" name="contact">Contact</button>
+			<button class="f-button-group__button" name="who">Who we are</button>
+			<button class="f-button-group__button" name="team">Team</button>-->
+				<iron-selector 
+				attr-for-selected="name" 
+				selected="{{buttonSelected}}"
+				fallback-selection="who" 
+				class="f-column f-column_3 f-column_mobile_2">
+				<button class="f-button-group__button" name="terms">Terms</button>
+				<button class="f-button-group__button" name="blog">Blog ></button>
+				<button class="f-button-group__button" name="manifesto">Manifesto</button>
+				<button class="f-button-group__button" name="contact">Contact</button>
+				<button class="f-button-group__button" name="who">Who we are</button>
+				<button class="f-button-group__button" name="team">Team</button>
+			</iron-selector> 
+		</section>
+	</template>
+<script>
+	"use strict"
+  Polymer({
+
+    is: 'about-buttons',
+
+    behaviors: [
+      Polymer.IronMultiSelectableBehavior
+    ],
+
+    properties: {
+			buttonSelected: {
+				type: String,
+				// notify: true,
+				value: 'who'
+			}
+		}
+
+    // function @troldmand - see about-iron-pages.htm
+    // 	lyt på hvilken attr-for-selected (eventListener?)
+    // 	find iron-pages tilsvarende attr-for-selected (hmmmm)
+    // 	indsæt samme attr-for-selected (øøøøøh)
+  });
+</script>
+</dom-module>
