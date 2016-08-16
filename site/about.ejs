@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>About us</title>
+	<link rel="stylesheet" href="css/bundle.css">
+	<!-- 1. Async HTML Imports do not block rending. Benefit of keeping it declarative
+	   (instead of dynamically loading it later in JS) is that the parser can go
+	   to town pre-fetching resources, etc. -->
+	<!-- TODO: change this to whatever WC you need <link rel="import" class="f-import" href="wc/header.htm" async>-->
+	<link rel="import" class="f-import" href="/lib/iron-resizable-behavior/iron-resizable-behavior.html">
+	<link rel="import" class="f-import" href="/lib/iron-selector/iron-selector.html">
+	<link rel="import" class="f-import" href="wc/about-iron-pages.htm">
+
+	<link rel="import" class="f-import" href="wc/about-buttons.htm">
+	<link rel="import" class="f-import" href="wc/about-us.htm">
+	<link rel="import" class="f-import" href="wc/about-manifesto.htm">
+	<link rel="import" class="f-import" href="wc/about-terms.htm">
+	<link rel="import" class="f-import" href="wc/about-team.htm">
+	<link rel="import" class="f-import" href="wc/about-contact.htm">
+	<link rel="import" class="f-import" href="wc/firefund-footer.htm">
+</head>
+<body>
+	<header class="f-navigation">
+		<div class="f-row f-row_12">
+			<div class="f-row__cell-4 f-row__cell-mobile-5">
+				<a href="/frontpage.htm"><h2 class="f-branding">Fire<span>fund</span></h2></a>
+			</div>
+			<nav class="f-row__cell-8 f-row__cell-mobile-7">
+				<div class="f-row f-row_12">
+					<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How it works</a>
+					</div>
+					<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
+						<a href="/howdoesitwork.htm" class="f-navigation__link">How</a>
+					</div>
+					<div class="f-row__cell-3 f-row__cell-mobile-3">
+						<a href="/about.htm" class="f-navigation__link">About</a>
+					</div>
+				</nav>
+			</div>
+		</div><!-- Header -->
+	</header>
+
+	<article class="f-content">
+		<h1 class="f-left-heading f-left-heading_big">About us</h1>
+		<div class="f-spacer"></div>
+
+		<about-buttons selected="who">
+		</about-buttons>
+
+		<!--<about-us name="who">
+		</about-us>
+		
+		<about-manifesto name="manifesto">
+		</about-manifesto>
+
+		<about-terms name="terms">
+		</about-terms>
+		
+		<about-team name="team">
+		</about-team>    
+		
+		<about-contact name="contact">
+		</about-contact>-->
+
+		
+		 <about-iron-pages attr-for-selected="name" selected="who" fallback-selection="who">   
+			<about-us name="who">
+			</about-us>
+			
+			<about-manifesto name="manifesto">
+			</about-manifesto>
+
+			<about-terms name="terms">
+			</about-terms>
+			
+			<about-team name="team">
+			</about-team>    
+			
+			<about-contact name="contact">
+			</about-contact> 
+		</about-iron-pages> 
+	</article>
+
+	<div class="f-spacer"></div>
+
+	<firefund-footer>
+	</firefund-footer>
+
+	<script src="js/loader.js" charset="utf8" async></script>
+	<script src="lib/jquery.js" charset="utf8" async></script>
+	<script src="lib/underscore.js" charset="utf8" async></script>
+<!-- 	<script>
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
+	</script> -->
+	</body>
+</html>
