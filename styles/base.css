@@ -51,6 +51,10 @@ a {
   text-decoration: none;
 }
 
+.f-button-group__button a {
+  color: var(--color-black, black);
+}
+
 span {
   color: var(--color-red);
 }
