@@ -153,11 +153,12 @@ I'm keeping these examples as a reminder but **DON'T USE THEM!**
 }
 
 .f-button-group__cuff {
-	display: inline;
+	display: block;
 	
 	font-weight: lighter;
 	font-size: 1.6rem;
 
+	height: 15rem;
 }
 
 .f-button-group__button:hover, .f-button-group__button:focus {
