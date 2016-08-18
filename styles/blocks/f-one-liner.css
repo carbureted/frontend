@@ -107,6 +107,7 @@ BLOCK f-one-liner
 @import "../variables";
 
 .f-one-liner {
+	position: relative;
 	margin: 0 0 1.4rem;
 
 	color: var(--color-grey-dark);

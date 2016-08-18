@@ -142,6 +142,24 @@ I'm keeping these examples as a reminder but **DON'T USE THEM!**
 	outline: none;
 	overflow: hidden;
 }
+
+/*For soft-soft launch. TODO: BEM structure*/
+.f-button-group__header {
+	padding-right: 1.2rem;
+	
+	font-weight: lighter;
+	font-size: 3rem;
+
+}
+
+.f-button-group__cuff {
+	display: inline;
+	
+	font-weight: lighter;
+	font-size: 1.6rem;
+
+}
+
 .f-button-group__button:hover, .f-button-group__button:focus {
 	background-position: left 13%;
 }

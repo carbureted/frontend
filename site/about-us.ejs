@@ -36,7 +36,21 @@
 
 	<article class="f-content">
 
+
 		<h1 class="f-left-heading f-left-heading_big">About us</h1>
+
+		<div class="f-row">
+			<div class="f-row__cell-1">
+				<div class="f-button-group__header">
+					<p>> Read our </p>
+				</div>
+			</div>
+			<div class="f-row__cell-4">
+				<div class="f-button-group__header">
+					<p class="element2"></p>
+				</div>
+			</div>
+		</div>
 
 		<div class="f-spacer"></div>
 
@@ -177,5 +191,42 @@
 	<script>
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
 	</script>
+	<script>
+		$(function(){
+			$(".element2").typed({
+				strings: ["manifesto", "terms", "team description", "e-mails by getting in contact", "blog on Medium.com", "us ..."],
+				// typing speed
+				typeSpeed: 0,
+				// time before typing starts
+				startDelay: 1000,
+				// backspacing speed
+				backSpeed: 0,
+				// time before backspacing
+				backDelay: 2000,
+				// loop
+				loop: true,
+				// false = infinite
+				loopCount: false,
+				// show cursor
+				showCursor: false,
+				// character for cursor
+				cursorChar: ".",
+				// attribute to type (null == text)
+				attr: null,
+				// either html or text
+				contentType: 'html',
+				// call when done callback function
+				callback: function() {},
+				// starting callback function before each string
+				preStringTyped: function() {},
+				//callback for every typed string
+				onStringTyped: function() {},
+				// callback for reset
+				resetCallback: function() {}
+			});
+		});
+	</script>
+	<script src="lib/typed.js" charset="utf8" async></script>
+
 	</body>
 </html>
