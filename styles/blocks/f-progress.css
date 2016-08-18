@@ -1,1 +1,276 @@
-@-webkit-keyframes a{0%{-webkit-transform:translateY(2rem);transform:translateY(2rem)}10%{-webkit-transform:translateY(0);transform:translateY(0)}30%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-2rem);transform:translateY(-2rem)}60%{-webkit-transform:translateY(-2rem);transform:translateY(-2rem)}70%{-webkit-transform:translateY(-4rem);transform:translateY(-4rem)}90%{-webkit-transform:translateY(-4rem);transform:translateY(-4rem)}to{-webkit-transform:translateY(-6rem);transform:translateY(-6rem)}}@keyframes a{0%{-webkit-transform:translateY(2rem);transform:translateY(2rem)}10%{-webkit-transform:translateY(0);transform:translateY(0)}30%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-2rem);transform:translateY(-2rem)}60%{-webkit-transform:translateY(-2rem);transform:translateY(-2rem)}70%{-webkit-transform:translateY(-4rem);transform:translateY(-4rem)}90%{-webkit-transform:translateY(-4rem);transform:translateY(-4rem)}to{-webkit-transform:translateY(-6rem);transform:translateY(-6rem)}}.f-progress{width:100%;margin-bottom:35.2px;margin-bottom:2.2rem;padding-top:22.4px;padding-top:1.4rem}.f-progress__bar,.f-progress__value{height:16px;height:1rem}.f-progress__bar{margin-bottom:28.8px;margin-bottom:1.8rem;background-color:#000}.f-progress__value{height:inherit;max-width:100%;background-color:#ad1c1a;-webkit-transition:width 1s ease .26s;transition:width 1s ease .26s;will-change:width}.f-progress__data{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:25.6px;font-size:1.6rem}.f-progress__data-element{margin:0;color:#666;font-weight:400;line-height:35.2px;line-height:2.2rem}.f-progress__data-element span{color:#333;font-weight:700}.f-progress_small .f-progress__bar{height:4.8px;height:.3rem;margin:0 0 8px;margin:0 0 .5rem;background-color:#666}.f-progress_small .f-progress__data-element{font-size:16px;font-size:1rem;white-space:nowrap}.f-progress_flyout{position:relative}.f-progress_flyout .f-progress__bar{margin:0 54.4px;margin:0 3.4rem;background-color:#d9d9d9}.f-progress_flyout .f-progress__data{position:absolute;top:-32px;top:-2rem;left:0;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:32px;height:2rem;margin-left:54.4px;margin-left:3.4rem;color:#333;line-height:1.2;clip:rect(0,800px,32px,0);clip:rect(0,50rem,2rem,0)}.f-progress_flyout .f-progress__data-element{color:#333;line-height:1.2;will-change:transform;-webkit-animation-duration:8s;animation-duration:8s;-webkit-animation-name:a;animation-name:a;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:none;animation-fill-mode:none}.f-progress_flyout .f-progress__data span{color:#ad1c1a}.f-progress_flyout .f-progress__data,.f-progress_vertical .f-progress__data{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+﻿/*
+Display how much is donated out of the goal.
+
+Note on currency format in different countries:
+[https://docs.oracle.com/cd/E19455-01/806-0169/overview-9/index.html]([https://docs.oracle.com/cd/E19455-01/806-0169/overview-9/index.html)
+
+## BEM
+<pre>
+BLOCK f-progress
+MODIFIER f-progress_small
+MODIFIER f-progress_vertical
+MODIFIER f-progress_flyout
+	ELEMENT f-progress__bar
+		ELEMENT f-progress__value
+	ELEMENT f-progress__data
+	ELEMENT f-progress__data-element
+</pre>
+
+## Example default
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	
+	<section class="f-progress" data-value="38">
+		<div class="f-progress__bar">
+			<div style="width: 38%;" class="f-progress__value"></div>
+		</div>
+		<div class="f-progress__data">
+			<p class="f-progress__data-element">
+				<span>38%</span> of $50,000
+			</p>
+			<p class="f-progress__data-element">
+				<span>$14,928</span> reached in total
+			</p>
+			<p class="f-progress__data-element">
+				<span>22</span> days to go
+			</p>
+			
+		</div>
+	</section>
+
+	<!-- this should be used on the website -->
+
+</div>
+```
+
+## Example vertical
+```
+<div class="kalei-background-white"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	
+	<section class="f-progress f-progress_vertical" data-value="38">
+		<div class="f-progress__bar">
+			<div style="width: 38%;" class="f-progress__value"></div>
+		</div>
+		<div class="f-progress__data">
+			<p class="f-progress__data-element">
+				<span>38%</span> of $50,000
+			</p>
+			<p class="f-progress__data-element">
+				<span>$14,928</span> reached in total
+			</p>
+			<p class="f-progress__data-element">
+				<span>22</span> days to go
+			</p>
+		</div>
+	</section>
+
+	<!-- this should be used on the website -->
+
+</div>
+```
+
+## Example small
+```
+<div class="kalei-background-white" style="max-width: 639px;"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	
+	<section class="f-progress f-progress_small" data-value="38">
+		<div class="f-progress__bar">
+			<div style="width: 38%;" class="f-progress__value"></div>
+		</div>
+		<div class="f-progress__data">
+			<p class="f-progress__data-element">
+				<span>38%</span> of $50,000
+			</p>
+			<p class="f-progress__data-element">
+				<span>$14,928</span> reached in total
+			</p>
+			<p class="f-progress__data-element">
+				<span>22</span> days to go
+			</p>
+		</div>
+	</section>
+
+	<!-- this should be used on the website -->
+
+</div>
+```
+
+## Example flyout
+```
+<div class="kalei-background-white" style="height:6.4rem;transform:translateY(6.4rem);"> <!-- only here for the style guide - should not be used on the website -->
+
+	<!-- this should be used on the website -->
+	
+	<section class="f-progress f-progress_flyout" data-value="38">
+		<div class="f-progress__bar">
+			<div style="width: 38%;" class="f-progress__value"></div>
+		</div>
+		<div class="f-progress__data">
+			<p class="f-progress__data-element">
+				<span>22</span> days to go
+			</p>
+			<p class="f-progress__data-element">
+				<span>38%</span> of $50,000
+			</p>
+			<p class="f-progress__data-element">
+				<span>$14,928</span> reached in total
+			</p>
+		</div>
+	</section>
+
+	<!-- this should be used on the website -->
+
+</div>
+
+```
+*/
+
+@import "../variables";
+
+@keyframes odometer {
+	0% {
+		/*color: cyan;*/
+		transform: translateY(2rem);
+	}
+  10% {
+		/*color: red;*/
+    transform: translateY(0rem);
+  }
+	30% {
+		/*color: red;*/
+    transform: translateY(0rem);
+  }
+  40% {
+		/*color: green;*/
+    transform: translateY(-2rem);
+  }
+  60% {
+		/*color: green;*/
+    transform: translateY(-2rem);
+  }
+  70% {
+		/*color: saddlebrown;*/
+    transform: translateY(-4rem);
+  }
+	90% {
+		/*color: saddlebrown;*/
+    transform: translateY(-4rem);
+  }
+  100% {
+		/*color: navy;*/
+    transform: translateY(-6rem);
+  }
+}
+
+
+.f-progress {
+	width: 100%;
+  	margin-bottom: 2.2rem;
+	padding-top: 1.4rem;
+}
+
+.f-progress__bar, .f-progress__value {
+	height: 1rem;
+}
+
+.f-progress__bar {
+	margin-bottom: 1.8rem;
+
+	background-color: var(--color-black);
+}
+
+.f-progress__value {
+	height: inherit;
+	max-width: 100%;
+
+	background-color: var(--color-red);
+
+	transition: width 1s ease 260ms;
+	will-change: width;
+}
+
+.f-progress__data {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+	font-size: 1.6rem;
+}
+
+.f-progress__data-element {
+	margin: 0;
+
+  	color: var(--color-grey);
+  	font-weight: normal;
+  	line-height: 2.2rem;
+}
+.f-progress__data-element span {
+  	color: var(--color-grey-dark);
+  	font-weight: bold;
+}
+
+/***************\
+	MODIFIERS
+\***************/
+/*this modifier is in affect on f-project-thumbnail */
+.f-progress_small {}
+.f-progress_small .f-progress__bar {
+	height: .3rem;
+	margin: 0 0 .5rem;
+
+	background-color: var(--color-grey);
+}
+.f-progress_small .f-progress__data-element {
+	font-size: 1rem;
+
+	white-space: nowrap;
+}
+
+.f-progress_flyout {
+	position: relative;
+}
+.f-progress_flyout .f-progress__bar {
+	margin: 0 var(--gutter-width);
+
+	background-color: var(--color-grey-light);
+}
+.f-progress_flyout .f-progress__data {
+	position: absolute;
+	top: -2rem;
+	left: 0;	
+	flex-direction: column;
+	
+	height: 2rem;
+	margin-left: var(--gutter-width);
+
+	color: var(--color-grey-dark);
+	line-height: 1.2;
+
+	clip: rect(0, 50rem, 2rem, 0);
+ }
+ .f-progress_flyout .f-progress__data-element {
+	color: var(--color-grey-dark);
+	line-height: 1.2;
+
+	will-change: transform;
+	animation-duration: 8s;
+	animation-name: odometer;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-fill-mode: none;
+ }
+ .f-progress_flyout .f-progress__data span {
+ 	color: var(--color-red);
+ }
+
+.f-progress_vertical {}
+.f-progress_vertical .f-progress__data,
+.f-progress_flyout .f-progress__data {
+	flex-direction: column;
+}

@@ -1,1 +1,49 @@
-.f-navigation{width:100%;margin:48px 0 32px;margin:3rem 0 2rem;*zoom:1;max-width:1574.4px;max-width:98.4rem;margin-left:auto;margin-right:auto}.f-navigation:after,.f-navigation:before{content:'';display:table}.f-navigation:after{clear:both}.f-navigation__link{color:#d9d9d9;font-size:28.8px;font-size:1.8rem;font-weight:lighter;line-height:76.8px;line-height:4.8rem;text-decoration:none;cursor:pointer;-webkit-transition:color .26s ease-out;transition:color .26s ease-out}.f-navigation__link:hover{color:#fff}
+/*
+Site navigation links.
+
+```
+<header class="f-navigation">
+	<div class="f-row f-row_12">
+		<div class="f-row__cell-4 f-row__cell-mobile-5">
+			<h2 class="f-branding">Fire<span>fund</span></h2>
+		</div>
+		<nav class="f-row__cell-8 f-row__cell-mobile-7">
+			<div class="f-row f-row_12">
+				<div class="f-row__cell-3 f-row__cell_push_6 f-row__not-mobile">
+					<a href="#" class="f-navigation__link">How it works</a>
+				</div>
+				<div class="f-row__not-desktop f-row__cell-mobile_push_6 f-row__cell-mobile-2">
+					<a href="#" class="f-navigation__link">How</a>
+				</div>
+				<div class="f-row__cell-3 f-row__cell-mobile-3">
+					<a href="#" class="f-navigation__link">About</a>
+				</div>
+			</nav>
+		</div>
+	</div>
+</header>
+```
+*/
+
+@import "../variables";
+
+.f-navigation {
+	width: 100%;
+
+	margin: 3rem 0 2rem 0;
+
+	lost-center: var(--page-max-width);
+}
+.f-navigation__link {
+	color: var(--color-grey-light, hsla(0, 0%, 84.7%, 1));
+	font-size: 1.8rem;
+	font-weight: lighter;
+	line-height: 4.8rem;
+	text-decoration: none;
+
+	cursor: pointer;
+	transition: color 260ms ease-out;
+}
+.f-navigation__link:hover {
+	color: var(--color-white, hsla(0, 0%, 100%, 1));
+}
