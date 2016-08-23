@@ -16,7 +16,7 @@ In app.js, l. 14-15 it says:
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
-Eason, do you know how to fix it? 
+I'm guessing it just because it needs to be put in a folder, that isn't there yet, because it's the backend to come?  Maybe try put it in site, Karl!
 
 
 3. Hero:
