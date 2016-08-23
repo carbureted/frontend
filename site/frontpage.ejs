@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width">
 	<title>Index</title>
 	<link rel="stylesheet" href="css/bundle.css">
-	<script src="lib/jquery.js" charset="utf8" async></script>
+	<script src="lib/jquery.js" charset="utf8"></script>
 
 </head>
 
@@ -47,10 +47,28 @@
 					</div>
 				</div>
 
-				<div class="f-row__cell-3">
+				<div class="f-row__cell">
 					<div class="f-hero__text">
-						<!-- TODO: Make duplicate and BEM it -->
-						<span class="f-typewriter__hero-text"></span>
+						<span class="f-typewriter__hero-text_1"></span>
+					</div>
+				</div>
+
+				<div class="f-row__cell">
+					<div class="f-hero__text">
+						<span class="f-typewriter__hero-text_2"></span>
+					</div>
+				</div>
+
+				<div class="f-row__cell">
+					<div class="f-hero__text">
+						<span class="f-typewriter__hero-text_3"></span>
+					</div>
+				</div>
+
+
+				<div class="f-row__cell">
+					<div class="f-hero__text f-hero__text_splash">
+						<p class="f-typewriter__hero-text_4"></p>
 					</div>
 				</div>
 
@@ -177,8 +195,8 @@
 <!-- Hero text typewriter -->
 	<script>
 		$(function(){
-			$(".f-typewriter__hero-text").typed({
-				strings: ["We have build a decentralized webplatform for political crowdfunding. This is a tool for the movements. Now, we will begin to organize solidarity and use the this tool."],
+			$(".f-typewriter__hero-text_1").typed({
+				strings: ["We made a webplatform for political crowdfunding,"],
 				// typing speed
 				typeSpeed: -50,
 				// time before typing starts
@@ -211,6 +229,113 @@
 		});
 	</script>
 
+	<script>
+		$(function(){
+			$(".f-typewriter__hero-text_2").typed({
+				strings: ["because we believe solidarity is a strong thing, "],
+				// typing speed
+				typeSpeed: -50,
+				// time before typing starts
+				startDelay: 0,
+				// backspacing speed
+				backSpeed: 0,
+				// time before backspacing
+				backDelay: 2000,
+				// loop
+				loop: false,
+				// false = infinite
+				loopCount: false,
+				// show cursor
+				showCursor: false,
+				// character for cursor
+				cursorChar: "",
+				// attribute to type (null == text)
+				attr: null,
+				// either html or text
+				contentType: 'text',
+				// call when done callback function
+				callback: function() {},
+				// starting callback function before each string
+				preStringTyped: function() {},
+				//callback for every typed string
+				onStringTyped: function() {},
+				// callback for reset
+				resetCallback: function() {}
+			});
+		});
+	</script>
+
+	<script>
+		$(function(){
+			$(".f-typewriter__hero-text_3").typed({
+				strings: ["with unrealised potential."],
+				// typing speed
+				typeSpeed: -50,
+				// time before typing starts
+				startDelay: 0,
+				// backspacing speed
+				backSpeed: 0,
+				// time before backspacing
+				backDelay: 2000,
+				// loop
+				loop: false,
+				// false = infinite
+				loopCount: false,
+				// show cursor
+				showCursor: false,
+				// character for cursor
+				cursorChar: "",
+				// attribute to type (null == text)
+				attr: null,
+				// either html or text
+				contentType: 'text',
+				// call when done callback function
+				callback: function() {},
+				// starting callback function before each string
+				preStringTyped: function() {},
+				//callback for every typed string
+				onStringTyped: function() {},
+				// callback for reset
+				resetCallback: function() {}
+			});
+		});
+	</script>
+
+	<script>
+		$(function(){
+			$(".f-typewriter__hero-text_4").typed({
+				strings: ["First campaign is scheduled for september, 2016."],
+				// typing speed
+				typeSpeed: -50,
+				// time before typing starts
+				startDelay: 0,
+				// backspacing speed
+				backSpeed: 0,
+				// time before backspacing
+				backDelay: 2000,
+				// loop
+				loop: false,
+				// false = infinite
+				loopCount: false,
+				// show cursor
+				showCursor: false,
+				// character for cursor
+				cursorChar: "",
+				// attribute to type (null == text)
+				attr: null,
+				// either html or text
+				contentType: 'text',
+				// call when done callback function
+				callback: function() {},
+				// starting callback function before each string
+				preStringTyped: function() {},
+				//callback for every typed string
+				onStringTyped: function() {},
+				// callback for reset
+				resetCallback: function() {}
+			});
+		});
+	</script>
 
 
 	<script src="lib/typed.js" charset="utf8" async></script>
