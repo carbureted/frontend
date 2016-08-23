@@ -35,13 +35,22 @@
 
 				<div class="f-row__cell f-row_not-mobile">
 					<div class="f-hero__heading">
-						<h1>We organize</h1><h1 class="element1"></h1>
+						<h1>We organize</h1><h1 class="f-typewriter__hero-headline"></h1>
 					</div>
 				</div>
 
 				<div class="f-row__cell f-row_not-desktop">
-					<div class="f-hero__heading_mobile">
-						<h1>We organize</h1><h1 class="element1"></h1>
+					<div class="f-hero__wrapper">
+						<div class="f-hero__heading_mobile">
+							<h1>We organize</h1><h1 class="f-typewriter__hero-headline"></h1>
+						</div>
+					</div>
+				</div>
+
+				<div class="f-row__cell-3">
+					<div class="f-hero__text">
+						<!-- TODO: Make duplicate and BEM it -->
+						<p class="f-typewriter__hero-text"></p>
 					</div>
 				</div>
 
@@ -128,14 +137,15 @@
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10421/livereload.js?snipver=1"></' + 'script>')
 	</script>
 
+<!-- Headline typewriter -->
 	<script>
 		$(function(){
-			$(".element1").typed({
+			$(".f-typewriter__hero-headline").typed({
 				strings: ["solidarity", "crowdfunding", "mutual aid", "direct action"],
 				// typing speed
 				typeSpeed: 0,
 				// time before typing starts
-				startDelay: 1000,
+				startDelay: 10000,
 				// backspacing speed
 				backSpeed: 0,
 				// time before backspacing
@@ -163,6 +173,46 @@
 			});
 		});
 	</script>
+
+<!-- Hero text typewriter -->
+	<script>
+		$(function(){
+			$(".f-typewriter__hero-text").typed({
+				strings: ["We have build a decentralized webplatform for political crowdfunding. This is a tool for the movements. Now, we will begin to organize solidarity and use the this tool."],
+				// typing speed
+				typeSpeed: -50,
+				// time before typing starts
+				startDelay: 0,
+				// backspacing speed
+				backSpeed: 0,
+				// time before backspacing
+				backDelay: 2000,
+				// loop
+				loop: false,
+				// false = infinite
+				loopCount: false,
+				// show cursor
+				showCursor: false,
+				// character for cursor
+				cursorChar: "",
+				// attribute to type (null == text)
+				attr: null,
+				// either html or text
+				contentType: 'text',
+				// call when done callback function
+				callback: function() {},
+				// starting callback function before each string
+				preStringTyped: function() {},
+				//callback for every typed string
+				onStringTyped: function() {},
+				// callback for reset
+				resetCallback: function() {}
+			});
+		});
+	</script>
+
+
+
 	<script src="lib/typed.js" charset="utf8" async></script>
 
 </body>
